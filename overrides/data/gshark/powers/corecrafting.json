@@ -1,0 +1,28 @@
+{
+  "name": "The Core",
+  "description": "Use an amethyst shard on a diamond to craft an Amethyst Core.",
+  "type": "origins:multiple",
+  "amethyst_core": {
+    "type": "origins:item_on_item",
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": { "item": "minecraft:amethyst_shard" }
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": { "item": "minecraft:diamond" }
+    },
+    "result": {
+      "item": "minecraft:amethyst_shard",
+      "tag": "{display:{Name:'{\"text\":\"Amethyst Core\",\"italic\":false}',Lore:['{\"text\":\"It still beats in your hand.. \"}']},CustomModelData:778,amethystcore:1b,fillerr:\"filler\",Enchantments:[{id:\"minecraft:mending\",lvl:1s}]}"
+    }
+  }
+}
