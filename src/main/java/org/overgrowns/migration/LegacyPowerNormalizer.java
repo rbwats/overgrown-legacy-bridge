@@ -39,6 +39,17 @@ public final class LegacyPowerNormalizer {
         boolean changed = false;
         for (Map.Entry<String, JsonElement> entry : obj.entrySet()) changed |= normalize(entry.getValue());
 
+        // The old Origins HUD atlases moved in Overgrown's Origins. Rewrite only
+        // known built-in locations so custom resource-pack sprites remain intact.
+        String sprite = string(obj, "sprite_location");
+        if (sprite != null) {
+            String updated = legacyHudSprite(sprite);
+            if (!sprite.equals(updated)) {
+                obj.addProperty("sprite_location", updated);
+                changed = true;
+            }
+        }
+
         String type = string(obj, "type");
         if (type == null) return changed;
         switch (type) {
@@ -255,6 +266,15 @@ public final class LegacyPowerNormalizer {
             }
         }
         return changed;
+    }
+
+    private static String legacyHudSprite(String sprite) {
+        if (sprite.equals("origins:textures/gui/resource_bar.png"))
+            return "apoli:textures/gui/resource_bar.png";
+        String oldPrefix = "origins:textures/gui/community/";
+        if (sprite.startsWith(oldPrefix))
+            return "origins:textures/gui/sprites/hud_render/" + sprite.substring(oldPrefix.length());
+        return sprite;
     }
 
     private static JsonObject singleDistance(JsonElement candidate) {

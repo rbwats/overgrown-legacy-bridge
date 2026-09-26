@@ -1,11 +1,11 @@
 # Overgrown Legacy Bridge
 
-Fabric 1.20.1 compatibility mod for Overgrown's Origins 1.41.0 and Apoli 1.90.0. Version 0.3.0 adds reusable gravity and damage-context adapters plus a conservative eating-event conversion. It reads legacy origin JSON during Apoli's reload, so origin archives do not need editing. The optional `overrides/` datapack contains a targeted Allaykin fix. This project does not include Origins, Apoli, Allaykin, or other third-party mod files.
+Fabric 1.20.1 compatibility mod for Overgrown's Origins 1.41.0 and Apoli 1.90.0. Version 0.3.1 also translates legacy HUD sprite paths to the textures bundled with Overgrown's Origins and Apoli. It reads legacy origin JSON during Apoli's reload, so origin archives do not need editing. The optional `overrides/` datapack contains a targeted Allaykin fix. This project does not include Origins, Apoli, Allaykin, or other third-party mod files.
 
 ## Install
 
 1. Remove older `overgrown-legacy-bridge` JARs from every `mods` folder.
-2. Put `overgrown-legacy-bridge-0.3.0.jar` in the server's `mods` folder and each player's `mods` folder. The status bar texture and gravity adapters need the client copy.
+2. Put `overgrown-legacy-bridge-0.3.1.jar` in the server's `mods` folder and each player's `mods` folder. The HUD sprite, status bar texture, and gravity adapters need the client copy.
 3. If using Allaykin, package the contents of `overrides/` as a ZIP with `pack.mcmeta` at its root and put it in the server world's `datapacks` folder. Keep Allaykin.zip installed. The overlay must have higher priority than Allaykin; if the invalid `gshark:corecrafting_amethyst_core` tag warning persists, run `/datapack enable "file/<overlay-zip-name>.zip" last` and `/reload`.
 4. Keep the matching Overgrown Origins, Apoli, Fabric API, origin mods, and data packs installed. Restart the server and clients.
 5. Check the new server `latest.log` for `Failed to parse power`, `Failed to load function`, and `Ignoring the ... field`. Gameplay test the origins you use.
@@ -15,6 +15,7 @@ Do not install both bridge versions at once; they use the same mod ID.
 ## Included adapters
 
 - Legacy `origins:set_resource` / `apoli:set_resource` actions, `sync:execute_command`, and `/power revoke` / `/power remove` syntax.
+- Legacy HUD `sprite_location` paths under `origins:textures/gui/community/` map to Overgrown's `origins:textures/gui/sprites/hud_render/` assets. The old `origins:textures/gui/resource_bar.png` maps to Apoli's default bar. Custom texture paths are unchanged.
 - Legacy `/resource operation <targets> <resource> = <score_targets> <objective>` syntax used by the included packs.
 - Missing types and conditions for insomnia, status bar textures, mobs ignoring a holder, passive mobs, attacker distance, daylight, velocity changes, and temporary cobwebs.
 - `origins:modify_gravity` modifies Apoli's calculated gravity on both client and server. Multiple active modifiers use Apoli's own modifier ordering.
@@ -34,7 +35,7 @@ The overlay replaces only `data/gshark/powers/corecrafting.json`. It converts Al
 
 ## Verification
 
-`gradle build --offline --no-daemon` succeeds with JDK 17. A local 53-mod server with Overgrown Origins, Apoli, four affected origin mods, and eight affected data packs (including Allaykin and the overlay) reached `Done`; it loaded 1,723 powers. The full server log with bridge 0.3.0 and the overlay reached `Done` with 2,948 powers, 115 origins, zero failed functions, and zero dropped fields. Both still show one failed power (`dragon_origins:test`). Client HUD rendering and in-game movement, shield damage, meat eating, and core crafting still need gameplay tests.
+`gradle build --offline --no-daemon` succeeds with JDK 17. A scan of the supplied mods and datapacks found 198 references to the two legacy HUD path layouts; all translated paths exist in the installed Origins or Apoli JAR. A local 53-mod server with Overgrown Origins, Apoli, four affected origin mods, and eight affected data packs (including Allaykin and the overlay) reached `Done`; it loaded 1,723 powers. The full server log with bridge 0.3.0 and the overlay reached `Done` with 2,948 powers, 115 origins, zero failed functions, and zero dropped fields. Both still show one failed power (`dragon_origins:test`). Version 0.3.1 still needs a client HUD check in game; movement, shield damage, meat eating, and core crafting also need gameplay tests.
 
 ## Build from source
 
