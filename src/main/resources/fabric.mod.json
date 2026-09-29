@@ -4,13 +4,22 @@
   "version": "${version}",
   "name": "Overgrown Legacy Bridge",
   "description": "Compatibility adapters for legacy Origins data packs on Overgrown's Apoli.",
-  "authors": ["OvergrownsMigrationsV2"],
+  "authors": [
+    "OvergrownsMigrationsV2"
+  ],
   "license": "MIT",
   "environment": "*",
   "entrypoints": {
-    "main": ["org.overgrowns.migration.LegacyBridge"]
+    "main": [
+      "org.overgrowns.migration.LegacyBridge"
+    ],
+    "client": [
+      "org.overgrowns.migration.LegacyBridgeClient"
+    ]
   },
-  "mixins": ["overgrown_legacy_bridge.mixins.json"],
+  "mixins": [
+    "overgrown_legacy_bridge.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.19.3",
     "minecraft": "~1.20.1",

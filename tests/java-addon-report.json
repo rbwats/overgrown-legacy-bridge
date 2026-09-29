@@ -1,0 +1,5996 @@
+{
+  "scope": "Bytecode API references and declared dependencies are porting candidates, not proof that an optional path executes. No jars or loader overrides are changed.",
+  "archives": [
+    {
+      "archive": "accessories-fabric-1.0.0-beta.48+1.20.1.jar",
+      "mod_id": "accessories",
+      "depends": {
+        "fabric": ">=0.92.0",
+        "minecraft": ">=1.20.1",
+        "cloth-config": ">=11.1.118"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "accessories-fabric-1.0.0-beta.48+1.20.1.jar!META-INF/jars/endec-0.1.8.jar",
+      "mod_id": "io_wispforest_endec",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "accessories-fabric-1.0.0-beta.48+1.20.1.jar!META-INF/jars/gson-0.1.5.jar",
+      "mod_id": "io_wispforest_endec_gson",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "accessories-fabric-1.0.0-beta.48+1.20.1.jar!META-INF/jars/netty-0.1.4.jar",
+      "mod_id": "io_wispforest_endec_netty",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "afogui-1.0.2.jar",
+      "mod_id": "afogui",
+      "depends": {
+        "fabricloader": ">=0.14.0",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "afogui-1.0.2.jar!META-INF/jars/sgui-1.2.2+1.20.jar",
+      "mod_id": "sgui",
+      "depends": {
+        "minecraft": ">=1.18.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "alternate-current-mc1.20-1.9.0.jar",
+      "mod_id": "alternate-current",
+      "depends": {
+        "minecraft": "1.20.x"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "AltOriginGui-fabric-1.20.1-1.1.1.jar",
+      "mod_id": "altorigingui",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric": "*",
+        "minecraft": "1.20.1",
+        "java": ">=17",
+        "origins": "*"
+      },
+      "legacy_api_classes": [
+        {
+          "class": "me/ultrusmods/altorigingui/mixin/ChooseOriginScreenMixinFabric.class",
+          "legacy_references": [
+            "io/github/apace100/origins/origin/Impact",
+            "io/github/apace100/origins/origin/Origin",
+            "io/github/apace100/origins/origin/OriginLayer",
+            "io/github/apace100/origins/screen/OriginDisplayScreen"
+          ]
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "archive": "amendments-1.20-2.2.5-fabric.jar",
+      "mod_id": "amendments",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20 <1.21",
+        "moonlight": ">=1.20-2.16.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "amendments-1.20-2.2.5-fabric.jar!META-INF/jars/mixinextras-fabric-0.4.1.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ancientstructures-fabric-1.20.1-0.0.14.jar",
+      "mod_id": "ancientstructures",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric": "*",
+        "minecraft": "1.20.1",
+        "java": ">=17",
+        "dawnoftimebuilder": ">=1.5.33",
+        "armoroftheages": ">=1.3.8"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Animal Origins 2.1_1.20.1.jar",
+      "mod_id": "anim_origins_nx95",
+      "depends": {
+        "fabric-api-base": "*",
+        "fabric": "*",
+        "minecraft": ">=1.20.0 <=1.20.1",
+        "origins": ">=1.10.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "another_furniture-fabric-1.20.1-3.0.5.jar",
+      "mod_id": "another_furniture",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "minecraft": ">=1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "apoli-1.90.0-keybind-fix-v6.jar",
+      "mod_id": "apoli",
+      "depends": {
+        "fabricloader": ">=0.19.3",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "apoli-1.90.0-keybind-fix-v6.jar!META-INF/jars/jna-5.7.0.jar",
+      "mod_id": "net_java_dev_jna_jna",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "apoli-1.90.0-keybind-fix-v6.jar!META-INF/jars/vosk-0.3.45.jar",
+      "mod_id": "com_alphacephei_vosk",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "architectury-9.2.14-fabric.jar",
+      "mod_id": "architectury",
+      "depends": {
+        "minecraft": "~1.20-",
+        "fabricloader": ">=0.14.0",
+        "fabric-api": ">=0.66.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Armor of the Ages-fabric-1.20.1-1.3.15.jar",
+      "mod_id": "armoroftheages",
+      "depends": {
+        "fabricloader": ">=0.15.10",
+        "fabric": "*",
+        "yet_another_config_lib_v3": "*",
+        "minecraft": "1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "artifacts-fabric-9.5.17-no-origins-compat.jar",
+      "mod_id": "artifacts",
+      "depends": {
+        "fabric": "*",
+        "minecraft": "1.20.1",
+        "architectury": "*",
+        "trinkets": "*",
+        "cloth-config": "*"
+      },
+      "legacy_api_classes": [
+        {
+          "class": "artifacts/fabric/integration/OriginsCompat.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/factory/condition/ConditionFactory",
+            "io/github/apace100/apoli/registry/ApoliRegistries",
+            "io/github/apace100/calio/data/SerializableData",
+            "io/github/apace100/calio/data/SerializableData$Instance"
+          ]
+        },
+        {
+          "class": "artifacts/fabric/mixin/compat/origins/ConditionFactoryAccessor.class",
+          "legacy_references": [
+            "io/github/apace100/calio/data/SerializableData",
+            "io/github/apace100/calio/data/SerializableData$Instance"
+          ]
+        },
+        {
+          "class": "artifacts/integration/OriginsCompat.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType",
+            "io/github/apace100/origins/power/OriginsPowerTypes"
+          ]
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "archive": "artifacts-fabric-9.5.17-no-origins-compat.jar!META-INF/jars/cardinal-components-base-5.2.2.jar",
+      "mod_id": "cardinal-components-base",
+      "depends": {
+        "minecraft": ">=1.17-",
+        "fabric-api-base": ">=0.1.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "artifacts-fabric-9.5.17-no-origins-compat.jar!META-INF/jars/cardinal-components-entity-5.2.2.jar",
+      "mod_id": "cardinal-components-entity",
+      "depends": {
+        "minecraft": ">=1.17-",
+        "fabric-api-base": "*",
+        "cardinal-components-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "artifacts-fabric-9.5.17-no-origins-compat.jar!META-INF/jars/expandability-fabric-9.0.4.jar",
+      "mod_id": "expandability",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "artifacts-fabric-9.5.17-no-origins-compat.jar!META-INF/jars/expandability-fabric-9.0.4.jar!META-INF/jars/MixinExtras-0.1.1.jar",
+      "mod_id": "com_github_llamalad7_mixinextras",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "artifacts-fabric-9.5.17-no-origins-compat.jar!META-INF/jars/mixinextras-fabric-0.3.5.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "artifacts-fabric-9.5.17-no-origins-compat.jar!META-INF/jars/step-height-entity-attribute-v1.2.0.jar",
+      "mod_id": "step-height-entity-attribute",
+      "depends": {
+        "fabricloader": ">=0.14.11",
+        "minecraft": ">=1.19.3",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "athena-fabric-1.20.1-3.1.2.jar",
+      "mod_id": "athena",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ATi Structures V1.4.6.jar",
+      "mod_id": "mr_ati_structuresfabricforge",
+      "depends": {
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "audioplayer-fabric-1.20.1-1.13.2.jar",
+      "mod_id": "audioplayer",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "minecraft": [
+          "1.20",
+          "1.20.1"
+        ],
+        "voicechat": ">=1.20.1-2.3.3"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "audioplayer-fabric-1.20.1-1.13.2.jar!META-INF/jars/admiral-0.4.5+1.20.1+fabric.jar",
+      "mod_id": "admiral",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "audioplayer-fabric-1.20.1-1.13.2.jar!META-INF/jars/fabric-api-base-0.4.31+1802ada577.jar",
+      "mod_id": "fabric-api-base",
+      "depends": {
+        "fabricloader": ">=0.4.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "audioplayer-fabric-1.20.1-1.13.2.jar!META-INF/jars/fabric-command-api-v2-2.2.13+1802ada577.jar",
+      "mod_id": "fabric-command-api-v2",
+      "depends": {
+        "fabricloader": ">=0.10.5",
+        "fabric-api-base": "*",
+        "minecraft": ">1.19-alpha.22.11.a"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "audioplayer-fabric-1.20.1-1.13.2.jar!META-INF/jars/fabric-lifecycle-events-v1-2.2.22+1802ada577.jar",
+      "mod_id": "fabric-lifecycle-events-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "BeansBackpacks-fabric-1.20.1-2.0.2.jar",
+      "error": "Invalid control character at: line 6 column 73 (char 180)"
+    },
+    {
+      "archive": "beautify-2.0.0+1.20.1.jar",
+      "mod_id": "beautify",
+      "depends": {
+        "fabricloader": ">=0.15.11",
+        "fabric": "*",
+        "minecraft": "~1.20",
+        "java": ">=17",
+        "cloth-config": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "betterarcheology-1.2.1-1.20.1.jar",
+      "mod_id": "betterarcheology",
+      "depends": {
+        "fabricloader": ">=0.14.14",
+        "fabric-api": "*",
+        "minecraft": "~1.20",
+        "java": ">=17",
+        "yungsapi": ">=1.20-Fabric-4.0.4",
+        "supermartijn642configlib": ">=1.1.8"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "bundle-crafting-backport-1.1.jar",
+      "mod_id": "mr_bundle_craftingbackport",
+      "depends": {
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "carryon-fabric-1.20.1-2.1.2.7.jar",
+      "mod_id": "carryon",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric-api": "*",
+        "minecraft": ">=1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "carryon-fabric-1.20.1-2.1.2.7.jar!META-INF/jars/mixinextras-fabric-0.2.0-beta.6.jar",
+      "mod_id": "com_github_llamalad7_mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.11"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "chipped-fabric-1.20.1-3.0.7.jar",
+      "mod_id": "chipped",
+      "depends": {
+        "fabric-api": "*",
+        "minecraft": ">=1.20.1",
+        "resourcefullib": ">=2.1.20",
+        "athena": ">=3.1.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Chunky-1.3.146.jar",
+      "mod_id": "chunky",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "fabric": "*",
+        "minecraft": ">=1.20.0",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "cloth-config-11.1.136-fabric.jar",
+      "mod_id": "cloth-config",
+      "depends": {
+        "fabricloader": ">=0.14.0",
+        "minecraft": ">=1.20-"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "cloth-config-11.1.136-fabric.jar!META-INF/jars/basic-math-0.6.1.jar",
+      "mod_id": "cloth-basic-math",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Clumps-fabric-1.20.1-12.0.0.3.jar",
+      "mod_id": "clumps",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "minecraft": "1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "clutter-1.20-0.6.2.jar",
+      "mod_id": "clutter",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "minecraft": [
+          "1.20",
+          "1.20.1"
+        ],
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "collective-1.20.1-8.39.jar",
+      "mod_id": "collective",
+      "depends": {
+        "fabricloader": ">=0.12.6",
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "comforts-fabric-6.4.0+1.20.1.jar",
+      "mod_id": "comforts",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric-api": "*",
+        "minecraft": "1.20.x",
+        "java": ">=17",
+        "cardinal-components-base": "*",
+        "cardinal-components-entity": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "comforts-fabric-6.4.0+1.20.1.jar!META-INF/jars/cardinal-components-base-5.2.1.jar",
+      "mod_id": "cardinal-components-base",
+      "depends": {
+        "minecraft": ">=1.17-",
+        "fabric-api-base": ">=0.1.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "comforts-fabric-6.4.0+1.20.1.jar!META-INF/jars/cardinal-components-entity-5.2.1.jar",
+      "mod_id": "cardinal-components-entity",
+      "depends": {
+        "minecraft": ">=1.17-",
+        "fabric-api-base": "*",
+        "cardinal-components-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "comforts-fabric-6.4.0+1.20.1.jar!META-INF/jars/spectrelib-fabric-0.13.15+1.20.1.jar",
+      "mod_id": "spectrelib",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "comforts-fabric-6.4.0+1.20.1.jar!META-INF/jars/spectrelib-fabric-0.13.15+1.20.1.jar!META-INF/jars/core-3.6.5.jar",
+      "mod_id": "com_electronwill_night-config_core",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "comforts-fabric-6.4.0+1.20.1.jar!META-INF/jars/spectrelib-fabric-0.13.15+1.20.1.jar!META-INF/jars/toml-3.6.5.jar",
+      "mod_id": "com_electronwill_night-config_toml",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "copperagebackport-fabric-1.20.1-0.1.4.jar",
+      "mod_id": "copperagebackport",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric-api": "*",
+        "minecraft": "1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "cullleaves-fabric-4.1.1+1.20.1.jar",
+      "mod_id": "cullleaves",
+      "depends": {
+        "midnightlib": "*",
+        "minecraft": ">=1.20 <=1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "cullleaves-fabric-4.1.1+1.20.1.jar!META-INF/jars/midnightlib-1.9.2+1.20.1-fabric.jar",
+      "mod_id": "midnightlib",
+      "depends": {
+        "fabric-resource-loader-v0": "*",
+        "minecraft": ">=1.20 <=1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "cushionbackport-1.20.1-Fabric-1.0.5.jar",
+      "mod_id": "cushionbackport",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "fabric-api": "*",
+        "minecraft": "1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "cwb-fabric-3.0.0+mc1.20.jar",
+      "mod_id": "cubes-without-borders",
+      "depends": {
+        "fabricloader": ">=0.15.0",
+        "minecraft": ">=1.20 <1.20.5",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Data_Anchor-fabric-1.20.1-1.0.0.20.jar",
+      "mod_id": "dataanchor",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Dawn Of Time-fabric-1.20.1-1.5.52.jar",
+      "mod_id": "dawnoftimebuilder",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric": "*",
+        "minecraft": "1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "decorative_blocks-fabric-1.20.1-4.1.3.jar",
+      "mod_id": "decorative_blocks",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric": "*",
+        "minecraft": "1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar",
+      "mod_id": "discord-mc-chat",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "~1.14.4",
+          "~1.15.2",
+          "~1.16.4",
+          "~1.17",
+          "~1.18",
+          "1.19",
+          "1.19.1",
+          "1.19.2",
+          "1.19.3",
+          "~1.19.4",
+          "1.20",
+          "1.20.1",
+          "1.20.2",
+          "1.20.3",
+          "1.20.4",
+          "~1.20.5",
+          "1.21",
+          "1.21.1",
+          "1.21.9",
+          "1.21.10",
+          "~1.21.11",
+          "1.21.2",
+          "1.21.3",
+          "1.21.4",
+          "1.21.5",
+          "1.21.6",
+          "1.21.7",
+          "1.21.8"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.15.2-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_15_2",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "~1.14.4",
+          "~1.15.2"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.16.5-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_16_5",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "~1.16.4"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.17.1-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_17_1",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "~1.17"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.18.2-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_18_2",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "~1.18"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.19-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_19",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "1.19"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.19.2-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_19_2",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "1.19.1",
+          "1.19.2"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.19.3-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_19_3",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "1.19.3"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.19.4-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_19_4",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "~1.19.4"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.20.1-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_20_1",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "1.20",
+          "1.20.1"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.20.2-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_20_2",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "1.20.2"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.20.4-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_20_4",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "1.20.3",
+          "1.20.4"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.21.1-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_21_1",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "~1.20.5",
+          "1.21",
+          "1.21.1"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.21.10-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_21_10",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "1.21.9",
+          "1.21.10"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.21.11-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_21_11",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "~1.21.11"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.21.4-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_21_4",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "1.21.2",
+          "1.21.3",
+          "1.21.4"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.21.5-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_21_5",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "1.21.5"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/Discord-MC-Chat-1.21.8-2.7.1.jar",
+      "mod_id": "discord-mc-chat-1_21_8",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=21",
+        "minecraft": [
+          "1.21.6",
+          "1.21.7",
+          "1.21.8"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/JDA-5.6.1.jar",
+      "mod_id": "net_dv8tion_jda",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/commons-collections4-4.4.jar",
+      "mod_id": "org_apache_commons_commons-collections4",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/commons-lang3-3.20.0.jar",
+      "mod_id": "org_apache_commons_commons-lang3",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/core-3.1.0.jar",
+      "mod_id": "net_sf_trove4j_core",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/jackson-annotations-2.18.3.jar",
+      "mod_id": "com_fasterxml_jackson_core_jackson-annotations",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/jackson-core-2.18.3.jar",
+      "mod_id": "com_fasterxml_jackson_core_jackson-core",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/jackson-databind-2.18.3.jar",
+      "mod_id": "com_fasterxml_jackson_core_jackson-databind",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/jemoji-1.7.4.jar",
+      "mod_id": "net_fellbaum_jemoji",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/kotlin-stdlib-1.9.10.jar",
+      "mod_id": "org_jetbrains_kotlin_kotlin-stdlib",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/nv-websocket-client-2.14.jar",
+      "mod_id": "com_neovisionaries_nv-websocket-client",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/okhttp-4.12.0.jar",
+      "mod_id": "com_squareup_okhttp3_okhttp",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Discord-MC-Chat-2.7.1.jar!META-INF/jars/okio-jvm-3.6.0.jar",
+      "mod_id": "com_squareup_okio_okio-jvm",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "dry-deserts-v1.0.2.jar",
+      "mod_id": "mr_dry_deserts",
+      "depends": {
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "dummmmmmy-1.20-2.0.12-fabric.jar",
+      "mod_id": "dummmmmmy",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20.1 <1.20.2",
+        "moonlight": ">=1.20-2.16.19"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "dummmmmmy-1.20-2.0.12-fabric.jar!META-INF/jars/mixinextras-fabric-0.5.0.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "emi-1.1.24+1.20.1+fabric.jar",
+      "mod_id": "emi",
+      "depends": {
+        "fabricloader": ">=0.13.1",
+        "fabric": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "emi-letsdo-compat-1.8.2.jar",
+      "mod_id": "emi_letsdo_compat",
+      "depends": {
+        "fabricloader": ">=0.15.0",
+        "minecraft": ">=1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "entityculling-fabric-1.10.5-mc1.20.1.jar",
+      "mod_id": "entityculling",
+      "depends": {
+        "minecraft": "1.20.1",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "entityculling-fabric-1.10.5-mc1.20.1.jar!META-INF/jars/TRansition-1.0.21-1.20.1-fabric-SNAPSHOT.jar",
+      "mod_id": "transition",
+      "depends": {
+        "minecraft": "1.20.1",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "entityculling-fabric-1.10.5-mc1.20.1.jar!META-INF/jars/TRender-1.0.15-1.20.1-fabric-SNAPSHOT.jar",
+      "mod_id": "trender",
+      "depends": {
+        "minecraft": "1.20.1",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "exposure-fabric-1.20.1-1.9.20.jar",
+      "mod_id": "exposure",
+      "depends": {
+        "fabricloader": ">=0.16.0",
+        "minecraft": "~1.20",
+        "java": ">=17",
+        "fabric-api": "*",
+        "forgeconfigapiport": ">=8.0.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "exposure_chests-1.3-fabric-1.20.1.jar",
+      "mod_id": "exposure_chests",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "fabric": "*",
+        "minecraft": "~1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "exposure_expanded-fabric-1.1.0-1.20.1.jar",
+      "mod_id": "exposure_expanded",
+      "depends": {
+        "fabricloader": ">=0.18.4",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "exposure": ">=1.9.16",
+        "architectury": ">=9.2.14",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "exposure_polaroid-fabric-1.20.1-1.1.4.jar",
+      "mod_id": "exposure_polaroid",
+      "depends": {
+        "minecraft": ">=1.20.1",
+        "fabric": "*",
+        "fabric-api": "*",
+        "exposure": ">=1.9.14"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar",
+      "mod_id": "fabric-api",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "java": ">=17",
+        "minecraft": ">=1.20 <1.20.2-"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-api-base-0.92.11.jar",
+      "mod_id": "fabric-api-base",
+      "depends": {
+        "fabricloader": ">=0.4.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-api-lookup-api-v1-0.92.11.jar",
+      "mod_id": "fabric-api-lookup-api-v1",
+      "depends": {
+        "fabricloader": ">=0.9.2",
+        "fabric-api-base": "*",
+        "fabric-lifecycle-events-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-biome-api-v1-0.92.11.jar",
+      "mod_id": "fabric-biome-api-v1",
+      "depends": {
+        "fabricloader": ">=0.9.2",
+        "minecraft": ">=1.16.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-block-api-v1-0.92.11.jar",
+      "mod_id": "fabric-block-api-v1",
+      "depends": {
+        "fabricloader": ">=0.14.9"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-block-view-api-v2-0.92.11.jar",
+      "mod_id": "fabric-block-view-api-v2",
+      "depends": {
+        "fabricloader": ">=0.14.21"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-blockrenderlayer-v1-0.92.11.jar",
+      "mod_id": "fabric-blockrenderlayer-v1",
+      "depends": {
+        "fabricloader": ">=0.6.2",
+        "minecraft": ">=1.15-alpha.19.38.b",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-client-tags-api-v1-0.92.11.jar",
+      "mod_id": "fabric-client-tags-api-v1",
+      "depends": {
+        "fabricloader": ">=0.14.6"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-command-api-v2-0.92.11.jar",
+      "mod_id": "fabric-command-api-v2",
+      "depends": {
+        "fabricloader": ">=0.10.5",
+        "fabric-api-base": "*",
+        "minecraft": ">1.19-alpha.22.11.a"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-content-registries-v0-0.92.11.jar",
+      "mod_id": "fabric-content-registries-v0",
+      "depends": {
+        "fabricloader": ">=0.12.0",
+        "fabric-api-base": "*",
+        "fabric-lifecycle-events-v1": "*",
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-convention-tags-v1-0.92.11.jar",
+      "mod_id": "fabric-convention-tags-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "minecraft": ">=1.18.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-crash-report-info-v1-0.92.11.jar",
+      "mod_id": "fabric-crash-report-info-v1",
+      "depends": {
+        "fabricloader": ">=0.13.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-data-attachment-api-v1-0.92.11.jar",
+      "mod_id": "fabric-data-attachment-api-v1",
+      "depends": {
+        "fabricloader": ">=0.15.1",
+        "fabric-entity-events-v1": "*",
+        "fabric-object-builder-api-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-data-generation-api-v1-0.92.11.jar",
+      "mod_id": "fabric-data-generation-api-v1",
+      "depends": {
+        "fabricloader": ">=0.14.10"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-dimensions-v1-0.92.11.jar",
+      "mod_id": "fabric-dimensions-v1",
+      "depends": {
+        "fabricloader": ">=0.12.0",
+        "minecraft": ">=1.16-rc.3",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-entity-events-v1-0.92.11.jar",
+      "mod_id": "fabric-entity-events-v1",
+      "depends": {
+        "fabricloader": ">=0.15.6"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-events-interaction-v0-0.92.11.jar",
+      "mod_id": "fabric-events-interaction-v0",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*",
+        "fabric-networking-api-v1": "*",
+        "minecraft": ">=1.15-alpha.19.37.a"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-game-rule-api-v1-0.92.11.jar",
+      "mod_id": "fabric-game-rule-api-v1",
+      "depends": {
+        "fabricloader": ">=0.8.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-item-api-v1-0.92.11.jar",
+      "mod_id": "fabric-item-api-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-item-group-api-v1-0.92.11.jar",
+      "mod_id": "fabric-item-group-api-v1",
+      "depends": {
+        "fabricloader": ">=0.14.9",
+        "fabric-api-base": "*",
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-key-binding-api-v1-0.92.11.jar",
+      "mod_id": "fabric-key-binding-api-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-lifecycle-events-v1-0.92.11.jar",
+      "mod_id": "fabric-lifecycle-events-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-loot-api-v2-0.92.11.jar",
+      "mod_id": "fabric-loot-api-v2",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*",
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-message-api-v1-0.92.11.jar",
+      "mod_id": "fabric-message-api-v1",
+      "depends": {
+        "fabricloader": ">=0.10.5",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-mining-level-api-v1-0.92.11.jar",
+      "mod_id": "fabric-mining-level-api-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*",
+        "fabric-lifecycle-events-v1": "*",
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-model-loading-api-v1-0.92.11.jar",
+      "mod_id": "fabric-model-loading-api-v1",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-networking-api-v1-0.92.11.jar",
+      "mod_id": "fabric-networking-api-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-object-builder-api-v1-0.92.11.jar",
+      "mod_id": "fabric-object-builder-api-v1",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-particles-v1-0.92.11.jar",
+      "mod_id": "fabric-particles-v1",
+      "depends": {
+        "fabricloader": ">=0.14.21"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-recipe-api-v1-0.92.11.jar",
+      "mod_id": "fabric-recipe-api-v1",
+      "depends": {
+        "fabricloader": ">=0.14.10",
+        "fabric-networking-api-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-registry-sync-v0-0.92.11.jar",
+      "mod_id": "fabric-registry-sync-v0",
+      "depends": {
+        "fabricloader": ">=0.13.2",
+        "fabric-api-base": "*",
+        "fabric-networking-api-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-renderer-api-v1-0.92.11.jar",
+      "mod_id": "fabric-renderer-api-v1",
+      "depends": {
+        "fabricloader": ">=0.6.2",
+        "minecraft": ">=1.15-alpha.19.39.a",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-renderer-indigo-0.92.11.jar",
+      "mod_id": "fabric-renderer-indigo",
+      "depends": {
+        "fabricloader": ">=0.6.2",
+        "minecraft": ">=1.15-alpha.19.39.a",
+        "fabric-api-base": "*",
+        "fabric-renderer-api-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-rendering-fluids-v1-0.92.11.jar",
+      "mod_id": "fabric-rendering-fluids-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-rendering-v1-0.92.11.jar",
+      "mod_id": "fabric-rendering-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-resource-conditions-api-v1-0.92.11.jar",
+      "mod_id": "fabric-resource-conditions-api-v1",
+      "depends": {
+        "fabricloader": ">=0.9.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-resource-loader-v0-0.92.11.jar",
+      "mod_id": "fabric-resource-loader-v0",
+      "depends": {
+        "fabricloader": ">=0.13.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-screen-api-v1-0.92.11.jar",
+      "mod_id": "fabric-screen-api-v1",
+      "depends": {
+        "fabricloader": ">=0.8.2",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-screen-handler-api-v1-0.92.11.jar",
+      "mod_id": "fabric-screen-handler-api-v1",
+      "depends": {
+        "fabricloader": ">=0.8.0",
+        "fabric-api-base": "*",
+        "fabric-networking-api-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-sound-api-v1-0.92.11.jar",
+      "mod_id": "fabric-sound-api-v1",
+      "depends": {
+        "fabricloader": ">=0.14.9",
+        "minecraft": ">=1.19.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-tag-api-v1-0.92.11.jar",
+      "mod_id": "fabric-tag-api-v1",
+      "depends": {
+        "fabricloader": ">=0.15.11",
+        "fabric-api-base": "*",
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-transfer-api-v1-0.92.11.jar",
+      "mod_id": "fabric-transfer-api-v1",
+      "depends": {
+        "fabricloader": ">=0.9.2",
+        "fabric-api-lookup-api-v1": "*",
+        "fabric-rendering-fluids-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-transitive-access-wideners-v1-0.92.11.jar",
+      "mod_id": "fabric-transitive-access-wideners-v1",
+      "depends": {
+        "fabricloader": ">=0.12.12"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-command-api-v1-0.92.11.jar",
+      "mod_id": "fabric-command-api-v1",
+      "depends": {
+        "fabricloader": ">=0.10.5",
+        "fabric-api-base": "*",
+        "fabric-command-api-v2": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-commands-v0-0.92.11.jar",
+      "mod_id": "fabric-commands-v0",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*",
+        "fabric-command-api-v2": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-containers-v0-0.92.11.jar",
+      "mod_id": "fabric-containers-v0",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*",
+        "fabric-networking-api-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-events-lifecycle-v0-0.92.11.jar",
+      "mod_id": "fabric-events-lifecycle-v0",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*",
+        "fabric-item-api-v1": "*",
+        "fabric-lifecycle-events-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-keybindings-v0-0.92.11.jar",
+      "mod_id": "fabric-keybindings-v0",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-key-binding-api-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-loot-tables-v1-0.92.11.jar",
+      "mod_id": "fabric-loot-tables-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*",
+        "fabric-loot-api-v2": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-models-v0-0.92.11.jar",
+      "mod_id": "fabric-models-v0",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*",
+        "fabric-model-loading-api-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-networking-v0-0.92.11.jar",
+      "mod_id": "fabric-networking-v0",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*",
+        "fabric-networking-api-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-renderer-registries-v1-0.92.11.jar",
+      "mod_id": "fabric-renderer-registries-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "minecraft": ">=1.15-alpha.19.39.a",
+        "fabric-api-base": "*",
+        "fabric-rendering-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-rendering-data-attachment-v1-0.92.11.jar",
+      "mod_id": "fabric-rendering-data-attachment-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-block-view-api-v2": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-api-0.92.11+1.20.1.jar!META-INF/jars/fabric-rendering-v0-0.92.11.jar",
+      "mod_id": "fabric-rendering-v0",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "minecraft": ">=1.15-alpha.19.39.a",
+        "fabric-api-base": "*",
+        "fabric-rendering-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-carpet-1.20-1.4.112+v230608.jar",
+      "mod_id": "carpet",
+      "depends": {
+        "minecraft": ">1.19.4",
+        "fabricloader": ">=0.14.18",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar",
+      "mod_id": "fabric-language-kotlin",
+      "depends": {
+        "fabricloader": ">=0.16.9"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar!META-INF/jars/atomicfu-jvm-0.33.0.jar",
+      "mod_id": "org_jetbrains_kotlinx_atomicfu-jvm",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar!META-INF/jars/kotlin-reflect-2.4.10.jar",
+      "mod_id": "org_jetbrains_kotlin_kotlin-reflect",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar!META-INF/jars/kotlin-stdlib-2.4.10.jar",
+      "mod_id": "org_jetbrains_kotlin_kotlin-stdlib",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar!META-INF/jars/kotlin-stdlib-jdk7-2.4.10.jar",
+      "mod_id": "org_jetbrains_kotlin_kotlin-stdlib-jdk7",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar!META-INF/jars/kotlin-stdlib-jdk8-2.4.10.jar",
+      "mod_id": "org_jetbrains_kotlin_kotlin-stdlib-jdk8",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar!META-INF/jars/kotlinx-coroutines-core-jvm-1.11.0.jar",
+      "mod_id": "org_jetbrains_kotlinx_kotlinx-coroutines-core-jvm",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar!META-INF/jars/kotlinx-coroutines-jdk8-1.11.0.jar",
+      "mod_id": "org_jetbrains_kotlinx_kotlinx-coroutines-jdk8",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar!META-INF/jars/kotlinx-datetime-jvm-0.8.0.jar",
+      "mod_id": "org_jetbrains_kotlinx_kotlinx-datetime-jvm",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar!META-INF/jars/kotlinx-io-bytestring-jvm-0.9.1.jar",
+      "mod_id": "org_jetbrains_kotlinx_kotlinx-io-bytestring-jvm",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar!META-INF/jars/kotlinx-io-core-jvm-0.9.1.jar",
+      "mod_id": "org_jetbrains_kotlinx_kotlinx-io-core-jvm",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar!META-INF/jars/kotlinx-serialization-cbor-jvm-1.11.0.jar",
+      "mod_id": "org_jetbrains_kotlinx_kotlinx-serialization-cbor-jvm",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar!META-INF/jars/kotlinx-serialization-core-jvm-1.11.0.jar",
+      "mod_id": "org_jetbrains_kotlinx_kotlinx-serialization-core-jvm",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar!META-INF/jars/kotlinx-serialization-json-jvm-1.11.0.jar",
+      "mod_id": "org_jetbrains_kotlinx_kotlinx-serialization-json-jvm",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar",
+      "mod_id": "farmersdelight",
+      "depends": {
+        "fabricloader": ">=0.16",
+        "fabric-api": ">=0.92.8",
+        "minecraft": "1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/Fabric-ASM-v2.3.jar",
+      "mod_id": "mm",
+      "depends": {
+        "fabricloader": ">=0.7.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_base",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_entity-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_entity",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_attributes-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_attributes",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_config-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_config",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_utility-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_utility",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_tags-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_tags",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_common-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_common",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_accessors-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_accessors",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/toml-3.6.6.jar",
+      "mod_id": "com_electronwill_night-config_toml",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/reach-entity-attributes-2.4.0.jar",
+      "mod_id": "reach-entity-attributes",
+      "depends": {
+        "minecraft": ">=1.20",
+        "fabricloader": ">=0.14.21",
+        "fabric-registry-sync-v0": ">=2.1.3",
+        "fabric-resource-loader-v0": ">=0.11.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_core-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_core",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_loot-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_loot",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_transfer-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_transfer",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_fluids-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_fluids",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_gui_utils-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_gui_utils",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_lazy_registration-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_lazy_registration",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_tool_actions-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_tool_actions",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_mixin_extensions-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_mixin_extensions",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_extensions-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_extensions",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/base-2.3.15+1.20.1.jar!META-INF/jars/core-3.6.6.jar",
+      "mod_id": "com_electronwill_night-config_core",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/config-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_config",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/config-2.3.15+1.20.1.jar!META-INF/jars/toml-3.6.6.jar",
+      "mod_id": "com_electronwill_night-config_toml",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/config-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_core-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_core",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/config-2.3.15+1.20.1.jar!META-INF/jars/core-3.6.6.jar",
+      "mod_id": "com_electronwill_night-config_core",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/lazy_registration-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_lazy_registration",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/lazy_registration-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_core-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_core",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/loot-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_loot",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/loot-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_core-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_core",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/loot-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_lazy_registration-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_lazy_registration",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/networking-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_networking",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/networking-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_core-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_core",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/recipe_book_categories-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_recipe_book_categories",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FarmersDelight-1.20.1-2.5.2+refabricated.jar!META-INF/jars/recipe_book_categories-2.3.15+1.20.1.jar!META-INF/jars/porting_lib_core-2.3.15+1.20.1.jar",
+      "mod_id": "porting_lib_core",
+      "depends": {
+        "fabricloader": ">=0.18.2",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar",
+      "mod_id": "fastload",
+      "depends": {
+        "fabricloader": ">=0.14.10",
+        "minecraft": ">=1.18.2",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-1.19.0-1-2-Extension-3.4.0.jar",
+      "mod_id": "fastload-119-0-1-2-compat",
+      "depends": {
+        "fabricloader": ">=0.14.10",
+        "minecraft": "*",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-1.19.3-Extension-3.4.0.jar",
+      "mod_id": "fastload-1193-compat",
+      "depends": {
+        "fabricloader": ">=0.14.10",
+        "minecraft": "*",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-1.19.4-Extension-3.4.0.jar",
+      "mod_id": "fastload-1194-compat",
+      "depends": {
+        "fabricloader": ">=0.14.10",
+        "minecraft": "*",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-Fapi-Forwarding-1.18.2-1.0.2.jar",
+      "mod_id": "fastload_fapi_forward",
+      "depends": {
+        "fabricloader": ">=0.14.10",
+        "minecraft": "1.18.2",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-Fapi-Forwarding-1.18.2-1.0.2.jar!META-INF/jars/fabric-resource-loader-v0-0.5.3+047a5ecb60.jar",
+      "mod_id": "fabric-resource-loader-v0",
+      "depends": {
+        "fabricloader": ">=0.13.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-Fapi-Forwarding-1.19-1.0.2.jar",
+      "mod_id": "fastload_fapi_forward",
+      "depends": {
+        "fabricloader": ">=0.14.10",
+        "minecraft": "1.19",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-Fapi-Forwarding-1.19-1.0.2.jar!META-INF/jars/fabric-resource-loader-v0-0.5.6+5f1a85e0a9.jar",
+      "mod_id": "fabric-resource-loader-v0",
+      "depends": {
+        "fabricloader": ">=0.13.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-Fapi-Forwarding-1.19.1-1.0.2.jar",
+      "mod_id": "fastload_fapi_forward",
+      "depends": {
+        "fabricloader": ">=0.14.10",
+        "minecraft": "1.19.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-Fapi-Forwarding-1.19.1-1.0.2.jar!META-INF/jars/fabric-resource-loader-v0-0.5.6+5f1a85e095.jar",
+      "mod_id": "fabric-resource-loader-v0",
+      "depends": {
+        "fabricloader": ">=0.13.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-Fapi-Forwarding-1.19.2-1.0.2.jar",
+      "mod_id": "fastload_fapi_forward",
+      "depends": {
+        "fabricloader": ">=0.14.10",
+        "minecraft": "1.19.2",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-Fapi-Forwarding-1.19.2-1.0.2.jar!META-INF/jars/fabric-resource-loader-v0-0.8.4+edbdcddb90.jar",
+      "mod_id": "fabric-resource-loader-v0",
+      "depends": {
+        "fabricloader": ">=0.13.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-Fapi-Forwarding-1.19.3-1.0.2.jar",
+      "mod_id": "fastload_fapi_forward",
+      "depends": {
+        "fabricloader": ">=0.14.10",
+        "minecraft": "1.19.3",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-Fapi-Forwarding-1.19.3-1.0.2.jar!META-INF/jars/fabric-resource-loader-v0-0.11.0+68296ad585.jar",
+      "mod_id": "fabric-resource-loader-v0",
+      "depends": {
+        "fabricloader": ">=0.13.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-Fapi-Forwarding-1.19.4-1.0.2.jar",
+      "mod_id": "fastload_fapi_forward",
+      "depends": {
+        "fabricloader": ">=0.14.10",
+        "minecraft": "1.19.4",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-Fapi-Forwarding-1.19.4-1.0.2.jar!META-INF/jars/fabric-resource-loader-v0-0.11.3+1e1fb126f4.jar",
+      "mod_id": "fabric-resource-loader-v0",
+      "depends": {
+        "fabricloader": ">=0.13.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-Fapi-Forwarding-1.20-1.0.2.jar",
+      "mod_id": "fastload_fapi_forward",
+      "depends": {
+        "fabricloader": ">=0.14.10",
+        "minecraft": ">=1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/Fastload-Fapi-Forwarding-1.20-1.0.2.jar!META-INF/jars/fabric-resource-loader-v0-0.11.5+bd913b0d4e.jar",
+      "mod_id": "fabric-resource-loader-v0",
+      "depends": {
+        "fabricloader": ">=0.13.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Fastload+1.18.2-1.20-3.4.0.jar!META-INF/jars/conditional-mixin-v0.3.2.jar",
+      "mod_id": "conditional-mixin",
+      "depends": {
+        "fabricloader": ">=0.10.4"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ferritecore-6.0.1-fabric.jar",
+      "mod_id": "ferritecore",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "minecraft": ">=1.20 <1.21"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fieldguide-fabric-1.20.1-1.17.0.jar",
+      "mod_id": "fieldguide",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric": "*",
+        "minecraft": "1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ForgeConfigAPIPort-v8.0.3-1.20.1-Fabric.jar",
+      "mod_id": "forgeconfigapiport",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "fabric-api": ">=0.83.0",
+        "minecraft": "1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "FrozenLib-1.9.3-mc1.20.1.jar",
+      "error": "Invalid control character at: line 9 column 66 (char 206)"
+    },
+    {
+      "archive": "FunctionMacroBackport_1.20.1-0.1.0.jar",
+      "mod_id": "functionmacrobackport",
+      "depends": {
+        "java": ">=17",
+        "fabricloader": ">=0.15.6",
+        "fabric-api": ">=0.92.2",
+        "minecraft": "1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "fusion-1.3.12-fabric-mc1.20.1.jar",
+      "mod_id": "fusion",
+      "depends": {
+        "fabricloader": ">=0.16.1",
+        "fabric": ">=0.83.0",
+        "minecraft": ">=1.20 <1.20.2",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Galosphere-1.20.1-1.5.2-Fabric.jar",
+      "mod_id": "galosphere",
+      "depends": {
+        "fabricloader": ">=0.14.9",
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Galosphere-1.20.1-1.5.2-Fabric.jar!META-INF/jars/midnightlib-1.1.0-fabric.jar",
+      "mod_id": "midnightlib",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Galosphere-1.20.1-1.5.2-Fabric.jar!META-INF/jars/Fabric-ASM-2.3.jar",
+      "mod_id": "mm",
+      "depends": {
+        "fabricloader": ">=0.7.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "geckolib-fabric-1.20.1-4.8.4.jar",
+      "mod_id": "geckolib",
+      "depends": {
+        "fabricloader": ">=0.15",
+        "fabric-api": ">=0.92.0+1.20.1",
+        "java": ">=17",
+        "minecraft": ">=1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "geckolib-fabric-1.20.1-4.8.4.jar!META-INF/jars/mclib-20.jar",
+      "mod_id": "com_eliotlash_mclib_mclib",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "handcrafted-fabric-1.20.1-3.0.6.jar",
+      "mod_id": "handcrafted",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "resourcefullib": ">=2.1.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "hatchways-1.5.jar",
+      "mod_id": "hatchways",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "fabric": "*",
+        "minecraft": "~1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "HopoBetterMineshaft-[1.20.1-1.20.4]-1.2.2d.jar",
+      "mod_id": "hopobettermineshaft",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ImmediatelyFast-Fabric-1.5.5+1.20.4.jar",
+      "mod_id": "immediatelyfast",
+      "depends": {
+        "java": ">=17",
+        "minecraft": ">=1.20 <=1.20.4",
+        "fabricloader": ">=0.15.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ImmediatelyFast-Fabric-1.5.5+1.20.4.jar!META-INF/jars/Reflect-1.6.2.jar",
+      "mod_id": "net_lenni0451_reflect",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "impersonate-2.10.3-standalone.jar",
+      "mod_id": "impersonate",
+      "depends": {
+        "minecraft": ">=1.19-",
+        "fabric": "*",
+        "cardinal-components-base": "^5.0.0-",
+        "cardinal-components-entity": "^5.0.0-",
+        "fabric-permissions-api-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "impersonate-2.10.3-standalone.jar!META-INF/jars/cardinal-components-base-5.2.1.jar",
+      "mod_id": "cardinal-components-base",
+      "depends": {
+        "minecraft": ">=1.17-",
+        "fabric-api-base": ">=0.1.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "impersonate-2.10.3-standalone.jar!META-INF/jars/fabric-permissions-api-0.2-SNAPSHOT.jar",
+      "mod_id": "fabric-permissions-api-v0",
+      "depends": {
+        "fabricloader": ">=0.9.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "impersonate-2.10.3-standalone.jar!META-INF/jars/cardinal-components-entity-5.2.1.jar",
+      "mod_id": "cardinal-components-entity",
+      "depends": {
+        "minecraft": ">=1.17-",
+        "fabric-api-base": "*",
+        "cardinal-components-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "imst-2.1.0.jar",
+      "mod_id": "imst",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "minecraft": ">=1.20"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Incendium_1.20.x_v5.3.5.jar",
+      "mod_id": "incendium",
+      "depends": {
+        "fabricloader": ">=0.12.7",
+        "fabric-api-base": "*",
+        "minecraft": ">=1.20"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "indium-1.0.36+mc1.20.1.jar",
+      "mod_id": "indium",
+      "depends": {
+        "fabricloader": ">=0.8.0",
+        "minecraft": [
+          "1.20.1",
+          "1.20.5",
+          "1.20.6"
+        ],
+        "sodium": "~0.5.11",
+        "fabric-renderer-api-v1": ">=3.2.0",
+        "fabric-resource-loader-v0": ">=0.4.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "invex-1.0.0-1.20.1.jar",
+      "mod_id": "invex",
+      "depends": {
+        "fabricloader": ">=0.19",
+        "fabric-api": ">=0.92.9",
+        "fabric-language-kotlin": ">=1.13.7+kotlin.2.2.21"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "invex-1.0.0-1.20.1.jar!META-INF/jars/sgui-1.2.2+1.20.jar",
+      "mod_id": "sgui",
+      "depends": {
+        "minecraft": ">=1.18.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "invex-1.0.0-1.20.1.jar!META-INF/jars/fabric-permissions-api-0.2-SNAPSHOT.jar",
+      "mod_id": "fabric-permissions-api-v0",
+      "depends": {
+        "fabricloader": ">=0.9.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "invex-1.0.0-1.20.1.jar!META-INF/jars/opc-directors-cut-2.0.0+1.20.1-beta.4-fabric.jar",
+      "mod_id": "opc",
+      "depends": {
+        "fabric": "*",
+        "minecraft": "~1.20.1",
+        "fabric-api": "*",
+        "fabric-language-kotlin": ">=1.10.19+kotlin.1.9.23"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "InvView-1.4.12-1.20+.jar",
+      "mod_id": "invview",
+      "depends": {
+        "fabricloader": ">=0.7.2",
+        "fabric": "*",
+        "minecraft": "1.20.x"
+      },
+      "legacy_api_classes": [
+        {
+          "class": "us/potatoboy/invview/ViewCommand.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/component/PowerHolderComponent",
+            "io/github/apace100/apoli/power/InventoryPower"
+          ]
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "archive": "InvView-1.4.12-1.20+.jar!META-INF/jars/sgui-1.2.2+1.20.jar",
+      "mod_id": "sgui",
+      "depends": {
+        "minecraft": ">=1.18.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "InvView-1.4.12-1.20+.jar!META-INF/jars/fabric-permissions-api-0.2-SNAPSHOT.jar",
+      "mod_id": "fabric-permissions-api-v0",
+      "depends": {
+        "fabricloader": ">=0.9.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "iris-1.7.6+mc1.20.1.jar",
+      "mod_id": "iris",
+      "depends": {
+        "fabricloader": ">=0.12.3",
+        "minecraft": [
+          "1.20.1"
+        ],
+        "sodium": [
+          "0.5.x"
+        ]
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "iris-1.7.6+mc1.20.1.jar!META-INF/jars/antlr4-runtime-4.13.1.jar",
+      "mod_id": "org_antlr_antlr4-runtime",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "iris-1.7.6+mc1.20.1.jar!META-INF/jars/fabric-api-base-0.4.31+1802ada577.jar",
+      "mod_id": "fabric-api-base",
+      "depends": {
+        "fabricloader": ">=0.4.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "iris-1.7.6+mc1.20.1.jar!META-INF/jars/fabric-key-binding-api-v1-1.0.37+1802ada577.jar",
+      "mod_id": "fabric-key-binding-api-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "iris-1.7.6+mc1.20.1.jar!META-INF/jars/glsl-transformer-2.0.1.jar",
+      "mod_id": "io_github_douira_glsl-transformer",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "iris-1.7.6+mc1.20.1.jar!META-INF/jars/jcpp-1.4.14.jar",
+      "mod_id": "org_anarres_jcpp",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ironchests-5.0.2-fabric.jar",
+      "mod_id": "ironchests",
+      "depends": {
+        "fabricloader": "*",
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ironchests-5.0.2-fabric.jar!META-INF/jars/resourcefullib-fabric-1.20-2.0.6.jar",
+      "mod_id": "resourcefullib",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ironchests-5.0.2-fabric.jar!META-INF/jars/resourcefullib-fabric-1.20-2.0.6.jar!META-INF/jars/yabn-1.0.3.jar",
+      "mod_id": "com_teamresourceful_yabn",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "katters-structures-1.6.jar",
+      "mod_id": "mr_katters_structures",
+      "depends": {
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "krypton-0.2.3(1).jar",
+      "mod_id": "krypton",
+      "depends": {
+        "fabricloader": ">=0.11.3",
+        "minecraft": "1.20.x"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "krypton-0.2.3(1).jar!META-INF/jars/velocity-native-3.2.0-SNAPSHOT.jar",
+      "mod_id": "com_velocitypowered_velocity-native",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "krypton-0.2.3.jar",
+      "mod_id": "krypton",
+      "depends": {
+        "fabricloader": ">=0.11.3",
+        "minecraft": "1.20.x"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "krypton-0.2.3.jar!META-INF/jars/velocity-native-3.2.0-SNAPSHOT.jar",
+      "mod_id": "com_velocitypowered_velocity-native",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar",
+      "mod_id": "ledger",
+      "depends": {
+        "fabricloader": ">=0.18.4",
+        "fabric": ">=0.92.6+1.20.1",
+        "fabric-language-kotlin": ">=1.13.4+kotlin.2.2.0",
+        "minecraft": "1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/commons-text-1.9.jar",
+      "mod_id": "org_apache_commons_commons-text",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/exposed-core-1.0.0-rc-2.jar",
+      "mod_id": "org_jetbrains_exposed_exposed-core",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/exposed-dao-1.0.0-rc-2.jar",
+      "mod_id": "org_jetbrains_exposed_exposed-dao",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/exposed-java-time-1.0.0-rc-2.jar",
+      "mod_id": "org_jetbrains_exposed_exposed-java-time",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/exposed-jdbc-1.0.0-rc-2.jar",
+      "mod_id": "org_jetbrains_exposed_exposed-jdbc",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/fabric-permissions-api-0.2-SNAPSHOT.jar",
+      "mod_id": "fabric-permissions-api-v0",
+      "depends": {
+        "fabricloader": ">=0.9.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/jackson-annotations-2.12.2.jar",
+      "mod_id": "com_fasterxml_jackson_core_jackson-annotations",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/jackson-core-2.12.2.jar",
+      "mod_id": "com_fasterxml_jackson_core_jackson-core",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/jackson-databind-2.12.2.jar",
+      "mod_id": "com_fasterxml_jackson_core_jackson-databind",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/jackson-datatype-jsr310-2.12.2.jar",
+      "mod_id": "com_fasterxml_jackson_datatype_jackson-datatype-jsr310",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/jackson-module-kotlin-2.12.2.jar",
+      "mod_id": "com_fasterxml_jackson_module_jackson-module-kotlin",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/javassist-3.26.0-GA.jar",
+      "mod_id": "org_javassist_javassist",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/konf-core-1.1.2.jar",
+      "mod_id": "com_uchuhimo_konf-core",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/konf-toml-1.1.2.jar",
+      "mod_id": "com_uchuhimo_konf-toml",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/reflections-0.9.12.jar",
+      "mod_id": "org_reflections_reflections",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/server-translations-api-2.0.0+1.20.jar",
+      "mod_id": "server_translations_api",
+      "depends": {
+        "minecraft": ">=1.19.4-",
+        "fabricloader": ">=0.14.14",
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/server-translations-api-2.0.0+1.20.jar!META-INF/jars/packet-tweaker-0.4.0+1.19.4.jar",
+      "mod_id": "packet_tweaker",
+      "depends": {
+        "fabricloader": ">=0.14.13",
+        "minecraft": ">=1.19.4-",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/sqlite-jdbc-3.50.3.0.jar",
+      "mod_id": "org_xerial_sqlite-jdbc",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ledger-1.3.18.jar!META-INF/jars/toml4j-0.7.2.jar",
+      "mod_id": "com_moandjiezana_toml_toml4j",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-addon-structures-1.7.2.jar",
+      "mod_id": "letsdoaddon-structures",
+      "depends": {
+        "minecraft": "1.20.1",
+        "fabric-resource-loader-v0": "*",
+        "meadow": "*",
+        "vinery": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-API-fabric-1.2.14-fabric.jar",
+      "mod_id": "doapi",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "architectury": ">=9.0.8",
+        "terraform-wood-api-v1": ">=7.0.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-API-fabric-1.2.14-fabric.jar!META-INF/jars/terraform-wood-api-v1-7.0.1.jar",
+      "mod_id": "terraform-wood-api-v1",
+      "depends": {
+        "fabric-content-registries-v0": "*",
+        "fabric-networking-api-v1": "*",
+        "fabric-object-builder-api-v1": "*",
+        "fabric-registry-sync-v0": "*",
+        "fabric-rendering-v1": "*",
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-API-fabric-1.2.14-fabric.jar!META-INF/jars/terraform-wood-api-v1-7.0.1.jar!META-INF/jars/mixinextras-fabric-0.2.0-beta.5.jar",
+      "mod_id": "com_github_llamalad7_mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.11"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-API-fabric-1.2.14-fabric.jar!META-INF/jars/jankson-1.2.1.jar",
+      "mod_id": "blue_endless_jankson",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-API-fabric-1.2.14-fabric.jar!META-INF/jars/mixinextras-fabric-0.3.5.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-bakery-fabric-2.0.6.jar",
+      "mod_id": "bakery",
+      "depends": {
+        "farm_and_charm": ">=1.0.6",
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "architectury": ">=9.0.8"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-bakery-fabric-2.0.6.jar!META-INF/jars/cloth-config-fabric-11.1.136.jar",
+      "mod_id": "cloth-config",
+      "depends": {
+        "fabricloader": ">=0.14.0",
+        "minecraft": ">=1.20-"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-bakery-fabric-2.0.6.jar!META-INF/jars/cloth-config-fabric-11.1.136.jar!META-INF/jars/basic-math-0.6.1.jar",
+      "mod_id": "cloth-basic-math",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-brewery-fabric-2.0.6.jar",
+      "mod_id": "brewery",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20.1",
+        "architectury": ">=6.5.82",
+        "farm_and_charm": ">=1.0.6"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-farm_and_charm-fabric-1.0.14.jar",
+      "mod_id": "farm_and_charm",
+      "depends": {
+        "fabric-api": "*",
+        "minecraft": ">=1.20",
+        "architectury": ">=9.0.8"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-farm_and_charm-fabric-1.0.14.jar!META-INF/jars/cloth-config-fabric-11.1.136.jar",
+      "mod_id": "cloth-config",
+      "depends": {
+        "fabricloader": ">=0.14.0",
+        "minecraft": ">=1.20-"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-farm_and_charm-fabric-1.0.14.jar!META-INF/jars/cloth-config-fabric-11.1.136.jar!META-INF/jars/basic-math-0.6.1.jar",
+      "mod_id": "cloth-basic-math",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-furniture-fabric-1.0.4.jar",
+      "mod_id": "furniture",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20.1",
+        "architectury": ">=6.5.77"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-meadow-fabric-1.3.25.jar",
+      "mod_id": "meadow",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "architectury": ">=9.1.10"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-nethervinery-fabric-1.2.19.jar",
+      "mod_id": "nethervinery",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20.1",
+        "architectury": ">=6.5.77",
+        "vinery": ">=1.4.32"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-vinery-fabric-1.4.41.jar",
+      "mod_id": "vinery",
+      "depends": {
+        "fabric-api": "*",
+        "minecraft": ">=1.20",
+        "architectury": ">=9.0.8"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-vinery-fabric-1.4.41.jar!META-INF/jars/cloth-config-fabric-11.1.136.jar",
+      "mod_id": "cloth-config",
+      "depends": {
+        "fabricloader": ">=0.14.0",
+        "minecraft": ">=1.20-"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-vinery-fabric-1.4.41.jar!META-INF/jars/cloth-config-fabric-11.1.136.jar!META-INF/jars/basic-math-0.6.1.jar",
+      "mod_id": "cloth-basic-math",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-wildernature-fabric-1.0.6.jar",
+      "mod_id": "wildernature",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "trinkets": ">=3.7.1",
+        "architectury": ">=9.0.8"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-wildernature-fabric-1.0.6.jar!META-INF/jars/cloth-config-fabric-8.2.88.jar",
+      "mod_id": "cloth-config",
+      "depends": {
+        "fabricloader": ">=0.14.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "letsdo-wildernature-fabric-1.0.6.jar!META-INF/jars/cloth-config-fabric-8.2.88.jar!META-INF/jars/basic-math-0.6.1.jar",
+      "mod_id": "cloth-basic-math",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "lithium-fabric-mc1.20.1-0.11.4.jar",
+      "mod_id": "lithium",
+      "depends": {
+        "fabricloader": ">=0.12.11",
+        "minecraft": "1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "lithostitched-fabric-1.20.1-1.4.11.jar",
+      "mod_id": "lithostitched",
+      "depends": {
+        "fabric": ">=0.86.0",
+        "fabricloader": ">=0.14",
+        "minecraft": ">=1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "lootr-fabric-1.20-0.7.35.86.jar",
+      "mod_id": "lootr",
+      "depends": {
+        "fabricloader": ">=0.14.19",
+        "fabric": "*",
+        "minecraft": "~1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "lostrelics-1.20-1.jar",
+      "mod_id": "lostrelics",
+      "depends": {
+        "fabricloader": "*",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*",
+        "trinkets": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "lostrelics-1.20-1.jar!META-INF/jars/mixinextras-fabric-0.3.2.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "lukis-grand-capitals-1.1.3.jar",
+      "mod_id": "mr_lukis_grandcapitals",
+      "depends": {
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "lukis-strongholds-v1.0.jar",
+      "mod_id": "mr_lukis_strongholds",
+      "depends": {
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "lukis-woodland-mansions-v.1.0.jar",
+      "mod_id": "mr_lukis_woodlandmansions",
+      "depends": {
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "magic_origins_forge_fabric_1.20+.jar",
+      "mod_id": "magic_origins",
+      "depends": {
+        "fabric-api-base": "*",
+        "fabric": "*",
+        "minecraft": ">=1.20.0",
+        "origins": ">=1.10.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "mcw-doors-1.1.5-mc1.20.1fabric.jar",
+      "mod_id": "mcwdoors",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "mcw-furniture-3.4.1-mc1.20.1fabric.jar",
+      "mod_id": "mcwfurnitures",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "mcw-mcwstairs-1.0.2-mc1.20.1fabric.jar",
+      "mod_id": "mcwstairs",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "mcw-mcwwindows-2.4.2-mc1.20.1fabric.jar",
+      "mod_id": "mcwwindows",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "mcw-trapdoors-1.1.5-mc1.20.1fabric.jar",
+      "mod_id": "mcwtrpdoors",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "medieval_buildings_nether_edition-1.20.1-1.0.2-fabric.jar",
+      "mod_id": "medieval_nether",
+      "depends": {
+        "fabricloader": ">=0.16.9",
+        "minecraft": ">=1.20.1",
+        "java": ">=17",
+        "cloth-config": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "midnightlib-fabric-1.9.3+1.20.1.jar",
+      "mod_id": "midnightlib",
+      "depends": {
+        "fabric-resource-loader-v0": "*",
+        "minecraft": ">=1.20 <=1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "modernfix-fabric-5.25.2+mc1.20.1.jar",
+      "mod_id": "modernfix",
+      "depends": {
+        "minecraft": ">=1.16.2",
+        "fabricloader": ">=0.16.10"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "modmenu-7.2.2.jar",
+      "mod_id": "modmenu",
+      "depends": {
+        "fabric-resource-loader-v0": "*",
+        "fabric-screen-api-v1": ">=1.0.4",
+        "fabric-key-binding-api-v1": "*",
+        "fabric-lifecycle-events-v1": "*",
+        "fabricloader": ">=0.12.13",
+        "minecraft": ">=1.19.4-"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "modmenu-7.2.2.jar!META-INF/jars/fabric-api-base-0.4.29+b04edc7a77.jar",
+      "mod_id": "fabric-api-base",
+      "depends": {
+        "fabricloader": ">=0.4.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "modmenu-7.2.2.jar!META-INF/jars/fabric-resource-loader-v0-0.11.7+f7923f6d77.jar",
+      "mod_id": "fabric-resource-loader-v0",
+      "depends": {
+        "fabricloader": ">=0.13.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "modmenu-7.2.2.jar!META-INF/jars/fabric-screen-api-v1-2.0.6+b3afc78b77.jar",
+      "mod_id": "fabric-screen-api-v1",
+      "depends": {
+        "fabricloader": ">=0.8.2",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "modmenu-7.2.2.jar!META-INF/jars/fabric-key-binding-api-v1-1.0.36+fb8d95da77.jar",
+      "mod_id": "fabric-key-binding-api-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "modmenu-7.2.2.jar!META-INF/jars/fabric-lifecycle-events-v1-2.2.20+b3afc78b77.jar",
+      "mod_id": "fabric-lifecycle-events-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "moogs_structures-1.20-1.20.4-3.0.2-fabric.jar",
+      "mod_id": "moogs_structures",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric": ">=0.83.0",
+        "minecraft": ">=1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "MoogsVoyagerStructures-1.20-5.0.8.jar",
+      "mod_id": "mvs",
+      "depends": {
+        "fabric-resource-loader-v0": "*",
+        "moogs_structures": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "moonlight-1.20-2.16.34-fabric.jar",
+      "mod_id": "moonlight",
+      "depends": {
+        "fabric": ">=0.86.0",
+        "minecraft": "1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "moonlight-1.20-2.16.34-fabric.jar!META-INF/jars/mixinextras-fabric-0.3.6.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "moonlight-1.20-2.16.34-fabric.jar!META-INF/jars/mixinsquared-fabric-0.1.1.jar",
+      "mod_id": "mixinsquared",
+      "depends": {
+        "fabricloader": ">=0.14.11"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "moredelight-26.05.07-1.20-fabric.jar",
+      "mod_id": "moredelight",
+      "depends": {
+        "fabricloader": ">=0.19.2",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*",
+        "farmersdelight": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Mythic-Origins-1.0.2.jar",
+      "mod_id": "mythic",
+      "depends": {
+        "fabric-api-base": "*",
+        "fabric": "*",
+        "minecraft": "*",
+        "origins": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "naturalist-5.0pre3+fabric-1.20.1.jar",
+      "mod_id": "naturalist",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20.1",
+        "geckolib": ">=4.0.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "naturalist-5.0pre3+fabric-1.20.1.jar!META-INF/jars/cloth-config-fabric-8.2.88.jar",
+      "mod_id": "cloth-config",
+      "depends": {
+        "fabricloader": ">=0.14.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "naturalist-5.0pre3+fabric-1.20.1.jar!META-INF/jars/cloth-config-fabric-8.2.88.jar!META-INF/jars/basic-math-0.6.1.jar",
+      "mod_id": "cloth-basic-math",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "naturalist-5.0pre3+fabric-1.20.1.jar!META-INF/jars/midnightlib-1.4.1-fabric.jar",
+      "mod_id": "midnightlib",
+      "depends": {
+        "fabric-resource-loader-v0": "*",
+        "minecraft": ">=1.20-beta.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "NaturesCompass-1.20.1-2.6.0-fabric.jar",
+      "mod_id": "naturescompass",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "fabric": "*",
+        "minecraft": "~1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "neruina-3.3.3+1.20.1-fabric.jar",
+      "mod_id": "neruina",
+      "depends": {
+        "fabricloader": ">=0.16.0",
+        "minecraft": "~1.20"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "neruina-3.3.3+1.20.1-fabric.jar!META-INF/jars/github-api-2.0-rc.6.jar",
+      "mod_id": "org_kohsuke_github-api",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "netherdepthsupgrade-fabric-3.1.6-1.20.jar",
+      "mod_id": "netherdepthsupgrade",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "minecraft": "~1.20",
+        "java": ">=17",
+        "fabric-api": "*",
+        "geckolib": ">=4.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "NethersDelight-Refabricated-1.20.1-4.1.1.jar",
+      "mod_id": "nethersdelight",
+      "depends": {
+        "fabric": "*",
+        "farmersdelight": "*",
+        "minecraft": ">=1.20 <1.20.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "nightlights-fabric-1.20.1-1.1.jar",
+      "mod_id": "nightlights",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "noisiumed-fabric-3.0.6+mc1.20-1.20.1.jar",
+      "mod_id": "noisiumed",
+      "depends": {
+        "fabricloader": ">=0.14.25",
+        "minecraft": ">=1.20 <=1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "noisiumed-fabric-3.0.6+mc1.20-1.20.1.jar!META-INF/jars/mixinextras-fabric-0.3.5.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "notenoughanimations-fabric-1.12.4-mc1.20.1.jar",
+      "mod_id": "notenoughanimations",
+      "depends": {
+        "minecraft": "1.20.1",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "notenoughanimations-fabric-1.12.4-mc1.20.1.jar!META-INF/jars/TRansition-1.0.21-1.20.1-fabric-SNAPSHOT.jar",
+      "mod_id": "transition",
+      "depends": {
+        "minecraft": "1.20.1",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "notenoughanimations-fabric-1.12.4-mc1.20.1.jar!META-INF/jars/TRender-1.0.15-1.20.1-fabric-SNAPSHOT.jar",
+      "mod_id": "trender",
+      "depends": {
+        "minecraft": "1.20.1",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "oceansdelight-fdrf-fabric-1.0.2-1.20.jar",
+      "mod_id": "oceansdelight",
+      "depends": {
+        "fabricloader": ">=0.14.9",
+        "fabric-api": "*",
+        "minecraft": "~1.20",
+        "java": ">=17",
+        "farmersdelight": ">=1.4.1-1.20-1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Oh-The-Trees-Youll-Grow-fabric-1.20.1-1.3.2.jar",
+      "mod_id": "ohthetreesyoullgrow",
+      "depends": {
+        "fabricloader": ">=0.15",
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "origins-1.41.0.jar",
+      "mod_id": "origins",
+      "depends": {
+        "fabricloader": ">=0.19.2",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*",
+        "apoli": ">=1.87.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Origins-Classes-1.20-1.7.0-Overgrown-Apoli-1.90.0-FIXED-v4.jar",
+      "mod_id": "origins-classes",
+      "depends": {
+        "fabricloader": "*",
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "origins": ">=1.10.0",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [
+        {
+          "class": "io/github/apace100/apoli/power/PowerType$Compat.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType",
+            "io/github/apace100/apoli/power/PowerType$Compat"
+          ]
+        },
+        {
+          "class": "io/github/apace100/apoli/power/PowerType.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/Power",
+            "io/github/apace100/apoli/power/PowerType",
+            "io/github/apace100/apoli/power/PowerType$Compat"
+          ]
+        },
+        {
+          "class": "io/github/apace100/apoli/power/VariableIntPower.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/Power",
+            "io/github/apace100/apoli/power/PowerType",
+            "io/github/apace100/apoli/power/PowerType$Compat",
+            "io/github/apace100/apoli/power/VariableIntPower"
+          ]
+        },
+        {
+          "class": "io/github/apace100/apoli/power/Power.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/Power",
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/apoli/power/PowerTypeReference.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/Power",
+            "io/github/apace100/apoli/power/PowerType",
+            "io/github/apace100/apoli/power/PowerTypeReference",
+            "io/github/apace100/apoli/power/VariableIntPower"
+          ]
+        },
+        {
+          "class": "io/github/apace100/apoli/power/ValueModifyingPower.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/Power",
+            "io/github/apace100/apoli/power/PowerType",
+            "io/github/apace100/apoli/power/ValueModifyingPower"
+          ]
+        },
+        {
+          "class": "io/github/apace100/apoli/component/PowerHolderComponent.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/component/PowerHolderComponent",
+            "io/github/apace100/apoli/component/TreeFelling",
+            "io/github/apace100/apoli/power/PowerType",
+            "io/github/apace100/apoli/power/PowerTypeReference"
+          ]
+        },
+        {
+          "class": "io/github/apace100/apoli/component/TreeFelling.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/component/TreeFelling"
+          ]
+        },
+        {
+          "class": "io/github/apace100/calio/Calio.class",
+          "legacy_references": [
+            "io/github/apace100/calio/Calio"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/OriginsClasses.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/util/NamespaceAlias"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/power/ClassPowerTypes.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType",
+            "io/github/apace100/apoli/power/PowerTypeReference"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/power/CraftAmountPower.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType",
+            "io/github/apace100/apoli/power/ValueModifyingPower"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/power/MultiMinePower.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/Power",
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/ClientPlayerEntityMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/CraftingScreenHandlerMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/component/PowerHolderComponent",
+            "io/github/apace100/apoli/power/PowerType",
+            "io/github/apace100/calio/Calio"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/EnchantmentScreenHandlerMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/BlockMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/CauldronBlockMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/ProjectileEntityMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/PlayerEntityMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/Power",
+            "io/github/apace100/apoli/power/PowerType",
+            "io/github/apace100/apoli/power/VariableIntPower"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/AbstractFurnaceBlockEntityMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/AbstractBlockMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/component/PowerHolderComponent"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/TameableEntityMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/EntityMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/SimpleMerchantMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/EntityRendererMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/AnimalMateGoalMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/RepairItemRecipeMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/ChildCreationMixin$CatKids.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/ChildCreationMixin$WolfKids.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/MerchantEntityMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/LivingEntityMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/HorseBaseEntityMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/ChildCreationMixin$HorseKids.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/AnvilScreenHandlerMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/BoneMealItemMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/power/PowerType"
+          ]
+        },
+        {
+          "class": "io/github/apace100/originsclasses/mixin/ServerPlayerInteractionManagerMixin.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/component/PowerHolderComponent"
+          ]
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "archive": "origins-extra-keybinds-1.0.0.jar",
+      "mod_id": "originsextrakeybinds",
+      "depends": {
+        "fabricloader": ">=0.16.0",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "origins-support-2.1.jar",
+      "mod_id": "mr_origins_support",
+      "depends": {
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "owo-lib-0.11.2+1.20.jar",
+      "mod_id": "owo",
+      "depends": {
+        "fabricloader": "*",
+        "fabric": ">=0.76",
+        "minecraft": ">=1.19"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "owo-lib-0.11.2+1.20.jar!META-INF/jars/jankson-1.2.2.jar",
+      "mod_id": "blue_endless_jankson",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Pehkui-3.8.3+1.14.4-1.21.jar",
+      "mod_id": "pehkui",
+      "depends": {
+        "fabricloader": ">=0.15.11",
+        "fabric-api-base": "*",
+        "kanos_config": ">=0.4.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Pehkui-3.8.3+1.14.4-1.21.jar!META-INF/jars/KanosConfig-0.4.1.jar",
+      "mod_id": "kanos_config",
+      "depends": {
+        "fabricloader": ">=0.14.17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Platform-fabric-1.20.1-1.3.4.jar",
+      "mod_id": "platform",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "minecraft": ">=1.20"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Platform-fabric-1.20.1-1.3.4.jar!META-INF/jars/mixinextras-fabric-0.4.1.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "polymorph-fabric-0.49.10+1.20.1.jar",
+      "mod_id": "polymorph",
+      "depends": {
+        "fabricloader": ">=0.14.23",
+        "fabric": "*",
+        "minecraft": "1.20.x",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "polymorph-fabric-0.49.10+1.20.1.jar!META-INF/jars/spectrelib-fabric-0.13.17+1.20.1.jar",
+      "mod_id": "spectrelib",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "polymorph-fabric-0.49.10+1.20.1.jar!META-INF/jars/spectrelib-fabric-0.13.17+1.20.1.jar!META-INF/jars/core-3.6.7.jar",
+      "mod_id": "com_electronwill_night-config_core",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "polymorph-fabric-0.49.10+1.20.1.jar!META-INF/jars/spectrelib-fabric-0.13.17+1.20.1.jar!META-INF/jars/toml-3.6.7.jar",
+      "mod_id": "com_electronwill_night-config_toml",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "polymorph-fabric-0.49.10+1.20.1.jar!META-INF/jars/cardinal-components-base-5.2.1.jar",
+      "mod_id": "cardinal-components-base",
+      "depends": {
+        "minecraft": ">=1.17-",
+        "fabric-api-base": ">=0.1.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "polymorph-fabric-0.49.10+1.20.1.jar!META-INF/jars/cardinal-components-entity-5.2.1.jar",
+      "mod_id": "cardinal-components-entity",
+      "depends": {
+        "minecraft": ">=1.17-",
+        "fabric-api-base": "*",
+        "cardinal-components-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "polymorph-fabric-0.49.10+1.20.1.jar!META-INF/jars/cardinal-components-block-5.2.1.jar",
+      "mod_id": "cardinal-components-block",
+      "depends": {
+        "minecraft": ">=1.17-",
+        "fabric-api-base": "*",
+        "fabric-api-lookup-api-v1": "*",
+        "fabric-networking-api-v1": "*",
+        "cardinal-components-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "polymorph-fabric-0.49.10+1.20.1.jar!META-INF/jars/cardinal-components-item-5.2.1.jar",
+      "mod_id": "cardinal-components-item",
+      "depends": {
+        "minecraft": ">=1.17-",
+        "fabric-api-base": "*",
+        "cardinal-components-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "PuzzlesLib-v8.1.33-1.20.1-Fabric.jar",
+      "mod_id": "puzzleslib",
+      "depends": {
+        "fabricloader": ">=0.16.0",
+        "fabric-api": ">=0.92.0",
+        "forgeconfigapiport": "*",
+        "puzzlesaccessapi": "*",
+        "minecraft": "1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "PuzzlesLib-v8.1.33-1.20.1-Fabric.jar!META-INF/jars/puzzlesaccessapi-fabric-20.1.1.jar",
+      "mod_id": "puzzlesaccessapi",
+      "depends": {
+        "fabricloader": ">=0.16.0",
+        "minecraft": "1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "qraftyfied-6.jar",
+      "mod_id": "mr_qraftyfied",
+      "depends": {
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "qu-enchantments-1.3.6-1.20.jar",
+      "mod_id": "qu-enchantments",
+      "depends": {
+        "fabricloader": ">=0.14.17",
+        "fabric": ">=0.83.0+1.20",
+        "minecraft": ">=1.20",
+        "java": ">=17",
+        "cloth-config": ">=11.0.98"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "qu-enchantments-1.3.6-1.20.jar!META-INF/jars/Fabric-ASM-v2.3.jar",
+      "mod_id": "mm",
+      "depends": {
+        "fabricloader": ">=0.7.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "qu-enchantments-1.3.6-1.20.jar!META-INF/jars/MixinExtras-0.1.1.jar",
+      "mod_id": "com_github_llamalad7_mixinextras",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "qu-enchantments-1.3.6-1.20.jar!META-INF/jars/cloth-config-fabric-11.1.106.jar",
+      "mod_id": "cloth-config",
+      "depends": {
+        "fabricloader": ">=0.14.0",
+        "minecraft": ">=1.20-"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "qu-enchantments-1.3.6-1.20.jar!META-INF/jars/cloth-config-fabric-11.1.106.jar!META-INF/jars/basic-math-0.6.1.jar",
+      "mod_id": "cloth-basic-math",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "resourcefullib-fabric-1.20.1-2.1.29.jar",
+      "mod_id": "resourcefullib",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "resourcefullib-fabric-1.20.1-2.1.29.jar!META-INF/jars/yabn-1.0.3.jar",
+      "mod_id": "com_teamresourceful_yabn",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "resourcefullib-fabric-1.20.1-2.1.29.jar!META-INF/jars/bytecodecs-1.0.2.jar",
+      "mod_id": "com_teamresourceful_bytecodecs",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "RideableRavagers-1.0.2-1.20.1-fabric.jar",
+      "mod_id": "rideableravagers",
+      "depends": {
+        "fabricloader": ">=0.14.22",
+        "fabric-biome-api-v1": ">=13.0.11",
+        "minecraft": ">=1.20.1",
+        "midnightlib": ">=1.5.0-1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "RideableRavagers-1.0.2-1.20.1-fabric.jar!META-INF/jars/midnightlib-fabric-1.5.0-1.20.1.jar",
+      "mod_id": "midnightlib",
+      "depends": {
+        "fabric-resource-loader-v0": "*",
+        "minecraft": "1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "safeslot-fabric-1.20.1-1.0.1.jar",
+      "mod_id": "safeslot",
+      "depends": {
+        "fabricloader": ">=0.12.5",
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "java": ">=17",
+        "collective": ">=7.91"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "scarves-1.3.0.jar",
+      "mod_id": "scarves",
+      "depends": {
+        "pride": ">=1.2.0",
+        "fabricloader": ">=0.14.21",
+        "fabric": "*",
+        "minecraft": "~1.20-rc.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "scarves-1.3.0.jar!META-INF/jars/trinkets-3.7.0.jar",
+      "mod_id": "trinkets",
+      "depends": {
+        "minecraft": ">1.18",
+        "fabricloader": ">=0.7.0",
+        "cardinal-components-base": ">=3.0.0-0",
+        "cardinal-components-entity": ">=3.0.0-0",
+        "fabric": ">=0.51.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "scarves-1.3.0.jar!META-INF/jars/trinkets-3.7.0.jar!META-INF/jars/cardinal-components-base-5.2.0.jar",
+      "mod_id": "cardinal-components-base",
+      "depends": {
+        "minecraft": ">=1.17-",
+        "fabric-api-base": ">=0.1.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "scarves-1.3.0.jar!META-INF/jars/trinkets-3.7.0.jar!META-INF/jars/cardinal-components-entity-5.2.0.jar",
+      "mod_id": "cardinal-components-entity",
+      "depends": {
+        "minecraft": ">=1.17-",
+        "fabric-api-base": "*",
+        "cardinal-components-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "scarves-1.3.0.jar!META-INF/jars/LibGui-8.0.0+1.20.jar",
+      "mod_id": "libgui",
+      "depends": {
+        "java": ">=17",
+        "fabricloader": ">=0.14.21",
+        "fabric-api-base": ">=0.4.4",
+        "fabric-lifecycle-events-v1": "^2.0.2",
+        "fabric-networking-api-v1": "^1.0.21",
+        "fabric-rendering-v1": "^3.0.6",
+        "minecraft": ">=1.20-rc.1",
+        "jankson": "^5.0.1",
+        "libninepatch": "^1.2.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "scarves-1.3.0.jar!META-INF/jars/LibGui-8.0.0+1.20.jar!META-INF/jars/Jankson-Fabric-5.0.1+j1.2.2.jar",
+      "mod_id": "jankson",
+      "depends": {
+        "minecraft": ">=1.19.4"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "scarves-1.3.0.jar!META-INF/jars/LibGui-8.0.0+1.20.jar!META-INF/jars/Jankson-Fabric-5.0.1+j1.2.2.jar!META-INF/jars/jankson-1.2.2.jar",
+      "mod_id": "blue_endless_jankson",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "scarves-1.3.0.jar!META-INF/jars/LibGui-8.0.0+1.20.jar!META-INF/jars/libninepatch-1.2.0.jar",
+      "mod_id": "libninepatch",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "scarves-1.3.0.jar!META-INF/jars/pridelib-1.2.0+1.19.4.jar",
+      "mod_id": "pride",
+      "depends": {
+        "minecraft": ">=1.19.4",
+        "fabricloader": ">=0.12.12",
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "servercore-fabric-1.5.2+1.20.1.jar",
+      "mod_id": "servercore",
+      "depends": {
+        "fabricloader": ">=0.15.2",
+        "minecraft": ">=1.20.1-",
+        "fabric-api-base": "*",
+        "fabric-command-api-v2": "*",
+        "fabric-lifecycle-events-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "servercore-fabric-1.5.2+1.20.1.jar!META-INF/jars/fabric-permissions-api-0.3.1.jar",
+      "mod_id": "fabric-permissions-api-v0",
+      "depends": {
+        "fabricloader": ">=0.9.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "servercore-fabric-1.5.2+1.20.1.jar!META-INF/jars/placeholder-api-2.1.3+1.20.1.jar",
+      "mod_id": "placeholder-api",
+      "depends": {
+        "fabricloader": ">=0.13.4",
+        "minecraft": ">=1.19-beta.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "servercore-fabric-1.5.2+1.20.1.jar!META-INF/jars/snakeyaml-2.2.jar",
+      "mod_id": "org_yaml_snakeyaml",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "servercore-fabric-1.5.2+1.20.1.jar!META-INF/jars/dazzleconf-core-1.3.0-M2.jar",
+      "mod_id": "space_arim_dazzleconf_dazzleconf-core",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "servercore-fabric-1.5.2+1.20.1.jar!META-INF/jars/dazzleconf-ext-snakeyaml-1.3.0-M2.jar",
+      "mod_id": "space_arim_dazzleconf_dazzleconf-ext-snakeyaml",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "simplehats-fabric-1.20.1-0.4.0a.jar",
+      "mod_id": "simplehats",
+      "depends": {
+        "fabricloader": ">=0.16.9",
+        "fabric-api": "*",
+        "minecraft": "1.20.1",
+        "java": ">=17",
+        "accessories": ">=1.0.0-beta.47+1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "smallships-fabric-1.20.1-2.0.0-b1.4.jar",
+      "mod_id": "smallships",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "smallships-fabric-1.20.1-2.0.0-b1.4.jar!META-INF/jars/forgeconfigapiport-fabric-8.0.0.jar",
+      "mod_id": "forgeconfigapiport",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "fabric-api": ">=0.83.0",
+        "minecraft": "1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Sniffer+-fabric-1.20.1-0.3.0.jar",
+      "mod_id": "snifferplus",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric": "*",
+        "minecraft": "1.20.x",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "sodium-fabric-0.5.13+mc1.20.1.jar",
+      "mod_id": "sodium",
+      "depends": {
+        "minecraft": "1.20.1",
+        "fabricloader": ">=0.12.0",
+        "fabric-rendering-data-attachment-v1": ">=0.1",
+        "fabric-rendering-fluids-v1": ">=0.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "sodium-fabric-0.5.13+mc1.20.1.jar!META-INF/jars/fabric-api-base-0.4.31+1802ada577.jar",
+      "mod_id": "fabric-api-base",
+      "depends": {
+        "fabricloader": ">=0.4.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "sodium-fabric-0.5.13+mc1.20.1.jar!META-INF/jars/fabric-block-view-api-v2-1.0.1+1802ada577.jar",
+      "mod_id": "fabric-block-view-api-v2",
+      "depends": {
+        "fabricloader": ">=0.14.21"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "sodium-fabric-0.5.13+mc1.20.1.jar!META-INF/jars/fabric-rendering-data-attachment-v1-0.3.37+92a0d36777.jar",
+      "mod_id": "fabric-rendering-data-attachment-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-block-view-api-v2": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "sodium-fabric-0.5.13+mc1.20.1.jar!META-INF/jars/fabric-rendering-fluids-v1-3.0.28+1802ada577.jar",
+      "mod_id": "fabric-rendering-fluids-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "sodium-fabric-0.5.13+mc1.20.1.jar!META-INF/jars/fabric-resource-loader-v0-0.11.11+fb82e9d777.jar",
+      "mod_id": "fabric-resource-loader-v0",
+      "depends": {
+        "fabricloader": ">=0.13.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "spark-1.10.42-fabric.jar",
+      "mod_id": "spark",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*",
+        "fabric-command-api-v2": "*",
+        "fabric-lifecycle-events-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "spark-1.10.42-fabric.jar!META-INF/jars/fabric-permissions-api-0.1-SNAPSHOT.jar",
+      "mod_id": "fabric-permissions-api-v0",
+      "depends": {
+        "fabricloader": ">=0.9.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "sparsestructures-fabric-1.20.1-3.0.jar",
+      "mod_id": "sparsestructures",
+      "depends": {
+        "fabricloader": ">=0.16.13",
+        "fabric-api": "*",
+        "minecraft": "~1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "spear-backport-fabric-1.4.7-1.20.1.jar",
+      "mod_id": "spears",
+      "depends": {
+        "fabricloader": ">=0.18.4",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "stardewfishing-fabric-1.3.1.jar",
+      "mod_id": "stardew_fishing",
+      "depends": {
+        "fabricloader": ">=0.16.9",
+        "fabric": "*",
+        "minecraft": ">=1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "stellarity-lite-1.20.1.jar",
+      "mod_id": "mr_stellarity_lite",
+      "depends": {
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "StreamsReflowing-1.20.1-fabric-2.10.3.jar",
+      "mod_id": "streamsreflowing",
+      "depends": {
+        "fabricloader": ">=0.16.9",
+        "fabric-api": "*",
+        "minecraft": "1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "structures-3.6.all.jar",
+      "mod_id": "structures",
+      "depends": {
+        "minecraft": ">=1.20"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "supermartijn642configlib-1.1.8a-fabric-mc1.20.jar",
+      "mod_id": "supermartijn642configlib",
+      "depends": {
+        "fabricloader": ">=0.14.0",
+        "fabric": "*",
+        "minecraft": ">=1.20 <1.21",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "supplementaries-1.20-3.1.43-fabric.jar",
+      "mod_id": "supplementaries",
+      "depends": {
+        "fabric": ">=0.92.0+1.20.1",
+        "minecraft": ">=1.20.1 <1.20.2",
+        "moonlight": ">=1.20-2.16.26"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "supplementaries-1.20-3.1.43-fabric.jar!META-INF/jars/mixinextras-fabric-0.3.6.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "supplementaries-1.20-3.1.43-fabric.jar!META-INF/jars/mixinsquared-fabric-0.1.1.jar",
+      "mod_id": "mixinsquared",
+      "depends": {
+        "fabricloader": ">=0.14.11"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "tectonic-3.0.17-fabric-1.20.1.jar",
+      "mod_id": "tectonic",
+      "depends": {
+        "fabricloader": ">=0.16",
+        "lithostitched": ">=1.4.11"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "TerraBlender-fabric-1.20.1-3.0.1.10.jar",
+      "mod_id": "terrablender",
+      "depends": {
+        "fabricloader": "*",
+        "fabric": "*",
+        "minecraft": "1.20.x",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "TerraBlender-fabric-1.20.1-3.0.1.10.jar!META-INF/jars/toml-3.6.7.jar",
+      "mod_id": "com_electronwill_night-config_toml",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "TerraBlender-fabric-1.20.1-3.0.1.10.jar!META-INF/jars/core-3.6.7.jar",
+      "mod_id": "com_electronwill_night-config_core",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Terralith_1.20.x_v2.5.4.jar",
+      "mod_id": "terralith",
+      "depends": {
+        "fabricloader": ">=0.12.7",
+        "fabric-api-base": "*",
+        "minecraft": ">=1.20"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "tffaf-alpha-7-1.20.1.jar",
+      "mod_id": "tffaf",
+      "depends": {
+        "fabricloader": ">=0.15.11",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "thekatanasmod-1.1.1-1.20.1.jar",
+      "mod_id": "thekatanasmod",
+      "depends": {
+        "fabricloader": ">=0.14.24",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "threadtweak-fabric-1.20.1-0.1.0.jar",
+      "mod_id": "threadtweak",
+      "depends": {
+        "fabricloader": ">=0.14.6",
+        "fabric": "*",
+        "minecraft": "1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "tide-fabric-1.20.1-2.1.jar",
+      "mod_id": "tide",
+      "depends": {
+        "minecraft": "1.20.1",
+        "cloth-config": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "tiny_takeover_backport-fabric-1.20.1-1.2.0.jar",
+      "mod_id": "tiny_takeover_backport",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric": "*",
+        "minecraft": "1.20.1",
+        "java": ">=17",
+        "yet_another_config_lib_v3": ">=3.6.6+1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "tiny_takeover_backport-fabric-1.20.1-1.2.0.jar!META-INF/jars/gson-0.3.0.jar",
+      "mod_id": "org_quiltmc_parsers_gson",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "tiny_takeover_backport-fabric-1.20.1-1.2.0.jar!META-INF/jars/json-0.3.0.jar",
+      "mod_id": "org_quiltmc_parsers_json",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "tiny_takeover_backport-fabric-1.20.1-1.2.0.jar!META-INF/jars/mixinsquared-fabric-0.3.7-beta.3.jar",
+      "mod_id": "mixinsquared",
+      "depends": {
+        "fabricloader": ">=0.14.11"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "TravelersTitles-1.20-Fabric-4.0.2.jar",
+      "mod_id": "travelerstitles",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "fabric": ">=0.83.0",
+        "minecraft": ">=1.20",
+        "cloth-config2": ">=11.0.99",
+        "java": ">=17",
+        "yungsapi": ">=1.20-Fabric-4.0.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "TravelersTitles-1.20-Fabric-4.0.2.jar!META-INF/jars/reflections-0.10.2.jar",
+      "mod_id": "org_reflections_reflections",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "trinkets-3.7.2.jar",
+      "mod_id": "trinkets",
+      "depends": {
+        "minecraft": ">1.18",
+        "fabricloader": ">=0.7.0",
+        "cardinal-components-base": ">=3.0.0-0",
+        "cardinal-components-entity": ">=3.0.0-0",
+        "fabric": ">=0.51.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "trinkets-3.7.2.jar!META-INF/jars/cardinal-components-base-5.2.0.jar",
+      "mod_id": "cardinal-components-base",
+      "depends": {
+        "minecraft": ">=1.17-",
+        "fabric-api-base": ">=0.1.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "trinkets-3.7.2.jar!META-INF/jars/cardinal-components-entity-5.2.0.jar",
+      "mod_id": "cardinal-components-entity",
+      "depends": {
+        "minecraft": ">=1.17-",
+        "fabric-api-base": "*",
+        "cardinal-components-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "tt20-0.8.4+mc1.20.1-fabric.jar",
+      "mod_id": "tt20",
+      "depends": {
+        "minecraft": ">=1.20 <1.20.5",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar",
+      "mod_id": "ubesdelight",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20 <1.20.2",
+        "farmersdelight": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_base",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_tool_actions-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_tool_actions",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_transfer-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_transfer",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_utility-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_utility",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_tags-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_tags",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/toml-3.6.6.jar",
+      "mod_id": "com_electronwill_night-config_toml",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_fluids-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_fluids",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_core-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_core",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/reach-entity-attributes-2.4.0.jar",
+      "mod_id": "reach-entity-attributes",
+      "depends": {
+        "minecraft": ">=1.20",
+        "fabricloader": ">=0.14.21",
+        "fabric-registry-sync-v0": ">=2.1.3",
+        "fabric-resource-loader-v0": ">=0.11.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_attributes-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_attributes",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_mixin_extensions-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_mixin_extensions",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_entity-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_entity",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/mixinextras-fabric-0.4.0-beta.2.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_config-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_config",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_lazy_registration-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_lazy_registration",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_accessors-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_accessors",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_gui_utils-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_gui_utils",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/core-3.6.6.jar",
+      "mod_id": "com_electronwill_night-config_core",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_extensions-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_extensions",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/base-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_common-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_common",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/extensions-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_extensions",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/extensions-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_core-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_core",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/extensions-2.3.8+1.20.1.jar!META-INF/jars/reach-entity-attributes-2.4.0.jar",
+      "mod_id": "reach-entity-attributes",
+      "depends": {
+        "minecraft": ">=1.20",
+        "fabricloader": ">=0.14.21",
+        "fabric-registry-sync-v0": ">=2.1.3",
+        "fabric-resource-loader-v0": ">=0.11.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/extensions-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_attributes-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_attributes",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/extensions-2.3.8+1.20.1.jar!META-INF/jars/mixinextras-fabric-0.4.0-beta.2.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/extensions-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_accessors-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_accessors",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/extensions-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_common-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_common",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/lazy_registration-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_lazy_registration",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/lazy_registration-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_core-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_core",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/lazy_registration-2.3.8+1.20.1.jar!META-INF/jars/mixinextras-fabric-0.4.0-beta.2.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/midnightlib-1.4.1-fabric.jar",
+      "mod_id": "midnightlib",
+      "depends": {
+        "fabric-resource-loader-v0": "*",
+        "minecraft": ">=1.20-beta.2"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/registries-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_registries",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/registries-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_core-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_core",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/registries-2.3.8+1.20.1.jar!META-INF/jars/mixinextras-fabric-0.4.0-beta.2.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/tags-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_tags",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/tags-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_core-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_core",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/tags-2.3.8+1.20.1.jar!META-INF/jars/mixinextras-fabric-0.4.0-beta.2.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/transfer-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_transfer",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/transfer-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_fluids-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_fluids",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/transfer-2.3.8+1.20.1.jar!META-INF/jars/porting_lib_core-2.3.8+1.20.1.jar",
+      "mod_id": "porting_lib_core",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric-api": ">=0.91.0+1.20.1",
+        "minecraft": "=1.20.1",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "ubesdelight-fabric-1.20.1-0.4.12.jar!META-INF/jars/transfer-2.3.8+1.20.1.jar!META-INF/jars/mixinextras-fabric-0.4.0-beta.2.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "uuid-impersonate-1.1.0(1).jar",
+      "mod_id": "uuid-impersonate",
+      "depends": {
+        "fabricloader": ">=0.16.10",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*",
+        "fabric-language-kotlin": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "vanilla-permissions-0.3.5+1.20.1.jar",
+      "mod_id": "vanilla-permissions",
+      "depends": {
+        "fabricloader": ">=0.15.10",
+        "fabric-api": "*",
+        "fabric-permissions-api-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "vanilla-permissions-0.3.5+1.20.1.jar!META-INF/jars/fabric-permissions-api-0.3.1.jar",
+      "mod_id": "fabric-permissions-api-v0",
+      "depends": {
+        "fabricloader": ">=0.9.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "VanillaBackport-fabric-1.20.1-1.1.7.10.jar",
+      "mod_id": "vanillabackport",
+      "depends": {
+        "fabricloader": ">=0.15.10",
+        "platform": ">=1.3.4",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "VanillaBackport-fabric-1.20.1-1.1.7.10.jar!META-INF/jars/mixinsquared-fabric-0.1.1.jar",
+      "mod_id": "mixinsquared",
+      "depends": {
+        "fabricloader": ">=0.14.11"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "vanish-1.5.5+1.20.1.jar",
+      "mod_id": "melius-vanish",
+      "depends": {
+        "fabricloader": ">=0.15.10",
+        "fabric-api": "*",
+        "java": ">=17",
+        "minecraft": ">=1.20 <=1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "vanish-1.5.5+1.20.1.jar!META-INF/jars/fabric-permissions-api-0.3.1.jar",
+      "mod_id": "fabric-permissions-api-v0",
+      "depends": {
+        "fabricloader": ">=0.9.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "vanish-1.5.5+1.20.1.jar!META-INF/jars/placeholder-api-2.1.3+1.20.1.jar",
+      "mod_id": "placeholder-api",
+      "depends": {
+        "fabricloader": ">=0.13.4",
+        "minecraft": ">=1.19-beta.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "vanish-1.5.5+1.20.1.jar!META-INF/jars/player-data-api-0.2.2+1.19.3.jar",
+      "mod_id": "player-data-api",
+      "depends": {
+        "fabricloader": ">=0.12.0",
+        "minecraft": ">=1.18-beta8"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "vanish-1.5.5+1.20.1.jar!META-INF/jars/server-translations-api-2.0.0+1.20.jar",
+      "mod_id": "server_translations_api",
+      "depends": {
+        "minecraft": ">=1.19.4-",
+        "fabricloader": ">=0.14.14",
+        "fabric-resource-loader-v0": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "vanish-1.5.5+1.20.1.jar!META-INF/jars/server-translations-api-2.0.0+1.20.jar!META-INF/jars/packet-tweaker-0.4.0+1.19.4.jar",
+      "mod_id": "packet_tweaker",
+      "depends": {
+        "fabricloader": ">=0.14.13",
+        "minecraft": ">=1.19.4-",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "veinmining-fabric-1.5.0+1.20.1.jar",
+      "mod_id": "veinmining",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric-api": "*",
+        "minecraft": ">=1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "veinmining-fabric-1.5.0+1.20.1.jar!META-INF/jars/spectrelib-fabric-0.13.15+1.20.1.jar",
+      "mod_id": "spectrelib",
+      "depends": {
+        "fabricloader": ">=0.14",
+        "fabric": "*",
+        "minecraft": ">=1.20",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "veinmining-fabric-1.5.0+1.20.1.jar!META-INF/jars/spectrelib-fabric-0.13.15+1.20.1.jar!META-INF/jars/core-3.6.5.jar",
+      "mod_id": "com_electronwill_night-config_core",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "veinmining-fabric-1.5.0+1.20.1.jar!META-INF/jars/spectrelib-fabric-0.13.15+1.20.1.jar!META-INF/jars/toml-3.6.5.jar",
+      "mod_id": "com_electronwill_night-config_toml",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "via_romana-2.2.2+1.20.1-fabric.jar",
+      "mod_id": "via_romana",
+      "depends": {
+        "minecraft": ">=1.20.1",
+        "fabricloader": ">=0.16.0",
+        "fabric-api": ">=0.92.0+1.20.1",
+        "moonlight": "*",
+        "midnightlib": ">=1.9.0",
+        "dataanchor": "1.0.0.20"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "vista-1.20-3.1.3-fabric.jar",
+      "mod_id": "vista",
+      "depends": {
+        "fabric": "*",
+        "minecraft": ">=1.20.1 <1.20.2",
+        "moonlight": ">=1.20-2.16.19"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "vista-1.20-3.1.3-fabric.jar!META-INF/jars/mixinextras-fabric-0.5.0.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "vmp-fabric-mc1.20.1-0.2.0+beta.7.102-all.jar",
+      "mod_id": "vmp",
+      "depends": {
+        "fabricloader": ">=0.14.13",
+        "minecraft": ">=1.19.1-rc.3",
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "voicechat-fabric-1.20.1-2.6.21.jar",
+      "mod_id": "voicechat",
+      "depends": {
+        "fabricloader": ">=0.14.19",
+        "minecraft": [
+          "1.20",
+          "1.20.1"
+        ],
+        "java": ">=17"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "voicechat-fabric-1.20.1-2.6.21.jar!META-INF/jars/fabric-api-base-0.4.29+b04edc7a82.jar",
+      "mod_id": "fabric-api-base",
+      "depends": {
+        "fabricloader": ">=0.4.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "voicechat-fabric-1.20.1-2.6.21.jar!META-INF/jars/fabric-command-api-v2-2.2.11+b3afc78b82.jar",
+      "mod_id": "fabric-command-api-v2",
+      "depends": {
+        "fabricloader": ">=0.10.5",
+        "fabric-api-base": "*",
+        "minecraft": ">1.19-alpha.22.11.a"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "voicechat-fabric-1.20.1-2.6.21.jar!META-INF/jars/fabric-key-binding-api-v1-1.0.36+fb8d95da82.jar",
+      "mod_id": "fabric-key-binding-api-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "voicechat-fabric-1.20.1-2.6.21.jar!META-INF/jars/fabric-lifecycle-events-v1-2.2.20+b3afc78b82.jar",
+      "mod_id": "fabric-lifecycle-events-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "voicechat-fabric-1.20.1-2.6.21.jar!META-INF/jars/fabric-networking-api-v1-1.3.8+b3afc78b82.jar",
+      "mod_id": "fabric-networking-api-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "voicechat-fabric-1.20.1-2.6.21.jar!META-INF/jars/fabric-resource-loader-v0-0.11.7+f7923f6d82.jar",
+      "mod_id": "fabric-resource-loader-v0",
+      "depends": {
+        "fabricloader": ">=0.13.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "voicechat-fabric-1.20.1-2.6.21.jar!META-INF/jars/voicechat-api-2.6.20.jar",
+      "mod_id": "voicechat_api",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "witchorigins-1.0.4.1.jar",
+      "mod_id": "witchorigins",
+      "depends": {
+        "fabricloader": ">=0.16.12",
+        "minecraft": "~1.20.1",
+        "java": ">=17",
+        "fabric-api": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Woodlands_Extra-Universal-1.20.1-v1.3.3.jar",
+      "mod_id": "woodlands_extra",
+      "depends": {
+        "fabric-api": "*",
+        "fabricloader": ">=0.12.0",
+        "minecraft": ">=1.20.1",
+        "ohthetreesyoullgrow": ">=1.20.1-1.3.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "Woodlands_Vanilla-Universal-1.20.1-v1.2.2.jar",
+      "mod_id": "woodlands_vanilla",
+      "depends": {
+        "fabric-api": "*",
+        "fabricloader": ">=0.12.0",
+        "minecraft": ">=1.20.1",
+        "ohthetreesyoullgrow": ">=1.20.1-1.3.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "worldedit-mod-7.2.15(1).jar",
+      "mod_id": "worldedit",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*",
+        "fabric-command-api-v2": "*",
+        "fabric-lifecycle-events-v1": "*",
+        "fabric-events-interaction-v0": "*",
+        "fabric-networking-api-v1": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "worldedit-mod-7.2.15(1).jar!META-INF/jars/fabric-api-base-0.4.29+b04edc7a27.jar",
+      "mod_id": "fabric-api-base",
+      "depends": {
+        "fabricloader": ">=0.4.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "worldedit-mod-7.2.15(1).jar!META-INF/jars/fabric-command-api-v2-2.2.11+b3afc78b27.jar",
+      "mod_id": "fabric-command-api-v2",
+      "depends": {
+        "fabricloader": ">=0.10.5",
+        "fabric-api-base": "*",
+        "minecraft": ">1.19-alpha.22.11.a"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "worldedit-mod-7.2.15(1).jar!META-INF/jars/fabric-events-interaction-v0-0.6.0+b3afc78b27.jar",
+      "mod_id": "fabric-events-interaction-v0",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*",
+        "minecraft": ">=1.15-alpha.19.37.a"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "worldedit-mod-7.2.15(1).jar!META-INF/jars/fabric-lifecycle-events-v1-2.2.20+b3afc78b27.jar",
+      "mod_id": "fabric-lifecycle-events-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "worldedit-mod-7.2.15(1).jar!META-INF/jars/fabric-networking-api-v1-1.3.8+b3afc78b27.jar",
+      "mod_id": "fabric-networking-api-v1",
+      "depends": {
+        "fabricloader": ">=0.4.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "xaerominimap-fabric-1.20.1-26.4.2.jar",
+      "mod_id": "xaerominimap",
+      "depends": {
+        "fabricloader": ">=0.13.0",
+        "fabric-api": ">=0.43.1",
+        "minecraft": ">=1.20 <=1.20.1",
+        "xaerolib": ">=1.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "xaerominimap-fabric-1.20.1-26.4.2.jar!META-INF/jars/xaerolib-fabric-1.20.1-1.7.1.jar",
+      "mod_id": "xaerolib",
+      "depends": {
+        "fabricloader": ">=0.13.0",
+        "fabric-api": ">=0.43.1",
+        "minecraft": ">=1.20 <=1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "xaeroworldmap-fabric-1.20.1-1.44.2.jar",
+      "mod_id": "xaeroworldmap",
+      "depends": {
+        "fabricloader": ">=0.13.0",
+        "fabric-api": ">=0.43.1",
+        "minecraft": ">=1.20 <=1.20.1",
+        "xaerolib": ">=1.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "xaeroworldmap-fabric-1.20.1-1.44.2.jar!META-INF/jars/xaerolib-fabric-1.20.1-1.7.1.jar",
+      "mod_id": "xaerolib",
+      "depends": {
+        "fabricloader": ">=0.13.0",
+        "fabric-api": ">=0.43.1",
+        "minecraft": ">=1.20 <=1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "xercapaint-fabric-1.20.1-2.0.0.jar",
+      "mod_id": "xercapaint",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "fabric-api": "*",
+        "minecraft": "1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "yet_another_config_lib_v3-3.6.6+1.20.1-fabric.jar",
+      "mod_id": "yet_another_config_lib_v3",
+      "depends": {
+        "fabricloader": ">=0.15.0",
+        "minecraft": "1.20.1",
+        "java": ">=17",
+        "fabric-api": ">=0.92.0+1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "yet_another_config_lib_v3-3.6.6+1.20.1-fabric.jar!META-INF/jars/common-image-3.12.0.jar",
+      "mod_id": "com_twelvemonkeys_common_common-image",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "yet_another_config_lib_v3-3.6.6+1.20.1-fabric.jar!META-INF/jars/common-io-3.12.0.jar",
+      "mod_id": "com_twelvemonkeys_common_common-io",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "yet_another_config_lib_v3-3.6.6+1.20.1-fabric.jar!META-INF/jars/common-lang-3.12.0.jar",
+      "mod_id": "com_twelvemonkeys_common_common-lang",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "yet_another_config_lib_v3-3.6.6+1.20.1-fabric.jar!META-INF/jars/gson-0.2.1.jar",
+      "mod_id": "org_quiltmc_parsers_gson",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "yet_another_config_lib_v3-3.6.6+1.20.1-fabric.jar!META-INF/jars/imageio-core-3.12.0.jar",
+      "mod_id": "com_twelvemonkeys_imageio_imageio-core",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "yet_another_config_lib_v3-3.6.6+1.20.1-fabric.jar!META-INF/jars/imageio-metadata-3.12.0.jar",
+      "mod_id": "com_twelvemonkeys_imageio_imageio-metadata",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "yet_another_config_lib_v3-3.6.6+1.20.1-fabric.jar!META-INF/jars/imageio-webp-3.12.0.jar",
+      "mod_id": "com_twelvemonkeys_imageio_imageio-webp",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "yet_another_config_lib_v3-3.6.6+1.20.1-fabric.jar!META-INF/jars/json-0.2.1.jar",
+      "mod_id": "org_quiltmc_parsers_json",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "yet_another_config_lib_v3-3.6.6+1.20.1-fabric.jar!META-INF/jars/mixinextras-fabric-0.4.1.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "youre-in-grave-danger-fabric-2.0.16.jar",
+      "mod_id": "yigd",
+      "depends": {
+        "fabricloader": ">=0.15.0",
+        "fabric-api": "*",
+        "minecraft": ">=1.20",
+        "java": ">=17",
+        "cloth-config": "^11.0.0"
+      },
+      "legacy_api_classes": [
+        {
+          "class": "com/b1n_ry/yigd/compat/OriginsCompat$OriginsCompatComponent.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/component/PowerHolderComponent",
+            "io/github/apace100/apoli/power/Active",
+            "io/github/apace100/apoli/power/Active$Key",
+            "io/github/apace100/apoli/power/InventoryPower"
+          ]
+        },
+        {
+          "class": "com/b1n_ry/yigd/compat/OriginsCompat.class",
+          "legacy_references": [
+            "io/github/apace100/apoli/component/PowerHolderComponent",
+            "io/github/apace100/apoli/power/InventoryPower",
+            "io/github/apace100/apoli/power/KeepInventoryPower"
+          ]
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "archive": "youre-in-grave-danger-fabric-2.0.16.jar!META-INF/jars/LibGui-8.1.1+1.20.1.jar",
+      "mod_id": "libgui",
+      "depends": {
+        "java": ">=17",
+        "fabricloader": ">=0.14.21",
+        "fabric-api-base": ">=0.4.4",
+        "fabric-lifecycle-events-v1": "^2.0.2",
+        "fabric-networking-api-v1": "^1.0.21",
+        "fabric-rendering-v1": "^3.0.6",
+        "minecraft": "=1.20.1",
+        "jankson": "^6.0.0",
+        "libninepatch": "^1.2.0"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "youre-in-grave-danger-fabric-2.0.16.jar!META-INF/jars/LibGui-8.1.1+1.20.1.jar!META-INF/jars/Jankson-Fabric-6.0.0+j1.2.3.jar",
+      "mod_id": "jankson",
+      "depends": {
+        "minecraft": ">=1.20.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "youre-in-grave-danger-fabric-2.0.16.jar!META-INF/jars/LibGui-8.1.1+1.20.1.jar!META-INF/jars/Jankson-Fabric-6.0.0+j1.2.3.jar!META-INF/jars/jankson-1.2.3.jar",
+      "mod_id": "blue_endless_jankson",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "youre-in-grave-danger-fabric-2.0.16.jar!META-INF/jars/LibGui-8.1.1+1.20.1.jar!META-INF/jars/libninepatch-1.2.0.jar",
+      "mod_id": "libninepatch",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "youre-in-grave-danger-fabric-2.0.16.jar!META-INF/jars/fabric-permissions-api-0.2-SNAPSHOT.jar",
+      "mod_id": "fabric-permissions-api-v0",
+      "depends": {
+        "fabricloader": ">=0.9.0",
+        "fabric-api-base": "*"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "YungsApi-1.20-Fabric-4.0.6.jar",
+      "mod_id": "yungsapi",
+      "depends": {
+        "fabricloader": ">=0.15.7",
+        "fabric": ">=0.83.0",
+        "minecraft": ">=1.20"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "YungsApi-1.20-Fabric-4.0.6.jar!META-INF/jars/mixinextras-fabric-0.3.5.jar",
+      "mod_id": "mixinextras",
+      "depends": {
+        "fabricloader": ">=0.14.25"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "YungsApi-1.20-Fabric-4.0.6.jar!META-INF/jars/reflections-0.10.2.jar",
+      "mod_id": "org_reflections_reflections",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "YungsApi-1.20-Fabric-4.0.6.jar!META-INF/jars/javassist-3.29.2-GA.jar",
+      "mod_id": "org_javassist_javassist",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "YungsBetterDungeons-1.20-Fabric-4.0.4.jar",
+      "mod_id": "betterdungeons",
+      "depends": {
+        "fabricloader": ">=0.14.21",
+        "fabric": ">=0.83.0",
+        "minecraft": ">=1.20",
+        "cloth-config2": ">=11.0.99",
+        "java": ">=17",
+        "yungsapi": ">=1.20-Fabric-4.0.1"
+      },
+      "legacy_api_classes": [],
+      "scan_errors": []
+    },
+    {
+      "archive": "YungsBetterDungeons-1.20-Fabric-4.0.4.jar!META-INF/jars/reflections-0.10.2.jar",
+      "mod_id": "org_reflections_reflections",
+      "depends": {},
+      "legacy_api_classes": [],
+      "scan_errors": []
+    }
+  ]
+}

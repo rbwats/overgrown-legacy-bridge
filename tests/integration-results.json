@@ -1,0 +1,93 @@
+{
+  "environment": "Dedicated development server, Overgrown Origins 1.41.0 / Apoli 1.90.0 keybind fix v6",
+  "mods": 53,
+  "origin_fixture_mods": [
+    "Animal Origins",
+    "Magic Origins",
+    "Mythic Origins",
+    "Origins Support 2.1"
+  ],
+  "packs": [
+    "Allaykin",
+    "Buzzborne",
+    "Gelatinous",
+    "Moth",
+    "Overhaul",
+    "Warden",
+    "Moon",
+    "Allaykin override"
+  ],
+  "loaded_powers": 1723,
+  "loaded_origins": 57,
+  "reached_done": true,
+  "codec_passed": 726,
+  "codec_total": 728,
+  "behavior_passed": 28,
+  "behavior_total": 28,
+  "failed_power": [
+    "dragon_origins:test"
+  ],
+  "failed_functions": [
+    "mrt_supports:alpha2/size",
+    "gelatinous:mass/stats/check_mass",
+    "overhaul:player/respawn",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/volumes/03x02",
+    "gelatinous:mass/stats/gain_mass_recursive",
+    "mrt_supports:alpha2/compact-offline-effects",
+    "overhaul:player/init",
+    "overhaul:fusion/scale_update",
+    "gelatinous:mass/stats/lose_mass_recursive",
+    "overhaul:player/cleanup",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/02",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/01",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/04",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/03",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/06",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/05",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/08",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/07",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/09",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/11",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/10",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/13",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/12",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/15",
+    "mrt_supports:alpha2/seismic-ping/render/initialize/heights/14"
+  ],
+  "diagnostic_candidates": [
+    {
+      "power": "mythic:spear_mastery",
+      "path": "$.throw.projectile_condition",
+      "context": "ENTITY_CONDITION",
+      "type": "origins:projectile",
+      "message": "Unknown factory in this context. Install a compatible provider or port it; the bridge does not substitute a dummy."
+    },
+    {
+      "power": "dragon_origins:speedswim",
+      "path": "$.conditions[0]",
+      "context": "POWER",
+      "type": "origins:food_level",
+      "message": "Unknown factory in this context. Install a compatible provider or port it; the bridge does not substitute a dummy."
+    },
+    {
+      "power": "dragon_origins:test",
+      "path": "$.entity_action.actions[1]",
+      "context": "ENTITY_ACTION",
+      "type": "origins:invisibility",
+      "message": "Unknown factory in this context. Install a compatible provider or port it; the bridge does not substitute a dummy."
+    },
+    {
+      "power": "dragon_origins:test",
+      "path": "$.entity_action.actions[2]",
+      "context": "ENTITY_ACTION",
+      "type": "minecraft:execute_command",
+      "message": "Unknown factory in this context. Install a compatible provider or port it; the bridge does not substitute a dummy."
+    }
+  ],
+  "notes": [
+    "Pehkui is not included in this subset; missing scale commands account for function failures.",
+    "Two of the reported paths are unused or malformed extra fields; availability diagnostics are candidates, not complete parse results.",
+    "Native arachnid recipe has result.id rather than the 1.20.1 result.item field.",
+    "No client rendering or physical key input test was performed."
+  ]
+}

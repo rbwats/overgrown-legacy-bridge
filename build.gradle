@@ -17,7 +17,9 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
     // These mod jars are local development dependencies, not redistributed here.
     modImplementation files('libs/apoli.jar')
-    modLocalRuntime files('libs/origins.jar')
+    modImplementation files('libs/origins.jar')
+    if (project.hasProperty('legacyIntegrationModsDir'))
+        modLocalRuntime fileTree(project.property('legacyIntegrationModsDir')) { include '*.jar' }
 }
 
 processResources {
@@ -33,4 +35,49 @@ tasks.withType(JavaCompile).configureEach {
 
 java {
     withSourcesJar()
+}
+loom {
+    runs {
+        compatibilityServer {
+            server()
+            name 'Legacy compatibility verification'
+            runDir (project.hasProperty('legacyIntegrationModsDir') || project.hasProperty('legacyIntegrationPacksDir') ? 'build/compatibility-integration-run' : 'build/compatibility-run')
+            vmArg "-Dovergrown_legacy_bridge.testCorpus=${projectDir}/tests/upstream-codec-corpus.json"
+            programArg 'nogui'
+        }
+    }
+}
+
+// A missing legacy factory stays an explicit expected gap, never a dummy implementation.
+tasks.register('verifyCompatibility') {
+    dependsOn 'runCompatibilityServer'
+    doLast {
+        def parser = new groovy.json.JsonSlurper()
+        def codecResults = parser.parse(file('tests/codec-results.json'))
+        def expected = ['power/attribute_modify_transfer', 'power/attribute_modify_transfer@apoli'] as Set
+        def actual = codecResults.findAll { !it.passed }.collect { it.name } as Set
+        if (actual != expected) throw new GradleException("Unexpected codec gaps: ${actual}; expected ${expected}")
+        def regressions = parser.parse(file('tests/regression-results.json'))
+        if (regressions.any { !it.passed }) throw new GradleException('Behavioral compatibility regression failed; see tests/regression-results.json')
+        println "Verified ${codecResults.count { it.passed }}/${codecResults.size()} codecs and ${regressions.size()} behavioral regressions. Known gap: attribute_modify_transfer."
+    }
+}
+
+tasks.named('runCompatibilityServer') {
+    doFirst {
+        def testRun = file(project.hasProperty('legacyIntegrationModsDir') || project.hasProperty('legacyIntegrationPacksDir') ? 'build/compatibility-integration-run' : 'build/compatibility-run')
+        testRun.mkdirs()
+        def eula = new File(testRun, 'eula.txt')
+        if (!eula.exists()) eula.text = 'eula=true\n'
+        def properties = new File(testRun, 'server.properties')
+        if (!properties.exists()) properties.text = 'server-ip=127.0.0.1\nserver-port=25579\nonline-mode=false\nlevel-name=compatibility-world\nview-distance=2\nsimulation-distance=2\nmax-tick-time=-1\n'
+        if (project.hasProperty('legacyIntegrationPacksDir')) {
+            copy {
+                from project.property('legacyIntegrationPacksDir')
+                into new File(testRun, 'compatibility-world/datapacks')
+                include '*.zip'
+            }
+        }
+        delete file('tests/codec-results.json'), file('tests/regression-results.json')
+    }
 }

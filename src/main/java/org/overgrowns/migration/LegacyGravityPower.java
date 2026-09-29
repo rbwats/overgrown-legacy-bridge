@@ -10,24 +10,25 @@ import dev.overgrown.apoli.power.PowerType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /** Applies legacy gravity modifiers to vanilla's gravity value during travel. */
 public final class LegacyGravityPower extends PowerType<LegacyGravityPower.Config> {
     public static final ResourceLocation ID = new ResourceLocation(LegacyBridge.MOD_ID, "modify_gravity");
 
-    public record Config(AttributeModifier modifier) {}
+    public record Config(Optional<AttributeModifier> modifier, Optional<List<AttributeModifier>> modifiers) {}
 
     @Override
     public MapCodec<Config> configCodec() {
         return RecordCodecBuilder.mapCodec(i -> i.group(
-            AttributeModifier.CODEC.fieldOf("modifier").forGetter(Config::modifier)
+            AttributeModifier.CODEC.optionalFieldOf("modifier").forGetter(Config::modifier),
+            AttributeModifier.LIST_OR_SINGLE.optionalFieldOf("modifiers").forGetter(Config::modifiers)
         ).apply(i, Config::new));
     }
 
     public static double modify(LivingEntity entity, double baseGravity) {
         var modifiers = new ArrayList<AttributeModifier>();
-        PowerLookup.forEach(entity, ID, Config.class, cfg -> modifiers.add(cfg.modifier()));
+        PowerLookup.forEach(entity, ID, Config.class, cfg -> modifiers.addAll(AttributeModifierHelper.flatten(cfg.modifier(), cfg.modifiers())));
         if (modifiers.isEmpty()) return baseGravity;
         PowerContainer holder = PowerContainer.of(entity);
         double gravity = AttributeModifierHelper.apply(baseGravity, modifiers, entity, holder);

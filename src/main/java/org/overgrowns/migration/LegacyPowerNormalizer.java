@@ -7,7 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import java.util.Map;
 
-/** Narrow, recursive upgrades of legacy data before Apoli expands multiple powers. */
+/** Context-aware legacy upgrades before Apoli expands multiple powers. */
 public final class LegacyPowerNormalizer {
     private LegacyPowerNormalizer() {}
 
@@ -25,20 +25,16 @@ public final class LegacyPowerNormalizer {
                 changed++;
             }
         }
+        LegacyCompatibilityReport.write(data, changed);
         LegacyBridge.LOGGER.info("Legacy power JSON normalization changed {} file(s)", changed);
     }
 
     static boolean normalize(JsonElement node) {
-        if (node.isJsonArray()) {
-            boolean changed = false;
-            for (JsonElement child : node.getAsJsonArray()) changed |= normalize(child);
-            return changed;
-        }
-        if (!node.isJsonObject()) return false;
-        JsonObject obj = node.getAsJsonObject();
-        boolean changed = false;
-        for (Map.Entry<String, JsonElement> entry : obj.entrySet()) changed |= normalize(entry.getValue());
+        return LegacySchema.normalize(node, LegacySchema.Context.POWER);
+    }
 
+    static boolean normalizeNode(JsonObject obj, LegacySchema.Context context) {
+        boolean changed = false;
         // The old Origins HUD atlases moved in Overgrown's Origins. Rewrite only
         // known built-in locations so custom resource-pack sprites remain intact.
         String sprite = string(obj, "sprite_location");
@@ -52,6 +48,13 @@ public final class LegacyPowerNormalizer {
 
         String type = string(obj, "type");
         if (type == null) return changed;
+        String path = type.substring(type.indexOf(':') + 1);
+        if (context != LegacySchema.Context.POWER && java.util.Set.of(
+            "active_self", "ignore_water", "invulnerability", "prevent_block_use", "modify_movement_speed",
+            "sprint_jumping", "launch", "fire_power", "no_shield", "edible_item", "custom_death_sound", "custom_hurt_sound").contains(path)) return changed;
+        if (path.equals("damage") && context != LegacySchema.Context.ENTITY_ACTION && context != LegacySchema.Context.BI_ENTITY_ACTION) return changed;
+        if (path.equals("entity_group") && context != LegacySchema.Context.ENTITY_CONDITION) return changed;
+        if (path.equals("attacker") && context != LegacySchema.Context.DAMAGE_CONDITION) return changed;
         switch (type) {
             case "origins:active_self", "apoli:active_self" -> {
                 JsonObject condition = obj.has("condition") && obj.get("condition").isJsonObject()
@@ -120,13 +123,13 @@ public final class LegacyPowerNormalizer {
                 }
             }
             case "origins:and", "apoli:and" -> {
-                if (obj.has("actions") && obj.get("actions").isJsonObject()) {
+                if (context.action() && obj.has("actions") && obj.get("actions").isJsonObject()) {
                     JsonArray actions = new JsonArray();
                     actions.add(obj.get("actions").deepCopy());
                     obj.add("actions", actions);
                     changed = true;
                 }
-                if (!obj.has("conditions") && !obj.has("actions")) {
+                if (context.condition() && !obj.has("conditions") && !obj.has("actions")) {
                     obj.addProperty("type", "apoli:constant");
                     obj.addProperty("value", true);
                     changed = true;

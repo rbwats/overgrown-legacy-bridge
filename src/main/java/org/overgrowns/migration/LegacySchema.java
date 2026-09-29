@@ -1,0 +1,256 @@
+package org.overgrowns.migration;
+
+import com.google.gson.*;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+
+/** Traverse only schema fields, keeping recipes, NBT, text and third-party payloads intact. */
+public final class LegacySchema {
+    public enum Context {
+        POWER, ENTITY_ACTION, BI_ENTITY_ACTION, BLOCK_ACTION, ITEM_ACTION,
+        ENTITY_CONDITION, BI_ENTITY_CONDITION, BLOCK_CONDITION, ITEM_CONDITION,
+        DAMAGE_CONDITION, FLUID_CONDITION, BIOME_CONDITION;
+        boolean action() { return name().endsWith("_ACTION"); }
+        boolean condition() { return name().endsWith("_CONDITION"); }
+        Context conditionContext() {
+            return action() ? valueOf(name().replace("_ACTION", "_CONDITION")) : this;
+        }
+    }
+    private static final JsonObject SCHEMAS = load();
+    private LegacySchema() {}
+    private static JsonObject load() {
+        try (var stream = LegacySchema.class.getResourceAsStream("/legacy-1.20.1-schemas.json")) {
+            if (stream == null) throw new IllegalStateException("Missing legacy schema inventory");
+            return JsonParser.parseReader(new InputStreamReader(stream, StandardCharsets.UTF_8)).getAsJsonObject();
+        } catch (IOException e) { throw new IllegalStateException(e); }
+    }
+    public static JsonObject schemas() { return SCHEMAS.deepCopy(); }
+    public static boolean normalize(JsonElement node, Context context) {
+        if (node == null || node.isJsonNull()) return false;
+        if (node.isJsonArray()) {
+            boolean changed = false;
+            for (JsonElement child : node.getAsJsonArray()) changed |= normalize(child, context);
+            return changed;
+        }
+        if (!node.isJsonObject()) return false;
+        JsonObject obj = node.getAsJsonObject();
+        String type = string(obj, "type");
+        boolean changed = adapt(obj, context, type);
+        changed |= LegacyPowerNormalizer.normalizeNode(obj, context);
+        type = string(obj, "type");
+        String path = type == null ? "" : type.substring(type.indexOf(':') + 1);
+        JsonObject fields = fields(context, path);
+        boolean multiple = context == Context.POWER && path.equals("multiple");
+        for (var entry : new ArrayList<>(obj.entrySet())) {
+            String key = entry.getKey();
+            JsonElement child = entry.getValue();
+            if (key.equals("hud_render") && child.isJsonObject()) {
+                JsonObject hud = child.getAsJsonObject();
+                changed |= LegacyPowerNormalizer.normalizeNode(hud, Context.ENTITY_CONDITION);
+                changed |= normalize(hud.get("condition"), Context.ENTITY_CONDITION);
+                continue;
+            }
+            if (multiple && child.isJsonObject() && child.getAsJsonObject().has("type")
+                && !Set.of("condition", "load_condition", "name", "description", "hud_render", "skill").contains(key)) {
+                changed |= normalize(child, Context.POWER);
+                continue;
+            }
+            Context nested = fieldContext(fields, key, context, path);
+            if (nested != null) changed |= normalize(child, nested);
+            else if (Set.of("modifier", "modifiers", "food_modifier", "food_modifiers", "saturation_modifier",
+                    "saturation_modifiers", "xp_modifier").contains(key)) changed |= normalizeModifiers(child);
+        }
+        return changed;
+    }
+    @FunctionalInterface public interface Visitor { void visit(Context context, JsonObject node, String path); }
+    public static void walk(JsonElement node, Context context, String location, Visitor visitor) {
+        if (node == null || node.isJsonNull()) return;
+        if (node.isJsonArray()) {
+            int index = 0; for (JsonElement child : node.getAsJsonArray()) walk(child, context, location + "[" + index++ + "]", visitor);
+            return;
+        }
+        if (!node.isJsonObject()) return;
+        JsonObject obj = node.getAsJsonObject(); String type = string(obj, "type");
+        if (type != null) visitor.visit(context, obj, location);
+        String path = type == null ? "" : type.substring(type.indexOf(':') + 1);
+        JsonObject fields = fields(context, path);
+        for (var entry : obj.entrySet()) {
+            String key = entry.getKey(); JsonElement child = entry.getValue();
+            if (key.equals("hud_render") && child.isJsonObject()) {
+                walk(child.getAsJsonObject().get("condition"), Context.ENTITY_CONDITION, location + ".hud_render.condition", visitor); continue;
+            }
+            if (context == Context.POWER && path.equals("multiple") && child.isJsonObject() && child.getAsJsonObject().has("type")
+                    && !Set.of("condition", "load_condition", "name", "description", "hud_render", "skill").contains(key)) {
+                walk(child, Context.POWER, location + "." + key, visitor); continue;
+            }
+            Context next = fieldContext(fields, key, context, path);
+            if (next != null) walk(child, next, location + "." + key, visitor);
+        }
+    }
+    private static Context fieldContext(JsonObject fields, String key, Context context, String path) {
+        if (fields != null && fields.has(key)) {
+            String javaType = string(fields.getAsJsonObject(key), "java_type");
+            if (javaType != null) {
+                // BIENTITY contains ENTITY: choose the more specific context before substring matching.
+                if (javaType.contains("BIENTITY_ACTION")) return Context.BI_ENTITY_ACTION;
+                if (javaType.contains("BIENTITY_CONDITION")) return Context.BI_ENTITY_CONDITION;
+                for (Context candidate : Context.values()) {
+                    if (candidate == Context.POWER) continue;
+                    String token = candidate.name().replace("BI_ENTITY", "BIENTITY");
+                    if (javaType.contains(token)) return candidate;
+                }
+            }
+        }
+        if (key.equals("load_condition")) return null;
+        if (key.equals("condition")) {
+            if (context == Context.POWER) return Context.ENTITY_CONDITION;
+            if (context == Context.ENTITY_CONDITION && path.equals("biome")) return Context.BIOME_CONDITION;
+            if (context == Context.BI_ENTITY_CONDITION && Set.of("actor_condition", "target_condition", "either", "both").contains(path))
+                return Context.ENTITY_CONDITION;
+            return context.conditionContext();
+        }
+        if (key.equals("conditions")) return context == Context.POWER ? Context.ENTITY_CONDITION : context.condition() ? context : context.conditionContext();
+        if (Set.of("action", "element", "if_action", "else_action", "fail_action", "success_action", "actions").contains(key)) {
+            if (context == Context.BI_ENTITY_ACTION && Set.of("actor_action", "target_action").contains(path)) return Context.ENTITY_ACTION;
+            if (context == Context.ENTITY_ACTION && path.equals("equipped_item_action")) return Context.ITEM_ACTION;
+            return context.action() ? context : null;
+        }
+        if (key.contains("bientity_action")) return Context.BI_ENTITY_ACTION;
+        if (key.contains("bientity_condition")) return Context.BI_ENTITY_CONDITION;
+        if (key.contains("block_action")) return Context.BLOCK_ACTION;
+        if (key.contains("block_condition")) return Context.BLOCK_CONDITION;
+        if (key.contains("item_action")) return Context.ITEM_ACTION;
+        if (key.contains("item_condition")) return Context.ITEM_CONDITION;
+        if (key.equals("fluid_condition")) return Context.FLUID_CONDITION;
+        if (key.equals("damage_condition")) return Context.DAMAGE_CONDITION;
+        if (key.endsWith("_action") || key.startsWith("entity_action_")) return Context.ENTITY_ACTION;
+        if (key.endsWith("_condition")) return Context.ENTITY_CONDITION;
+        return null;
+    }
+    private static JsonObject fields(Context context, String path) {
+        JsonObject group = SCHEMAS.getAsJsonObject(context.name());
+        return group != null && group.has(path) ? group.getAsJsonObject(path).getAsJsonObject("fields") : null;
+    }
+    private static boolean adapt(JsonObject obj, Context ctx, String type) {
+        if (type == null || !(type.startsWith("origins:") || type.startsWith("apoli:"))) return false;
+        String path = type.substring(type.indexOf(':') + 1);
+        JsonObject before = obj.deepCopy();
+        if (ctx == Context.ENTITY_CONDITION && path.equals("power_type") && obj.has("power_type")) {
+            obj.addProperty("type", "apoli:power");
+            obj.add("power", obj.remove("power_type"));
+        }
+        if (ctx == Context.BIOME_CONDITION && path.equals("category") && obj.has("category")) {
+            obj.addProperty("type", "apoli:in_tag");
+            obj.addProperty("tag", "apoli:category/" + obj.remove("category").getAsString());
+        }
+        if (ctx == Context.BLOCK_CONDITION && path.equals("material")) {
+            JsonArray conditions = new JsonArray();
+            if (obj.has("material")) conditions.add(materialCondition(obj.remove("material").getAsString()));
+            if (obj.has("materials") && obj.get("materials").isJsonArray()) {
+                for (JsonElement material : obj.getAsJsonArray("materials")) conditions.add(materialCondition(material.getAsString()));
+                obj.remove("materials");
+            }
+            obj.addProperty("type", "apoli:or"); obj.add("conditions", conditions);
+        }
+        if (ctx == Context.ITEM_CONDITION && path.equals("enchantment")) {
+            if (!obj.has("comparison")) obj.addProperty("comparison", ">");
+            if (!obj.has("compare_to")) obj.addProperty("compare_to", 0);
+        }
+        if (ctx == Context.ENTITY_ACTION && path.equals("apply_effect")) {
+            JsonArray effects = new JsonArray();
+            if (obj.has("effect")) append(effects, obj.remove("effect"));
+            if (obj.has("effects")) append(effects, obj.remove("effects"));
+            obj.add("effect", effects);
+        }
+        if ((ctx == Context.ENTITY_ACTION || ctx == Context.BI_ENTITY_ACTION) && path.equals("damage") && obj.has("source"))
+            obj.addProperty("type", "overgrown_legacy_bridge:damage");
+        if (ctx == Context.POWER) {
+            if (path.equals("damage_over_time")) obj.addProperty("type", "overgrown_legacy_bridge:damage_over_time");
+            translate(obj, "name"); translate(obj, "description");
+            if (path.equals("toggle_night_vision")) obj.addProperty("type", "overgrown_legacy_bridge:toggle_night_vision");
+            if (path.equals("action_on_land") && !obj.has("entity_action")) {
+                JsonObject noAction = new JsonObject(); noAction.addProperty("type", "apoli:nothing"); obj.add("entity_action", noAction);
+            }
+            if (path.equals("modify_camera_submersion") && !obj.has("from")) obj.addProperty("type", "overgrown_legacy_bridge:modify_camera_submersion");
+            if (path.equals("prevent_sleep") && obj.has("message") && obj.get("message").isJsonPrimitive()) {
+                JsonObject text = new JsonObject(); text.add("translate", obj.get("message")); obj.add("message", text);
+            }
+            if (path.equals("particle") && !obj.has("offset_y")) obj.addProperty("offset_y", 1.0);
+            // Legacy keys are translation names; map the two built-in controls, preserving addon bindings.
+            if (obj.has("key")) normalizeKey(obj, "key");
+        }
+        if (ctx.action() && path.equals("side")) obj.addProperty("type", "overgrown_legacy_bridge:side");
+        if (ctx == Context.ENTITY_ACTION && path.equals("modify_resource")) mergeModifiers(obj, "modifier", "modifiers");
+        if (ctx == Context.POWER && path.equals("modify_movement_speed")) {
+            addAttribute(obj.get("modifier"), "minecraft:generic.movement_speed");
+            addAttribute(obj.get("modifiers"), "minecraft:generic.movement_speed");
+            obj.addProperty("type", "apoli:attribute");
+        }
+        return !before.equals(obj);
+    }
+    private static JsonObject materialCondition(String material) {
+        JsonObject out = new JsonObject(); out.addProperty("type", "apoli:in_tag"); out.addProperty("tag", "apoli:material/" + material); return out;
+    }
+    private static void append(JsonArray into, JsonElement values) {
+        if (values.isJsonArray()) for (JsonElement value : values.getAsJsonArray()) into.add(value);
+        else if (!values.isJsonNull()) into.add(values);
+    }
+    public static void translate(JsonObject obj, String key) {
+        String value = string(obj, key);
+        if (value == null) return;
+        if (value.isEmpty()) { obj.remove(key); return; }
+        JsonObject component = new JsonObject(); component.addProperty("translate", value); obj.add(key, component);
+    }
+    static void normalizeKey(JsonObject obj, String field) {
+        JsonElement value = obj.get(field);
+        if (value.isJsonObject()) {
+            JsonObject key = value.getAsJsonObject();
+            rename(key, "continous", "continuous");
+            if (key.has("key")) normalizeKey(key, "key");
+        } else if (value.isJsonPrimitive() && value.getAsJsonPrimitive().isString()) {
+            String name = value.getAsString();
+            if (Set.of("origins.primary_active", "key.origins.primary_active").contains(name)) obj.addProperty(field, "key.apoli.primary_active");
+            if (Set.of("origins.secondary_active", "key.origins.secondary_active").contains(name)) obj.addProperty(field, "key.apoli.secondary_active");
+        }
+    }
+    static boolean normalizeModifiers(JsonElement node) {
+        if (node == null) return false;
+        if (node.isJsonArray()) {
+            boolean changed = false;
+            for (JsonElement mod : node.getAsJsonArray()) changed |= normalizeModifiers(mod);
+            return changed;
+        }
+        if (!node.isJsonObject()) return false;
+        JsonObject mod = node.getAsJsonObject();
+        boolean changed = false;
+        String operation = string(mod, "operation");
+        if (operation != null && (operation.startsWith("minecraft:") || operation.startsWith("origins:"))) {
+            mod.addProperty("operation", operation.substring(operation.indexOf(':') + 1)); changed = true;
+        }
+        JsonElement nested = mod.get("modifier");
+        if (nested != null && nested.isJsonArray() && nested.getAsJsonArray().size() == 1) {
+            mod.add("modifier", nested.getAsJsonArray().get(0)); changed = true;
+        }
+        return normalizeModifiers(mod.get("modifier")) | changed;
+    }
+    private static void addAttribute(JsonElement node, String attribute) {
+        if (node == null) return;
+        if (node.isJsonArray()) for (JsonElement mod : node.getAsJsonArray()) addAttribute(mod, attribute);
+        else if (node.isJsonObject()) node.getAsJsonObject().addProperty("attribute", attribute);
+    }
+    static void mergeModifiers(JsonObject obj, String single, String plural) {
+        if (obj.has("position") || obj.has("from")) return;
+        // A single modifier is representable by Overgrown's action codec. Lists need a dedicated action.
+        obj.addProperty("type", "overgrown_legacy_bridge:modify_resource");
+    }
+    static void rename(JsonObject obj, String old, String current) {
+        if (!obj.has(old)) return;
+        JsonElement value = obj.remove(old);
+        if (!obj.has(current)) obj.add(current, value);
+    }
+    static String string(JsonObject obj, String field) {
+        JsonElement value = obj.get(field);
+        return value != null && value.isJsonPrimitive() && value.getAsJsonPrimitive().isString() ? value.getAsString() : null;
+    }
+}

@@ -1,0 +1,6084 @@
+[
+  {
+    "name": "biome_condition/and",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "origins:and",
+      "conditions": []
+    }
+  },
+  {
+    "name": "biome_condition/category",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "origins:category",
+      "category": "forest"
+    }
+  },
+  {
+    "name": "biome_condition/constant",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "origins:constant",
+      "value": true
+    }
+  },
+  {
+    "name": "biome_condition/high_humidity",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "origins:high_humidity"
+    }
+  },
+  {
+    "name": "biome_condition/in_tag",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_forest"
+    }
+  },
+  {
+    "name": "biome_condition/or",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "origins:or",
+      "conditions": []
+    }
+  },
+  {
+    "name": "biome_condition/precipitation",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "origins:precipitation",
+      "precipitation": "rain"
+    }
+  },
+  {
+    "name": "biome_condition/temperature",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "origins:temperature",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "bi_entity_action/actor_action",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:actor_action",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "bi_entity_action/add_velocity",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:add_velocity"
+    }
+  },
+  {
+    "name": "bi_entity_action/and",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:and",
+      "actions": []
+    }
+  },
+  {
+    "name": "bi_entity_action/chance",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:chance",
+      "chance": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "bi_entity_action/choice",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:choice",
+      "actions": [
+        {
+          "weight": 1,
+          "element": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "bi_entity_action/damage",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:damage",
+      "amount": 1
+    }
+  },
+  {
+    "name": "bi_entity_action/delay",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:delay",
+      "ticks": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "bi_entity_action/if_else",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "if_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "bi_entity_action/if_else_list",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:constant",
+            "value": true
+          },
+          "action": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "bi_entity_action/invert",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:invert",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "bi_entity_action/mount",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:mount"
+    }
+  },
+  {
+    "name": "bi_entity_action/nothing",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:nothing"
+    }
+  },
+  {
+    "name": "bi_entity_action/set_in_love",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:set_in_love"
+    }
+  },
+  {
+    "name": "bi_entity_action/side",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:side",
+      "side": "server",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "bi_entity_action/tame",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:tame"
+    }
+  },
+  {
+    "name": "bi_entity_action/target_action",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "bi_entity_condition/actor_condition",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "bi_entity_condition/and",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:and",
+      "conditions": []
+    }
+  },
+  {
+    "name": "bi_entity_condition/attack_target",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:attack_target"
+    }
+  },
+  {
+    "name": "bi_entity_condition/attacker",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:attacker"
+    }
+  },
+  {
+    "name": "bi_entity_condition/both",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:both",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "bi_entity_condition/can_see",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:can_see"
+    }
+  },
+  {
+    "name": "bi_entity_condition/constant",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:constant",
+      "value": true
+    }
+  },
+  {
+    "name": "bi_entity_condition/distance",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:distance",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "bi_entity_condition/either",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:either",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "bi_entity_condition/invert",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:invert",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "bi_entity_condition/or",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:or",
+      "conditions": []
+    }
+  },
+  {
+    "name": "bi_entity_condition/owner",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:owner"
+    }
+  },
+  {
+    "name": "bi_entity_condition/relative_rotation",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:relative_rotation",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "bi_entity_condition/riding",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:riding"
+    }
+  },
+  {
+    "name": "bi_entity_condition/riding_recursive",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:riding_recursive"
+    }
+  },
+  {
+    "name": "bi_entity_condition/riding_root",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:riding_root"
+    }
+  },
+  {
+    "name": "bi_entity_condition/target_condition",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "bi_entity_condition/undirected",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:undirected",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "block_action/add_block",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:add_block",
+      "block": "minecraft:stone"
+    }
+  },
+  {
+    "name": "block_action/and",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:and",
+      "actions": []
+    }
+  },
+  {
+    "name": "block_action/area_of_effect",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:area_of_effect",
+      "block_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "block_action/bonemeal",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:bonemeal"
+    }
+  },
+  {
+    "name": "block_action/chance",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:chance",
+      "chance": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "block_action/choice",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:choice",
+      "actions": [
+        {
+          "weight": 1,
+          "element": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "block_action/delay",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:delay",
+      "ticks": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "block_action/execute_command",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:execute_command",
+      "command": "say bridge-test"
+    }
+  },
+  {
+    "name": "block_action/explode",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:explode",
+      "power": 2.0
+    }
+  },
+  {
+    "name": "block_action/if_else",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "if_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "block_action/if_else_list",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:constant",
+            "value": true
+          },
+          "action": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "block_action/modify_block_state",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:modify_block_state",
+      "property": "age"
+    }
+  },
+  {
+    "name": "block_action/nothing",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:nothing"
+    }
+  },
+  {
+    "name": "block_action/offset",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:offset",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "block_action/set_block",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:set_block",
+      "block": "minecraft:stone"
+    }
+  },
+  {
+    "name": "block_action/side",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:side",
+      "side": "server",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "block_condition/adjacent",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:adjacent",
+      "comparison": ">=",
+      "compare_to": 1,
+      "adjacent_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "block_condition/and",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:and",
+      "conditions": []
+    }
+  },
+  {
+    "name": "block_condition/attachable",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:attachable"
+    }
+  },
+  {
+    "name": "block_condition/blast_resistance",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:blast_resistance",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "block_condition/block",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:block",
+      "block": "minecraft:stone"
+    }
+  },
+  {
+    "name": "block_condition/block_entity",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:block_entity"
+    }
+  },
+  {
+    "name": "block_condition/block_state",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:block_state",
+      "property": "age"
+    }
+  },
+  {
+    "name": "block_condition/constant",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:constant",
+      "value": true
+    }
+  },
+  {
+    "name": "block_condition/exposed_to_sky",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:exposed_to_sky"
+    }
+  },
+  {
+    "name": "block_condition/fluid",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:fluid",
+      "fluid_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "block_condition/hardness",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:hardness",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "block_condition/height",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:height",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "block_condition/in_tag",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_forest"
+    }
+  },
+  {
+    "name": "block_condition/light_blocking",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:light_blocking"
+    }
+  },
+  {
+    "name": "block_condition/light_level",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:light_level",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "block_condition/material",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:material"
+    }
+  },
+  {
+    "name": "block_condition/movement_blocking",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:movement_blocking"
+    }
+  },
+  {
+    "name": "block_condition/nbt",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:nbt",
+      "nbt": "{}"
+    }
+  },
+  {
+    "name": "block_condition/offset",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:offset",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "block_condition/or",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:or",
+      "conditions": []
+    }
+  },
+  {
+    "name": "block_condition/replacable",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:replacable"
+    }
+  },
+  {
+    "name": "block_condition/slipperiness",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:slipperiness",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "block_condition/water_loggable",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:water_loggable"
+    }
+  },
+  {
+    "name": "damage_condition/amount",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:amount",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "damage_condition/and",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:and",
+      "conditions": []
+    }
+  },
+  {
+    "name": "damage_condition/attacker",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:attacker"
+    }
+  },
+  {
+    "name": "damage_condition/bypasses_armor",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:bypasses_armor"
+    }
+  },
+  {
+    "name": "damage_condition/constant",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:constant",
+      "value": true
+    }
+  },
+  {
+    "name": "damage_condition/explosive",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:explosive"
+    }
+  },
+  {
+    "name": "damage_condition/fire",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:fire"
+    }
+  },
+  {
+    "name": "damage_condition/from_falling",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:from_falling"
+    }
+  },
+  {
+    "name": "damage_condition/in_tag",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_forest"
+    }
+  },
+  {
+    "name": "damage_condition/name",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:name",
+      "name": "generic"
+    }
+  },
+  {
+    "name": "damage_condition/or",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:or",
+      "conditions": []
+    }
+  },
+  {
+    "name": "damage_condition/out_of_world",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:out_of_world"
+    }
+  },
+  {
+    "name": "damage_condition/projectile",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:projectile"
+    }
+  },
+  {
+    "name": "damage_condition/unblockable",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:unblockable"
+    }
+  },
+  {
+    "name": "entity_action/add_velocity",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:add_velocity"
+    }
+  },
+  {
+    "name": "entity_action/add_xp",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:add_xp"
+    }
+  },
+  {
+    "name": "entity_action/and",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:and",
+      "actions": []
+    }
+  },
+  {
+    "name": "entity_action/apply_effect",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:apply_effect"
+    }
+  },
+  {
+    "name": "entity_action/area_of_effect",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:area_of_effect",
+      "bientity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/block_action_at",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:block_action_at",
+      "block_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/chance",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:chance",
+      "chance": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/change_resource",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:change_resource",
+      "resource": "bridge_test:resource",
+      "change": 1
+    }
+  },
+  {
+    "name": "entity_action/choice",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:choice",
+      "actions": [
+        {
+          "weight": 1,
+          "element": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "entity_action/clear_effect",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:clear_effect"
+    }
+  },
+  {
+    "name": "entity_action/crafting_table",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:crafting_table"
+    }
+  },
+  {
+    "name": "entity_action/damage",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:damage",
+      "amount": 1
+    }
+  },
+  {
+    "name": "entity_action/delay",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:delay",
+      "ticks": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/dismount",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:dismount"
+    }
+  },
+  {
+    "name": "entity_action/drop_inventory",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:drop_inventory"
+    }
+  },
+  {
+    "name": "entity_action/emit_game_event",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:emit_game_event",
+      "event": "minecraft:step"
+    }
+  },
+  {
+    "name": "entity_action/ender_chest",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:ender_chest"
+    }
+  },
+  {
+    "name": "entity_action/equipped_item_action",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:equipped_item_action",
+      "equipment_slot": "mainhand",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/execute_command",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:execute_command",
+      "command": "say bridge-test"
+    }
+  },
+  {
+    "name": "entity_action/exhaust",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:exhaust",
+      "amount": 1
+    }
+  },
+  {
+    "name": "entity_action/explode",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:explode",
+      "power": 2.0
+    }
+  },
+  {
+    "name": "entity_action/extinguish",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:extinguish"
+    }
+  },
+  {
+    "name": "entity_action/feed",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:feed",
+      "food": 1,
+      "saturation": 1
+    }
+  },
+  {
+    "name": "entity_action/fire_projectile",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:fire_projectile",
+      "entity_type": "minecraft:snowball"
+    }
+  },
+  {
+    "name": "entity_action/gain_air",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:gain_air",
+      "value": 1
+    }
+  },
+  {
+    "name": "entity_action/give",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:give",
+      "stack": {
+        "item": "minecraft:stone"
+      }
+    }
+  },
+  {
+    "name": "entity_action/grant_advancement",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:grant_advancement",
+      "advancement": "minecraft:stone"
+    }
+  },
+  {
+    "name": "entity_action/grant_power",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:grant_power",
+      "power": "bridge_test:resource",
+      "source": "bridge_test:source"
+    }
+  },
+  {
+    "name": "entity_action/heal",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:heal",
+      "amount": 1
+    }
+  },
+  {
+    "name": "entity_action/if_else",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "if_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/if_else_list",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:constant",
+            "value": true
+          },
+          "action": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "entity_action/modify_death_ticks",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:modify_death_ticks",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      }
+    }
+  },
+  {
+    "name": "entity_action/modify_inventory",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:modify_inventory",
+      "item_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/modify_resource",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:modify_resource",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "resource": "bridge_test:resource"
+    }
+  },
+  {
+    "name": "entity_action/modify_stat",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:modify_stat",
+      "stat": "minecraft:stone",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      }
+    }
+  },
+  {
+    "name": "entity_action/nothing",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:nothing"
+    }
+  },
+  {
+    "name": "entity_action/passenger_action",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:passenger_action"
+    }
+  },
+  {
+    "name": "entity_action/play_sound",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:entity.player.levelup"
+    }
+  },
+  {
+    "name": "entity_action/raycast",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:raycast",
+      "distance": 1
+    }
+  },
+  {
+    "name": "entity_action/replace_inventory",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:replace_inventory",
+      "stack": {
+        "item": "minecraft:stone"
+      }
+    }
+  },
+  {
+    "name": "entity_action/revoke_advancement",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:revoke_advancement",
+      "advancement": "minecraft:stone"
+    }
+  },
+  {
+    "name": "entity_action/revoke_power",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:revoke_power",
+      "power": "bridge_test:resource",
+      "source": "bridge_test:source"
+    }
+  },
+  {
+    "name": "entity_action/riding_action",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:riding_action"
+    }
+  },
+  {
+    "name": "entity_action/selector_action",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:selector_action",
+      "selector": "minecraft:stone",
+      "bientity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/set_fall_distance",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:set_fall_distance",
+      "fall_distance": 1
+    }
+  },
+  {
+    "name": "entity_action/set_on_fire",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:set_on_fire",
+      "duration": 1
+    }
+  },
+  {
+    "name": "entity_action/set_resource",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:set_resource",
+      "resource": "bridge_test:resource",
+      "value": 1
+    }
+  },
+  {
+    "name": "entity_action/side",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:side",
+      "side": "server",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/spawn_effect_cloud",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:spawn_effect_cloud"
+    }
+  },
+  {
+    "name": "entity_action/spawn_entity",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:spawn_entity",
+      "entity_type": "minecraft:snowball"
+    }
+  },
+  {
+    "name": "entity_action/spawn_particles",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:spawn_particles",
+      "particle": "minecraft:cloud",
+      "count": 1
+    }
+  },
+  {
+    "name": "entity_action/swing_hand",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:swing_hand"
+    }
+  },
+  {
+    "name": "entity_action/toggle",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:toggle",
+      "power": "bridge_test:resource"
+    }
+  },
+  {
+    "name": "entity_action/trigger_cooldown",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:trigger_cooldown",
+      "power": "bridge_test:resource"
+    }
+  },
+  {
+    "name": "entity_condition/ability",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:ability",
+      "ability": "minecraft:allow_flying"
+    }
+  },
+  {
+    "name": "entity_condition/advancement",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:advancement",
+      "advancement": "minecraft:stone"
+    }
+  },
+  {
+    "name": "entity_condition/air",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:air",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/and",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:and",
+      "conditions": []
+    }
+  },
+  {
+    "name": "entity_condition/attribute",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:attribute",
+      "attribute": "minecraft:generic.movement_speed",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/biome",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:biome"
+    }
+  },
+  {
+    "name": "entity_condition/block_collision",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:block_collision"
+    }
+  },
+  {
+    "name": "entity_condition/block_in_radius",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:block_in_radius",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "radius": 1
+    }
+  },
+  {
+    "name": "entity_condition/brightness",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:brightness",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/climbing",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:climbing"
+    }
+  },
+  {
+    "name": "entity_condition/collided_horizontally",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:collided_horizontally"
+    }
+  },
+  {
+    "name": "entity_condition/command",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:command",
+      "command": "say bridge-test",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/constant",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:constant",
+      "value": true
+    }
+  },
+  {
+    "name": "entity_condition/creative_flying",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:creative_flying"
+    }
+  },
+  {
+    "name": "entity_condition/daytime",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:daytime"
+    }
+  },
+  {
+    "name": "entity_condition/dimension",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:overworld"
+    }
+  },
+  {
+    "name": "entity_condition/elytra_flight_possible",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:elytra_flight_possible"
+    }
+  },
+  {
+    "name": "entity_condition/enchantment",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:enchantment",
+      "enchantment": "minecraft:protection",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/entity_group",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:entity_group",
+      "group": "default"
+    }
+  },
+  {
+    "name": "entity_condition/entity_type",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:entity_type",
+      "entity_type": "minecraft:snowball"
+    }
+  },
+  {
+    "name": "entity_condition/equipped_item",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "entity_condition/exists",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:exists"
+    }
+  },
+  {
+    "name": "entity_condition/exposed_to_sky",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:exposed_to_sky"
+    }
+  },
+  {
+    "name": "entity_condition/exposed_to_sun",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:exposed_to_sun"
+    }
+  },
+  {
+    "name": "entity_condition/fall_distance",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:fall_distance",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/fall_flying",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:fall_flying"
+    }
+  },
+  {
+    "name": "entity_condition/fluid_height",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:fluid_height",
+      "fluid": "minecraft:water",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/food_level",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:food_level",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/gamemode",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:gamemode",
+      "gamemode": "survival"
+    }
+  },
+  {
+    "name": "entity_condition/glowing",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:glowing"
+    }
+  },
+  {
+    "name": "entity_condition/health",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:health",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/in_block",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:in_block",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "entity_condition/in_block_anywhere",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:in_block_anywhere",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "entity_condition/in_rain",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:in_rain"
+    }
+  },
+  {
+    "name": "entity_condition/in_tag",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_forest"
+    }
+  },
+  {
+    "name": "entity_condition/inventory",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:inventory"
+    }
+  },
+  {
+    "name": "entity_condition/invisible",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:invisible"
+    }
+  },
+  {
+    "name": "entity_condition/living",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:living"
+    }
+  },
+  {
+    "name": "entity_condition/moving",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:moving"
+    }
+  },
+  {
+    "name": "entity_condition/nbt",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:nbt",
+      "nbt": "{}"
+    }
+  },
+  {
+    "name": "entity_condition/on_block",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:on_block"
+    }
+  },
+  {
+    "name": "entity_condition/on_fire",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:on_fire"
+    }
+  },
+  {
+    "name": "entity_condition/or",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:or",
+      "conditions": []
+    }
+  },
+  {
+    "name": "entity_condition/passenger",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:passenger"
+    }
+  },
+  {
+    "name": "entity_condition/passenger_recursive",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:passenger_recursive"
+    }
+  },
+  {
+    "name": "entity_condition/power",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:power",
+      "power": "bridge_test:resource"
+    }
+  },
+  {
+    "name": "entity_condition/power_active",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:power_active",
+      "power": "bridge_test:resource"
+    }
+  },
+  {
+    "name": "entity_condition/power_type",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:power_type",
+      "power_type": "bridge_test:resource"
+    }
+  },
+  {
+    "name": "entity_condition/predicate",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:predicate",
+      "predicate": "bridge_test:predicate"
+    }
+  },
+  {
+    "name": "entity_condition/raycast",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:raycast",
+      "distance": 1
+    }
+  },
+  {
+    "name": "entity_condition/relative_health",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:relative_health",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/resource",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:resource",
+      "resource": "bridge_test:resource",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/riding",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:riding"
+    }
+  },
+  {
+    "name": "entity_condition/riding_recursive",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:riding_recursive"
+    }
+  },
+  {
+    "name": "entity_condition/riding_root",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:riding_root"
+    }
+  },
+  {
+    "name": "entity_condition/saturation_level",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:saturation_level",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/scoreboard",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:scoreboard",
+      "objective": "minecraft:stone",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/sneaking",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:sneaking"
+    }
+  },
+  {
+    "name": "entity_condition/sprinting",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:sprinting"
+    }
+  },
+  {
+    "name": "entity_condition/status_effect",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:status_effect",
+      "effect": "minecraft:stone"
+    }
+  },
+  {
+    "name": "entity_condition/submerged_in",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:submerged_in",
+      "fluid": "minecraft:water"
+    }
+  },
+  {
+    "name": "entity_condition/swimming",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:swimming"
+    }
+  },
+  {
+    "name": "entity_condition/tamed",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:tamed"
+    }
+  },
+  {
+    "name": "entity_condition/time_of_day",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:time_of_day",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/using_effective_tool",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:using_effective_tool"
+    }
+  },
+  {
+    "name": "entity_condition/using_item",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:using_item"
+    }
+  },
+  {
+    "name": "entity_condition/xp_levels",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:xp_levels",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/xp_points",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:xp_points",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "fluid_condition/and",
+    "context": "FLUID_CONDITION",
+    "data": {
+      "type": "origins:and",
+      "conditions": []
+    }
+  },
+  {
+    "name": "fluid_condition/constant",
+    "context": "FLUID_CONDITION",
+    "data": {
+      "type": "origins:constant",
+      "value": true
+    }
+  },
+  {
+    "name": "fluid_condition/empty",
+    "context": "FLUID_CONDITION",
+    "data": {
+      "type": "origins:empty"
+    }
+  },
+  {
+    "name": "fluid_condition/fluid",
+    "context": "FLUID_CONDITION",
+    "data": {
+      "type": "origins:fluid",
+      "fluid": "minecraft:water"
+    }
+  },
+  {
+    "name": "fluid_condition/in_tag",
+    "context": "FLUID_CONDITION",
+    "data": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:water"
+    }
+  },
+  {
+    "name": "fluid_condition/or",
+    "context": "FLUID_CONDITION",
+    "data": {
+      "type": "origins:or",
+      "conditions": []
+    }
+  },
+  {
+    "name": "fluid_condition/still",
+    "context": "FLUID_CONDITION",
+    "data": {
+      "type": "origins:still"
+    }
+  },
+  {
+    "name": "item_action/and",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:and",
+      "actions": []
+    }
+  },
+  {
+    "name": "item_action/chance",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:chance",
+      "chance": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "item_action/choice",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:choice",
+      "actions": [
+        {
+          "weight": 1,
+          "element": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "item_action/consume",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:consume"
+    }
+  },
+  {
+    "name": "item_action/damage",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:damage"
+    }
+  },
+  {
+    "name": "item_action/delay",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:delay",
+      "ticks": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "item_action/holder",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:holder",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "item_action/if_else",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "if_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "item_action/if_else_list",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:constant",
+            "value": true
+          },
+          "action": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "item_action/merge_nbt",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:merge_nbt",
+      "nbt": "{}"
+    }
+  },
+  {
+    "name": "item_action/modify",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:modify",
+      "modifier": "minecraft:empty"
+    }
+  },
+  {
+    "name": "item_action/nothing",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:nothing"
+    }
+  },
+  {
+    "name": "item_action/remove_enchantment",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:remove_enchantment"
+    }
+  },
+  {
+    "name": "item_action/side",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:side",
+      "side": "server",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "item_condition/amount",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:amount",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "item_condition/and",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:and",
+      "conditions": []
+    }
+  },
+  {
+    "name": "item_condition/armor_value",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:armor_value",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "item_condition/constant",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:constant",
+      "value": true
+    }
+  },
+  {
+    "name": "item_condition/durability",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:durability",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "item_condition/empty",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:empty"
+    }
+  },
+  {
+    "name": "item_condition/enchantable",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:enchantable"
+    }
+  },
+  {
+    "name": "item_condition/enchantment",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:enchantment"
+    }
+  },
+  {
+    "name": "item_condition/fireproof",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:fireproof"
+    }
+  },
+  {
+    "name": "item_condition/food",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:food"
+    }
+  },
+  {
+    "name": "item_condition/harvest_level",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:harvest_level",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "item_condition/has_power",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:has_power",
+      "power": "bridge_test:resource"
+    }
+  },
+  {
+    "name": "item_condition/ingredient",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:stone"
+      }
+    }
+  },
+  {
+    "name": "item_condition/is_damageable",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:is_damageable"
+    }
+  },
+  {
+    "name": "item_condition/is_equippable",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:is_equippable",
+      "equipment_slot": "mainhand"
+    }
+  },
+  {
+    "name": "item_condition/meat",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:meat"
+    }
+  },
+  {
+    "name": "item_condition/nbt",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:nbt",
+      "nbt": "{}"
+    }
+  },
+  {
+    "name": "item_condition/or",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:or",
+      "conditions": []
+    }
+  },
+  {
+    "name": "item_condition/power_count",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:power_count",
+      "compare_to": 1,
+      "comparison": ">="
+    }
+  },
+  {
+    "name": "item_condition/relative_durability",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:relative_durability",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "item_condition/smeltable",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:smeltable"
+    }
+  },
+  {
+    "name": "power/action_on_being_used",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_being_used"
+    }
+  },
+  {
+    "name": "power/action_on_block_break",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_block_break"
+    }
+  },
+  {
+    "name": "power/action_on_block_use",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_block_use"
+    }
+  },
+  {
+    "name": "power/action_on_callback",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_callback"
+    }
+  },
+  {
+    "name": "power/action_on_entity_use",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_entity_use"
+    }
+  },
+  {
+    "name": "power/action_on_hit",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_hit",
+      "bientity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "power/action_on_item_use",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_item_use"
+    }
+  },
+  {
+    "name": "power/action_on_land",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_land"
+    }
+  },
+  {
+    "name": "power/action_on_wake_up",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_wake_up"
+    }
+  },
+  {
+    "name": "power/action_over_time",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_over_time"
+    }
+  },
+  {
+    "name": "power/action_when_damage_taken",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_when_damage_taken"
+    }
+  },
+  {
+    "name": "power/action_when_hit",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_when_hit",
+      "bientity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "power/active_self",
+    "context": "POWER",
+    "data": {
+      "type": "origins:active_self",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "power/attacker_action_when_hit",
+    "context": "POWER",
+    "data": {
+      "type": "origins:attacker_action_when_hit",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "power/attribute",
+    "context": "POWER",
+    "data": {
+      "type": "origins:attribute"
+    }
+  },
+  {
+    "name": "power/attribute_modify_transfer",
+    "context": "POWER",
+    "data": {
+      "type": "origins:attribute_modify_transfer",
+      "class": "modify_jump",
+      "attribute": "minecraft:generic.movement_speed"
+    }
+  },
+  {
+    "name": "power/burn",
+    "context": "POWER",
+    "data": {
+      "type": "origins:burn",
+      "interval": 1,
+      "burn_duration": 1
+    }
+  },
+  {
+    "name": "power/climbing",
+    "context": "POWER",
+    "data": {
+      "type": "origins:climbing"
+    }
+  },
+  {
+    "name": "power/conditioned_attribute",
+    "context": "POWER",
+    "data": {
+      "type": "origins:conditioned_attribute"
+    }
+  },
+  {
+    "name": "power/conditioned_restrict_armor",
+    "context": "POWER",
+    "data": {
+      "type": "origins:conditioned_restrict_armor"
+    }
+  },
+  {
+    "name": "power/cooldown",
+    "context": "POWER",
+    "data": {
+      "type": "origins:cooldown",
+      "cooldown": 1
+    }
+  },
+  {
+    "name": "power/creative_flight",
+    "context": "POWER",
+    "data": {
+      "type": "origins:creative_flight"
+    }
+  },
+  {
+    "name": "power/damage_over_time",
+    "context": "POWER",
+    "data": {
+      "type": "origins:damage_over_time",
+      "damage": 1
+    }
+  },
+  {
+    "name": "power/disable_regen",
+    "context": "POWER",
+    "data": {
+      "type": "origins:disable_regen"
+    }
+  },
+  {
+    "name": "power/effect_immunity",
+    "context": "POWER",
+    "data": {
+      "type": "origins:effect_immunity"
+    }
+  },
+  {
+    "name": "power/elytra_flight",
+    "context": "POWER",
+    "data": {
+      "type": "origins:elytra_flight",
+      "render_elytra": true
+    }
+  },
+  {
+    "name": "power/entity_glow",
+    "context": "POWER",
+    "data": {
+      "type": "origins:entity_glow"
+    }
+  },
+  {
+    "name": "power/entity_group",
+    "context": "POWER",
+    "data": {
+      "type": "origins:entity_group",
+      "group": "default"
+    }
+  },
+  {
+    "name": "power/exhaust",
+    "context": "POWER",
+    "data": {
+      "type": "origins:exhaust",
+      "exhaustion": 1
+    }
+  },
+  {
+    "name": "power/fire_immunity",
+    "context": "POWER",
+    "data": {
+      "type": "origins:fire_immunity"
+    }
+  },
+  {
+    "name": "power/fire_projectile",
+    "context": "POWER",
+    "data": {
+      "type": "origins:fire_projectile",
+      "entity_type": "minecraft:snowball"
+    }
+  },
+  {
+    "name": "power/freeze",
+    "context": "POWER",
+    "data": {
+      "type": "origins:freeze"
+    }
+  },
+  {
+    "name": "power/grounded",
+    "context": "POWER",
+    "data": {
+      "type": "origins:grounded"
+    }
+  },
+  {
+    "name": "power/ignore_water",
+    "context": "POWER",
+    "data": {
+      "type": "origins:ignore_water"
+    }
+  },
+  {
+    "name": "power/inventory",
+    "context": "POWER",
+    "data": {
+      "type": "origins:inventory"
+    }
+  },
+  {
+    "name": "power/invisibility",
+    "context": "POWER",
+    "data": {
+      "type": "origins:invisibility"
+    }
+  },
+  {
+    "name": "power/invulnerability",
+    "context": "POWER",
+    "data": {
+      "type": "origins:invulnerability",
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "power/item_on_item",
+    "context": "POWER",
+    "data": {
+      "type": "origins:item_on_item"
+    }
+  },
+  {
+    "name": "power/keep_inventory",
+    "context": "POWER",
+    "data": {
+      "type": "origins:keep_inventory"
+    }
+  },
+  {
+    "name": "power/launch",
+    "context": "POWER",
+    "data": {
+      "type": "origins:launch",
+      "speed": 1
+    }
+  },
+  {
+    "name": "power/lava_vision",
+    "context": "POWER",
+    "data": {
+      "type": "origins:lava_vision",
+      "s": 1,
+      "v": 1
+    }
+  },
+  {
+    "name": "power/model_color",
+    "context": "POWER",
+    "data": {
+      "type": "origins:model_color"
+    }
+  },
+  {
+    "name": "power/modify_air_speed",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_air_speed"
+    }
+  },
+  {
+    "name": "power/modify_attribute",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_attribute",
+      "attribute": "minecraft:generic.movement_speed"
+    }
+  },
+  {
+    "name": "power/modify_block_render",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_block_render",
+      "block": "minecraft:stone"
+    }
+  },
+  {
+    "name": "power/modify_break_speed",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_break_speed"
+    }
+  },
+  {
+    "name": "power/modify_camera_submersion",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_camera_submersion",
+      "to": "water"
+    }
+  },
+  {
+    "name": "power/modify_crafting",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_crafting"
+    }
+  },
+  {
+    "name": "power/modify_damage_dealt",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_damage_dealt"
+    }
+  },
+  {
+    "name": "power/modify_damage_taken",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_damage_taken"
+    }
+  },
+  {
+    "name": "power/modify_exhaustion",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_exhaustion"
+    }
+  },
+  {
+    "name": "power/modify_falling",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_falling"
+    }
+  },
+  {
+    "name": "power/modify_fluid_render",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_fluid_render",
+      "fluid": "minecraft:water"
+    }
+  },
+  {
+    "name": "power/modify_food",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_food"
+    }
+  },
+  {
+    "name": "power/modify_grindstone",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_grindstone"
+    }
+  },
+  {
+    "name": "power/modify_harvest",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_harvest",
+      "allow": true
+    }
+  },
+  {
+    "name": "power/modify_healing",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_healing"
+    }
+  },
+  {
+    "name": "power/modify_insomnia_ticks",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_insomnia_ticks"
+    }
+  },
+  {
+    "name": "power/modify_jump",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_jump"
+    }
+  },
+  {
+    "name": "power/modify_lava_speed",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_lava_speed"
+    }
+  },
+  {
+    "name": "power/modify_player_spawn",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_player_spawn",
+      "dimension": "minecraft:overworld"
+    }
+  },
+  {
+    "name": "power/modify_projectile_damage",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_projectile_damage"
+    }
+  },
+  {
+    "name": "power/modify_slipperiness",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_slipperiness"
+    }
+  },
+  {
+    "name": "power/modify_status_effect_amplifier",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_status_effect_amplifier"
+    }
+  },
+  {
+    "name": "power/modify_status_effect_duration",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_status_effect_duration"
+    }
+  },
+  {
+    "name": "power/modify_swim_speed",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_swim_speed"
+    }
+  },
+  {
+    "name": "power/modify_velocity",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_velocity"
+    }
+  },
+  {
+    "name": "power/modify_xp_gain",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_xp_gain"
+    }
+  },
+  {
+    "name": "power/multiple",
+    "context": "POWER",
+    "data": {
+      "type": "origins:multiple"
+    }
+  },
+  {
+    "name": "power/night_vision",
+    "context": "POWER",
+    "data": {
+      "type": "origins:night_vision"
+    }
+  },
+  {
+    "name": "power/overlay",
+    "context": "POWER",
+    "data": {
+      "type": "origins:overlay",
+      "texture": "minecraft:textures/misc/underwater.png",
+      "draw_mode": "texture",
+      "draw_phase": "above_hud"
+    }
+  },
+  {
+    "name": "power/particle",
+    "context": "POWER",
+    "data": {
+      "type": "origins:particle",
+      "particle": "minecraft:cloud",
+      "frequency": 1
+    }
+  },
+  {
+    "name": "power/phasing",
+    "context": "POWER",
+    "data": {
+      "type": "origins:phasing"
+    }
+  },
+  {
+    "name": "power/prevent_being_used",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_being_used"
+    }
+  },
+  {
+    "name": "power/prevent_block_selection",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_block_selection"
+    }
+  },
+  {
+    "name": "power/prevent_block_use",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_block_use"
+    }
+  },
+  {
+    "name": "power/prevent_death",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_death"
+    }
+  },
+  {
+    "name": "power/prevent_elytra_flight",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_elytra_flight"
+    }
+  },
+  {
+    "name": "power/prevent_entity_collision",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_entity_collision"
+    }
+  },
+  {
+    "name": "power/prevent_entity_render",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_entity_render"
+    }
+  },
+  {
+    "name": "power/prevent_entity_use",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_entity_use"
+    }
+  },
+  {
+    "name": "power/prevent_feature_render",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_feature_render"
+    }
+  },
+  {
+    "name": "power/prevent_game_event",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_game_event"
+    }
+  },
+  {
+    "name": "power/prevent_item_use",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_item_use"
+    }
+  },
+  {
+    "name": "power/prevent_sleep",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_sleep"
+    }
+  },
+  {
+    "name": "power/prevent_sprinting",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_sprinting"
+    }
+  },
+  {
+    "name": "power/recipe",
+    "context": "POWER",
+    "data": {
+      "type": "origins:recipe",
+      "recipe": {
+        "id": "bridge_test:recipe",
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:dirt"
+          }
+        ],
+        "result": {
+          "item": "minecraft:stone"
+        }
+      }
+    }
+  },
+  {
+    "name": "power/resource",
+    "context": "POWER",
+    "data": {
+      "type": "origins:resource",
+      "min": 1,
+      "max": 1
+    }
+  },
+  {
+    "name": "power/restrict_armor",
+    "context": "POWER",
+    "data": {
+      "type": "origins:restrict_armor"
+    }
+  },
+  {
+    "name": "power/self_action_on_hit",
+    "context": "POWER",
+    "data": {
+      "type": "origins:self_action_on_hit",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "power/self_action_on_kill",
+    "context": "POWER",
+    "data": {
+      "type": "origins:self_action_on_kill",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "power/self_action_when_hit",
+    "context": "POWER",
+    "data": {
+      "type": "origins:self_action_when_hit"
+    }
+  },
+  {
+    "name": "power/self_glow",
+    "context": "POWER",
+    "data": {
+      "type": "origins:self_glow"
+    }
+  },
+  {
+    "name": "power/shader",
+    "context": "POWER",
+    "data": {
+      "type": "origins:shader",
+      "shader": "minecraft:shaders/post/creeper.json"
+    }
+  },
+  {
+    "name": "power/shaking",
+    "context": "POWER",
+    "data": {
+      "type": "origins:shaking"
+    }
+  },
+  {
+    "name": "power/simple",
+    "context": "POWER",
+    "data": {
+      "type": "origins:simple"
+    }
+  },
+  {
+    "name": "power/stacking_status_effect",
+    "context": "POWER",
+    "data": {
+      "type": "origins:stacking_status_effect",
+      "min_stacks": 1,
+      "max_stacks": 1,
+      "duration_per_stack": 1
+    }
+  },
+  {
+    "name": "power/starting_equipment",
+    "context": "POWER",
+    "data": {
+      "type": "origins:starting_equipment"
+    }
+  },
+  {
+    "name": "power/status_bar_texture",
+    "context": "POWER",
+    "data": {
+      "type": "origins:status_bar_texture"
+    }
+  },
+  {
+    "name": "power/swimming",
+    "context": "POWER",
+    "data": {
+      "type": "origins:swimming"
+    }
+  },
+  {
+    "name": "power/target_action_on_hit",
+    "context": "POWER",
+    "data": {
+      "type": "origins:target_action_on_hit",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "power/toggle",
+    "context": "POWER",
+    "data": {
+      "type": "origins:toggle"
+    }
+  },
+  {
+    "name": "power/toggle_night_vision",
+    "context": "POWER",
+    "data": {
+      "type": "origins:toggle_night_vision"
+    }
+  },
+  {
+    "name": "power/tooltip",
+    "context": "POWER",
+    "data": {
+      "type": "origins:tooltip"
+    }
+  },
+  {
+    "name": "power/walk_on_fluid",
+    "context": "POWER",
+    "data": {
+      "type": "origins:walk_on_fluid",
+      "fluid": "minecraft:water"
+    }
+  },
+  {
+    "name": "biome_condition/and@apoli",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "apoli:and",
+      "conditions": []
+    }
+  },
+  {
+    "name": "biome_condition/category@apoli",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "apoli:category",
+      "category": "forest"
+    }
+  },
+  {
+    "name": "biome_condition/constant@apoli",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "apoli:constant",
+      "value": true
+    }
+  },
+  {
+    "name": "biome_condition/high_humidity@apoli",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "apoli:high_humidity"
+    }
+  },
+  {
+    "name": "biome_condition/in_tag@apoli",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "apoli:in_tag",
+      "tag": "minecraft:is_forest"
+    }
+  },
+  {
+    "name": "biome_condition/or@apoli",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "apoli:or",
+      "conditions": []
+    }
+  },
+  {
+    "name": "biome_condition/precipitation@apoli",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "apoli:precipitation",
+      "precipitation": "rain"
+    }
+  },
+  {
+    "name": "biome_condition/temperature@apoli",
+    "context": "BIOME_CONDITION",
+    "data": {
+      "type": "apoli:temperature",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "bi_entity_action/actor_action@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:actor_action",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "bi_entity_action/add_velocity@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:add_velocity"
+    }
+  },
+  {
+    "name": "bi_entity_action/and@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:and",
+      "actions": []
+    }
+  },
+  {
+    "name": "bi_entity_action/chance@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:chance",
+      "chance": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "bi_entity_action/choice@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:choice",
+      "actions": [
+        {
+          "weight": 1,
+          "element": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "bi_entity_action/damage@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:damage",
+      "amount": 1
+    }
+  },
+  {
+    "name": "bi_entity_action/delay@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:delay",
+      "ticks": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "bi_entity_action/if_else@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "if_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "bi_entity_action/if_else_list@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:constant",
+            "value": true
+          },
+          "action": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "bi_entity_action/invert@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:invert",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "bi_entity_action/mount@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:mount"
+    }
+  },
+  {
+    "name": "bi_entity_action/nothing@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:nothing"
+    }
+  },
+  {
+    "name": "bi_entity_action/set_in_love@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:set_in_love"
+    }
+  },
+  {
+    "name": "bi_entity_action/side@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:side",
+      "side": "server",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "bi_entity_action/tame@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:tame"
+    }
+  },
+  {
+    "name": "bi_entity_action/target_action@apoli",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:target_action",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "bi_entity_condition/actor_condition@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:actor_condition",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "bi_entity_condition/and@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:and",
+      "conditions": []
+    }
+  },
+  {
+    "name": "bi_entity_condition/attack_target@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:attack_target"
+    }
+  },
+  {
+    "name": "bi_entity_condition/attacker@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:attacker"
+    }
+  },
+  {
+    "name": "bi_entity_condition/both@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:both",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "bi_entity_condition/can_see@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:can_see"
+    }
+  },
+  {
+    "name": "bi_entity_condition/constant@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:constant",
+      "value": true
+    }
+  },
+  {
+    "name": "bi_entity_condition/distance@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:distance",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "bi_entity_condition/either@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:either",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "bi_entity_condition/invert@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:invert",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "bi_entity_condition/or@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:or",
+      "conditions": []
+    }
+  },
+  {
+    "name": "bi_entity_condition/owner@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:owner"
+    }
+  },
+  {
+    "name": "bi_entity_condition/relative_rotation@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:relative_rotation",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "bi_entity_condition/riding@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:riding"
+    }
+  },
+  {
+    "name": "bi_entity_condition/riding_recursive@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:riding_recursive"
+    }
+  },
+  {
+    "name": "bi_entity_condition/riding_root@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:riding_root"
+    }
+  },
+  {
+    "name": "bi_entity_condition/target_condition@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:target_condition",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "bi_entity_condition/undirected@apoli",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:undirected",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "block_action/add_block@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:add_block",
+      "block": "minecraft:stone"
+    }
+  },
+  {
+    "name": "block_action/and@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:and",
+      "actions": []
+    }
+  },
+  {
+    "name": "block_action/area_of_effect@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:area_of_effect",
+      "block_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "block_action/bonemeal@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:bonemeal"
+    }
+  },
+  {
+    "name": "block_action/chance@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:chance",
+      "chance": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "block_action/choice@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:choice",
+      "actions": [
+        {
+          "weight": 1,
+          "element": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "block_action/delay@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:delay",
+      "ticks": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "block_action/execute_command@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:execute_command",
+      "command": "say bridge-test"
+    }
+  },
+  {
+    "name": "block_action/explode@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:explode",
+      "power": 2.0
+    }
+  },
+  {
+    "name": "block_action/if_else@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "if_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "block_action/if_else_list@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:constant",
+            "value": true
+          },
+          "action": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "block_action/modify_block_state@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:modify_block_state",
+      "property": "age"
+    }
+  },
+  {
+    "name": "block_action/nothing@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:nothing"
+    }
+  },
+  {
+    "name": "block_action/offset@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:offset",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "block_action/set_block@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:set_block",
+      "block": "minecraft:stone"
+    }
+  },
+  {
+    "name": "block_action/side@apoli",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:side",
+      "side": "server",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "block_condition/adjacent@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:adjacent",
+      "comparison": ">=",
+      "compare_to": 1,
+      "adjacent_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "block_condition/and@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:and",
+      "conditions": []
+    }
+  },
+  {
+    "name": "block_condition/attachable@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:attachable"
+    }
+  },
+  {
+    "name": "block_condition/blast_resistance@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:blast_resistance",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "block_condition/block@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:block",
+      "block": "minecraft:stone"
+    }
+  },
+  {
+    "name": "block_condition/block_entity@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:block_entity"
+    }
+  },
+  {
+    "name": "block_condition/block_state@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:block_state",
+      "property": "age"
+    }
+  },
+  {
+    "name": "block_condition/constant@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:constant",
+      "value": true
+    }
+  },
+  {
+    "name": "block_condition/exposed_to_sky@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:exposed_to_sky"
+    }
+  },
+  {
+    "name": "block_condition/fluid@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:fluid",
+      "fluid_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "block_condition/hardness@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:hardness",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "block_condition/height@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:height",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "block_condition/in_tag@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:in_tag",
+      "tag": "minecraft:is_forest"
+    }
+  },
+  {
+    "name": "block_condition/light_blocking@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:light_blocking"
+    }
+  },
+  {
+    "name": "block_condition/light_level@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:light_level",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "block_condition/material@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:material"
+    }
+  },
+  {
+    "name": "block_condition/movement_blocking@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:movement_blocking"
+    }
+  },
+  {
+    "name": "block_condition/nbt@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:nbt",
+      "nbt": "{}"
+    }
+  },
+  {
+    "name": "block_condition/offset@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:offset",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "block_condition/or@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:or",
+      "conditions": []
+    }
+  },
+  {
+    "name": "block_condition/replacable@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:replacable"
+    }
+  },
+  {
+    "name": "block_condition/slipperiness@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:slipperiness",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "block_condition/water_loggable@apoli",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:water_loggable"
+    }
+  },
+  {
+    "name": "damage_condition/amount@apoli",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:amount",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "damage_condition/and@apoli",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:and",
+      "conditions": []
+    }
+  },
+  {
+    "name": "damage_condition/attacker@apoli",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:attacker"
+    }
+  },
+  {
+    "name": "damage_condition/bypasses_armor@apoli",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:bypasses_armor"
+    }
+  },
+  {
+    "name": "damage_condition/constant@apoli",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:constant",
+      "value": true
+    }
+  },
+  {
+    "name": "damage_condition/explosive@apoli",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:explosive"
+    }
+  },
+  {
+    "name": "damage_condition/fire@apoli",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:fire"
+    }
+  },
+  {
+    "name": "damage_condition/from_falling@apoli",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:from_falling"
+    }
+  },
+  {
+    "name": "damage_condition/in_tag@apoli",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:in_tag",
+      "tag": "minecraft:is_forest"
+    }
+  },
+  {
+    "name": "damage_condition/name@apoli",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:name",
+      "name": "generic"
+    }
+  },
+  {
+    "name": "damage_condition/or@apoli",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:or",
+      "conditions": []
+    }
+  },
+  {
+    "name": "damage_condition/out_of_world@apoli",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:out_of_world"
+    }
+  },
+  {
+    "name": "damage_condition/projectile@apoli",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:projectile"
+    }
+  },
+  {
+    "name": "damage_condition/unblockable@apoli",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:unblockable"
+    }
+  },
+  {
+    "name": "entity_action/add_velocity@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:add_velocity"
+    }
+  },
+  {
+    "name": "entity_action/add_xp@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:add_xp"
+    }
+  },
+  {
+    "name": "entity_action/and@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:and",
+      "actions": []
+    }
+  },
+  {
+    "name": "entity_action/apply_effect@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:apply_effect"
+    }
+  },
+  {
+    "name": "entity_action/area_of_effect@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:area_of_effect",
+      "bientity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/block_action_at@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:block_action_at",
+      "block_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/chance@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:chance",
+      "chance": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/change_resource@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:change_resource",
+      "resource": "bridge_test:resource",
+      "change": 1
+    }
+  },
+  {
+    "name": "entity_action/choice@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:choice",
+      "actions": [
+        {
+          "weight": 1,
+          "element": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "entity_action/clear_effect@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:clear_effect"
+    }
+  },
+  {
+    "name": "entity_action/crafting_table@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:crafting_table"
+    }
+  },
+  {
+    "name": "entity_action/damage@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:damage",
+      "amount": 1
+    }
+  },
+  {
+    "name": "entity_action/delay@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:delay",
+      "ticks": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/dismount@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:dismount"
+    }
+  },
+  {
+    "name": "entity_action/drop_inventory@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:drop_inventory"
+    }
+  },
+  {
+    "name": "entity_action/emit_game_event@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:emit_game_event",
+      "event": "minecraft:step"
+    }
+  },
+  {
+    "name": "entity_action/ender_chest@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:ender_chest"
+    }
+  },
+  {
+    "name": "entity_action/equipped_item_action@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:equipped_item_action",
+      "equipment_slot": "mainhand",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/execute_command@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:execute_command",
+      "command": "say bridge-test"
+    }
+  },
+  {
+    "name": "entity_action/exhaust@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:exhaust",
+      "amount": 1
+    }
+  },
+  {
+    "name": "entity_action/explode@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:explode",
+      "power": 2.0
+    }
+  },
+  {
+    "name": "entity_action/extinguish@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:extinguish"
+    }
+  },
+  {
+    "name": "entity_action/feed@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:feed",
+      "food": 1,
+      "saturation": 1
+    }
+  },
+  {
+    "name": "entity_action/fire_projectile@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:fire_projectile",
+      "entity_type": "minecraft:snowball"
+    }
+  },
+  {
+    "name": "entity_action/gain_air@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:gain_air",
+      "value": 1
+    }
+  },
+  {
+    "name": "entity_action/give@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:give",
+      "stack": {
+        "item": "minecraft:stone"
+      }
+    }
+  },
+  {
+    "name": "entity_action/grant_advancement@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:grant_advancement",
+      "advancement": "minecraft:stone"
+    }
+  },
+  {
+    "name": "entity_action/grant_power@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:grant_power",
+      "power": "bridge_test:resource",
+      "source": "bridge_test:source"
+    }
+  },
+  {
+    "name": "entity_action/heal@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:heal",
+      "amount": 1
+    }
+  },
+  {
+    "name": "entity_action/if_else@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "if_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/if_else_list@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:constant",
+            "value": true
+          },
+          "action": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "entity_action/modify_death_ticks@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:modify_death_ticks",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      }
+    }
+  },
+  {
+    "name": "entity_action/modify_inventory@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:modify_inventory",
+      "item_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/modify_resource@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:modify_resource",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "resource": "bridge_test:resource"
+    }
+  },
+  {
+    "name": "entity_action/modify_stat@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:modify_stat",
+      "stat": "minecraft:stone",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      }
+    }
+  },
+  {
+    "name": "entity_action/nothing@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:nothing"
+    }
+  },
+  {
+    "name": "entity_action/passenger_action@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:passenger_action"
+    }
+  },
+  {
+    "name": "entity_action/play_sound@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:entity.player.levelup"
+    }
+  },
+  {
+    "name": "entity_action/raycast@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:raycast",
+      "distance": 1
+    }
+  },
+  {
+    "name": "entity_action/replace_inventory@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:replace_inventory",
+      "stack": {
+        "item": "minecraft:stone"
+      }
+    }
+  },
+  {
+    "name": "entity_action/revoke_advancement@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:revoke_advancement",
+      "advancement": "minecraft:stone"
+    }
+  },
+  {
+    "name": "entity_action/revoke_power@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:revoke_power",
+      "power": "bridge_test:resource",
+      "source": "bridge_test:source"
+    }
+  },
+  {
+    "name": "entity_action/riding_action@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:riding_action"
+    }
+  },
+  {
+    "name": "entity_action/selector_action@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:selector_action",
+      "selector": "minecraft:stone",
+      "bientity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/set_fall_distance@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:set_fall_distance",
+      "fall_distance": 1
+    }
+  },
+  {
+    "name": "entity_action/set_on_fire@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:set_on_fire",
+      "duration": 1
+    }
+  },
+  {
+    "name": "entity_action/set_resource@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:set_resource",
+      "resource": "bridge_test:resource",
+      "value": 1
+    }
+  },
+  {
+    "name": "entity_action/side@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:side",
+      "side": "server",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "entity_action/spawn_effect_cloud@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:spawn_effect_cloud"
+    }
+  },
+  {
+    "name": "entity_action/spawn_entity@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:spawn_entity",
+      "entity_type": "minecraft:snowball"
+    }
+  },
+  {
+    "name": "entity_action/spawn_particles@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:spawn_particles",
+      "particle": "minecraft:cloud",
+      "count": 1
+    }
+  },
+  {
+    "name": "entity_action/swing_hand@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:swing_hand"
+    }
+  },
+  {
+    "name": "entity_action/toggle@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:toggle",
+      "power": "bridge_test:resource"
+    }
+  },
+  {
+    "name": "entity_action/trigger_cooldown@apoli",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:trigger_cooldown",
+      "power": "bridge_test:resource"
+    }
+  },
+  {
+    "name": "entity_condition/ability@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:ability",
+      "ability": "minecraft:allow_flying"
+    }
+  },
+  {
+    "name": "entity_condition/advancement@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:advancement",
+      "advancement": "minecraft:stone"
+    }
+  },
+  {
+    "name": "entity_condition/air@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:air",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/and@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:and",
+      "conditions": []
+    }
+  },
+  {
+    "name": "entity_condition/attribute@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:attribute",
+      "attribute": "minecraft:generic.movement_speed",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/biome@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:biome"
+    }
+  },
+  {
+    "name": "entity_condition/block_collision@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:block_collision"
+    }
+  },
+  {
+    "name": "entity_condition/block_in_radius@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:block_in_radius",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "radius": 1
+    }
+  },
+  {
+    "name": "entity_condition/brightness@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:brightness",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/climbing@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:climbing"
+    }
+  },
+  {
+    "name": "entity_condition/collided_horizontally@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:collided_horizontally"
+    }
+  },
+  {
+    "name": "entity_condition/command@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:command",
+      "command": "say bridge-test",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/constant@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:constant",
+      "value": true
+    }
+  },
+  {
+    "name": "entity_condition/creative_flying@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:creative_flying"
+    }
+  },
+  {
+    "name": "entity_condition/daytime@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:daytime"
+    }
+  },
+  {
+    "name": "entity_condition/dimension@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:dimension",
+      "dimension": "minecraft:overworld"
+    }
+  },
+  {
+    "name": "entity_condition/elytra_flight_possible@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:elytra_flight_possible"
+    }
+  },
+  {
+    "name": "entity_condition/enchantment@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:enchantment",
+      "enchantment": "minecraft:protection",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/entity_group@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:entity_group",
+      "group": "default"
+    }
+  },
+  {
+    "name": "entity_condition/entity_type@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:entity_type",
+      "entity_type": "minecraft:snowball"
+    }
+  },
+  {
+    "name": "entity_condition/equipped_item@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "entity_condition/exists@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:exists"
+    }
+  },
+  {
+    "name": "entity_condition/exposed_to_sky@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:exposed_to_sky"
+    }
+  },
+  {
+    "name": "entity_condition/exposed_to_sun@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:exposed_to_sun"
+    }
+  },
+  {
+    "name": "entity_condition/fall_distance@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:fall_distance",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/fall_flying@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:fall_flying"
+    }
+  },
+  {
+    "name": "entity_condition/fluid_height@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:fluid_height",
+      "fluid": "minecraft:water",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/food_level@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:food_level",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/gamemode@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:gamemode",
+      "gamemode": "survival"
+    }
+  },
+  {
+    "name": "entity_condition/glowing@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:glowing"
+    }
+  },
+  {
+    "name": "entity_condition/health@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:health",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/in_block@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:in_block",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "entity_condition/in_block_anywhere@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:in_block_anywhere",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "entity_condition/in_rain@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:in_rain"
+    }
+  },
+  {
+    "name": "entity_condition/in_tag@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:in_tag",
+      "tag": "minecraft:is_forest"
+    }
+  },
+  {
+    "name": "entity_condition/inventory@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:inventory"
+    }
+  },
+  {
+    "name": "entity_condition/invisible@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:invisible"
+    }
+  },
+  {
+    "name": "entity_condition/living@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:living"
+    }
+  },
+  {
+    "name": "entity_condition/moving@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:moving"
+    }
+  },
+  {
+    "name": "entity_condition/nbt@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:nbt",
+      "nbt": "{}"
+    }
+  },
+  {
+    "name": "entity_condition/on_block@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:on_block"
+    }
+  },
+  {
+    "name": "entity_condition/on_fire@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:on_fire"
+    }
+  },
+  {
+    "name": "entity_condition/or@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:or",
+      "conditions": []
+    }
+  },
+  {
+    "name": "entity_condition/passenger@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:passenger"
+    }
+  },
+  {
+    "name": "entity_condition/passenger_recursive@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:passenger_recursive"
+    }
+  },
+  {
+    "name": "entity_condition/power@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:power",
+      "power": "bridge_test:resource"
+    }
+  },
+  {
+    "name": "entity_condition/power_active@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:power_active",
+      "power": "bridge_test:resource"
+    }
+  },
+  {
+    "name": "entity_condition/power_type@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:power_type",
+      "power_type": "bridge_test:resource"
+    }
+  },
+  {
+    "name": "entity_condition/predicate@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:predicate",
+      "predicate": "bridge_test:predicate"
+    }
+  },
+  {
+    "name": "entity_condition/raycast@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:raycast",
+      "distance": 1
+    }
+  },
+  {
+    "name": "entity_condition/relative_health@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:relative_health",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/resource@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:resource",
+      "resource": "bridge_test:resource",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/riding@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:riding"
+    }
+  },
+  {
+    "name": "entity_condition/riding_recursive@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:riding_recursive"
+    }
+  },
+  {
+    "name": "entity_condition/riding_root@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:riding_root"
+    }
+  },
+  {
+    "name": "entity_condition/saturation_level@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:saturation_level",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/scoreboard@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:scoreboard",
+      "objective": "minecraft:stone",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/sneaking@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:sneaking"
+    }
+  },
+  {
+    "name": "entity_condition/sprinting@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:sprinting"
+    }
+  },
+  {
+    "name": "entity_condition/status_effect@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:status_effect",
+      "effect": "minecraft:stone"
+    }
+  },
+  {
+    "name": "entity_condition/submerged_in@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:submerged_in",
+      "fluid": "minecraft:water"
+    }
+  },
+  {
+    "name": "entity_condition/swimming@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:swimming"
+    }
+  },
+  {
+    "name": "entity_condition/tamed@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:tamed"
+    }
+  },
+  {
+    "name": "entity_condition/time_of_day@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:time_of_day",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/using_effective_tool@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:using_effective_tool"
+    }
+  },
+  {
+    "name": "entity_condition/using_item@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:using_item"
+    }
+  },
+  {
+    "name": "entity_condition/xp_levels@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:xp_levels",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "entity_condition/xp_points@apoli",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:xp_points",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "fluid_condition/and@apoli",
+    "context": "FLUID_CONDITION",
+    "data": {
+      "type": "apoli:and",
+      "conditions": []
+    }
+  },
+  {
+    "name": "fluid_condition/constant@apoli",
+    "context": "FLUID_CONDITION",
+    "data": {
+      "type": "apoli:constant",
+      "value": true
+    }
+  },
+  {
+    "name": "fluid_condition/empty@apoli",
+    "context": "FLUID_CONDITION",
+    "data": {
+      "type": "apoli:empty"
+    }
+  },
+  {
+    "name": "fluid_condition/fluid@apoli",
+    "context": "FLUID_CONDITION",
+    "data": {
+      "type": "apoli:fluid",
+      "fluid": "minecraft:water"
+    }
+  },
+  {
+    "name": "fluid_condition/in_tag@apoli",
+    "context": "FLUID_CONDITION",
+    "data": {
+      "type": "apoli:in_tag",
+      "tag": "minecraft:water"
+    }
+  },
+  {
+    "name": "fluid_condition/or@apoli",
+    "context": "FLUID_CONDITION",
+    "data": {
+      "type": "apoli:or",
+      "conditions": []
+    }
+  },
+  {
+    "name": "fluid_condition/still@apoli",
+    "context": "FLUID_CONDITION",
+    "data": {
+      "type": "apoli:still"
+    }
+  },
+  {
+    "name": "item_action/and@apoli",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:and",
+      "actions": []
+    }
+  },
+  {
+    "name": "item_action/chance@apoli",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:chance",
+      "chance": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "item_action/choice@apoli",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:choice",
+      "actions": [
+        {
+          "weight": 1,
+          "element": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "item_action/consume@apoli",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:consume"
+    }
+  },
+  {
+    "name": "item_action/damage@apoli",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:damage"
+    }
+  },
+  {
+    "name": "item_action/delay@apoli",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:delay",
+      "ticks": 1,
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "item_action/holder@apoli",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:holder",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "item_action/if_else@apoli",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:if_else",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "if_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "item_action/if_else_list@apoli",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:constant",
+            "value": true
+          },
+          "action": {
+            "type": "origins:nothing"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "item_action/merge_nbt@apoli",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:merge_nbt",
+      "nbt": "{}"
+    }
+  },
+  {
+    "name": "item_action/modify@apoli",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:modify",
+      "modifier": "minecraft:empty"
+    }
+  },
+  {
+    "name": "item_action/nothing@apoli",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:nothing"
+    }
+  },
+  {
+    "name": "item_action/remove_enchantment@apoli",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:remove_enchantment"
+    }
+  },
+  {
+    "name": "item_action/side@apoli",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:side",
+      "side": "server",
+      "action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "item_condition/amount@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:amount",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "item_condition/and@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:and",
+      "conditions": []
+    }
+  },
+  {
+    "name": "item_condition/armor_value@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:armor_value",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "item_condition/constant@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:constant",
+      "value": true
+    }
+  },
+  {
+    "name": "item_condition/durability@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:durability",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "item_condition/empty@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:empty"
+    }
+  },
+  {
+    "name": "item_condition/enchantable@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:enchantable"
+    }
+  },
+  {
+    "name": "item_condition/enchantment@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:enchantment"
+    }
+  },
+  {
+    "name": "item_condition/fireproof@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:fireproof"
+    }
+  },
+  {
+    "name": "item_condition/food@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:food"
+    }
+  },
+  {
+    "name": "item_condition/harvest_level@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:harvest_level",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "item_condition/has_power@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:has_power",
+      "power": "bridge_test:resource"
+    }
+  },
+  {
+    "name": "item_condition/ingredient@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:ingredient",
+      "ingredient": {
+        "item": "minecraft:stone"
+      }
+    }
+  },
+  {
+    "name": "item_condition/is_damageable@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:is_damageable"
+    }
+  },
+  {
+    "name": "item_condition/is_equippable@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:is_equippable",
+      "equipment_slot": "mainhand"
+    }
+  },
+  {
+    "name": "item_condition/meat@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:meat"
+    }
+  },
+  {
+    "name": "item_condition/nbt@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:nbt",
+      "nbt": "{}"
+    }
+  },
+  {
+    "name": "item_condition/or@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:or",
+      "conditions": []
+    }
+  },
+  {
+    "name": "item_condition/power_count@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:power_count",
+      "compare_to": 1,
+      "comparison": ">="
+    }
+  },
+  {
+    "name": "item_condition/relative_durability@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:relative_durability",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  {
+    "name": "item_condition/smeltable@apoli",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:smeltable"
+    }
+  },
+  {
+    "name": "power/action_on_being_used@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_being_used"
+    }
+  },
+  {
+    "name": "power/action_on_block_break@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_block_break"
+    }
+  },
+  {
+    "name": "power/action_on_block_use@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_block_use"
+    }
+  },
+  {
+    "name": "power/action_on_callback@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_callback"
+    }
+  },
+  {
+    "name": "power/action_on_entity_use@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_entity_use"
+    }
+  },
+  {
+    "name": "power/action_on_hit@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_hit",
+      "bientity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "power/action_on_item_use@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_item_use"
+    }
+  },
+  {
+    "name": "power/action_on_land@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_land"
+    }
+  },
+  {
+    "name": "power/action_on_wake_up@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_wake_up"
+    }
+  },
+  {
+    "name": "power/action_over_time@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_over_time"
+    }
+  },
+  {
+    "name": "power/action_when_damage_taken@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_when_damage_taken"
+    }
+  },
+  {
+    "name": "power/action_when_hit@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_when_hit",
+      "bientity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "power/active_self@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:active_self",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "power/attacker_action_when_hit@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:attacker_action_when_hit",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "power/attribute@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:attribute"
+    }
+  },
+  {
+    "name": "power/attribute_modify_transfer@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:attribute_modify_transfer",
+      "class": "modify_jump",
+      "attribute": "minecraft:generic.movement_speed"
+    }
+  },
+  {
+    "name": "power/burn@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:burn",
+      "interval": 1,
+      "burn_duration": 1
+    }
+  },
+  {
+    "name": "power/climbing@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:climbing"
+    }
+  },
+  {
+    "name": "power/conditioned_attribute@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:conditioned_attribute"
+    }
+  },
+  {
+    "name": "power/conditioned_restrict_armor@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:conditioned_restrict_armor"
+    }
+  },
+  {
+    "name": "power/cooldown@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:cooldown",
+      "cooldown": 1
+    }
+  },
+  {
+    "name": "power/creative_flight@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:creative_flight"
+    }
+  },
+  {
+    "name": "power/damage_over_time@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:damage_over_time",
+      "damage": 1
+    }
+  },
+  {
+    "name": "power/disable_regen@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:disable_regen"
+    }
+  },
+  {
+    "name": "power/effect_immunity@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:effect_immunity"
+    }
+  },
+  {
+    "name": "power/elytra_flight@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:elytra_flight",
+      "render_elytra": true
+    }
+  },
+  {
+    "name": "power/entity_glow@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:entity_glow"
+    }
+  },
+  {
+    "name": "power/entity_group@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:entity_group",
+      "group": "default"
+    }
+  },
+  {
+    "name": "power/exhaust@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:exhaust",
+      "exhaustion": 1
+    }
+  },
+  {
+    "name": "power/fire_immunity@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:fire_immunity"
+    }
+  },
+  {
+    "name": "power/fire_projectile@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:fire_projectile",
+      "entity_type": "minecraft:snowball"
+    }
+  },
+  {
+    "name": "power/freeze@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:freeze"
+    }
+  },
+  {
+    "name": "power/grounded@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:grounded"
+    }
+  },
+  {
+    "name": "power/ignore_water@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:ignore_water"
+    }
+  },
+  {
+    "name": "power/inventory@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:inventory"
+    }
+  },
+  {
+    "name": "power/invisibility@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:invisibility"
+    }
+  },
+  {
+    "name": "power/invulnerability@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:invulnerability",
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    }
+  },
+  {
+    "name": "power/item_on_item@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:item_on_item"
+    }
+  },
+  {
+    "name": "power/keep_inventory@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:keep_inventory"
+    }
+  },
+  {
+    "name": "power/launch@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:launch",
+      "speed": 1
+    }
+  },
+  {
+    "name": "power/lava_vision@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:lava_vision",
+      "s": 1,
+      "v": 1
+    }
+  },
+  {
+    "name": "power/model_color@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:model_color"
+    }
+  },
+  {
+    "name": "power/modify_air_speed@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_air_speed"
+    }
+  },
+  {
+    "name": "power/modify_attribute@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_attribute",
+      "attribute": "minecraft:generic.movement_speed"
+    }
+  },
+  {
+    "name": "power/modify_block_render@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_block_render",
+      "block": "minecraft:stone"
+    }
+  },
+  {
+    "name": "power/modify_break_speed@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_break_speed"
+    }
+  },
+  {
+    "name": "power/modify_camera_submersion@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_camera_submersion",
+      "to": "water"
+    }
+  },
+  {
+    "name": "power/modify_crafting@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_crafting"
+    }
+  },
+  {
+    "name": "power/modify_damage_dealt@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_damage_dealt"
+    }
+  },
+  {
+    "name": "power/modify_damage_taken@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_damage_taken"
+    }
+  },
+  {
+    "name": "power/modify_exhaustion@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_exhaustion"
+    }
+  },
+  {
+    "name": "power/modify_falling@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_falling"
+    }
+  },
+  {
+    "name": "power/modify_fluid_render@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_fluid_render",
+      "fluid": "minecraft:water"
+    }
+  },
+  {
+    "name": "power/modify_food@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_food"
+    }
+  },
+  {
+    "name": "power/modify_grindstone@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_grindstone"
+    }
+  },
+  {
+    "name": "power/modify_harvest@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_harvest",
+      "allow": true
+    }
+  },
+  {
+    "name": "power/modify_healing@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_healing"
+    }
+  },
+  {
+    "name": "power/modify_insomnia_ticks@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_insomnia_ticks"
+    }
+  },
+  {
+    "name": "power/modify_jump@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_jump"
+    }
+  },
+  {
+    "name": "power/modify_lava_speed@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_lava_speed"
+    }
+  },
+  {
+    "name": "power/modify_player_spawn@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_player_spawn",
+      "dimension": "minecraft:overworld"
+    }
+  },
+  {
+    "name": "power/modify_projectile_damage@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_projectile_damage"
+    }
+  },
+  {
+    "name": "power/modify_slipperiness@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_slipperiness"
+    }
+  },
+  {
+    "name": "power/modify_status_effect_amplifier@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_status_effect_amplifier"
+    }
+  },
+  {
+    "name": "power/modify_status_effect_duration@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_status_effect_duration"
+    }
+  },
+  {
+    "name": "power/modify_swim_speed@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_swim_speed"
+    }
+  },
+  {
+    "name": "power/modify_velocity@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_velocity"
+    }
+  },
+  {
+    "name": "power/modify_xp_gain@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_xp_gain"
+    }
+  },
+  {
+    "name": "power/multiple@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:multiple"
+    }
+  },
+  {
+    "name": "power/night_vision@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:night_vision"
+    }
+  },
+  {
+    "name": "power/overlay@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:overlay",
+      "texture": "minecraft:textures/misc/underwater.png",
+      "draw_mode": "texture",
+      "draw_phase": "above_hud"
+    }
+  },
+  {
+    "name": "power/particle@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:particle",
+      "particle": "minecraft:cloud",
+      "frequency": 1
+    }
+  },
+  {
+    "name": "power/phasing@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:phasing"
+    }
+  },
+  {
+    "name": "power/prevent_being_used@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_being_used"
+    }
+  },
+  {
+    "name": "power/prevent_block_selection@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_block_selection"
+    }
+  },
+  {
+    "name": "power/prevent_block_use@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_block_use"
+    }
+  },
+  {
+    "name": "power/prevent_death@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_death"
+    }
+  },
+  {
+    "name": "power/prevent_elytra_flight@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_elytra_flight"
+    }
+  },
+  {
+    "name": "power/prevent_entity_collision@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_entity_collision"
+    }
+  },
+  {
+    "name": "power/prevent_entity_render@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_entity_render"
+    }
+  },
+  {
+    "name": "power/prevent_entity_use@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_entity_use"
+    }
+  },
+  {
+    "name": "power/prevent_feature_render@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_feature_render"
+    }
+  },
+  {
+    "name": "power/prevent_game_event@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_game_event"
+    }
+  },
+  {
+    "name": "power/prevent_item_use@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_item_use"
+    }
+  },
+  {
+    "name": "power/prevent_sleep@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_sleep"
+    }
+  },
+  {
+    "name": "power/prevent_sprinting@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_sprinting"
+    }
+  },
+  {
+    "name": "power/recipe@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:recipe",
+      "recipe": {
+        "id": "bridge_test:recipe",
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:dirt"
+          }
+        ],
+        "result": {
+          "item": "minecraft:stone"
+        }
+      }
+    }
+  },
+  {
+    "name": "power/resource@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:resource",
+      "min": 1,
+      "max": 1
+    }
+  },
+  {
+    "name": "power/restrict_armor@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:restrict_armor"
+    }
+  },
+  {
+    "name": "power/self_action_on_hit@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:self_action_on_hit",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "power/self_action_on_kill@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:self_action_on_kill",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "power/self_action_when_hit@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:self_action_when_hit"
+    }
+  },
+  {
+    "name": "power/self_glow@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:self_glow"
+    }
+  },
+  {
+    "name": "power/shader@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:shader",
+      "shader": "minecraft:shaders/post/creeper.json"
+    }
+  },
+  {
+    "name": "power/shaking@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:shaking"
+    }
+  },
+  {
+    "name": "power/simple@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:simple"
+    }
+  },
+  {
+    "name": "power/stacking_status_effect@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:stacking_status_effect",
+      "min_stacks": 1,
+      "max_stacks": 1,
+      "duration_per_stack": 1
+    }
+  },
+  {
+    "name": "power/starting_equipment@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:starting_equipment"
+    }
+  },
+  {
+    "name": "power/status_bar_texture@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:status_bar_texture"
+    }
+  },
+  {
+    "name": "power/swimming@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:swimming"
+    }
+  },
+  {
+    "name": "power/target_action_on_hit@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:target_action_on_hit",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    }
+  },
+  {
+    "name": "power/toggle@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:toggle"
+    }
+  },
+  {
+    "name": "power/toggle_night_vision@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:toggle_night_vision"
+    }
+  },
+  {
+    "name": "power/tooltip@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:tooltip"
+    }
+  },
+  {
+    "name": "power/walk_on_fluid@apoli",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:walk_on_fluid",
+      "fluid": "minecraft:water"
+    }
+  }
+]

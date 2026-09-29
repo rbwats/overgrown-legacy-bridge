@@ -1,0 +1,10 @@
+Overgrown Legacy Bridge 0.4.0
+
+The biome category tags, block material tags and damage_over_time damage type
+in data/apoli are reused from apace100/apoli v2.9.0 (MIT, copyright 2021 apace100).
+The included LICENSE-upstream-apoli preserves the complete copyright and license.
+Source: https://github.com/apace100/apoli/tree/v2.9.0/src/main/resources/data/apoli
+
+Legacy damage-source selection and damage-over-time behavior are adapted from
+that project's MIT-licensed implementations. No Origins or Apoli mod jars are
+bundled in this artifact.

@@ -1,70 +1,49 @@
 package org.overgrowns.migration;
-
 import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.arguments.StringArgumentType;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.tree.CommandNode;
-import dev.overgrown.apoli.power.PowerContainer;
-import dev.overgrown.apoli.power.PowerResources;
-import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.commands.Commands;
-import net.minecraft.commands.arguments.EntityArgument;
-import net.minecraft.commands.arguments.ResourceLocationArgument;
+import dev.overgrown.apoli.power.*;
+import net.minecraft.commands.*;
+import net.minecraft.commands.arguments.*;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.scores.Objective;
-import net.minecraft.world.scores.Scoreboard;
-
-import java.util.Collection;
-import java.util.OptionalInt;
-
-/** Legacy /resource operations used by functions and command actions. */
+import net.minecraft.world.scores.Score;
+/** Use vanilla scoreboard parsing and operations, including fake players and floor arithmetic. */
 public final class LegacyResourceCommands {
     private LegacyResourceCommands() {}
-
     public static void attach(CommandDispatcher<CommandSourceStack> dispatcher) {
         CommandNode<CommandSourceStack> root = dispatcher.getRoot().getChild("apoli:resource");
-        if (root == null) {
-            LegacyBridge.LOGGER.error("Could not attach legacy resource operation: apoli:resource is unavailable");
-            return;
-        }
-        if (root.getChild("operation") != null) return;
+        if (root == null || root.getChild("operation") != null) return;
         root.addChild(Commands.literal("operation")
-                .then(Commands.argument("targets", EntityArgument.entities())
-                    .then(Commands.argument("resource", ResourceLocationArgument.id())
-                        .then(Commands.literal("=")
-                            .then(Commands.argument("score_targets", EntityArgument.entities())
-                                .then(Commands.argument("objective", StringArgumentType.word())
-                                    .executes(ctx -> {
-                                        Scoreboard board = ctx.getSource().getServer().getScoreboard();
-                                        Objective objective = board.getObjective(
-                                            StringArgumentType.getString(ctx, "objective"));
-                                        if (objective == null) return 0;
-                                        Collection<? extends Entity> scoreTargets =
-                                            EntityArgument.getEntities(ctx, "score_targets");
-                                        if (scoreTargets.isEmpty()) return 0;
-                                        int value = board.getOrCreatePlayerScore(
-                                            scoreTargets.iterator().next().getScoreboardName(), objective).getScore();
-                                        return write(ctx.getSource(),
-                                            EntityArgument.getEntities(ctx, "targets"),
-                                            ResourceLocationArgument.getId(ctx, "resource"), value);
-                                    })))))).build());
-        LegacyBridge.LOGGER.info("Attached legacy /resource operation command");
-    }
-
-    private static int write(CommandSourceStack source, Collection<? extends Entity> targets,
-                             ResourceLocation resource, int value)
-            throws CommandSyntaxException {
-        int changed = 0;
-        for (Entity entity : targets) {
-            PowerContainer holder = PowerContainer.of(entity);
-            OptionalInt before = PowerResources.read(holder, resource);
-            if (before.isEmpty()) continue;
-            if (PowerResources.write(holder, resource, value).isPresent()) changed++;
-        }
-        final int count = changed;
-        source.sendSuccess(() -> Component.literal("Updated " + resource + " for " + count + " target(s)."), true);
-        return changed;
+            .then(Commands.argument("targets", EntityArgument.entities())
+                .then(Commands.argument("resource", ResourceLocationArgument.id())
+                    .then(Commands.argument("operation", OperationArgument.operation())
+                        .then(Commands.argument("score_targets", ScoreHolderArgument.scoreHolder())
+                            .then(Commands.argument("objective", ObjectiveArgument.objective())
+                                .executes(ctx -> {
+                                    var board = ctx.getSource().getServer().getScoreboard();
+                                    var objective = ObjectiveArgument.getObjective(ctx, "objective");
+                                    var name = ScoreHolderArgument.getName(ctx, "score_targets");
+                                    Score score = board.getOrCreatePlayerScore(name, objective);
+                                    var operation = OperationArgument.getOperation(ctx, "operation");
+                                    var resource = ResourceLocationArgument.getId(ctx, "resource");
+                                    int affected = 0;
+                                    for (var entity : EntityArgument.getEntities(ctx, "targets")) {
+                                        PowerContainer holder = PowerContainer.of(entity);
+                                        if (holder == null) continue;
+                                        var current = PowerResources.read(holder, resource);
+                                        if (current.isEmpty()) continue;
+                                        Score working = new Score(board, objective, "overgrown_legacy_bridge:temporary") {
+                                            private int value;
+                                            @Override public int getScore() { return value; }
+                                            @Override public void setScore(int next) { value = next; }
+                                        };
+                                        working.setScore(current.getAsInt());
+                                        operation.apply(working, score);
+                                        if (PowerResources.write(holder, resource, working.getScore()).isPresent()) affected++;
+                                    }
+                                    final int count = affected;
+                                    ctx.getSource().sendSuccess(() -> Component.literal("Updated " + resource + " for " + count + " target(s)."), true);
+                                    return affected;
+                                })))))).build());
+        LegacyBridge.LOGGER.info("Attached all legacy /resource operation operators");
     }
 }

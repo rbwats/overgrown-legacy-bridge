@@ -1,0 +1,2926 @@
+[
+  {
+    "name": "biome_condition/and",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/category",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/constant",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/high_humidity",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/in_tag",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/or",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/precipitation",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/temperature",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/actor_action",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/add_velocity",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/and",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/chance",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/choice",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/damage",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/delay",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/if_else",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/if_else_list",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/invert",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/mount",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/nothing",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/set_in_love",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/side",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/tame",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/target_action",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/actor_condition",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/and",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/attack_target",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/attacker",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/both",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/can_see",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/constant",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/distance",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/either",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/invert",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/or",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/owner",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/relative_rotation",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/riding",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/riding_recursive",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/riding_root",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/target_condition",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/undirected",
+    "passed": true
+  },
+  {
+    "name": "block_action/add_block",
+    "passed": true
+  },
+  {
+    "name": "block_action/and",
+    "passed": true
+  },
+  {
+    "name": "block_action/area_of_effect",
+    "passed": true
+  },
+  {
+    "name": "block_action/bonemeal",
+    "passed": true
+  },
+  {
+    "name": "block_action/chance",
+    "passed": true
+  },
+  {
+    "name": "block_action/choice",
+    "passed": true
+  },
+  {
+    "name": "block_action/delay",
+    "passed": true
+  },
+  {
+    "name": "block_action/execute_command",
+    "passed": true
+  },
+  {
+    "name": "block_action/explode",
+    "passed": true
+  },
+  {
+    "name": "block_action/if_else",
+    "passed": true
+  },
+  {
+    "name": "block_action/if_else_list",
+    "passed": true
+  },
+  {
+    "name": "block_action/modify_block_state",
+    "passed": true
+  },
+  {
+    "name": "block_action/nothing",
+    "passed": true
+  },
+  {
+    "name": "block_action/offset",
+    "passed": true
+  },
+  {
+    "name": "block_action/set_block",
+    "passed": true
+  },
+  {
+    "name": "block_action/side",
+    "passed": true
+  },
+  {
+    "name": "block_condition/adjacent",
+    "passed": true
+  },
+  {
+    "name": "block_condition/and",
+    "passed": true
+  },
+  {
+    "name": "block_condition/attachable",
+    "passed": true
+  },
+  {
+    "name": "block_condition/blast_resistance",
+    "passed": true
+  },
+  {
+    "name": "block_condition/block",
+    "passed": true
+  },
+  {
+    "name": "block_condition/block_entity",
+    "passed": true
+  },
+  {
+    "name": "block_condition/block_state",
+    "passed": true
+  },
+  {
+    "name": "block_condition/constant",
+    "passed": true
+  },
+  {
+    "name": "block_condition/exposed_to_sky",
+    "passed": true
+  },
+  {
+    "name": "block_condition/fluid",
+    "passed": true
+  },
+  {
+    "name": "block_condition/hardness",
+    "passed": true
+  },
+  {
+    "name": "block_condition/height",
+    "passed": true
+  },
+  {
+    "name": "block_condition/in_tag",
+    "passed": true
+  },
+  {
+    "name": "block_condition/light_blocking",
+    "passed": true
+  },
+  {
+    "name": "block_condition/light_level",
+    "passed": true
+  },
+  {
+    "name": "block_condition/material",
+    "passed": true
+  },
+  {
+    "name": "block_condition/movement_blocking",
+    "passed": true
+  },
+  {
+    "name": "block_condition/nbt",
+    "passed": true
+  },
+  {
+    "name": "block_condition/offset",
+    "passed": true
+  },
+  {
+    "name": "block_condition/or",
+    "passed": true
+  },
+  {
+    "name": "block_condition/replacable",
+    "passed": true
+  },
+  {
+    "name": "block_condition/slipperiness",
+    "passed": true
+  },
+  {
+    "name": "block_condition/water_loggable",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/amount",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/and",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/attacker",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/bypasses_armor",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/constant",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/explosive",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/fire",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/from_falling",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/in_tag",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/name",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/or",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/out_of_world",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/projectile",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/unblockable",
+    "passed": true
+  },
+  {
+    "name": "entity_action/add_velocity",
+    "passed": true
+  },
+  {
+    "name": "entity_action/add_xp",
+    "passed": true
+  },
+  {
+    "name": "entity_action/and",
+    "passed": true
+  },
+  {
+    "name": "entity_action/apply_effect",
+    "passed": true
+  },
+  {
+    "name": "entity_action/area_of_effect",
+    "passed": true
+  },
+  {
+    "name": "entity_action/block_action_at",
+    "passed": true
+  },
+  {
+    "name": "entity_action/chance",
+    "passed": true
+  },
+  {
+    "name": "entity_action/change_resource",
+    "passed": true
+  },
+  {
+    "name": "entity_action/choice",
+    "passed": true
+  },
+  {
+    "name": "entity_action/clear_effect",
+    "passed": true
+  },
+  {
+    "name": "entity_action/crafting_table",
+    "passed": true
+  },
+  {
+    "name": "entity_action/damage",
+    "passed": true
+  },
+  {
+    "name": "entity_action/delay",
+    "passed": true
+  },
+  {
+    "name": "entity_action/dismount",
+    "passed": true
+  },
+  {
+    "name": "entity_action/drop_inventory",
+    "passed": true
+  },
+  {
+    "name": "entity_action/emit_game_event",
+    "passed": true
+  },
+  {
+    "name": "entity_action/ender_chest",
+    "passed": true
+  },
+  {
+    "name": "entity_action/equipped_item_action",
+    "passed": true
+  },
+  {
+    "name": "entity_action/execute_command",
+    "passed": true
+  },
+  {
+    "name": "entity_action/exhaust",
+    "passed": true
+  },
+  {
+    "name": "entity_action/explode",
+    "passed": true
+  },
+  {
+    "name": "entity_action/extinguish",
+    "passed": true
+  },
+  {
+    "name": "entity_action/feed",
+    "passed": true
+  },
+  {
+    "name": "entity_action/fire_projectile",
+    "passed": true
+  },
+  {
+    "name": "entity_action/gain_air",
+    "passed": true
+  },
+  {
+    "name": "entity_action/give",
+    "passed": true
+  },
+  {
+    "name": "entity_action/grant_advancement",
+    "passed": true
+  },
+  {
+    "name": "entity_action/grant_power",
+    "passed": true
+  },
+  {
+    "name": "entity_action/heal",
+    "passed": true
+  },
+  {
+    "name": "entity_action/if_else",
+    "passed": true
+  },
+  {
+    "name": "entity_action/if_else_list",
+    "passed": true
+  },
+  {
+    "name": "entity_action/modify_death_ticks",
+    "passed": true
+  },
+  {
+    "name": "entity_action/modify_inventory",
+    "passed": true
+  },
+  {
+    "name": "entity_action/modify_resource",
+    "passed": true
+  },
+  {
+    "name": "entity_action/modify_stat",
+    "passed": true
+  },
+  {
+    "name": "entity_action/nothing",
+    "passed": true
+  },
+  {
+    "name": "entity_action/passenger_action",
+    "passed": true
+  },
+  {
+    "name": "entity_action/play_sound",
+    "passed": true
+  },
+  {
+    "name": "entity_action/raycast",
+    "passed": true
+  },
+  {
+    "name": "entity_action/replace_inventory",
+    "passed": true
+  },
+  {
+    "name": "entity_action/revoke_advancement",
+    "passed": true
+  },
+  {
+    "name": "entity_action/revoke_power",
+    "passed": true
+  },
+  {
+    "name": "entity_action/riding_action",
+    "passed": true
+  },
+  {
+    "name": "entity_action/selector_action",
+    "passed": true
+  },
+  {
+    "name": "entity_action/set_fall_distance",
+    "passed": true
+  },
+  {
+    "name": "entity_action/set_on_fire",
+    "passed": true
+  },
+  {
+    "name": "entity_action/set_resource",
+    "passed": true
+  },
+  {
+    "name": "entity_action/side",
+    "passed": true
+  },
+  {
+    "name": "entity_action/spawn_effect_cloud",
+    "passed": true
+  },
+  {
+    "name": "entity_action/spawn_entity",
+    "passed": true
+  },
+  {
+    "name": "entity_action/spawn_particles",
+    "passed": true
+  },
+  {
+    "name": "entity_action/swing_hand",
+    "passed": true
+  },
+  {
+    "name": "entity_action/toggle",
+    "passed": true
+  },
+  {
+    "name": "entity_action/trigger_cooldown",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/ability",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/advancement",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/air",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/and",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/attribute",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/biome",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/block_collision",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/block_in_radius",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/brightness",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/climbing",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/collided_horizontally",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/command",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/constant",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/creative_flying",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/daytime",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/dimension",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/elytra_flight_possible",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/enchantment",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/entity_group",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/entity_type",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/equipped_item",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/exists",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/exposed_to_sky",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/exposed_to_sun",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/fall_distance",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/fall_flying",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/fluid_height",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/food_level",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/gamemode",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/glowing",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/health",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/in_block",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/in_block_anywhere",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/in_rain",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/in_tag",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/inventory",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/invisible",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/living",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/moving",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/nbt",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/on_block",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/on_fire",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/or",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/passenger",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/passenger_recursive",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/power",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/power_active",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/power_type",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/predicate",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/raycast",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/relative_health",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/resource",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/riding",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/riding_recursive",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/riding_root",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/saturation_level",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/scoreboard",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/sneaking",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/sprinting",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/status_effect",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/submerged_in",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/swimming",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/tamed",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/time_of_day",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/using_effective_tool",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/using_item",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/xp_levels",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/xp_points",
+    "passed": true
+  },
+  {
+    "name": "fluid_condition/and",
+    "passed": true
+  },
+  {
+    "name": "fluid_condition/constant",
+    "passed": true
+  },
+  {
+    "name": "fluid_condition/empty",
+    "passed": true
+  },
+  {
+    "name": "fluid_condition/fluid",
+    "passed": true
+  },
+  {
+    "name": "fluid_condition/in_tag",
+    "passed": true
+  },
+  {
+    "name": "fluid_condition/or",
+    "passed": true
+  },
+  {
+    "name": "fluid_condition/still",
+    "passed": true
+  },
+  {
+    "name": "item_action/and",
+    "passed": true
+  },
+  {
+    "name": "item_action/chance",
+    "passed": true
+  },
+  {
+    "name": "item_action/choice",
+    "passed": true
+  },
+  {
+    "name": "item_action/consume",
+    "passed": true
+  },
+  {
+    "name": "item_action/damage",
+    "passed": true
+  },
+  {
+    "name": "item_action/delay",
+    "passed": true
+  },
+  {
+    "name": "item_action/holder",
+    "passed": true
+  },
+  {
+    "name": "item_action/if_else",
+    "passed": true
+  },
+  {
+    "name": "item_action/if_else_list",
+    "passed": true
+  },
+  {
+    "name": "item_action/merge_nbt",
+    "passed": true
+  },
+  {
+    "name": "item_action/modify",
+    "passed": true
+  },
+  {
+    "name": "item_action/nothing",
+    "passed": true
+  },
+  {
+    "name": "item_action/remove_enchantment",
+    "passed": true
+  },
+  {
+    "name": "item_action/side",
+    "passed": true
+  },
+  {
+    "name": "item_condition/amount",
+    "passed": true
+  },
+  {
+    "name": "item_condition/and",
+    "passed": true
+  },
+  {
+    "name": "item_condition/armor_value",
+    "passed": true
+  },
+  {
+    "name": "item_condition/constant",
+    "passed": true
+  },
+  {
+    "name": "item_condition/durability",
+    "passed": true
+  },
+  {
+    "name": "item_condition/empty",
+    "passed": true
+  },
+  {
+    "name": "item_condition/enchantable",
+    "passed": true
+  },
+  {
+    "name": "item_condition/enchantment",
+    "passed": true
+  },
+  {
+    "name": "item_condition/fireproof",
+    "passed": true
+  },
+  {
+    "name": "item_condition/food",
+    "passed": true
+  },
+  {
+    "name": "item_condition/harvest_level",
+    "passed": true
+  },
+  {
+    "name": "item_condition/has_power",
+    "passed": true
+  },
+  {
+    "name": "item_condition/ingredient",
+    "passed": true
+  },
+  {
+    "name": "item_condition/is_damageable",
+    "passed": true
+  },
+  {
+    "name": "item_condition/is_equippable",
+    "passed": true
+  },
+  {
+    "name": "item_condition/meat",
+    "passed": true
+  },
+  {
+    "name": "item_condition/nbt",
+    "passed": true
+  },
+  {
+    "name": "item_condition/or",
+    "passed": true
+  },
+  {
+    "name": "item_condition/power_count",
+    "passed": true
+  },
+  {
+    "name": "item_condition/relative_durability",
+    "passed": true
+  },
+  {
+    "name": "item_condition/smeltable",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_being_used",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_block_break",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_block_use",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_callback",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_entity_use",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_hit",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_item_use",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_land",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_wake_up",
+    "passed": true
+  },
+  {
+    "name": "power/action_over_time",
+    "passed": true
+  },
+  {
+    "name": "power/action_when_damage_taken",
+    "passed": true
+  },
+  {
+    "name": "power/action_when_hit",
+    "passed": true
+  },
+  {
+    "name": "power/active_self",
+    "passed": true
+  },
+  {
+    "name": "power/attacker_action_when_hit",
+    "passed": true
+  },
+  {
+    "name": "power/attribute",
+    "passed": true
+  },
+  {
+    "name": "power/attribute_modify_transfer",
+    "passed": false,
+    "error": "Unknown power type: origins:attribute_modify_transfer",
+    "normalized": {
+      "type": "origins:attribute_modify_transfer",
+      "class": "modify_jump",
+      "attribute": "minecraft:generic.movement_speed"
+    }
+  },
+  {
+    "name": "power/burn",
+    "passed": true
+  },
+  {
+    "name": "power/climbing",
+    "passed": true
+  },
+  {
+    "name": "power/conditioned_attribute",
+    "passed": true
+  },
+  {
+    "name": "power/conditioned_restrict_armor",
+    "passed": true
+  },
+  {
+    "name": "power/cooldown",
+    "passed": true
+  },
+  {
+    "name": "power/creative_flight",
+    "passed": true
+  },
+  {
+    "name": "power/damage_over_time",
+    "passed": true
+  },
+  {
+    "name": "power/disable_regen",
+    "passed": true
+  },
+  {
+    "name": "power/effect_immunity",
+    "passed": true
+  },
+  {
+    "name": "power/elytra_flight",
+    "passed": true
+  },
+  {
+    "name": "power/entity_glow",
+    "passed": true
+  },
+  {
+    "name": "power/entity_group",
+    "passed": true
+  },
+  {
+    "name": "power/exhaust",
+    "passed": true
+  },
+  {
+    "name": "power/fire_immunity",
+    "passed": true
+  },
+  {
+    "name": "power/fire_projectile",
+    "passed": true
+  },
+  {
+    "name": "power/freeze",
+    "passed": true
+  },
+  {
+    "name": "power/grounded",
+    "passed": true
+  },
+  {
+    "name": "power/ignore_water",
+    "passed": true
+  },
+  {
+    "name": "power/inventory",
+    "passed": true
+  },
+  {
+    "name": "power/invisibility",
+    "passed": true
+  },
+  {
+    "name": "power/invulnerability",
+    "passed": true
+  },
+  {
+    "name": "power/item_on_item",
+    "passed": true
+  },
+  {
+    "name": "power/keep_inventory",
+    "passed": true
+  },
+  {
+    "name": "power/launch",
+    "passed": true
+  },
+  {
+    "name": "power/lava_vision",
+    "passed": true
+  },
+  {
+    "name": "power/model_color",
+    "passed": true
+  },
+  {
+    "name": "power/modify_air_speed",
+    "passed": true
+  },
+  {
+    "name": "power/modify_attribute",
+    "passed": true
+  },
+  {
+    "name": "power/modify_block_render",
+    "passed": true
+  },
+  {
+    "name": "power/modify_break_speed",
+    "passed": true
+  },
+  {
+    "name": "power/modify_camera_submersion",
+    "passed": true
+  },
+  {
+    "name": "power/modify_crafting",
+    "passed": true
+  },
+  {
+    "name": "power/modify_damage_dealt",
+    "passed": true
+  },
+  {
+    "name": "power/modify_damage_taken",
+    "passed": true
+  },
+  {
+    "name": "power/modify_exhaustion",
+    "passed": true
+  },
+  {
+    "name": "power/modify_falling",
+    "passed": true
+  },
+  {
+    "name": "power/modify_fluid_render",
+    "passed": true
+  },
+  {
+    "name": "power/modify_food",
+    "passed": true
+  },
+  {
+    "name": "power/modify_grindstone",
+    "passed": true
+  },
+  {
+    "name": "power/modify_harvest",
+    "passed": true
+  },
+  {
+    "name": "power/modify_healing",
+    "passed": true
+  },
+  {
+    "name": "power/modify_insomnia_ticks",
+    "passed": true
+  },
+  {
+    "name": "power/modify_jump",
+    "passed": true
+  },
+  {
+    "name": "power/modify_lava_speed",
+    "passed": true
+  },
+  {
+    "name": "power/modify_player_spawn",
+    "passed": true
+  },
+  {
+    "name": "power/modify_projectile_damage",
+    "passed": true
+  },
+  {
+    "name": "power/modify_slipperiness",
+    "passed": true
+  },
+  {
+    "name": "power/modify_status_effect_amplifier",
+    "passed": true
+  },
+  {
+    "name": "power/modify_status_effect_duration",
+    "passed": true
+  },
+  {
+    "name": "power/modify_swim_speed",
+    "passed": true
+  },
+  {
+    "name": "power/modify_velocity",
+    "passed": true
+  },
+  {
+    "name": "power/modify_xp_gain",
+    "passed": true
+  },
+  {
+    "name": "power/multiple",
+    "passed": true
+  },
+  {
+    "name": "power/night_vision",
+    "passed": true
+  },
+  {
+    "name": "power/overlay",
+    "passed": true
+  },
+  {
+    "name": "power/particle",
+    "passed": true
+  },
+  {
+    "name": "power/phasing",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_being_used",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_block_selection",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_block_use",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_death",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_elytra_flight",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_entity_collision",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_entity_render",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_entity_use",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_feature_render",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_game_event",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_item_use",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_sleep",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_sprinting",
+    "passed": true
+  },
+  {
+    "name": "power/recipe",
+    "passed": true
+  },
+  {
+    "name": "power/resource",
+    "passed": true
+  },
+  {
+    "name": "power/restrict_armor",
+    "passed": true
+  },
+  {
+    "name": "power/self_action_on_hit",
+    "passed": true
+  },
+  {
+    "name": "power/self_action_on_kill",
+    "passed": true
+  },
+  {
+    "name": "power/self_action_when_hit",
+    "passed": true
+  },
+  {
+    "name": "power/self_glow",
+    "passed": true
+  },
+  {
+    "name": "power/shader",
+    "passed": true
+  },
+  {
+    "name": "power/shaking",
+    "passed": true
+  },
+  {
+    "name": "power/simple",
+    "passed": true
+  },
+  {
+    "name": "power/stacking_status_effect",
+    "passed": true
+  },
+  {
+    "name": "power/starting_equipment",
+    "passed": true
+  },
+  {
+    "name": "power/status_bar_texture",
+    "passed": true
+  },
+  {
+    "name": "power/swimming",
+    "passed": true
+  },
+  {
+    "name": "power/target_action_on_hit",
+    "passed": true
+  },
+  {
+    "name": "power/toggle",
+    "passed": true
+  },
+  {
+    "name": "power/toggle_night_vision",
+    "passed": true
+  },
+  {
+    "name": "power/tooltip",
+    "passed": true
+  },
+  {
+    "name": "power/walk_on_fluid",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/and@apoli",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/category@apoli",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/constant@apoli",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/high_humidity@apoli",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/in_tag@apoli",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/or@apoli",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/precipitation@apoli",
+    "passed": true
+  },
+  {
+    "name": "biome_condition/temperature@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/actor_action@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/add_velocity@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/and@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/chance@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/choice@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/damage@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/delay@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/if_else@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/if_else_list@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/invert@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/mount@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/nothing@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/set_in_love@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/side@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/tame@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_action/target_action@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/actor_condition@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/and@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/attack_target@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/attacker@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/both@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/can_see@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/constant@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/distance@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/either@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/invert@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/or@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/owner@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/relative_rotation@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/riding@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/riding_recursive@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/riding_root@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/target_condition@apoli",
+    "passed": true
+  },
+  {
+    "name": "bi_entity_condition/undirected@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/add_block@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/and@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/area_of_effect@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/bonemeal@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/chance@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/choice@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/delay@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/execute_command@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/explode@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/if_else@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/if_else_list@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/modify_block_state@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/nothing@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/offset@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/set_block@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_action/side@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/adjacent@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/and@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/attachable@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/blast_resistance@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/block@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/block_entity@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/block_state@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/constant@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/exposed_to_sky@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/fluid@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/hardness@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/height@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/in_tag@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/light_blocking@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/light_level@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/material@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/movement_blocking@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/nbt@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/offset@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/or@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/replacable@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/slipperiness@apoli",
+    "passed": true
+  },
+  {
+    "name": "block_condition/water_loggable@apoli",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/amount@apoli",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/and@apoli",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/attacker@apoli",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/bypasses_armor@apoli",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/constant@apoli",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/explosive@apoli",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/fire@apoli",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/from_falling@apoli",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/in_tag@apoli",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/name@apoli",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/or@apoli",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/out_of_world@apoli",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/projectile@apoli",
+    "passed": true
+  },
+  {
+    "name": "damage_condition/unblockable@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/add_velocity@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/add_xp@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/and@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/apply_effect@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/area_of_effect@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/block_action_at@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/chance@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/change_resource@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/choice@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/clear_effect@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/crafting_table@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/damage@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/delay@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/dismount@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/drop_inventory@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/emit_game_event@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/ender_chest@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/equipped_item_action@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/execute_command@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/exhaust@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/explode@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/extinguish@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/feed@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/fire_projectile@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/gain_air@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/give@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/grant_advancement@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/grant_power@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/heal@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/if_else@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/if_else_list@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/modify_death_ticks@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/modify_inventory@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/modify_resource@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/modify_stat@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/nothing@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/passenger_action@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/play_sound@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/raycast@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/replace_inventory@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/revoke_advancement@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/revoke_power@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/riding_action@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/selector_action@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/set_fall_distance@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/set_on_fire@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/set_resource@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/side@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/spawn_effect_cloud@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/spawn_entity@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/spawn_particles@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/swing_hand@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/toggle@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_action/trigger_cooldown@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/ability@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/advancement@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/air@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/and@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/attribute@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/biome@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/block_collision@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/block_in_radius@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/brightness@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/climbing@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/collided_horizontally@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/command@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/constant@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/creative_flying@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/daytime@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/dimension@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/elytra_flight_possible@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/enchantment@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/entity_group@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/entity_type@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/equipped_item@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/exists@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/exposed_to_sky@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/exposed_to_sun@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/fall_distance@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/fall_flying@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/fluid_height@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/food_level@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/gamemode@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/glowing@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/health@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/in_block@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/in_block_anywhere@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/in_rain@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/in_tag@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/inventory@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/invisible@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/living@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/moving@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/nbt@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/on_block@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/on_fire@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/or@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/passenger@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/passenger_recursive@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/power@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/power_active@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/power_type@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/predicate@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/raycast@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/relative_health@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/resource@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/riding@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/riding_recursive@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/riding_root@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/saturation_level@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/scoreboard@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/sneaking@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/sprinting@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/status_effect@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/submerged_in@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/swimming@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/tamed@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/time_of_day@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/using_effective_tool@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/using_item@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/xp_levels@apoli",
+    "passed": true
+  },
+  {
+    "name": "entity_condition/xp_points@apoli",
+    "passed": true
+  },
+  {
+    "name": "fluid_condition/and@apoli",
+    "passed": true
+  },
+  {
+    "name": "fluid_condition/constant@apoli",
+    "passed": true
+  },
+  {
+    "name": "fluid_condition/empty@apoli",
+    "passed": true
+  },
+  {
+    "name": "fluid_condition/fluid@apoli",
+    "passed": true
+  },
+  {
+    "name": "fluid_condition/in_tag@apoli",
+    "passed": true
+  },
+  {
+    "name": "fluid_condition/or@apoli",
+    "passed": true
+  },
+  {
+    "name": "fluid_condition/still@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_action/and@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_action/chance@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_action/choice@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_action/consume@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_action/damage@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_action/delay@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_action/holder@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_action/if_else@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_action/if_else_list@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_action/merge_nbt@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_action/modify@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_action/nothing@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_action/remove_enchantment@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_action/side@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/amount@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/and@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/armor_value@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/constant@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/durability@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/empty@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/enchantable@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/enchantment@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/fireproof@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/food@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/harvest_level@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/has_power@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/ingredient@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/is_damageable@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/is_equippable@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/meat@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/nbt@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/or@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/power_count@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/relative_durability@apoli",
+    "passed": true
+  },
+  {
+    "name": "item_condition/smeltable@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_being_used@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_block_break@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_block_use@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_callback@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_entity_use@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_hit@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_item_use@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_land@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/action_on_wake_up@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/action_over_time@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/action_when_damage_taken@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/action_when_hit@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/active_self@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/attacker_action_when_hit@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/attribute@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/attribute_modify_transfer@apoli",
+    "passed": false,
+    "error": "Unknown power type: apoli:attribute_modify_transfer",
+    "normalized": {
+      "type": "apoli:attribute_modify_transfer",
+      "class": "modify_jump",
+      "attribute": "minecraft:generic.movement_speed"
+    }
+  },
+  {
+    "name": "power/burn@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/climbing@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/conditioned_attribute@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/conditioned_restrict_armor@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/cooldown@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/creative_flight@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/damage_over_time@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/disable_regen@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/effect_immunity@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/elytra_flight@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/entity_glow@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/entity_group@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/exhaust@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/fire_immunity@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/fire_projectile@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/freeze@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/grounded@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/ignore_water@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/inventory@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/invisibility@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/invulnerability@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/item_on_item@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/keep_inventory@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/launch@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/lava_vision@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/model_color@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_air_speed@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_attribute@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_block_render@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_break_speed@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_camera_submersion@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_crafting@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_damage_dealt@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_damage_taken@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_exhaustion@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_falling@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_fluid_render@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_food@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_grindstone@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_harvest@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_healing@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_insomnia_ticks@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_jump@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_lava_speed@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_player_spawn@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_projectile_damage@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_slipperiness@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_status_effect_amplifier@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_status_effect_duration@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_swim_speed@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_velocity@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/modify_xp_gain@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/multiple@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/night_vision@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/overlay@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/particle@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/phasing@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_being_used@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_block_selection@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_block_use@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_death@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_elytra_flight@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_entity_collision@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_entity_render@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_entity_use@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_feature_render@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_game_event@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_item_use@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_sleep@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/prevent_sprinting@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/recipe@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/resource@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/restrict_armor@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/self_action_on_hit@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/self_action_on_kill@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/self_action_when_hit@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/self_glow@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/shader@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/shaking@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/simple@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/stacking_status_effect@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/starting_equipment@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/status_bar_texture@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/swimming@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/target_action_on_hit@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/toggle@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/toggle_night_vision@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/tooltip@apoli",
+    "passed": true
+  },
+  {
+    "name": "power/walk_on_fluid@apoli",
+    "passed": true
+  }
+]

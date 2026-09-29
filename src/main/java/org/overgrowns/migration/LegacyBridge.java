@@ -1,11 +1,10 @@
 package org.overgrowns.migration;
 
-import dev.overgrown.apoli.action.ActionTypes;
+import dev.overgrown.apoli.action.*;
 import dev.overgrown.apoli.alias.AliasingOptions;
 import dev.overgrown.apoli.condition.ConditionTypes;
 import dev.overgrown.apoli.power.PowerTypeRegistry;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -44,7 +43,7 @@ public final class LegacyBridge implements ModInitializer {
         ResourceLocation insomniaId = new ResourceLocation(MOD_ID, "modify_insomnia_ticks");
         if (PowerTypeRegistry.get(new ResourceLocation("origins", "modify_insomnia_ticks")) == null) {
             PowerTypeRegistry.register(insomniaId, new LegacyInsomniaPower(),
-                AliasingOptions.builder().addTypeAlias("origins:modify_insomnia_ticks").build());
+                AliasingOptions.builder().addTypeAlias("origins:modify_insomnia_ticks").addTypeAlias("apoli:modify_insomnia_ticks").build());
             LOGGER.info("Registered legacy modify_insomnia_ticks power");
         }
         if (PowerTypeRegistry.get(new ResourceLocation("origins", "modify_gravity")) == null) {
@@ -96,11 +95,39 @@ public final class LegacyBridge implements ModInitializer {
                 AliasingOptions.builder().addTypeAlias("origins:modify_velocity").build());
         }
 
-        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-            LegacyPowerCommands.attach(dispatcher);
-            LegacyResourceCommands.attach(dispatcher);
-        });
 
+        registerGeneralAdapters();
+        net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents.SERVER_STARTED.register(LegacyCompatibilityTests::runIfRequested);
         LOGGER.info("Overgrown Legacy Bridge active; legacy power revoke syntax will attach during command registration");
     }
+    private static void registerGeneralAdapters() {
+        PowerTypeRegistry.register(LegacyDamageOverTimePower.ID, new LegacyDamageOverTimePower());
+        var damageId = new ResourceLocation(MOD_ID, "damage");
+        ActionTypes.ENTITY.register(damageId, new LegacyDamageAction<>(dev.overgrown.apoli.condition.context.EntityCtx::entity, ctx -> null));
+        ActionTypes.BI_ENTITY.register(damageId, new LegacyDamageAction<>(dev.overgrown.apoli.condition.context.BiEntityCtx::target, dev.overgrown.apoli.condition.context.BiEntityCtx::actor));
+        net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents.AFTER_RESPAWN.register((oldPlayer, player, alive) -> {
+            if (dev.overgrown.apoli.power.PowerContainer.of(player) instanceof dev.overgrown.apoli.power.PowerContainerImpl holder)
+                for (var id : holder.powersOfType(LegacyDamageOverTimePower.ID)) holder.setAuxInts(id, new int[2]);
+        });
+        PowerTypeRegistry.register(LegacyToggleNightVisionPower.ID, new LegacyToggleNightVisionPower());
+        if (PowerTypeRegistry.get(new ResourceLocation("origins", "modify_lava_speed")) == null)
+            PowerTypeRegistry.register(LegacyLavaSpeedPower.ID, new LegacyLavaSpeedPower(), AliasingOptions.builder()
+                .addTypeAlias("origins:modify_lava_speed").addTypeAlias("apoli:modify_lava_speed").build());
+        PowerTypeRegistry.register(LegacyCameraSubmersionPower.ID, new LegacyCameraSubmersionPower());
+        if (PowerTypeRegistry.get(new ResourceLocation("origins", "modify_fluid_render")) == null)
+            PowerTypeRegistry.register(LegacyFluidRenderPower.ID, new LegacyFluidRenderPower(), AliasingOptions.builder()
+                .addTypeAlias("origins:modify_fluid_render").addTypeAlias("apoli:modify_fluid_render").build());
+        var fluid = new ResourceLocation(MOD_ID, "fluid");
+        if (ConditionTypes.FLUID.get(new ResourceLocation("origins", "fluid")) == null)
+            ConditionTypes.FLUID.register(fluid, new LegacyFluidCondition(), AliasingOptions.builder()
+                .addTypeAlias("origins:fluid").addTypeAlias("apoli:fluid").build());
+        var side = new ResourceLocation(MOD_ID, "side");
+        var aliases = AliasingOptions.builder().addTypeAlias("origins:side").addTypeAlias("apoli:side").build();
+        ActionTypes.ENTITY.register(side, new LegacySideAction<>(EntityAction.CODEC, EntityAction::run, ctx -> ctx.level().isClientSide), aliases);
+        ActionTypes.BI_ENTITY.register(side, new LegacySideAction<>(BiEntityAction.CODEC, BiEntityAction::run, ctx -> ctx.level().isClientSide), aliases);
+        ActionTypes.BLOCK.register(side, new LegacySideAction<>(BlockAction.CODEC, BlockAction::run, ctx -> ctx.level().isClientSide), aliases);
+        ActionTypes.ITEM.register(side, new LegacySideAction<>(ItemAction.CODEC, ItemAction::run, ctx -> ctx.level().isClientSide), aliases);
+        ActionTypes.ENTITY.register(new ResourceLocation(MOD_ID, "modify_resource"), new LegacyModifyResourceAction());
+    }
+
 }

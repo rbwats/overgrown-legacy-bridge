@@ -1,0 +1,114 @@
+[
+  {
+    "name": "insomnia: aggregate active modifiers without modifying state",
+    "passed": true
+  },
+  {
+    "name": "lava: modifier arithmetic and native travel injection",
+    "passed": true
+  },
+  {
+    "name": "toggle night vision: defaults, key dispatch, active condition, suppression",
+    "passed": true
+  },
+  {
+    "name": "toggle: persisted state survives container round trip",
+    "passed": true
+  },
+  {
+    "name": "modify_resource: singular and plural, legacy truncation",
+    "passed": true
+  },
+  {
+    "name": "resource command: \u003d with fake scoreboard holder",
+    "passed": true
+  },
+  {
+    "name": "resource command: +\u003d with fake scoreboard holder",
+    "passed": true
+  },
+  {
+    "name": "resource command: -\u003d with fake scoreboard holder",
+    "passed": true
+  },
+  {
+    "name": "resource command: *\u003d with fake scoreboard holder",
+    "passed": true
+  },
+  {
+    "name": "resource command: /\u003d with fake scoreboard holder",
+    "passed": true
+  },
+  {
+    "name": "resource command: %\u003d with fake scoreboard holder",
+    "passed": true
+  },
+  {
+    "name": "resource command: \u003c with fake scoreboard holder",
+    "passed": true
+  },
+  {
+    "name": "resource command: \u003e with fake scoreboard holder",
+    "passed": true
+  },
+  {
+    "name": "resource command: \u003e\u003c with fake scoreboard holder",
+    "passed": true
+  },
+  {
+    "name": "resource command: clamp and divide-by-zero atomicity",
+    "passed": true
+  },
+  {
+    "name": "fluid identity: still fluid does not equal flowing fluid",
+    "passed": true
+  },
+  {
+    "name": "material: singular/plural union",
+    "passed": true
+  },
+  {
+    "name": "held power ID condition: does not compare factory type",
+    "passed": true
+  },
+  {
+    "name": "damage source: source flags take priority and death name is retained",
+    "passed": true
+  },
+  {
+    "name": "damage over time: exact onset and interval",
+    "passed": true
+  },
+  {
+    "name": "damage over time: protection adds level plus enchanted-item count",
+    "passed": true
+  },
+  {
+    "name": "normalizer: NBT, recipe and arbitrary payloads are untouched",
+    "passed": true
+  },
+  {
+    "name": "normalizer: context disambiguates item damage and nested side/chance actions",
+    "passed": true
+  },
+  {
+    "name": "normalizer: combined status effects survive idempotent normalization",
+    "passed": true
+  },
+  {
+    "name": "camera submersion: omitted from matches every original fluid",
+    "passed": true
+  },
+  {
+    "name": "layer overlays: accumulate exclusions and merge partial GUI titles",
+    "passed": true
+  },
+  {
+    "name": "schema: bi-entity fields do not become entity fields",
+    "passed": true
+  },
+  {
+    "name": "origin text: translation keys are preserved as components",
+    "passed": true
+  }
+]

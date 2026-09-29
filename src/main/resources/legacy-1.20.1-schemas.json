@@ -1,0 +1,5502 @@
+{
+  "BIOME_CONDITION": {
+    "and": {
+      "source": "power/factory/condition/BiomeConditions.java",
+      "fields": {
+        "conditions": {
+          "java_type": "ApoliDataTypes.BIOME_CONDITIONS",
+          "required": true
+        }
+      }
+    },
+    "category": {
+      "source": "power/factory/condition/BiomeConditions.java",
+      "fields": {
+        "category": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": true
+        }
+      }
+    },
+    "constant": {
+      "source": "power/factory/condition/BiomeConditions.java",
+      "fields": {
+        "value": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": true
+        }
+      }
+    },
+    "high_humidity": {
+      "source": "power/factory/condition/BiomeConditions.java",
+      "fields": {}
+    },
+    "in_tag": {
+      "source": "power/factory/condition/BiomeConditions.java",
+      "fields": {
+        "tag": {
+          "java_type": "SerializableDataTypes.BIOME_TAG",
+          "required": true
+        }
+      }
+    },
+    "or": {
+      "source": "power/factory/condition/BiomeConditions.java",
+      "fields": {
+        "conditions": {
+          "java_type": "ApoliDataTypes.BIOME_CONDITIONS",
+          "required": true
+        }
+      }
+    },
+    "precipitation": {
+      "source": "power/factory/condition/BiomeConditions.java",
+      "fields": {
+        "precipitation": {
+          "java_type": "SerializableDataType.enumValue(Biome.Precipitation.class)",
+          "required": true
+        }
+      }
+    },
+    "temperature": {
+      "source": "power/factory/condition/BiomeConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    }
+  },
+  "BI_ENTITY_ACTION": {
+    "actor_action": {
+      "source": "power/factory/action/BiEntityActions.java",
+      "fields": {
+        "action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": true
+        }
+      }
+    },
+    "add_velocity": {
+      "source": "power/factory/action/BiEntityActions.java",
+      "fields": {
+        "x": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "0F"
+        },
+        "y": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "0F"
+        },
+        "z": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "0F"
+        },
+        "client": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "server": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "set": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "and": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "actions": {
+          "java_type": "SELF_ACTIONS",
+          "required": true
+        }
+      }
+    },
+    "chance": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "chance": {
+          "java_type": "FLOAT",
+          "required": true
+        },
+        "action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    },
+    "choice": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "actions": {
+          "java_type": "CHOICES",
+          "required": true
+        }
+      }
+    },
+    "damage": {
+      "source": "power/factory/action/bientity/DamageAction.java",
+      "fields": {
+        "amount": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        },
+        "source": {
+          "java_type": "ApoliDataTypes.DAMAGE_SOURCE_DESCRIPTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "damage_type": {
+          "java_type": "SerializableDataTypes.DAMAGE_TYPE",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "delay": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "ticks": {
+          "java_type": "INT",
+          "required": true
+        },
+        "action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    },
+    "if_else": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "condition": {
+          "java_type": "SELF_CONDITION",
+          "required": true
+        },
+        "if_action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    },
+    "if_else_list": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "actions": {
+          "java_type": "BRANCHES",
+          "required": true
+        }
+      }
+    },
+    "invert": {
+      "source": "power/factory/action/BiEntityActions.java",
+      "fields": {
+        "action": {
+          "java_type": "ApoliDataTypes.BIENTITY_ACTION",
+          "required": true
+        }
+      }
+    },
+    "mount": {
+      "source": "power/factory/action/BiEntityActions.java",
+      "fields": {}
+    },
+    "nothing": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {}
+    },
+    "set_in_love": {
+      "source": "power/factory/action/BiEntityActions.java",
+      "fields": {}
+    },
+    "side": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "side": {
+          "java_type": "SIDE",
+          "required": true
+        },
+        "action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    },
+    "tame": {
+      "source": "power/factory/action/BiEntityActions.java",
+      "fields": {}
+    },
+    "target_action": {
+      "source": "power/factory/action/BiEntityActions.java",
+      "fields": {
+        "action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": true
+        }
+      }
+    }
+  },
+  "BI_ENTITY_CONDITION": {
+    "actor_condition": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {
+        "condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": true
+        }
+      }
+    },
+    "and": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {
+        "conditions": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITIONS",
+          "required": true
+        }
+      }
+    },
+    "attack_target": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {}
+    },
+    "attacker": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {}
+    },
+    "both": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {
+        "condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": true
+        }
+      }
+    },
+    "can_see": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {
+        "shape_type": {
+          "java_type": "SerializableDataType.enumValue(RaycastContext.ShapeType.class)",
+          "required": false,
+          "java_default": "RaycastContext.ShapeType.VISUAL"
+        },
+        "fluid_handling": {
+          "java_type": "SerializableDataType.enumValue(RaycastContext.FluidHandling.class)",
+          "required": false,
+          "java_default": "RaycastContext.FluidHandling.NONE"
+        }
+      }
+    },
+    "constant": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {
+        "value": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": true
+        }
+      }
+    },
+    "distance": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.DOUBLE",
+          "required": true
+        }
+      }
+    },
+    "either": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {
+        "condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": true
+        }
+      }
+    },
+    "invert": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {
+        "condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": true
+        }
+      }
+    },
+    "or": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {
+        "conditions": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITIONS",
+          "required": true
+        }
+      }
+    },
+    "owner": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {}
+    },
+    "relative_rotation": {
+      "source": "power/factory/condition/bientity/RelativeRotationCondition.java",
+      "fields": {
+        "axes": {
+          "java_type": "SerializableDataTypes.AXIS_SET",
+          "required": false,
+          "java_default": "EnumSet.allOf(Direction.Axis.class)"
+        },
+        "actor_rotation": {
+          "java_type": "SerializableDataType.enumValue(RotationType.class)",
+          "required": false,
+          "java_default": "RotationType.HEAD"
+        },
+        "target_rotation": {
+          "java_type": "SerializableDataType.enumValue(RotationType.class)",
+          "required": false,
+          "java_default": "RotationType.BODY"
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.DOUBLE",
+          "required": true
+        }
+      }
+    },
+    "riding": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {}
+    },
+    "riding_recursive": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {}
+    },
+    "riding_root": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {}
+    },
+    "target_condition": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {
+        "condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": true
+        }
+      }
+    },
+    "undirected": {
+      "source": "power/factory/condition/BiEntityConditions.java",
+      "fields": {
+        "condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": true
+        }
+      }
+    }
+  },
+  "BLOCK_ACTION": {
+    "add_block": {
+      "source": "power/factory/action/BlockActions.java",
+      "fields": {
+        "block": {
+          "java_type": "SerializableDataTypes.BLOCK_STATE",
+          "required": true
+        }
+      }
+    },
+    "and": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "actions": {
+          "java_type": "SELF_ACTIONS",
+          "required": true
+        }
+      }
+    },
+    "area_of_effect": {
+      "source": "power/factory/action/block/AreaOfEffectAction.java",
+      "fields": {
+        "block_action": {
+          "java_type": "ApoliDataTypes.BLOCK_ACTION",
+          "required": true
+        },
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "radius": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "16"
+        },
+        "shape": {
+          "java_type": "SerializableDataType.enumValue(Shape.class)",
+          "required": false,
+          "java_default": "Shape.CUBE"
+        }
+      }
+    },
+    "bonemeal": {
+      "source": "power/factory/action/block/BonemealAction.java",
+      "fields": {
+        "effects": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        }
+      }
+    },
+    "chance": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "chance": {
+          "java_type": "FLOAT",
+          "required": true
+        },
+        "action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    },
+    "choice": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "actions": {
+          "java_type": "CHOICES",
+          "required": true
+        }
+      }
+    },
+    "delay": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "ticks": {
+          "java_type": "INT",
+          "required": true
+        },
+        "action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    },
+    "execute_command": {
+      "source": "power/factory/action/BlockActions.java",
+      "fields": {
+        "command": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": true
+        }
+      }
+    },
+    "explode": {
+      "source": "power/factory/action/block/ExplodeAction.java",
+      "fields": {
+        "power": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        },
+        "destruction_type": {
+          "java_type": "ApoliDataTypes.BACKWARDS_COMPATIBLE_DESTRUCTION_TYPE",
+          "required": false,
+          "java_default": "Explosion.DestructionType.DESTROY"
+        },
+        "indestructible": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "destructible": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "create_fire": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "if_else": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "condition": {
+          "java_type": "SELF_CONDITION",
+          "required": true
+        },
+        "if_action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    },
+    "if_else_list": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "actions": {
+          "java_type": "BRANCHES",
+          "required": true
+        }
+      }
+    },
+    "modify_block_state": {
+      "source": "power/factory/action/block/ModifyBlockStateAction.java",
+      "fields": {
+        "property": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": true
+        },
+        "operation": {
+          "java_type": "ApoliDataTypes.RESOURCE_OPERATION",
+          "required": false,
+          "java_default": "ResourceOperation.ADD"
+        },
+        "change": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "null"
+        },
+        "value": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "null"
+        },
+        "enum": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": false,
+          "java_default": "null"
+        },
+        "cycle": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "nothing": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {}
+    },
+    "offset": {
+      "source": "power/factory/action/BlockActions.java",
+      "fields": {
+        "action": {
+          "java_type": "ApoliDataTypes.BLOCK_ACTION",
+          "required": true
+        },
+        "x": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        },
+        "y": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        },
+        "z": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        }
+      }
+    },
+    "set_block": {
+      "source": "power/factory/action/BlockActions.java",
+      "fields": {
+        "block": {
+          "java_type": "SerializableDataTypes.BLOCK_STATE",
+          "required": true
+        }
+      }
+    },
+    "side": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "side": {
+          "java_type": "SIDE",
+          "required": true
+        },
+        "action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    }
+  },
+  "BLOCK_CONDITION": {
+    "adjacent": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "adjacent_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": true
+        }
+      }
+    },
+    "and": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "conditions": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITIONS",
+          "required": true
+        }
+      }
+    },
+    "attachable": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {}
+    },
+    "blast_resistance": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "block": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "block": {
+          "java_type": "SerializableDataTypes.BLOCK",
+          "required": true
+        }
+      }
+    },
+    "block_entity": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {}
+    },
+    "block_state": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "property": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": true
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": false,
+          "java_default": "null"
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "null"
+        },
+        "value": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "null"
+        },
+        "enum": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "constant": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "value": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": true
+        }
+      }
+    },
+    "exposed_to_sky": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {}
+    },
+    "fluid": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "fluid_condition": {
+          "java_type": "ApoliDataTypes.FLUID_CONDITION",
+          "required": true
+        }
+      }
+    },
+    "hardness": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "height": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "in_tag": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "tag": {
+          "java_type": "SerializableDataTypes.BLOCK_TAG",
+          "required": true
+        }
+      }
+    },
+    "light_blocking": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {}
+    },
+    "light_level": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "light_type": {
+          "java_type": "SerializableDataType.enumValue(LightType.class)",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "material": {
+      "source": "power/factory/condition/block/MaterialCondition.java",
+      "fields": {
+        "material": {
+          "java_type": "ApoliDataTypes.LEGACY_MATERIAL",
+          "required": false,
+          "java_default": "null"
+        },
+        "materials": {
+          "java_type": "ApoliDataTypes.LEGACY_MATERIALS",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "movement_blocking": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {}
+    },
+    "nbt": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "nbt": {
+          "java_type": "SerializableDataTypes.NBT",
+          "required": true
+        }
+      }
+    },
+    "offset": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": true
+        },
+        "x": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        },
+        "y": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        },
+        "z": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        }
+      }
+    },
+    "or": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "conditions": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITIONS",
+          "required": true
+        }
+      }
+    },
+    "replacable": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {}
+    },
+    "slipperiness": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "water_loggable": {
+      "source": "power/factory/condition/BlockConditions.java",
+      "fields": {}
+    }
+  },
+  "DAMAGE_CONDITION": {
+    "amount": {
+      "source": "power/factory/condition/DamageConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "and": {
+      "source": "power/factory/condition/DamageConditions.java",
+      "fields": {
+        "conditions": {
+          "java_type": "ApoliDataTypes.DAMAGE_CONDITIONS",
+          "required": true
+        }
+      }
+    },
+    "attacker": {
+      "source": "power/factory/condition/DamageConditions.java",
+      "fields": {
+        "entity_condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "bypasses_armor": {
+      "source": "power/factory/condition/DamageConditions.java",
+      "fields": {}
+    },
+    "constant": {
+      "source": "power/factory/condition/DamageConditions.java",
+      "fields": {
+        "value": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": true
+        }
+      }
+    },
+    "explosive": {
+      "source": "power/factory/condition/DamageConditions.java",
+      "fields": {}
+    },
+    "fire": {
+      "source": "power/factory/condition/DamageConditions.java",
+      "fields": {}
+    },
+    "from_falling": {
+      "source": "power/factory/condition/DamageConditions.java",
+      "fields": {}
+    },
+    "in_tag": {
+      "source": "power/factory/condition/DamageConditions.java",
+      "fields": {
+        "tag": {
+          "java_type": "SerializableDataType.tag(RegistryKeys.DAMAGE_TYPE)",
+          "required": true
+        }
+      }
+    },
+    "name": {
+      "source": "power/factory/condition/DamageConditions.java",
+      "fields": {
+        "name": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": true
+        }
+      }
+    },
+    "or": {
+      "source": "power/factory/condition/DamageConditions.java",
+      "fields": {
+        "conditions": {
+          "java_type": "ApoliDataTypes.DAMAGE_CONDITIONS",
+          "required": true
+        }
+      }
+    },
+    "out_of_world": {
+      "source": "power/factory/condition/DamageConditions.java",
+      "fields": {}
+    },
+    "projectile": {
+      "source": "power/factory/condition/DamageConditions.java",
+      "fields": {
+        "projectile": {
+          "java_type": "SerializableDataTypes.ENTITY_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "projectile_condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "unblockable": {
+      "source": "power/factory/condition/DamageConditions.java",
+      "fields": {}
+    }
+  },
+  "ENTITY_ACTION": {
+    "add_velocity": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "x": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "0F"
+        },
+        "y": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "0F"
+        },
+        "z": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "0F"
+        },
+        "space": {
+          "java_type": "ApoliDataTypes.SPACE",
+          "required": false,
+          "java_default": "Space.WORLD"
+        },
+        "client": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "server": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "set": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "add_xp": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "points": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        },
+        "levels": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        }
+      }
+    },
+    "and": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "actions": {
+          "java_type": "SELF_ACTIONS",
+          "required": true
+        }
+      }
+    },
+    "apply_effect": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "effect": {
+          "java_type": "SerializableDataTypes.STATUS_EFFECT_INSTANCE",
+          "required": false,
+          "java_default": "null"
+        },
+        "effects": {
+          "java_type": "SerializableDataTypes.STATUS_EFFECT_INSTANCES",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "area_of_effect": {
+      "source": "power/factory/action/entity/AreaOfEffectAction.java",
+      "fields": {
+        "radius": {
+          "java_type": "SerializableDataTypes.DOUBLE",
+          "required": false,
+          "java_default": "16D"
+        },
+        "bientity_action": {
+          "java_type": "ApoliDataTypes.BIENTITY_ACTION",
+          "required": true
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "include_target": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "block_action_at": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "block_action": {
+          "java_type": "ApoliDataTypes.BLOCK_ACTION",
+          "required": true
+        }
+      }
+    },
+    "chance": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "chance": {
+          "java_type": "FLOAT",
+          "required": true
+        },
+        "action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    },
+    "change_resource": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "resource": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": true
+        },
+        "change": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "operation": {
+          "java_type": "ApoliDataTypes.RESOURCE_OPERATION",
+          "required": false,
+          "java_default": "ResourceOperation.ADD"
+        }
+      }
+    },
+    "choice": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "actions": {
+          "java_type": "CHOICES",
+          "required": true
+        }
+      }
+    },
+    "clear_effect": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "effect": {
+          "java_type": "SerializableDataTypes.STATUS_EFFECT",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "crafting_table": {
+      "source": "power/factory/action/entity/CraftingTableAction.java",
+      "fields": {}
+    },
+    "damage": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "amount": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        },
+        "source": {
+          "java_type": "ApoliDataTypes.DAMAGE_SOURCE_DESCRIPTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "damage_type": {
+          "java_type": "SerializableDataTypes.DAMAGE_TYPE",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "delay": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "ticks": {
+          "java_type": "INT",
+          "required": true
+        },
+        "action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    },
+    "dismount": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {}
+    },
+    "drop_inventory": {
+      "source": "power/factory/action/entity/DropInventoryAction.java",
+      "fields": {
+        "inventory_type": {
+          "java_type": "ApoliDataTypes.INVENTORY_TYPE",
+          "required": false,
+          "java_default": "InventoryType.INVENTORY"
+        },
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "slots": {
+          "java_type": "ApoliDataTypes.ITEM_SLOTS",
+          "required": false,
+          "java_default": "null"
+        },
+        "slot": {
+          "java_type": "ApoliDataTypes.ITEM_SLOT",
+          "required": false,
+          "java_default": "null"
+        },
+        "power": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "throw_randomly": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        },
+        "retain_ownership": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "amount": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        }
+      }
+    },
+    "emit_game_event": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "event": {
+          "java_type": "SerializableDataTypes.GAME_EVENT",
+          "required": true
+        }
+      }
+    },
+    "ender_chest": {
+      "source": "power/factory/action/entity/EnderChestAction.java",
+      "fields": {}
+    },
+    "equipped_item_action": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "equipment_slot": {
+          "java_type": "SerializableDataTypes.EQUIPMENT_SLOT",
+          "required": true
+        },
+        "action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": true
+        }
+      }
+    },
+    "execute_command": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "command": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": true
+        }
+      }
+    },
+    "exhaust": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "amount": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "explode": {
+      "source": "power/factory/action/entity/ExplodeAction.java",
+      "fields": {
+        "power": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        },
+        "destruction_type": {
+          "java_type": "ApoliDataTypes.BACKWARDS_COMPATIBLE_DESTRUCTION_TYPE",
+          "required": false,
+          "java_default": "Explosion.DestructionType.DESTROY"
+        },
+        "damage_self": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "indestructible": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "destructible": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "create_fire": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "extinguish": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {}
+    },
+    "feed": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "food": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "saturation": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "fire_projectile": {
+      "source": "power/factory/action/entity/FireProjectileAction.java",
+      "fields": {
+        "entity_type": {
+          "java_type": "SerializableDataTypes.ENTITY_TYPE",
+          "required": true
+        },
+        "divergence": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1F"
+        },
+        "speed": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.5F"
+        },
+        "count": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        },
+        "tag": {
+          "java_type": "SerializableDataTypes.NBT",
+          "required": false,
+          "java_default": "null"
+        },
+        "projectile_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "gain_air": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "value": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "give": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "stack": {
+          "java_type": "SerializableDataTypes.ITEM_STACK",
+          "required": true
+        },
+        "item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "preferred_slot": {
+          "java_type": "SerializableDataTypes.EQUIPMENT_SLOT",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "grant_advancement": {
+      "source": "power/factory/action/entity/GrantAdvancementAction.java",
+      "fields": {
+        "advancement": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": true
+        }
+      }
+    },
+    "grant_power": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "power": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": true
+        },
+        "source": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": true
+        }
+      }
+    },
+    "heal": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "amount": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "if_else": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "condition": {
+          "java_type": "SELF_CONDITION",
+          "required": true
+        },
+        "if_action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    },
+    "if_else_list": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "actions": {
+          "java_type": "BRANCHES",
+          "required": true
+        }
+      }
+    },
+    "modify_death_ticks": {
+      "source": "power/factory/action/entity/ModifyDeathTicksAction.java",
+      "fields": {
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": true
+        }
+      }
+    },
+    "modify_inventory": {
+      "source": "power/factory/action/entity/ModifyInventoryAction.java",
+      "fields": {
+        "inventory_type": {
+          "java_type": "ApoliDataTypes.INVENTORY_TYPE",
+          "required": false,
+          "java_default": "InventoryType.INVENTORY"
+        },
+        "process_mode": {
+          "java_type": "ApoliDataTypes.PROCESS_MODE",
+          "required": false,
+          "java_default": "ProcessMode.STACKS"
+        },
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": true
+        },
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "slots": {
+          "java_type": "ApoliDataTypes.ITEM_SLOTS",
+          "required": false,
+          "java_default": "null"
+        },
+        "slot": {
+          "java_type": "ApoliDataTypes.ITEM_SLOT",
+          "required": false,
+          "java_default": "null"
+        },
+        "power": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "limit": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        }
+      }
+    },
+    "modify_resource": {
+      "source": "power/factory/action/entity/ModifyResourceAction.java",
+      "fields": {
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": true
+        },
+        "resource": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": true
+        }
+      }
+    },
+    "modify_stat": {
+      "source": "power/factory/action/entity/ModifyStatAction.java",
+      "fields": {
+        "stat": {
+          "java_type": "SerializableDataTypes.STAT",
+          "required": true
+        },
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": true
+        }
+      }
+    },
+    "nothing": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {}
+    },
+    "passenger_action": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_action": {
+          "java_type": "ApoliDataTypes.BIENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "recursive": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "play_sound": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "sound": {
+          "java_type": "SerializableDataTypes.SOUND_EVENT",
+          "required": true
+        },
+        "volume": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1F"
+        },
+        "pitch": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1F"
+        }
+      }
+    },
+    "raycast": {
+      "source": "power/factory/action/entity/RaycastAction.java",
+      "fields": {
+        "distance": {
+          "java_type": "SerializableDataTypes.DOUBLE",
+          "required": true
+        },
+        "block": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "entity": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "shape_type": {
+          "java_type": "SerializableDataType.enumValue(RaycastContext.ShapeType.class)",
+          "required": false,
+          "java_default": "RaycastContext.ShapeType.OUTLINE"
+        },
+        "fluid_handling": {
+          "java_type": "SerializableDataType.enumValue(RaycastContext.FluidHandling.class)",
+          "required": false,
+          "java_default": "RaycastContext.FluidHandling.ANY"
+        },
+        "block_action": {
+          "java_type": "ApoliDataTypes.BLOCK_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_action": {
+          "java_type": "ApoliDataTypes.BIENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "command_at_hit": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": false,
+          "java_default": "null"
+        },
+        "command_hit_offset": {
+          "java_type": "SerializableDataTypes.DOUBLE",
+          "required": false,
+          "java_default": "null"
+        },
+        "command_along_ray": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": false,
+          "java_default": "null"
+        },
+        "command_step": {
+          "java_type": "SerializableDataTypes.DOUBLE",
+          "required": false,
+          "java_default": "1.0"
+        },
+        "command_along_ray_only_on_hit": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        },
+        "before_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "hit_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "miss_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "replace_inventory": {
+      "source": "power/factory/action/entity/ReplaceInventoryAction.java",
+      "fields": {
+        "inventory_type": {
+          "java_type": "ApoliDataTypes.INVENTORY_TYPE",
+          "required": false,
+          "java_default": "InventoryType.INVENTORY"
+        },
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "slots": {
+          "java_type": "ApoliDataTypes.ITEM_SLOTS",
+          "required": false,
+          "java_default": "null"
+        },
+        "slot": {
+          "java_type": "ApoliDataTypes.ITEM_SLOT",
+          "required": false,
+          "java_default": "null"
+        },
+        "power": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "stack": {
+          "java_type": "SerializableDataTypes.ITEM_STACK",
+          "required": true
+        },
+        "merge_nbt": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "revoke_advancement": {
+      "source": "power/factory/action/entity/RevokeAdvancementAction.java",
+      "fields": {
+        "advancement": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": true
+        }
+      }
+    },
+    "revoke_power": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "power": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": true
+        },
+        "source": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": true
+        }
+      }
+    },
+    "riding_action": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_action": {
+          "java_type": "ApoliDataTypes.BIENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "recursive": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "selector_action": {
+      "source": "power/factory/action/entity/SelectorAction.java",
+      "fields": {
+        "selector": {
+          "java_type": "ApoliDataTypes.ENTITIES_SELECTOR",
+          "required": true
+        },
+        "bientity_action": {
+          "java_type": "ApoliDataTypes.BIENTITY_ACTION",
+          "required": true
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "set_fall_distance": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "fall_distance": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "set_on_fire": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "duration": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "set_resource": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "resource": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": true
+        },
+        "value": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "side": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "side": {
+          "java_type": "SIDE",
+          "required": true
+        },
+        "action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    },
+    "spawn_effect_cloud": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "radius": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "3.0F"
+        },
+        "radius_on_use": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "-0.5F"
+        },
+        "wait_time": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "10"
+        },
+        "effect": {
+          "java_type": "SerializableDataTypes.STATUS_EFFECT_INSTANCE",
+          "required": false,
+          "java_default": "null"
+        },
+        "effects": {
+          "java_type": "SerializableDataTypes.STATUS_EFFECT_INSTANCES",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "spawn_entity": {
+      "source": "power/factory/action/entity/SpawnEntityAction.java",
+      "fields": {
+        "entity_type": {
+          "java_type": "SerializableDataTypes.ENTITY_TYPE",
+          "required": true
+        },
+        "tag": {
+          "java_type": "SerializableDataTypes.NBT",
+          "required": false,
+          "java_default": "null"
+        },
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "spawn_particles": {
+      "source": "power/factory/action/entity/SpawnParticlesAction.java",
+      "fields": {
+        "particle": {
+          "java_type": "SerializableDataTypes.PARTICLE_EFFECT_OR_TYPE",
+          "required": true
+        },
+        "count": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "speed": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "0.0F"
+        },
+        "force": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        },
+        "spread": {
+          "java_type": "SerializableDataTypes.VECTOR",
+          "required": false,
+          "java_default": "new Vec3d(0.5, 0.25, 0.5)"
+        },
+        "offset_y": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "0.5F"
+        }
+      }
+    },
+    "swing_hand": {
+      "source": "power/factory/action/entity/SwingHandAction.java",
+      "fields": {
+        "hand": {
+          "java_type": "SerializableDataTypes.HAND",
+          "required": false,
+          "java_default": "Hand.MAIN_HAND"
+        }
+      }
+    },
+    "toggle": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "power": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": true
+        }
+      }
+    },
+    "trigger_cooldown": {
+      "source": "power/factory/action/EntityActions.java",
+      "fields": {
+        "power": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": true
+        }
+      }
+    }
+  },
+  "ENTITY_CONDITION": {
+    "ability": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "ability": {
+          "java_type": "ApoliDataTypes.PLAYER_ABILITY",
+          "required": true
+        }
+      }
+    },
+    "advancement": {
+      "source": "power/factory/condition/EntityConditionsServer.java",
+      "fields": {
+        "advancement": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": true
+        }
+      }
+    },
+    "air": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "and": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "conditions": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITIONS",
+          "required": true
+        }
+      }
+    },
+    "attribute": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "attribute": {
+          "java_type": "SerializableDataTypes.ATTRIBUTE",
+          "required": true
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.DOUBLE",
+          "required": true
+        }
+      }
+    },
+    "biome": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "biome": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": false,
+          "java_default": "null"
+        },
+        "biomes": {
+          "java_type": "SerializableDataTypes.IDENTIFIERS",
+          "required": false,
+          "java_default": "null"
+        },
+        "condition": {
+          "java_type": "ApoliDataTypes.BIOME_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "block_collision": {
+      "source": "power/factory/condition/entity/BlockCollisionCondition.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "offset_x": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "0F"
+        },
+        "offset_y": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "0F"
+        },
+        "offset_z": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "0F"
+        }
+      }
+    },
+    "block_in_radius": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": true
+        },
+        "radius": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "shape": {
+          "java_type": "SerializableDataType.enumValue(Shape.class)",
+          "required": false,
+          "java_default": "Shape.CUBE"
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": false,
+          "java_default": "Comparison.GREATER_THAN_OR_EQUAL"
+        }
+      }
+    },
+    "brightness": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "climbing": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "collided_horizontally": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "command": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "command": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": true
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "constant": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "value": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": true
+        }
+      }
+    },
+    "creative_flying": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "daytime": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "dimension": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "dimension": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": true
+        }
+      }
+    },
+    "elytra_flight_possible": {
+      "source": "power/factory/condition/entity/ElytraFlightPossibleCondition.java",
+      "fields": {
+        "check_state": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        },
+        "check_ability": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        }
+      }
+    },
+    "enchantment": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "enchantment": {
+          "java_type": "SerializableDataTypes.ENCHANTMENT",
+          "required": true
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "calculation": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": false,
+          "java_default": "\"sum\""
+        }
+      }
+    },
+    "entity_group": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "group": {
+          "java_type": "SerializableDataTypes.ENTITY_GROUP",
+          "required": true
+        }
+      }
+    },
+    "entity_type": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "entity_type": {
+          "java_type": "SerializableDataTypes.ENTITY_TYPE",
+          "required": true
+        }
+      }
+    },
+    "equipped_item": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "equipment_slot": {
+          "java_type": "SerializableDataTypes.EQUIPMENT_SLOT",
+          "required": true
+        },
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": true
+        }
+      }
+    },
+    "exists": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "exposed_to_sky": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "exposed_to_sun": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "fall_distance": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "fall_flying": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "fluid_height": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "fluid": {
+          "java_type": "SerializableDataTypes.FLUID_TAG",
+          "required": true
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.DOUBLE",
+          "required": true
+        }
+      }
+    },
+    "food_level": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "gamemode": {
+      "source": "power/factory/condition/EntityConditionsServer.java",
+      "fields": {
+        "gamemode": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": true
+        }
+      }
+    },
+    "glowing": {
+      "source": "power/factory/condition/EntityConditionsServer.java",
+      "fields": {}
+    },
+    "health": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "in_block": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": true
+        }
+      }
+    },
+    "in_block_anywhere": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": true
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": false,
+          "java_default": "Comparison.GREATER_THAN_OR_EQUAL"
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        }
+      }
+    },
+    "in_rain": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "in_tag": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "tag": {
+          "java_type": "SerializableDataTypes.ENTITY_TAG",
+          "required": true
+        }
+      }
+    },
+    "inventory": {
+      "source": "power/factory/condition/entity/InventoryCondition.java",
+      "fields": {
+        "inventory_types": {
+          "java_type": "ApoliDataTypes.INVENTORY_TYPE_SET",
+          "required": false,
+          "java_default": "EnumSet.of(InventoryUtil.InventoryType.INVENTORY)"
+        },
+        "process_mode": {
+          "java_type": "ApoliDataTypes.PROCESS_MODE",
+          "required": false,
+          "java_default": "InventoryUtil.ProcessMode.ITEMS"
+        },
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "slots": {
+          "java_type": "ApoliDataTypes.ITEM_SLOTS",
+          "required": false,
+          "java_default": "null"
+        },
+        "slot": {
+          "java_type": "ApoliDataTypes.ITEM_SLOT",
+          "required": false,
+          "java_default": "null"
+        },
+        "power": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": false,
+          "java_default": "Comparison.GREATER_THAN"
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        }
+      }
+    },
+    "invisible": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "living": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "moving": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "nbt": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "nbt": {
+          "java_type": "SerializableDataTypes.NBT",
+          "required": true
+        }
+      }
+    },
+    "on_block": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "on_fire": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "or": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "conditions": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITIONS",
+          "required": true
+        }
+      }
+    },
+    "passenger": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": false,
+          "java_default": "Comparison.GREATER_THAN_OR_EQUAL"
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        }
+      }
+    },
+    "passenger_recursive": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": false,
+          "java_default": "Comparison.GREATER_THAN_OR_EQUAL"
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        }
+      }
+    },
+    "power": {
+      "source": "power/factory/condition/entity/PowerCondition.java",
+      "fields": {
+        "power": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": true
+        },
+        "source": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "power_active": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "power": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": true
+        }
+      }
+    },
+    "power_type": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "power_type": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": true
+        }
+      }
+    },
+    "predicate": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "predicate": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": true
+        }
+      }
+    },
+    "raycast": {
+      "source": "power/factory/condition/entity/RaycastCondition.java",
+      "fields": {
+        "distance": {
+          "java_type": "SerializableDataTypes.DOUBLE",
+          "required": true
+        },
+        "block": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "entity": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "shape_type": {
+          "java_type": "SerializableDataType.enumValue(RaycastContext.ShapeType.class)",
+          "required": false,
+          "java_default": "RaycastContext.ShapeType.OUTLINE"
+        },
+        "fluid_handling": {
+          "java_type": "SerializableDataType.enumValue(RaycastContext.FluidHandling.class)",
+          "required": false,
+          "java_default": "RaycastContext.FluidHandling.ANY"
+        },
+        "match_bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "hit_bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "relative_health": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "resource": {
+      "source": "power/factory/condition/entity/ResourceCondition.java",
+      "fields": {
+        "resource": {
+          "java_type": "ApoliDataTypes.POWER_TYPE",
+          "required": true
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "riding": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "riding_recursive": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": false,
+          "java_default": "Comparison.GREATER_THAN_OR_EQUAL"
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        }
+      }
+    },
+    "riding_root": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "saturation_level": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "scoreboard": {
+      "source": "power/factory/condition/entity/ScoreboardCondition.java",
+      "fields": {
+        "name": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": false,
+          "java_default": "null"
+        },
+        "objective": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": true
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "sneaking": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "sprinting": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "status_effect": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "effect": {
+          "java_type": "SerializableDataTypes.STATUS_EFFECT",
+          "required": true
+        },
+        "min_amplifier": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        },
+        "max_amplifier": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "Integer.MAX_VALUE"
+        },
+        "min_duration": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        },
+        "max_duration": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "Integer.MAX_VALUE"
+        }
+      }
+    },
+    "submerged_in": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "fluid": {
+          "java_type": "SerializableDataTypes.FLUID_TAG",
+          "required": true
+        }
+      }
+    },
+    "swimming": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "tamed": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {}
+    },
+    "time_of_day": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "using_effective_tool": {
+      "source": "power/factory/condition/EntityConditionsServer.java",
+      "fields": {}
+    },
+    "using_item": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "xp_levels": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "xp_points": {
+      "source": "power/factory/condition/EntityConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    }
+  },
+  "FLUID_CONDITION": {
+    "and": {
+      "source": "power/factory/condition/FluidConditions.java",
+      "fields": {
+        "conditions": {
+          "java_type": "ApoliDataTypes.FLUID_CONDITIONS",
+          "required": true
+        }
+      }
+    },
+    "constant": {
+      "source": "power/factory/condition/FluidConditions.java",
+      "fields": {
+        "value": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": true
+        }
+      }
+    },
+    "empty": {
+      "source": "power/factory/condition/FluidConditions.java",
+      "fields": {}
+    },
+    "fluid": {
+      "source": "power/factory/condition/FluidConditions.java",
+      "fields": {
+        "fluid": {
+          "java_type": "SerializableDataTypes.FLUID",
+          "required": true
+        }
+      }
+    },
+    "in_tag": {
+      "source": "power/factory/condition/FluidConditions.java",
+      "fields": {
+        "tag": {
+          "java_type": "SerializableDataTypes.FLUID_TAG",
+          "required": true
+        }
+      }
+    },
+    "or": {
+      "source": "power/factory/condition/FluidConditions.java",
+      "fields": {
+        "conditions": {
+          "java_type": "ApoliDataTypes.FLUID_CONDITIONS",
+          "required": true
+        }
+      }
+    },
+    "still": {
+      "source": "power/factory/condition/FluidConditions.java",
+      "fields": {}
+    }
+  },
+  "ITEM_ACTION": {
+    "and": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "actions": {
+          "java_type": "SELF_ACTIONS",
+          "required": true
+        }
+      }
+    },
+    "chance": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "chance": {
+          "java_type": "FLOAT",
+          "required": true
+        },
+        "action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    },
+    "choice": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "actions": {
+          "java_type": "CHOICES",
+          "required": true
+        }
+      }
+    },
+    "consume": {
+      "source": "power/factory/action/ItemActions.java",
+      "fields": {
+        "amount": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        }
+      }
+    },
+    "damage": {
+      "source": "power/factory/action/ItemActions.java",
+      "fields": {
+        "amount": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        },
+        "ignore_unbreaking": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "delay": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "ticks": {
+          "java_type": "INT",
+          "required": true
+        },
+        "action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    },
+    "holder": {
+      "source": "power/factory/action/item/HolderAction.java",
+      "fields": {
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": true
+        }
+      }
+    },
+    "if_else": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "condition": {
+          "java_type": "SELF_CONDITION",
+          "required": true
+        },
+        "if_action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    },
+    "if_else_list": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "actions": {
+          "java_type": "BRANCHES",
+          "required": true
+        }
+      }
+    },
+    "merge_nbt": {
+      "source": "power/factory/action/ItemActions.java",
+      "fields": {
+        "nbt": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": true
+        }
+      }
+    },
+    "modify": {
+      "source": "power/factory/action/ItemActions.java",
+      "fields": {
+        "modifier": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": true
+        }
+      }
+    },
+    "nothing": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {}
+    },
+    "remove_enchantment": {
+      "source": "power/factory/action/ItemActions.java",
+      "fields": {
+        "enchantment": {
+          "java_type": "SerializableDataTypes.ENCHANTMENT",
+          "required": false,
+          "java_default": "null"
+        },
+        "enchantments": {
+          "java_type": "SerializableDataType.list(SerializableDataTypes.ENCHANTMENT)",
+          "required": false,
+          "java_default": "null"
+        },
+        "levels": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "null"
+        },
+        "reset_repair_cost": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "side": {
+      "source": "power/factory/action (generic factory)",
+      "fields": {
+        "side": {
+          "java_type": "SIDE",
+          "required": true
+        },
+        "action": {
+          "java_type": "SELF_ACTION",
+          "required": true
+        }
+      }
+    }
+  },
+  "ITEM_CONDITION": {
+    "amount": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "and": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {
+        "conditions": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITIONS",
+          "required": true
+        }
+      }
+    },
+    "armor_value": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "constant": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {
+        "value": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": true
+        }
+      }
+    },
+    "durability": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "empty": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {}
+    },
+    "enchantable": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {}
+    },
+    "enchantment": {
+      "source": "power/factory/condition/item/EnchantmentCondition.java",
+      "fields": {
+        "enchantment": {
+          "java_type": "SerializableDataTypes.ENCHANTMENT",
+          "required": false,
+          "java_default": "null"
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": false,
+          "java_default": "Comparison.GREATER_THAN"
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        }
+      }
+    },
+    "fireproof": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {}
+    },
+    "food": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {}
+    },
+    "harvest_level": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "has_power": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {
+        "slot": {
+          "java_type": "SerializableDataTypes.EQUIPMENT_SLOT",
+          "required": false,
+          "java_default": "null"
+        },
+        "power": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": true
+        }
+      }
+    },
+    "ingredient": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {
+        "ingredient": {
+          "java_type": "SerializableDataTypes.INGREDIENT",
+          "required": true
+        }
+      }
+    },
+    "is_damageable": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {}
+    },
+    "is_equippable": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {
+        "equipment_slot": {
+          "java_type": "SerializableDataTypes.EQUIPMENT_SLOT",
+          "required": true
+        }
+      }
+    },
+    "meat": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {}
+    },
+    "nbt": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {
+        "nbt": {
+          "java_type": "SerializableDataTypes.NBT",
+          "required": true
+        }
+      }
+    },
+    "or": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {
+        "conditions": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITIONS",
+          "required": true
+        }
+      }
+    },
+    "power_count": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {
+        "slot": {
+          "java_type": "SerializableDataTypes.EQUIPMENT_SLOT",
+          "required": false,
+          "java_default": "null"
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        }
+      }
+    },
+    "relative_durability": {
+      "source": "power/factory/condition/ItemConditions.java",
+      "fields": {
+        "comparison": {
+          "java_type": "ApoliDataTypes.COMPARISON",
+          "required": true
+        },
+        "compare_to": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "smeltable": {
+      "source": "power/factory/condition/ItemConditionsServer.java",
+      "fields": {}
+    }
+  },
+  "POWER": {
+    "action_on_being_used": {
+      "source": "power/ActionOnBeingUsedPower.java",
+      "fields": {
+        "bientity_action": {
+          "java_type": "ApoliDataTypes.BIENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "hands": {
+          "java_type": "SerializableDataTypes.HAND_SET",
+          "required": false,
+          "java_default": "EnumSet.allOf(Hand.class)"
+        },
+        "result_stack": {
+          "java_type": "SerializableDataTypes.ITEM_STACK",
+          "required": false,
+          "java_default": "null"
+        },
+        "held_item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "result_item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "action_result": {
+          "java_type": "SerializableDataTypes.ACTION_RESULT",
+          "required": false,
+          "java_default": "ActionResult.SUCCESS"
+        },
+        "priority": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        }
+      }
+    },
+    "action_on_block_break": {
+      "source": "power/ActionOnBlockBreakPower.java",
+      "fields": {
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "block_action": {
+          "java_type": "ApoliDataTypes.BLOCK_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "only_when_harvested": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        }
+      }
+    },
+    "action_on_block_use": {
+      "source": "power/ActionOnBlockUsePower.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "block_action": {
+          "java_type": "ApoliDataTypes.BLOCK_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "directions": {
+          "java_type": "SerializableDataTypes.DIRECTION_SET",
+          "required": false,
+          "java_default": "EnumSet.allOf(Direction.class)"
+        },
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "hands": {
+          "java_type": "SerializableDataTypes.HAND_SET",
+          "required": false,
+          "java_default": "EnumSet.allOf(Hand.class)"
+        },
+        "result_stack": {
+          "java_type": "SerializableDataTypes.ITEM_STACK",
+          "required": false,
+          "java_default": "null"
+        },
+        "held_item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "result_item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "action_result": {
+          "java_type": "SerializableDataTypes.ACTION_RESULT",
+          "required": false,
+          "java_default": "ActionResult.SUCCESS"
+        },
+        "priority": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        }
+      }
+    },
+    "action_on_callback": {
+      "source": "power/ActionOnCallbackPower.java",
+      "fields": {
+        "entity_action_respawned": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "entity_action_removed": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "entity_action_gained": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "entity_action_lost": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "entity_action_added": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "action_on_entity_use": {
+      "source": "power/ActionOnEntityUsePower.java",
+      "fields": {
+        "bientity_action": {
+          "java_type": "ApoliDataTypes.BIENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "hands": {
+          "java_type": "SerializableDataTypes.HAND_SET",
+          "required": false,
+          "java_default": "EnumSet.allOf(Hand.class)"
+        },
+        "result_stack": {
+          "java_type": "SerializableDataTypes.ITEM_STACK",
+          "required": false,
+          "java_default": "null"
+        },
+        "held_item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "result_item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "action_result": {
+          "java_type": "SerializableDataTypes.ACTION_RESULT",
+          "required": false,
+          "java_default": "ActionResult.SUCCESS"
+        },
+        "priority": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        }
+      }
+    },
+    "action_on_hit": {
+      "source": "power/ActionOnHitPower.java",
+      "fields": {
+        "bientity_action": {
+          "java_type": "ApoliDataTypes.BIENTITY_ACTION",
+          "required": true
+        },
+        "damage_condition": {
+          "java_type": "ApoliDataTypes.DAMAGE_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "cooldown": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        },
+        "hud_render": {
+          "java_type": "ApoliDataTypes.HUD_RENDER",
+          "required": false,
+          "java_default": "HudRender.DONT_RENDER"
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "action_on_item_use": {
+      "source": "power/ActionOnItemUsePower.java",
+      "fields": {
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "trigger": {
+          "java_type": "SerializableDataType.enumValue(TriggerType.class)",
+          "required": false,
+          "java_default": "TriggerType.FINISH"
+        },
+        "priority": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        }
+      }
+    },
+    "action_on_land": {
+      "source": "power/ActionOnLandPower.java",
+      "fields": {
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "action_on_wake_up": {
+      "source": "power/ActionOnWakeUp.java",
+      "fields": {
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "block_action": {
+          "java_type": "ApoliDataTypes.BLOCK_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "action_over_time": {
+      "source": "power/ActionOverTimePower.java",
+      "fields": {
+        "interval": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "20"
+        },
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "rising_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "falling_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "action_when_damage_taken": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {}
+    },
+    "action_when_hit": {
+      "source": "power/ActionWhenHitPower.java",
+      "fields": {
+        "bientity_action": {
+          "java_type": "ApoliDataTypes.BIENTITY_ACTION",
+          "required": true
+        },
+        "damage_condition": {
+          "java_type": "ApoliDataTypes.DAMAGE_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "cooldown": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        },
+        "hud_render": {
+          "java_type": "ApoliDataTypes.HUD_RENDER",
+          "required": false,
+          "java_default": "HudRender.DONT_RENDER"
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "active_self": {
+      "source": "power/ActiveCooldownPower.java",
+      "fields": {
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": true
+        },
+        "cooldown": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        },
+        "hud_render": {
+          "java_type": "ApoliDataTypes.HUD_RENDER",
+          "required": false,
+          "java_default": "HudRender.DONT_RENDER"
+        },
+        "key": {
+          "java_type": "ApoliDataTypes.BACKWARDS_COMPATIBLE_KEY",
+          "required": false,
+          "java_default": "new Active.Key()"
+        }
+      }
+    },
+    "attacker_action_when_hit": {
+      "source": "power/AttackerActionWhenHitPower.java",
+      "fields": {
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": true
+        },
+        "damage_condition": {
+          "java_type": "ApoliDataTypes.DAMAGE_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "cooldown": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        },
+        "hud_render": {
+          "java_type": "ApoliDataTypes.HUD_RENDER",
+          "required": false,
+          "java_default": "HudRender.DONT_RENDER"
+        }
+      }
+    },
+    "attribute": {
+      "source": "power/AttributePower.java",
+      "fields": {
+        "modifier": {
+          "java_type": "ApoliDataTypes.ATTRIBUTED_ATTRIBUTE_MODIFIER",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "ApoliDataTypes.ATTRIBUTED_ATTRIBUTE_MODIFIERS",
+          "required": false,
+          "java_default": "null"
+        },
+        "update_health": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        }
+      }
+    },
+    "attribute_modify_transfer": {
+      "source": "power/AttributeModifyTransferPower.java",
+      "fields": {
+        "class": {
+          "java_type": "ClassDataRegistry.get(Power.class).get().getDataType()",
+          "required": true
+        },
+        "attribute": {
+          "java_type": "SerializableDataTypes.ATTRIBUTE",
+          "required": true
+        },
+        "multiplier": {
+          "java_type": "SerializableDataTypes.DOUBLE",
+          "required": false,
+          "java_default": "1.0"
+        }
+      }
+    },
+    "burn": {
+      "source": "power/BurnPower.java",
+      "fields": {
+        "interval": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "burn_duration": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        }
+      }
+    },
+    "climbing": {
+      "source": "power/ClimbingPower.java",
+      "fields": {
+        "allow_holding": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "hold_condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "conditioned_attribute": {
+      "source": "power/ConditionedAttributePower.java",
+      "fields": {
+        "modifier": {
+          "java_type": "ApoliDataTypes.ATTRIBUTED_ATTRIBUTE_MODIFIER",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "ApoliDataTypes.ATTRIBUTED_ATTRIBUTE_MODIFIERS",
+          "required": false,
+          "java_default": "null"
+        },
+        "tick_rate": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "20"
+        },
+        "update_health": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        }
+      }
+    },
+    "conditioned_restrict_armor": {
+      "source": "power/ConditionedRestrictArmorPower.java",
+      "fields": {
+        "head": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "chest": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "legs": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "feet": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "tick_rate": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "80"
+        }
+      }
+    },
+    "cooldown": {
+      "source": "power/CooldownPower.java",
+      "fields": {
+        "cooldown": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "hud_render": {
+          "java_type": "ApoliDataTypes.HUD_RENDER",
+          "required": false,
+          "java_default": "HudRender.DONT_RENDER"
+        }
+      }
+    },
+    "creative_flight": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {}
+    },
+    "damage_over_time": {
+      "source": "power/DamageOverTimePower.java",
+      "fields": {
+        "interval": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "20"
+        },
+        "damage": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        },
+        "damage_source": {
+          "java_type": "ApoliDataTypes.DAMAGE_SOURCE_DESCRIPTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "damage_type": {
+          "java_type": "SerializableDataTypes.DAMAGE_TYPE",
+          "required": false,
+          "java_default": "GENERIC_DAMAGE"
+        },
+        "protection_enchantment": {
+          "java_type": "SerializableDataTypes.ENCHANTMENT",
+          "required": false,
+          "java_default": "null"
+        },
+        "protection_effectiveness": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        }
+      }
+    },
+    "disable_regen": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {}
+    },
+    "effect_immunity": {
+      "source": "power/EffectImmunityPower.java",
+      "fields": {
+        "effect": {
+          "java_type": "SerializableDataTypes.STATUS_EFFECT",
+          "required": false,
+          "java_default": "null"
+        },
+        "effects": {
+          "java_type": "SerializableDataTypes.STATUS_EFFECTS",
+          "required": false,
+          "java_default": "null"
+        },
+        "inverted": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "elytra_flight": {
+      "source": "power/ElytraFlightPower.java",
+      "fields": {
+        "render_elytra": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": true
+        },
+        "texture_location": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "entity_glow": {
+      "source": "power/EntityGlowPower.java",
+      "fields": {
+        "entity_condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "use_teams": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "red": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        },
+        "green": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        },
+        "blue": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        }
+      }
+    },
+    "entity_group": {
+      "source": "power/SetEntityGroupPower.java",
+      "fields": {
+        "group": {
+          "java_type": "SerializableDataTypes.ENTITY_GROUP",
+          "required": true
+        }
+      }
+    },
+    "exhaust": {
+      "source": "power/ExhaustOverTimePower.java",
+      "fields": {
+        "interval": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "20"
+        },
+        "exhaustion": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "fire_immunity": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {}
+    },
+    "fire_projectile": {
+      "source": "power/FireProjectilePower.java",
+      "fields": {
+        "cooldown": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        },
+        "count": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        },
+        "interval": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        },
+        "start_delay": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        },
+        "speed": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.5F"
+        },
+        "divergence": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1F"
+        },
+        "sound": {
+          "java_type": "SerializableDataTypes.SOUND_EVENT",
+          "required": false,
+          "java_default": "null"
+        },
+        "entity_type": {
+          "java_type": "SerializableDataTypes.ENTITY_TYPE",
+          "required": true
+        },
+        "hud_render": {
+          "java_type": "ApoliDataTypes.HUD_RENDER",
+          "required": false,
+          "java_default": "HudRender.DONT_RENDER"
+        },
+        "tag": {
+          "java_type": "SerializableDataTypes.NBT",
+          "required": false,
+          "java_default": "null"
+        },
+        "key": {
+          "java_type": "ApoliDataTypes.BACKWARDS_COMPATIBLE_KEY",
+          "required": false,
+          "java_default": "new Active.Key()"
+        },
+        "projectile_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "shooter_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "freeze": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {}
+    },
+    "grounded": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {}
+    },
+    "ignore_water": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {}
+    },
+    "inventory": {
+      "source": "power/InventoryPower.java",
+      "fields": {
+        "title": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": false,
+          "java_default": "\"container.inventory\""
+        },
+        "container_type": {
+          "java_type": "SerializableDataType.enumValue(ContainerType.class)",
+          "required": false,
+          "java_default": "ContainerType.DROPPER"
+        },
+        "drop_on_death": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        },
+        "drop_on_death_filter": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "key": {
+          "java_type": "ApoliDataTypes.BACKWARDS_COMPATIBLE_KEY",
+          "required": false,
+          "java_default": "new Active.Key()"
+        },
+        "recoverable": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        }
+      }
+    },
+    "invisibility": {
+      "source": "power/InvisibilityPower.java",
+      "fields": {
+        "render_armor": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        },
+        "render_outline": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "invulnerability": {
+      "source": "power/InvulnerablePower.java",
+      "fields": {
+        "damage_condition": {
+          "java_type": "ApoliDataTypes.DAMAGE_CONDITION",
+          "required": true
+        }
+      }
+    },
+    "item_on_item": {
+      "source": "power/ItemOnItemPower.java",
+      "fields": {
+        "using_item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "on_item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "result_from_on_stack": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        },
+        "result": {
+          "java_type": "SerializableDataTypes.ITEM_STACK",
+          "required": false,
+          "java_default": "null"
+        },
+        "using_item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "on_item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "result_item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "keep_inventory": {
+      "source": "power/KeepInventoryPower.java",
+      "fields": {
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "slots": {
+          "java_type": "SerializableDataTypes.INTS",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "launch": {
+      "source": "power/ActiveCooldownPower.java",
+      "fields": {
+        "cooldown": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        },
+        "speed": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        },
+        "sound": {
+          "java_type": "SerializableDataTypes.SOUND_EVENT",
+          "required": false,
+          "java_default": "null"
+        },
+        "hud_render": {
+          "java_type": "ApoliDataTypes.HUD_RENDER",
+          "required": false,
+          "java_default": "HudRender.DONT_RENDER"
+        },
+        "key": {
+          "java_type": "ApoliDataTypes.BACKWARDS_COMPATIBLE_KEY",
+          "required": false,
+          "java_default": "new Active.Key()"
+        }
+      }
+    },
+    "lava_vision": {
+      "source": "power/LavaVisionPower.java",
+      "fields": {
+        "s": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        },
+        "v": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": true
+        }
+      }
+    },
+    "model_color": {
+      "source": "power/ModelColorPower.java",
+      "fields": {
+        "red": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        },
+        "green": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        },
+        "blue": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        },
+        "alpha": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        }
+      }
+    },
+    "modify_air_speed": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false
+        }
+      }
+    },
+    "modify_attribute": {
+      "source": "power/ModifyAttributePower.java",
+      "fields": {
+        "attribute": {
+          "java_type": "SerializableDataTypes.ATTRIBUTE",
+          "required": true
+        },
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_block_render": {
+      "source": "power/ModifyBlockRenderPower.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "block": {
+          "java_type": "SerializableDataTypes.BLOCK",
+          "required": true
+        }
+      }
+    },
+    "modify_break_speed": {
+      "source": "power/ModifyBreakSpeedPower.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_camera_submersion": {
+      "source": "power/ModifyCameraSubmersionTypePower.java",
+      "fields": {
+        "from": {
+          "java_type": "SerializableDataTypes.CAMERA_SUBMERSION_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "to": {
+          "java_type": "SerializableDataTypes.CAMERA_SUBMERSION_TYPE",
+          "required": true
+        }
+      }
+    },
+    "modify_crafting": {
+      "source": "power/ModifyCraftingPower.java",
+      "fields": {
+        "recipe": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "result": {
+          "java_type": "SerializableDataTypes.ITEM_STACK",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_action_after_crafting": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "block_action": {
+          "java_type": "ApoliDataTypes.BLOCK_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_damage_dealt": {
+      "source": "power/ModifyDamageDealtPower.java",
+      "fields": {
+        "damage_condition": {
+          "java_type": "ApoliDataTypes.DAMAGE_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "target_condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "self_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "target_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_action": {
+          "java_type": "ApoliDataTypes.BIENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_damage_taken": {
+      "source": "power/ModifyDamageTakenPower.java",
+      "fields": {
+        "damage_condition": {
+          "java_type": "ApoliDataTypes.DAMAGE_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "self_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "attacker_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_action": {
+          "java_type": "ApoliDataTypes.BIENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "apply_armor_condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "damage_armor_condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_exhaustion": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false
+        }
+      }
+    },
+    "modify_falling": {
+      "source": "power/ModifyFallingPower.java",
+      "fields": {
+        "velocity": {
+          "java_type": "SerializableDataTypes.DOUBLE",
+          "required": false,
+          "java_default": "null"
+        },
+        "take_fall_damage": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_fluid_render": {
+      "source": "power/ModifyFluidRenderPower.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "fluid_condition": {
+          "java_type": "ApoliDataTypes.FLUID_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "fluid": {
+          "java_type": "SerializableDataTypes.FLUID",
+          "required": true
+        }
+      }
+    },
+    "modify_food": {
+      "source": "power/ModifyFoodPower.java",
+      "fields": {
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "replace_stack": {
+          "java_type": "SerializableDataTypes.ITEM_STACK",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "food_modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "food_modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "saturation_modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "saturation_modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "always_edible": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        },
+        "prevent_effects": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "modify_grindstone": {
+      "source": "power/ModifyGrindstonePower.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "block_action": {
+          "java_type": "ApoliDataTypes.BLOCK_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "top_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bottom_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "output_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_action_after_grinding": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "result_stack": {
+          "java_type": "SerializableDataTypes.ITEM_STACK",
+          "required": false,
+          "java_default": "null"
+        },
+        "result_type": {
+          "java_type": "SerializableDataType.enumValue(ResultType.class)",
+          "required": false,
+          "java_default": "ResultType.UNCHANGED"
+        },
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "xp_modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_harvest": {
+      "source": "power/ModifyHarvestPower.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "allow": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": true
+        }
+      }
+    },
+    "modify_healing": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false
+        }
+      }
+    },
+    "modify_insomnia_ticks": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false
+        }
+      }
+    },
+    "modify_jump": {
+      "source": "power/ModifyJumpPower.java",
+      "fields": {
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_lava_speed": {
+      "source": "power/ModifyLavaSpeedPower.java",
+      "fields": {
+        "modifier": {
+          "java_type": "SerializableDataTypes.ATTRIBUTE_MODIFIER",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "SerializableDataTypes.ATTRIBUTE_MODIFIERS",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_player_spawn": {
+      "source": "power/ModifyPlayerSpawnPower.java",
+      "fields": {
+        "dimension": {
+          "java_type": "SerializableDataTypes.DIMENSION",
+          "required": true
+        },
+        "dimension_distance_multiplier": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "0F"
+        },
+        "biome": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": false,
+          "java_default": "null"
+        },
+        "spawn_strategy": {
+          "java_type": "SerializableDataType.enumValue(SpawnStrategy.class)",
+          "required": false,
+          "java_default": "SpawnStrategy.DEFAULT"
+        },
+        "structure": {
+          "java_type": "SerializableDataType.registryKey(RegistryKeys.STRUCTURE)",
+          "required": false,
+          "java_default": "null"
+        },
+        "respawn_sound": {
+          "java_type": "SerializableDataTypes.SOUND_EVENT",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_projectile_damage": {
+      "source": "power/ModifyProjectileDamagePower.java",
+      "fields": {
+        "damage_condition": {
+          "java_type": "ApoliDataTypes.DAMAGE_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "target_condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "self_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "target_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_slipperiness": {
+      "source": "power/ModifySlipperinessPower.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_status_effect_amplifier": {
+      "source": "power/ModifyStatusEffectAmplifierPower.java",
+      "fields": {
+        "status_effect": {
+          "java_type": "SerializableDataTypes.STATUS_EFFECT",
+          "required": false,
+          "java_default": "null"
+        },
+        "status_effects": {
+          "java_type": "SerializableDataTypes.STATUS_EFFECTS",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_status_effect_duration": {
+      "source": "power/ModifyStatusEffectDurationPower.java",
+      "fields": {
+        "status_effect": {
+          "java_type": "SerializableDataTypes.STATUS_EFFECT",
+          "required": false,
+          "java_default": "null"
+        },
+        "status_effects": {
+          "java_type": "SerializableDataTypes.STATUS_EFFECTS",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_swim_speed": {
+      "source": "power/ModifySwimSpeedPower.java",
+      "fields": {
+        "modifier": {
+          "java_type": "SerializableDataTypes.ATTRIBUTE_MODIFIER",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "SerializableDataTypes.ATTRIBUTE_MODIFIERS",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "modify_velocity": {
+      "source": "power/ModifyVelocityPower.java",
+      "fields": {
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false,
+          "java_default": "null"
+        },
+        "axes": {
+          "java_type": "SerializableDataTypes.AXIS_SET",
+          "required": false,
+          "java_default": "EnumSet.allOf(Direction.Axis.class)"
+        }
+      }
+    },
+    "modify_xp_gain": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {
+        "modifier": {
+          "java_type": "Modifier.DATA_TYPE",
+          "required": false
+        },
+        "modifiers": {
+          "java_type": "Modifier.LIST_TYPE",
+          "required": false
+        }
+      }
+    },
+    "multiple": {
+      "source": "power/PowerTypes.java",
+      "fields": {}
+    },
+    "night_vision": {
+      "source": "power/NightVisionPower.java",
+      "fields": {
+        "strength": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        }
+      }
+    },
+    "overlay": {
+      "source": "power/OverlayPower.java",
+      "fields": {
+        "texture": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": true
+        },
+        "strength": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        },
+        "red": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        },
+        "green": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        },
+        "blue": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        },
+        "draw_mode": {
+          "java_type": "SerializableDataType.enumValue(OverlayPower.DrawMode.class)",
+          "required": true
+        },
+        "draw_phase": {
+          "java_type": "SerializableDataType.enumValue(OverlayPower.DrawPhase.class)",
+          "required": true
+        },
+        "hide_with_hud": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "visible_in_third_person": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "particle": {
+      "source": "power/ParticlePower.java",
+      "fields": {
+        "particle": {
+          "java_type": "SerializableDataTypes.PARTICLE_EFFECT_OR_TYPE",
+          "required": true
+        },
+        "frequency": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "visible_in_first_person": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        },
+        "spread": {
+          "java_type": "SerializableDataTypes.VECTOR",
+          "required": false,
+          "java_default": "new Vec3d(0.25, 0.5, 0.25)"
+        },
+        "offset_y": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        },
+        "count": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        },
+        "visible_while_invisible": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        },
+        "speed": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "0.0F"
+        }
+      }
+    },
+    "phasing": {
+      "source": "power/PhasingPower.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "blacklist": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        },
+        "render_type": {
+          "java_type": "SerializableDataType.enumValue(PhasingPower.RenderType.class)",
+          "required": false,
+          "java_default": "PhasingPower.RenderType.BLINDNESS"
+        },
+        "view_distance": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "10F"
+        },
+        "phase_down_condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "prevent_being_used": {
+      "source": "power/PreventBeingUsedPower.java",
+      "fields": {
+        "bientity_action": {
+          "java_type": "ApoliDataTypes.BIENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "hands": {
+          "java_type": "SerializableDataTypes.HAND_SET",
+          "required": false,
+          "java_default": "EnumSet.allOf(Hand.class)"
+        },
+        "result_stack": {
+          "java_type": "SerializableDataTypes.ITEM_STACK",
+          "required": false,
+          "java_default": "null"
+        },
+        "held_item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "result_item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "prevent_block_selection": {
+      "source": "power/PreventBlockSelectionPower.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "prevent_block_use": {
+      "source": "power/PreventBlockUsePower.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "prevent_death": {
+      "source": "power/PreventDeathPower.java",
+      "fields": {
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "damage_condition": {
+          "java_type": "ApoliDataTypes.DAMAGE_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "prevent_elytra_flight": {
+      "source": "power/PreventElytraFlightPower.java",
+      "fields": {
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "prevent_entity_collision": {
+      "source": "power/PreventEntityCollisionPower.java",
+      "fields": {
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "prevent_entity_render": {
+      "source": "power/PreventEntityRenderPower.java",
+      "fields": {
+        "entity_condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "prevent_entity_use": {
+      "source": "power/PreventEntityUsePower.java",
+      "fields": {
+        "bientity_action": {
+          "java_type": "ApoliDataTypes.BIENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "hands": {
+          "java_type": "SerializableDataTypes.HAND_SET",
+          "required": false,
+          "java_default": "EnumSet.allOf(Hand.class)"
+        },
+        "result_stack": {
+          "java_type": "SerializableDataTypes.ITEM_STACK",
+          "required": false,
+          "java_default": "null"
+        },
+        "held_item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "result_item_action": {
+          "java_type": "ApoliDataTypes.ITEM_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "prevent_feature_render": {
+      "source": "power/PreventFeatureRenderPower.java",
+      "fields": {
+        "feature": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": false,
+          "java_default": "null"
+        },
+        "features": {
+          "java_type": "SerializableDataTypes.STRINGS",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "prevent_game_event": {
+      "source": "power/PreventGameEventPower.java",
+      "fields": {
+        "event": {
+          "java_type": "SerializableDataTypes.GAME_EVENT",
+          "required": false,
+          "java_default": "null"
+        },
+        "events": {
+          "java_type": "SerializableDataTypes.GAME_EVENTS",
+          "required": false,
+          "java_default": "null"
+        },
+        "tag": {
+          "java_type": "SerializableDataTypes.GAME_EVENT_TAG",
+          "required": false,
+          "java_default": "null"
+        },
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "prevent_item_use": {
+      "source": "power/PreventItemUsePower.java",
+      "fields": {
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "prevent_sleep": {
+      "source": "power/PreventSleepPower.java",
+      "fields": {
+        "block_condition": {
+          "java_type": "ApoliDataTypes.BLOCK_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "message": {
+          "java_type": "SerializableDataTypes.STRING",
+          "required": false,
+          "java_default": "\"origins.cant_sleep\""
+        },
+        "set_spawn_point": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "prevent_sprinting": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {}
+    },
+    "recipe": {
+      "source": "power/RecipePower.java",
+      "fields": {
+        "recipe": {
+          "java_type": "SerializableDataTypes.RECIPE",
+          "required": true
+        }
+      }
+    },
+    "resource": {
+      "source": "power/ResourcePower.java",
+      "fields": {
+        "min": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "max": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "hud_render": {
+          "java_type": "ApoliDataTypes.HUD_RENDER",
+          "required": false,
+          "java_default": "HudRender.DONT_RENDER"
+        },
+        "min_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        },
+        "max_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "restrict_armor": {
+      "source": "power/RestrictArmorPower.java",
+      "fields": {
+        "head": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "chest": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "legs": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "feet": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "self_action_on_hit": {
+      "source": "power/SelfActionOnHitPower.java",
+      "fields": {
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": true
+        },
+        "damage_condition": {
+          "java_type": "ApoliDataTypes.DAMAGE_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "cooldown": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        },
+        "hud_render": {
+          "java_type": "ApoliDataTypes.HUD_RENDER",
+          "required": false,
+          "java_default": "HudRender.DONT_RENDER"
+        },
+        "target_condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "self_action_on_kill": {
+      "source": "power/SelfActionOnKillPower.java",
+      "fields": {
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": true
+        },
+        "damage_condition": {
+          "java_type": "ApoliDataTypes.DAMAGE_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "cooldown": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        },
+        "hud_render": {
+          "java_type": "ApoliDataTypes.HUD_RENDER",
+          "required": false,
+          "java_default": "HudRender.DONT_RENDER"
+        },
+        "target_condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "self_action_when_hit": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {}
+    },
+    "self_glow": {
+      "source": "power/SelfGlowPower.java",
+      "fields": {
+        "entity_condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "bientity_condition": {
+          "java_type": "ApoliDataTypes.BIENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "use_teams": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "red": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        },
+        "green": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        },
+        "blue": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        }
+      }
+    },
+    "shader": {
+      "source": "power/ShaderPower.java",
+      "fields": {
+        "shader": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": true
+        },
+        "toggleable": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        }
+      }
+    },
+    "shaking": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {}
+    },
+    "simple": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {}
+    },
+    "stacking_status_effect": {
+      "source": "power/StackingStatusEffectPower.java",
+      "fields": {
+        "min_stacks": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "max_stacks": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "duration_per_stack": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": true
+        },
+        "tick_rate": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "10"
+        },
+        "effect": {
+          "java_type": "SerializableDataTypes.STATUS_EFFECT_INSTANCE",
+          "required": false,
+          "java_default": "null"
+        },
+        "effects": {
+          "java_type": "SerializableDataTypes.STATUS_EFFECT_INSTANCES",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "starting_equipment": {
+      "source": "power/StartingEquipmentPower.java",
+      "fields": {
+        "stack": {
+          "java_type": "ApoliDataTypes.POSITIONED_ITEM_STACK",
+          "required": false,
+          "java_default": "null"
+        },
+        "stacks": {
+          "java_type": "ApoliDataTypes.POSITIONED_ITEM_STACKS",
+          "required": false,
+          "java_default": "null"
+        },
+        "recurrent": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        }
+      }
+    },
+    "status_bar_texture": {
+      "source": "power/OverrideHudTexturePower.java",
+      "fields": {
+        "texture": {
+          "java_type": "SerializableDataTypes.IDENTIFIER",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "swimming": {
+      "source": "power/factory/PowerFactories.java",
+      "fields": {}
+    },
+    "target_action_on_hit": {
+      "source": "power/TargetActionOnHitPower.java",
+      "fields": {
+        "entity_action": {
+          "java_type": "ApoliDataTypes.ENTITY_ACTION",
+          "required": true
+        },
+        "damage_condition": {
+          "java_type": "ApoliDataTypes.DAMAGE_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "cooldown": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "1"
+        },
+        "hud_render": {
+          "java_type": "ApoliDataTypes.HUD_RENDER",
+          "required": false,
+          "java_default": "HudRender.DONT_RENDER"
+        },
+        "target_condition": {
+          "java_type": "ApoliDataTypes.ENTITY_CONDITION",
+          "required": false,
+          "java_default": "null"
+        }
+      }
+    },
+    "toggle": {
+      "source": "power/TogglePower.java",
+      "fields": {
+        "active_by_default": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "retain_state": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "true"
+        },
+        "key": {
+          "java_type": "ApoliDataTypes.BACKWARDS_COMPATIBLE_KEY",
+          "required": false,
+          "java_default": "new Active.Key()"
+        }
+      }
+    },
+    "toggle_night_vision": {
+      "source": "power/ToggleNightVisionPower.java",
+      "fields": {
+        "active_by_default": {
+          "java_type": "SerializableDataTypes.BOOLEAN",
+          "required": false,
+          "java_default": "false"
+        },
+        "strength": {
+          "java_type": "SerializableDataTypes.FLOAT",
+          "required": false,
+          "java_default": "1.0F"
+        },
+        "key": {
+          "java_type": "ApoliDataTypes.BACKWARDS_COMPATIBLE_KEY",
+          "required": false,
+          "java_default": "new Active.Key()"
+        }
+      }
+    },
+    "tooltip": {
+      "source": "power/TooltipPower.java",
+      "fields": {
+        "item_condition": {
+          "java_type": "ApoliDataTypes.ITEM_CONDITION",
+          "required": false,
+          "java_default": "null"
+        },
+        "text": {
+          "java_type": "SerializableDataTypes.TEXT",
+          "required": false,
+          "java_default": "null"
+        },
+        "texts": {
+          "java_type": "SerializableDataType.list(SerializableDataTypes.TEXT)",
+          "required": false,
+          "java_default": "null"
+        },
+        "order": {
+          "java_type": "SerializableDataTypes.INT",
+          "required": false,
+          "java_default": "0"
+        }
+      }
+    },
+    "walk_on_fluid": {
+      "source": "power/WalkOnFluidPower.java",
+      "fields": {
+        "fluid": {
+          "java_type": "SerializableDataTypes.FLUID_TAG",
+          "required": true
+        }
+      }
+    }
+  }
+}
