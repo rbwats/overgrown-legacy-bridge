@@ -40,8 +40,12 @@ public final class LegacyRegressionTests {
     }
     private static <T> T decode(Codec<T> codec, JsonElement data) { return codec.parse(JsonOps.INSTANCE, data).getOrThrow(false, message -> {}); }
     private static Power power(String data) {
+        return power(new ResourceLocation("bridge_test", "test"), data);
+    }
+    /** Parses as the loader does under this id, so fields recorded from the raw JSON (tick_rate, priority) apply to it. */
+    private static Power power(ResourceLocation id, String data) {
         JsonObject obj = normalized(data, LegacySchema.Context.POWER);
-        return decode(Power.CODEC, ApoliReloadListener.prepare(new Dynamic<>(JsonOps.INSTANCE, obj), new ResourceLocation("bridge_test", "test")).getValue());
+        return decode(Power.CODEC, ApoliReloadListener.prepare(new Dynamic<>(JsonOps.INSTANCE, obj), id).getValue());
     }
     public static JsonArray run(MinecraftServer server) {
         var suite = new LegacyRegressionTests();
@@ -71,9 +75,21 @@ public final class LegacyRegressionTests {
         powers.put(dot, power("{\"type\":\"origins:damage_over_time\",\"damage\":1,\"interval\":2,\"onset_delay\":0}"));
         powers.put(camera, power("{\"type\":\"origins:modify_camera_submersion\",\"to\":\"water\"}"));
         powers.put(transfer, power("{\"type\":\"origins:attribute_modify_transfer\",\"class\":\"modify_air_speed\",\"attribute\":\"minecraft:generic.movement_speed\"}"));
+        var jumpTransfer = new ResourceLocation("bridge_test", "jump_transfer");
+        powers.put(jumpTransfer, power("{\"type\":\"origins:attribute_modify_transfer\",\"class\":\"ModifyJumpPower\",\"attribute\":\"minecraft:generic.movement_speed\",\"multiplier\":2}"));
+        var grind = new ResourceLocation("bridge_test", "grind");
+        powers.put(grind, power(grind, "{\"type\":\"origins:modify_grindstone\",\"result_type\":\"SPECIFIED\",\"result_stack\":{\"item\":\"minecraft:diamond\",\"amount\":2},\"bottom_condition\":{\"type\":\"origins:empty\"}}"));
+        var xpGain = new ResourceLocation("bridge_test", "xp_gain");
+        powers.put(xpGain, power(xpGain, "{\"type\":\"origins:modify_xp_gain\",\"modifier\":{\"operation\":\"multiply_total\",\"value\":1}}"));
+        var useZero = new ResourceLocation("bridge_test", "use_zero");
+        powers.put(useZero, power(useZero, "{\"type\":\"origins:action_on_entity_use\",\"bientity_action\":{\"type\":\"origins:target_action\",\"action\":{\"type\":\"origins:heal\",\"amount\":1}}}"));
+        var useFirst = new ResourceLocation("bridge_test", "use_first");
+        powers.put(useFirst, power(useFirst, "{\"type\":\"origins:action_on_entity_use\",\"priority\":1,\"action_result\":\"consume\",\"bientity_action\":{\"type\":\"origins:target_action\",\"action\":{\"type\":\"origins:heal\",\"amount\":2}}}"));
+        var slowAttribute = new ResourceLocation("bridge_test", "slow_attribute");
+        powers.put(slowAttribute, power(slowAttribute, "{\"type\":\"origins:conditioned_attribute\",\"tick_rate\":5,\"modifier\":{\"attribute\":\"minecraft:generic.armor\",\"operation\":\"addition\",\"value\":1}}"));
         ApoliPowers.replaceAll(powers);
         try {
-            for (var id : List.of(resource, insomnia, insomnia2, insomniaOff, lava, night, dot, camera, transfer)) check(holder.addPower(id, source), "Cannot grant " + id);
+            for (var id : List.of(resource, insomnia, insomnia2, insomniaOff, lava, night, dot, camera, transfer, jumpTransfer)) check(holder.addPower(id, source), "Cannot grant " + id);
             suite.test("insomnia: aggregate active modifiers without modifying state", () -> {
                 eq(LegacyInsomniaPower.modify(pig, 100), 220); eq(holder.getAuxIntOr(resource, -1), 10);
                 holder.suppressPower(insomnia2, source); eq(LegacyInsomniaPower.modify(pig, 100), 110); holder.unsuppressPower(insomnia2, source);
@@ -220,17 +236,122 @@ public final class LegacyRegressionTests {
                 check(breathing != null && breathing.typeId().equals(new ResourceLocation("apoli", "water_breathing")), "water_breathing is not native");
                 check(original.containsKey(new ResourceLocation("origins", "scare_creepers_flee")), "scare_creepers was not expanded");
             });
-            suite.test("attribute transfer: movement speed modifiers reach air speed; other classes still fail", () -> {
+            suite.test("attribute transfer: modifiers reach air speed and jump; legacy class names resolve as Calio did", () -> {
                 var speed = pig.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED);
                 var modifier = new net.minecraft.world.entity.ai.attributes.AttributeModifier(UUID.randomUUID(), "bridge_test", 0.5,
                     net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.MULTIPLY_TOTAL);
                 speed.addTransientModifier(modifier);
-                try { eq(dev.overgrown.apoli.power.builtin.ModifyAirSpeedPower.modify(pig, 0.02f), 0.03f); }
-                finally { speed.removeModifier(modifier); }
-                var unsupported = Power.CODEC.parse(JsonOps.INSTANCE, ApoliReloadListener.prepare(new Dynamic<>(JsonOps.INSTANCE,
-                    normalized("{\"type\":\"origins:attribute_modify_transfer\",\"class\":\"modify_jump\",\"attribute\":\"minecraft:generic.movement_speed\"}", LegacySchema.Context.POWER)),
-                    new ResourceLocation("bridge_test", "unsupported")).getValue());
-                check(unsupported.error().isPresent(), "Unsupported transfer class was accepted");
+                try {
+                    eq(dev.overgrown.apoli.power.builtin.ModifyAirSpeedPower.modify(pig, 0.02f), 0.03f);
+                    eq(dev.overgrown.apoli.power.builtin.ModifyJumpHandler.modify(pig, 0.5f), 1.0f);
+                } finally { speed.removeModifier(modifier); }
+                eq(dev.overgrown.apoli.power.builtin.ModifyJumpHandler.modify(pig, 0.5f), 0.5f);
+                for (String name : List.of("modify_swim_speed", "io.github.apace100.apoli.power.ModifyHealingPower", "modifyExhaustion"))
+                    power("{\"type\":\"origins:attribute_modify_transfer\",\"class\":\"" + name + "\",\"attribute\":\"minecraft:generic.armor\"}");
+                var missing = Power.CODEC.parse(JsonOps.INSTANCE, ApoliReloadListener.prepare(new Dynamic<>(JsonOps.INSTANCE,
+                    normalized("{\"type\":\"origins:attribute_modify_transfer\",\"class\":\"modify_nothing_at_all\",\"attribute\":\"minecraft:generic.armor\"}", LegacySchema.Context.POWER)),
+                    new ResourceLocation("bridge_test", "missing")).getValue());
+                check(missing.error().isPresent(), "A class legacy Apoli could not resolve was accepted");
+            });
+            suite.test("mixin targets: server-side injections apply", () -> {
+                for (String name : List.of("net.minecraft.world.inventory.GrindstoneMenu", "net.minecraft.world.inventory.GrindstoneMenu$2",
+                        "net.minecraft.world.inventory.GrindstoneMenu$3", "net.minecraft.world.inventory.GrindstoneMenu$4",
+                        "net.minecraft.server.PlayerAdvancements", "net.minecraft.world.entity.ExperienceOrb",
+                        "dev.overgrown.apoli.power.builtin.ActionOnUseHandler", "dev.overgrown.apoli.power.builtin.AttributePower"))
+                    Class.forName(name, true, LegacyRegressionTests.class.getClassLoader());
+            });
+            suite.test("tick_rate: conditioned_attribute re-checks every tick_rate ticks", () -> {
+                int saved = pig.tickCount;
+                try {
+                    pig.tickCount = 10; check(LegacyTickRates.attributeTicks(slowAttribute, pig), "Tick 10 skipped at rate 5");
+                    pig.tickCount = 11; check(!LegacyTickRates.attributeTicks(slowAttribute, pig), "Tick 11 ran at rate 5");
+                    check(LegacyTickRates.attributeTicks(resource, pig), "Power without a legacy rate was gated");
+                } finally { pig.tickCount = saved; }
+            });
+            var fake = net.fabricmc.fabric.api.entity.FakePlayer.get(level);
+            var fakeHolder = (PowerContainerImpl) PowerContainerAttachment.getOrCreate(fake);
+            suite.test("modify_grindstone: inputs, result and conditions apply", () -> {
+                fakeHolder.addPower(grind, source);
+                try {
+                    var menu = new net.minecraft.world.inventory.GrindstoneMenu(0, fake.getInventory(), net.minecraft.world.inventory.ContainerLevelAccess.NULL);
+                    check(menu.getSlot(0).mayPlace(new ItemStack(Items.STICK)), "Top slot refused an item the power allows");
+                    check(!menu.getSlot(1).mayPlace(new ItemStack(Items.STICK)), "Bottom condition was ignored");
+                    menu.getSlot(0).set(new ItemStack(Items.STICK));
+                    var result = menu.getSlot(2).getItem();
+                    check(result.is(Items.DIAMOND) && result.getCount() == 2, "Result was " + result);
+                    menu.removed(fake);
+                } finally { fakeHolder.removePower(grind, source); }
+            });
+            suite.test("modify_xp_gain: experience orbs pay the modified value", () -> {
+                fakeHolder.addPower(xpGain, source);
+                try {
+                    int before = fake.totalExperience;
+                    fake.takeXpDelay = 0;
+                    var orb = new ExperienceOrb(level, fake.getX(), fake.getY(), fake.getZ(), 10);
+                    orb.playerTouch(fake);
+                    eq(fake.totalExperience - before, 20);
+                } finally { fakeHolder.removePower(xpGain, source); }
+            });
+            suite.test("entity use priority: 0 keeps vanilla running, positive cancels it", () -> {
+                fakeHolder.addPower(useZero, source);
+                try {
+                    pig.setHealth(2);
+                    check(dev.overgrown.apoli.power.builtin.ActionOnUseHandler.fire(fake, pig, net.minecraft.world.InteractionHand.MAIN_HAND) == net.minecraft.world.InteractionResult.PASS, "Priority 0 cancelled vanilla");
+                    eq(pig.getHealth(), 3);
+                    check(fake.interact(pig, net.minecraft.world.InteractionHand.MAIN_HAND).consumesAction(), "Priority 0 result was not applied after vanilla");
+                    fakeHolder.addPower(useFirst, source);
+                    check(dev.overgrown.apoli.power.builtin.ActionOnUseHandler.fire(fake, pig, net.minecraft.world.InteractionHand.MAIN_HAND) == net.minecraft.world.InteractionResult.CONSUME, "Priority 1 did not cancel vanilla");
+                    eq(pig.getHealth(), 5);
+                } finally { fakeHolder.removePower(useZero, source); fakeHolder.removePower(useFirst, source); pig.setHealth(pig.getMaxHealth()); }
+            });
+            suite.test("save migration: legacy origins, sourced powers and resource values", () -> {
+                var state = dev.overgrown.origins.component.PlayerOriginsAttachment.getOrCreate(fake);
+                for (var layer : new ArrayList<>(state.snapshot().keySet())) state.clearOrigin(layer);
+                var save = new net.minecraft.nbt.CompoundTag();
+                var components = new net.minecraft.nbt.CompoundTag();
+                var originTag = new net.minecraft.nbt.CompoundTag(); var layers = new net.minecraft.nbt.ListTag(); var layerTag = new net.minecraft.nbt.CompoundTag();
+                layerTag.putString("Layer", "origins:origin"); layerTag.putString("Origin", "origins:avian"); layers.add(layerTag);
+                originTag.put("OriginLayers", layers); originTag.putBoolean("HadOriginBefore", true); components.put("origins:origin", originTag);
+                var powerTag = new net.minecraft.nbt.CompoundTag(); var powerList = new net.minecraft.nbt.ListTag(); var entry = new net.minecraft.nbt.CompoundTag();
+                entry.putString("Type", resource.toString()); var sources = new net.minecraft.nbt.ListTag(); sources.add(net.minecraft.nbt.StringTag.valueOf("apoli:command"));
+                entry.put("Sources", sources); entry.put("Data", net.minecraft.nbt.IntTag.valueOf(42)); powerList.add(entry);
+                powerTag.put("Powers", powerList); components.put("apoli:powers", powerTag); save.put(LegacySaveMigration.COMPONENTS, components);
+                var legacy = LegacySaveMigration.capture(save);
+                check(legacy != null, "Legacy components were not captured");
+                var written = new net.minecraft.nbt.CompoundTag(); LegacySaveMigration.writeBack(written, legacy);
+                check(written.getCompound(LegacySaveMigration.COMPONENTS).contains("origins:origin"), "Unmigrated data would be lost on save");
+                var holderView = (LegacySaveMigration.Holder) fake;
+                holderView.overgrownLegacyBridge$setLegacyComponents(legacy);
+                try {
+                    LegacySaveMigration.restoreOrigins(fake);
+                    check(new ResourceLocation("origins", "avian").equals(state.getOrigin(new ResourceLocation("origins", "origin"))), "Origin not restored: " + state.snapshot());
+                    check(fakeHolder.sourcesOf(resource).contains(new ResourceLocation("apoli", "command")), "Command-granted power not restored");
+                    LegacySaveMigration.restorePowerData(fake);
+                    eq(PowerResources.read(fakeHolder, resource).orElseThrow(), 42);
+                    check(holderView.overgrownLegacyBridge$legacyComponents() == null, "Migrated data kept for another pass");
+                } finally {
+                    holderView.overgrownLegacyBridge$setLegacyComponents(null);
+                    for (var layer : new ArrayList<>(state.snapshot().keySet())) state.clearOrigin(layer);
+                    fakeHolder.clear();
+                }
+            });
+            suite.test("origin upgrades: legacy upgrades fire on advancement completion", () -> {
+                var state = dev.overgrown.origins.component.PlayerOriginsAttachment.getOrCreate(fake);
+                var layer = new ResourceLocation("origins", "origin");
+                var advancement = new ResourceLocation("minecraft", "story/root");
+                var upgrade = json("{\"condition\":\"minecraft:story/root\",\"origin\":\"origins:avian\",\"announcement\":\"bridge.upgrade\"}");
+                state.setOrigin(layer, new ResourceLocation("origins", "human"));
+                LegacyOriginUpgrades.load(Map.of(new ResourceLocation("origins", "human"), List.of(upgrade)));
+                try {
+                    LegacyOriginUpgrades.onCompleted(fake, new ResourceLocation("minecraft", "story/mine_stone"));
+                    check(new ResourceLocation("origins", "human").equals(state.getOrigin(layer)), "Another advancement triggered the upgrade");
+                    LegacyOriginUpgrades.onCompleted(fake, advancement);
+                    check(new ResourceLocation("origins", "avian").equals(state.getOrigin(layer)), "Upgrade did not apply: " + state.snapshot());
+                } finally {
+                    LegacyOriginUpgrades.load(Map.of());
+                    state.clearOrigin(layer);
+                    fakeHolder.clear();
+                }
             });
             suite.test("resource conditions: sub-powers and apoli namespace conditions", () -> {
                 var id = new ResourceLocation("bridge_test", "conditional");
@@ -238,8 +359,9 @@ public final class LegacyRegressionTests {
                 LegacyPowerNormalizer.filterSubPowers(id, multiple);
                 check(multiple.has("kept") && !multiple.has("dropped"), "Sub-power conditions not applied: " + multiple);
             });
-            suite.test("origin upgrades: advancement IDs become native entity conditions", () -> {
-                var origin = json("{\"upgrades\":[{\"condition\":\"minecraft:story/root\",\"origin\":\"origins:human\",\"announcement\":\"bridge.upgrade\"}]}");
+            suite.test("origin upgrades: condition objects stay native Overgrown upgrades", () -> {
+                var origin = json("{\"upgrades\":[{\"condition\":{\"type\":\"origins:advancement\",\"advancement\":\"minecraft:story/root\"},\"origin\":\"origins:human\",\"announcement\":\"bridge.upgrade\"}]}");
+                check(LegacyOriginNormalizer.extractAdvancementUpgrades(origin).isEmpty(), "Condition object treated as an advancement id");
                 LegacyOriginNormalizer.origin(origin);
                 decode(dev.overgrown.origins.origin.OriginUpgrade.CODEC, origin.getAsJsonArray("upgrades").get(0));
             });

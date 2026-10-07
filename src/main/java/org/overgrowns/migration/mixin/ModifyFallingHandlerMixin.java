@@ -14,6 +14,10 @@ public abstract class ModifyFallingHandlerMixin {
     @Inject(method = "modifyGravity", at = @At("RETURN"), cancellable = true)
     private static void overgrownLegacyBridge$gravity(LivingEntity entity, double vanilla,
             CallbackInfoReturnable<Double> cir) {
-        cir.setReturnValue(LegacyGravityPower.modify(entity, cir.getReturnValue()));
+        double value = cir.getReturnValueD();
+        // Legacy applied modify_falling transfers only while a falling power was active and the entity was not rising.
+        if (entity.getDeltaMovement().y <= 0 && dev.overgrown.apoli.power.PowerLookup.hasActive(entity, dev.overgrown.apoli.power.ApoliIds.MODIFY_FALLING))
+            value = org.overgrowns.migration.LegacyAttributeTransferPower.apply(entity, "modify_falling", value);
+        cir.setReturnValue(LegacyGravityPower.modify(entity, value));
     }
 }

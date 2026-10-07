@@ -24,13 +24,33 @@
     "MultiPackResourceManagerMixin",
     "LegacyCobwebMixin",
     "LegacyConduitMixin",
-    "ModifyAirSpeedMixin"
+    "ModifyAirSpeedMixin",
+    "GrindstoneMenuMixin",
+    "GrindstoneInputSlotMixin",
+    "GrindstoneResultSlotMixin",
+    "AttributeTickRateMixin",
+    "ActionOnUseHandlerMixin",
+    "PlayerInteractMixin",
+    "PlayerAdvancementsMixin",
+    "ServerPlayerLegacyDataMixin",
+    "ExperienceOrbMixin",
+    "AttributeValueTransferMixin",
+    "TransferJumpMixin",
+    "TransferHealingMixin",
+    "TransferExhaustionMixin",
+    "TransferSlipperinessMixin",
+    "TransferBreakSpeedMixin",
+    "TransferVelocityMixin",
+    "TransferStatusEffectMixin",
+    "TransferProjectileDamageMixin"
   ],
   "client": [
     "GuiMixin",
     "FluidRenderMixin",
     "LegacyClientKeysMixin",
-    "LegacyWaterVisionMixin"
+    "LegacyWaterVisionMixin",
+    "LocalPlayerFlySpeedMixin",
+    "SodiumFluidRenderMixin"
   ],
   "injectors": {
     "defaultRequire": 1

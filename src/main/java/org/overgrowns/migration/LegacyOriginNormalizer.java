@@ -13,9 +13,23 @@ public final class LegacyOriginNormalizer {
                 if (upgrade.isJsonObject()) upgrade(upgrade.getAsJsonObject());
     }
     /**
-     * Origins 1.10.0 upgrades named an advancement and announced a gold translation key. Overgrown
-     * expects an entity condition and polls it, so an already-earned advancement upgrades on the next check.
+     * Removes Origins 1.10.0 upgrades (an advancement id as the condition). They fire when that advancement
+     * is completed, as legacy did; Overgrown's poller would also upgrade players who earned it earlier.
      */
+    public static java.util.List<JsonObject> extractAdvancementUpgrades(JsonObject root) {
+        java.util.List<JsonObject> legacy = new java.util.ArrayList<>();
+        if (!root.has("upgrades") || !root.get("upgrades").isJsonArray()) return legacy;
+        JsonArray kept = new JsonArray();
+        for (JsonElement upgrade : root.getAsJsonArray("upgrades")) {
+            if (upgrade.isJsonObject() && LegacySchema.string(upgrade.getAsJsonObject(), "condition") != null
+                    && LegacySchema.string(upgrade.getAsJsonObject(), "origin") != null)
+                legacy.add(upgrade.getAsJsonObject());
+            else kept.add(upgrade);
+        }
+        root.add("upgrades", kept);
+        return legacy;
+    }
+    /** Upgrades left for Overgrown: an advancement name becomes a condition, an announcement a gold translation. */
     static void upgrade(JsonObject upgrade) {
         String advancement = LegacySchema.string(upgrade, "condition");
         if (advancement != null) {

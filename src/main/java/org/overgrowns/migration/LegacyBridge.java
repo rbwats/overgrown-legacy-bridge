@@ -99,7 +99,19 @@ public final class LegacyBridge implements ModInitializer {
         registerGeneralAdapters();
         LegacyResourceConditions.register();
         net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents.SERVER_STARTED.register(LegacyCompatibilityTests::runIfRequested);
+        net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents.END_SERVER_TICK.register(LegacyTickRates::sweepArmor);
+        registerSaveMigration();
         LOGGER.info("Overgrown Legacy Bridge active; legacy power revoke syntax will attach during command registration");
+    }
+    /** Origins go in before Overgrown's join handler would prompt for them; power data after it re-grants powers. */
+    private static void registerSaveMigration() {
+        var join = net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents.JOIN;
+        var origins = new ResourceLocation(MOD_ID, "legacy_origins");
+        var powerData = new ResourceLocation(MOD_ID, "legacy_power_data");
+        join.addPhaseOrdering(origins, net.fabricmc.fabric.api.event.Event.DEFAULT_PHASE);
+        join.addPhaseOrdering(net.fabricmc.fabric.api.event.Event.DEFAULT_PHASE, powerData);
+        join.register(origins, (handler, sender, server) -> LegacySaveMigration.restoreOrigins(handler.player));
+        join.register(powerData, (handler, sender, server) -> LegacySaveMigration.restorePowerData(handler.player));
     }
     private static void registerGeneralAdapters() {
         PowerTypeRegistry.register(LegacyDamageOverTimePower.ID, new LegacyDamageOverTimePower());
@@ -116,6 +128,7 @@ public final class LegacyBridge implements ModInitializer {
             PowerTypeRegistry.register(LegacyLavaSpeedPower.ID, new LegacyLavaSpeedPower(), AliasingOptions.builder()
                 .addTypeAlias("origins:modify_lava_speed").addTypeAlias("apoli:modify_lava_speed").build());
         PowerTypeRegistry.register(LegacyCameraSubmersionPower.ID, new LegacyCameraSubmersionPower());
+        PowerTypeRegistry.register(LegacyGrindstonePower.ID, new LegacyGrindstonePower());
         if (PowerTypeRegistry.get(new ResourceLocation("origins", "attribute_modify_transfer")) == null)
             PowerTypeRegistry.register(LegacyAttributeTransferPower.ID, new LegacyAttributeTransferPower(), AliasingOptions.builder()
                 .addTypeAlias("origins:attribute_modify_transfer").addTypeAlias("apoli:attribute_modify_transfer").build());

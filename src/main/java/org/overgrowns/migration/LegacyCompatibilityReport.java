@@ -34,11 +34,6 @@ public final class LegacyCompatibilityReport {
                 "Unknown factory in this context. Install a compatible provider or port it; the bridge does not substitute a dummy.");
             for (String field : List.of("modifier", "modifiers", "food_modifier", "food_modifiers", "saturation_modifier", "saturation_modifiers"))
                 inspectModifiers(node.get(field), issues, id, location + "." + field, ctx, name);
-            String path = name == null ? "" : name.substring(name.indexOf(':') + 1);
-            for (String field : IGNORED_FIELDS.getOrDefault(ctx + "/" + path, List.of()))
-                // client/server default to true, so only a false value loses behavior.
-                if (field.equals("client") || field.equals("server") ? isFalse(node, field) : node.has(field))
-                    issue(issues, id, location + "." + field, ctx, name, "Overgrown ignores this legacy field; the power loads without its effect.");
         }));
         issueCount = issues.size();
         JsonObject report = new JsonObject(); report.addProperty("scope", "Normalized JSON factory checks; not a gameplay certification. Optional load conditions may intentionally disable reported entries.");
@@ -46,16 +41,6 @@ public final class LegacyCompatibilityReport {
         try { Files.createDirectories(path().getParent()); Files.writeString(path(), new GsonBuilder().setPrettyPrinting().create().toJson(report)); }
         catch (Exception error) { LegacyBridge.LOGGER.warn("Could not write compatibility report", error); }
         if (!issues.isEmpty()) LegacyBridge.LOGGER.warn("Legacy compatibility found {} diagnostic candidate(s); see {}", issues.size(), path());
-    }
-    /** Legacy fields with no Overgrown equivalent; codecs drop unknown keys silently. */
-    private static final Map<String, List<String>> IGNORED_FIELDS = Map.of(
-        "POWER/modify_grindstone", List.of("block_condition"),
-        "POWER/modify_player_spawn", List.of("respawn_sound"),
-        "ENTITY_ACTION/add_velocity", List.of("client", "server"),
-        "BI_ENTITY_ACTION/add_velocity", List.of("client", "server"));
-    private static boolean isFalse(JsonObject node, String field) {
-        JsonElement value = node.get(field);
-        return value != null && value.isJsonPrimitive() && value.getAsJsonPrimitive().isBoolean() && !value.getAsBoolean();
     }
     private static void inspectModifiers(JsonElement node, JsonArray issues, ResourceLocation id, String path, LegacySchema.Context ctx, String type) {
         if (node == null) return;

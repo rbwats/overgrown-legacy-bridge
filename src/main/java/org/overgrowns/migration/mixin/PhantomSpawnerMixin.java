@@ -21,6 +21,9 @@ public abstract class PhantomSpawnerMixin {
     @ModifyExpressionValue(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/Mth;clamp(III)I"))
     private int overgrownLegacyBridge$insomnia(int original) {
         // The result is passed to nextInt, which rejects non-positive bounds.
-        return overgrownLegacyBridge$player == null ? original : Math.max(1, LegacyInsomniaPower.modify(overgrownLegacyBridge$player, original));
+        if (overgrownLegacyBridge$player == null) return original;
+        int modified = LegacyInsomniaPower.modify(overgrownLegacyBridge$player, original);
+        modified = (int) org.overgrowns.migration.LegacyAttributeTransferPower.apply(overgrownLegacyBridge$player, "modify_insomnia_ticks", (double) modified);
+        return Math.max(1, modified);
     }
 }

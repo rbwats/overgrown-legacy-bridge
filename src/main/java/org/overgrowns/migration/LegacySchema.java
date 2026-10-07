@@ -42,9 +42,11 @@ public final class LegacySchema {
         String path = type == null ? "" : type.substring(type.indexOf(':') + 1);
         JsonObject fields = fields(context, path);
         boolean multiple = context == Context.POWER && path.equals("multiple");
+        boolean legacyType = type != null && (type.startsWith("origins:") || type.startsWith("apoli:"));
         for (var entry : new ArrayList<>(obj.entrySet())) {
             String key = entry.getKey();
             JsonElement child = entry.getValue();
+            if (legacyType && isEnumField(fields, key)) changed |= lowercaseEnum(obj, key, child);
             if (key.equals("hud_render") && child.isJsonObject()) {
                 JsonObject hud = child.getAsJsonObject();
                 changed |= LegacyPowerNormalizer.normalizeNode(hud, Context.ENTITY_CONDITION);
@@ -60,6 +62,35 @@ public final class LegacySchema {
             if (nested != null) changed |= normalize(child, nested);
             else if (Set.of("modifier", "modifiers", "food_modifier", "food_modifiers", "saturation_modifier",
                     "saturation_modifiers", "xp_modifier").contains(key)) changed |= normalizeModifiers(child);
+        }
+        return changed;
+    }
+    /** Calio enum types: names matched in either case. Overgrown's codecs take only the lowercase names. */
+    private static final List<String> ENUM_TYPES = List.of("enumValue(", "ACTION_RESULT", "HAND", "AXIS_SET", "DIRECTION_SET",
+        "EQUIPMENT_SLOT", "CAMERA_SUBMERSION_TYPE", "SPACE", "INVENTORY_TYPE", "PROCESS_MODE", "RESOURCE_OPERATION");
+    private static boolean isEnumField(JsonObject fields, String key) {
+        if (fields == null || !fields.has(key) || !fields.get(key).isJsonObject()) return false;
+        String javaType = string(fields.getAsJsonObject(key), "java_type");
+        if (javaType == null) return false;
+        for (String marker : ENUM_TYPES) if (javaType.contains(marker)) return true;
+        return false;
+    }
+    private static boolean lowercaseEnum(JsonObject obj, String key, JsonElement value) {
+        if (value.isJsonPrimitive() && value.getAsJsonPrimitive().isString()) {
+            String lower = value.getAsString().toLowerCase(Locale.ROOT);
+            if (lower.equals(value.getAsString())) return false;
+            obj.addProperty(key, lower);
+            return true;
+        }
+        if (!value.isJsonArray()) return false;
+        JsonArray array = value.getAsJsonArray();
+        boolean changed = false;
+        for (int i = 0; i < array.size(); i++) {
+            JsonElement item = array.get(i);
+            if (item.isJsonPrimitive() && item.getAsJsonPrimitive().isString() && !item.getAsString().equals(item.getAsString().toLowerCase(Locale.ROOT))) {
+                array.set(i, new JsonPrimitive(item.getAsString().toLowerCase(Locale.ROOT)));
+                changed = true;
+            }
         }
         return changed;
     }
@@ -185,6 +216,8 @@ public final class LegacySchema {
         if (ctx == Context.POWER) {
             if (path.equals("damage_over_time")) obj.addProperty("type", "overgrown_legacy_bridge:damage_over_time");
             if (path.equals("toggle_night_vision")) obj.addProperty("type", "overgrown_legacy_bridge:toggle_night_vision");
+            // Overgrown registers modify_grindstone without applying it anywhere.
+            if (path.equals("modify_grindstone")) obj.addProperty("type", "overgrown_legacy_bridge:modify_grindstone");
             if (path.equals("action_on_land") && !obj.has("entity_action")) {
                 JsonObject noAction = new JsonObject(); noAction.addProperty("type", "apoli:nothing"); obj.add("entity_action", noAction);
             }

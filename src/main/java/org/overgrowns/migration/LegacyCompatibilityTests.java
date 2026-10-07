@@ -45,8 +45,24 @@ public final class LegacyCompatibilityTests {
         DataResult<JsonElement> encoded = ((Codec) codec(context)).encodeStart(JsonOps.INSTANCE, value);
         return encoded.result().orElse(null);
     }
+    /**
+     * Fields the fork's codecs drop that the bridge reads from the raw JSON instead (tick_rate, entity-use priority),
+     * or that legacy Apoli itself never read (block-use priority, respawn_sound).
+     */
+    private static final java.util.Map<String, java.util.Set<String>> HANDLED = java.util.Map.of(
+        "conditioned_attribute", java.util.Set.of("tick_rate"),
+        "conditioned_restrict_armor", java.util.Set.of("tick_rate"),
+        "action_on_entity_use", java.util.Set.of("priority"),
+        "action_on_being_used", java.util.Set.of("priority"),
+        "action_on_block_use", java.util.Set.of("priority"),
+        "modify_player_spawn", java.util.Set.of("respawn_sound"));
+    static boolean handledByBridge(LegacySchema.Context context, JsonElement normalized, String key) {
+        if (context != LegacySchema.Context.POWER || !normalized.isJsonObject()) return false;
+        String type = LegacySchema.string(normalized.getAsJsonObject(), "type");
+        return type != null && HANDLED.getOrDefault(type.substring(type.indexOf(':') + 1), java.util.Set.of()).contains(key);
+    }
     /** Top-level fields whose removal decodes to an identical value. */
-    private static JsonArray ignoredFields(LegacySchema.Context context, JsonElement normalized, Object decoded) {
+    private static JsonArray ignoredFields(LegacySchema.Context context, JsonElement normalized, Object decoded, JsonArray handled) {
         JsonArray unused = new JsonArray();
         JsonElement reference = encode(context, decoded);
         if (reference == null || !normalized.isJsonObject()) return unused;
@@ -54,7 +70,8 @@ public final class LegacyCompatibilityTests {
             if (key.equals("type")) continue;
             JsonObject without = normalized.getAsJsonObject().deepCopy(); without.remove(key);
             DataResult<?> reduced = parse(context, without);
-            if (reduced.result().isPresent() && reference.equals(encode(context, reduced.result().get()))) unused.add(key);
+            if (reduced.result().isPresent() && reference.equals(encode(context, reduced.result().get())))
+                (handledByBridge(context, normalized, key) ? handled : unused).add(key);
         }
         return unused;
     }
@@ -87,9 +104,11 @@ public final class LegacyCompatibilityTests {
                     result.addProperty("decoded", ok);
                     if (ok) {
                         fullDecoded++;
-                        JsonArray unused = ignoredFields(context, input, parsed.result().orElseThrow());
+                        JsonArray handled = new JsonArray();
+                        JsonArray unused = ignoredFields(context, input, parsed.result().orElseThrow(), handled);
                         ignored += unused.size();
                         result.add("ignored_fields", unused);
+                        if (!handled.isEmpty()) result.add("bridge_handled_fields", handled);
                     } else result.addProperty("error", parsed.error().get().message());
                     result.addProperty("passed", true);
                     results.add(result);

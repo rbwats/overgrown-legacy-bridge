@@ -113,6 +113,7 @@ public final class LegacyPowerNormalizer {
                 }
             }
             case "origins:add_velocity", "apoli:add_velocity" -> {
+                changed |= sidedVelocity(obj, context);
                 String space = string(obj, "space");
                 if ("velocity_normalized_to_actor".equals(space)
                     || "velocity_normalized_to_target".equals(space)) {
@@ -390,6 +391,38 @@ public final class LegacyPowerNormalizer {
         JsonElement value = obj.get(key);
         return value != null && value.isJsonPrimitive() && value.getAsJsonPrimitive().isString()
             ? value.getAsString() : null;
+    }
+
+    /**
+     * Legacy add_velocity skipped players on a side whose flag was false; Overgrown runs it once on the
+     * server and syncs it, which matches one enabled side. Only disabling both sides changes behavior.
+     */
+    static boolean sidedVelocity(JsonObject obj, LegacySchema.Context context) {
+        Boolean client = bool(obj, "client"), server = bool(obj, "server");
+        if (client == null && server == null) return false;
+        boolean skipPlayers = Boolean.FALSE.equals(client) && Boolean.FALSE.equals(server);
+        if (client != null) obj.remove("client");
+        if (server != null) obj.remove("server");
+        if (!skipPlayers) return true;
+        JsonObject velocity = obj.deepCopy();
+        JsonObject player = typed("apoli:entity_type");
+        player.addProperty("entity_type", "minecraft:player");
+        player.addProperty("inverted", true);
+        JsonObject condition = player;
+        if (context == LegacySchema.Context.BI_ENTITY_ACTION) {
+            condition = typed("apoli:target_condition");
+            condition.add("condition", player);
+        }
+        for (String key : new java.util.ArrayList<>(obj.keySet())) obj.remove(key);
+        obj.addProperty("type", "apoli:if_else");
+        obj.add("condition", condition);
+        obj.add("if_action", velocity);
+        return true;
+    }
+
+    private static Boolean bool(JsonObject obj, String key) {
+        JsonElement value = obj.get(key);
+        return value != null && value.isJsonPrimitive() && value.getAsJsonPrimitive().isBoolean() ? value.getAsBoolean() : null;
     }
 
     private static JsonObject typed(String id) {

@@ -5,6 +5,7 @@ import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.util.profiling.ProfilerFiller;
 import org.overgrowns.migration.LegacyLoadingPriority;
 import org.overgrowns.migration.LegacyOriginNormalizer;
+import org.overgrowns.migration.LegacyOriginUpgrades;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -14,13 +15,17 @@ public abstract class OriginLoaderMixin {
     @Inject(method = "apply", at = @At("HEAD"))
     private void overgrownLegacyBridge$origin(Map<ResourceLocation, JsonElement> entries, ResourceManager manager, ProfilerFiller profiler, CallbackInfo ci) {
         LegacyLoadingPriority.select(entries, manager, "origins");
+        Map<ResourceLocation, java.util.List<JsonObject>> upgrades = new java.util.HashMap<>();
         for (Map.Entry<ResourceLocation, JsonElement> entry : entries.entrySet()) {
             if (!entry.getValue().isJsonObject()) continue;
             try {
+                var legacy = LegacyOriginNormalizer.extractAdvancementUpgrades(entry.getValue().getAsJsonObject());
+                if (!legacy.isEmpty()) upgrades.put(entry.getKey(), legacy);
                 LegacyOriginNormalizer.origin(entry.getValue().getAsJsonObject());
             } catch (RuntimeException error) {
                 org.slf4j.LoggerFactory.getLogger("overgrown_legacy_bridge").error("Legacy normalization failed for origin {}: {}", entry.getKey(), error.toString());
             }
         }
+        LegacyOriginUpgrades.load(upgrades);
     }
 }
