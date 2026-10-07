@@ -9,7 +9,7 @@ Install the jar on the server **and** every client, after removing older bridge 
 
 ### Highlights since 0.5.0
 
-- **Production fix:** several of the bridge's hooks into Overgrown's loaders named methods the way they appear in development, not in the released jars. They now name both, and every release build runs the full test suite on a production-mapped Fabric server too.
+- **Fixes 0.5.0 failing to start:** two hooks added in 0.5.0 (power loading and attribute tick rate) described their target methods with development names only, so a normal server or client with 0.5.0 crashed at startup. Every release build now also runs the full test suite on a production-mapped Fabric server with the published jars, so this cannot pass CI again.
 - **Legacy modifier math:** modifiers in `origins:` powers are computed the way Apoli 2.9.0 did (grouped multipliers, `add_total_late`, resource fallback), including nested lists of several modifiers; `attribute_modify_transfer` joins the same pass. Overgrown-native packs keep Overgrown's math.
 - **Save migration** now also carries over remaining cooldowns, damage-over-time timers, stacking-effect counts and active `action_over_time` state.
 - `origins:attribute` ignores its condition again, lava speed re-checks its condition every 10 ticks, layers without an `order` sort as they did, `/power revoke` without a source only removes command grants, and toggle night vision shows the toggle badge.

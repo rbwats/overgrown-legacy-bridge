@@ -14,7 +14,7 @@ import java.util.Map;
 public abstract class OriginLoaderMixin {
     @Inject(method = {
         "apply(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V",
-        "method_18788(Ljava/util/Map;Lnet/minecraft/class_3300;Lnet/minecraft/class_3695;)V"}, at = @At("HEAD"))
+        "apply(Ljava/util/Map;Lnet/minecraft/class_3300;Lnet/minecraft/class_3695;)V"}, at = @At("HEAD"))
     private void overgrownLegacyBridge$origin(Map<ResourceLocation, JsonElement> entries, ResourceManager manager, ProfilerFiller profiler, CallbackInfo ci) {
         LegacyLoadingPriority.select(entries, manager, "origins");
         Map<ResourceLocation, java.util.List<JsonObject>> upgrades = new java.util.HashMap<>();

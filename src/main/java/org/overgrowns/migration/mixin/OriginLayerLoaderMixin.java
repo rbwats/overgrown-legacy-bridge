@@ -14,7 +14,7 @@ public abstract class OriginLayerLoaderMixin {
     @Unique private static volatile java.util.Map<ResourceLocation, Integer> overgrownLegacyBridge$indices = java.util.Map.of();
     @Inject(method = {
         "apply(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V",
-        "method_18788(Ljava/util/Map;Lnet/minecraft/class_3300;Lnet/minecraft/class_3695;)V"}, at = @At("HEAD"))
+        "apply(Ljava/util/Map;Lnet/minecraft/class_3300;Lnet/minecraft/class_3695;)V"}, at = @At("HEAD"))
     private void overgrownLegacyBridge$indices(java.util.Map<ResourceLocation, com.google.gson.JsonElement> entries,
             net.minecraft.server.packs.resources.ResourceManager manager, net.minecraft.util.profiling.ProfilerFiller profiler,
             org.spongepowered.asm.mixin.injection.callback.CallbackInfo ci) {

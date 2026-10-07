@@ -19,14 +19,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Map;
 
 /**
- * remap = false: these are Overgrown's classes. Selectors that spell a Minecraft type, or name an override of a
- * Minecraft method, list both the development (Mojang) and the production (intermediary) form.
+ * remap = false: these are Overgrown's classes. Selectors that spell a Minecraft type list both the development
+ * (Mojang) and the production (intermediary) descriptor; Overgrown's jars keep their own method names.
  */
 @Mixin(value = ApoliReloadListener.class, remap = false)
 public abstract class ApoliReloadListenerMixin {
     @Inject(method = {
         "apply(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V",
-        "method_18788(Ljava/util/Map;Lnet/minecraft/class_3300;Lnet/minecraft/class_3695;)V"}, at = @At("HEAD"))
+        "apply(Ljava/util/Map;Lnet/minecraft/class_3300;Lnet/minecraft/class_3695;)V"}, at = @At("HEAD"))
     private void overgrownLegacyBridge$normalize(Map<ResourceLocation, JsonElement> data,
             ResourceManager manager, ProfilerFiller profiler, CallbackInfo ci) {
         LegacyLoadingPriority.select(data, manager, "powers");

@@ -60,9 +60,6 @@ jobs:
           curl -fsSL -o "$run/server.jar" "https://meta.fabricmc.net/v2/versions/loader/$mc/$loader/$installer/server/jar"
           curl -fsSL -o "$run/mods/fabric-api.jar" "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/$fapi/fabric-api-$fapi.jar"
           cp libs/apoli.jar libs/origins.jar "build/libs/overgrown-legacy-bridge-$version.jar" "$run/mods/"
-          # Shows which reload-listener method names the published jars use (development name vs intermediary).
-          unzip -p libs/origins.jar dev/overgrown/origins/origin/OriginLoader.class > "$run/OriginLoader.class"
-          javap -p "$run/OriginLoader.class" | grep -E " (apply|method_18788)\(" || true
           cp tests/upstream-codec-corpus.json "$run/tests/"
           printf 'eula=true\n' > "$run/eula.txt"
           printf 'server-ip=127.0.0.1\nserver-port=25580\nonline-mode=false\nlevel-name=world\nview-distance=2\nsimulation-distance=2\nmax-tick-time=-1\n' > "$run/server.properties"
