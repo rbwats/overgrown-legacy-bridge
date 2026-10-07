@@ -107,7 +107,7 @@ jobs:
         with:
           tag_name: ${{ env.TAG }}
           target_commitish: ${{ github.sha }}
-          name: Overgrown Legacy Bridge 0.4.0 beta
+          name: Overgrown Legacy Bridge ${{ env.TAG }}
           prerelease: true
           body_path: .github/release-notes-beta.md
           files: build/release/assets/*
