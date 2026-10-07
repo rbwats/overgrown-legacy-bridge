@@ -45,6 +45,14 @@ loom {
             vmArg "-Dovergrown_legacy_bridge.testCorpus=${projectDir}/tests/upstream-codec-corpus.json"
             programArg 'nogui'
         }
+        // CI starts this under a virtual display: the servers above never apply the client mixins.
+        auditClient {
+            client()
+            name 'Client mixin audit'
+            runDir 'build/audit-client-run'
+            vmArg '-Dovergrown_legacy_bridge.auditMixins=true'
+            vmArg '-Dmixin.debug.countInjections=true'
+        }
     }
 }
 

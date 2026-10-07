@@ -18,7 +18,7 @@ The fork source checkouts do not exactly match the installed jars. The actual in
 
 ## What changed, and why
 
-| Area | Source-level incompatibility | Bridge 0.4.0 behavior |
+| Area | Source-level incompatibility | Bridge behavior |
 | --- | --- | --- |
 | Data engine | Original SerializableData factories and class registries became codecs and typed context registries | Traverses known action/condition fields with the correct context; uses native aliases where they already work |
 | Entity vs item damage | Identical factory names have different data in different contexts | Restricts entity damage conversion to entity and bi-entity actions |

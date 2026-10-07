@@ -1,8 +1,8 @@
-# Overgrown Legacy Bridge 0.4.0 beta
+# Overgrown Legacy Bridge 0.6.1 beta
 
-**Status: beta.** This branch contains the expanded compatibility work for 0.4.0. [Beta source](https://github.com/rbwats/overgrown-legacy-bridge/tree/beta) · [Stable 0.3.1 source](https://github.com/rbwats/overgrown-legacy-bridge/tree/v0.3.1)
+**Status: beta.** This branch contains the compatibility work through 0.6.1. [Beta source](https://github.com/rbwats/overgrown-legacy-bridge/tree/beta) · [Stable 0.3.1 source](https://github.com/rbwats/overgrown-legacy-bridge/tree/v0.3.1)
 
-Build the beta jar from this branch using the instructions below. The mod's version and generated filename are `0.4.0`; the beta label describes this branch's testing status.
+Build the beta jar from this branch using the instructions below. The mod's version and generated filename are `0.6.1`; the beta label describes this branch's testing status.
 
 A general compatibility layer for legacy **Origins 1.10.0 / Apoli 2.9.0, Fabric Minecraft 1.20.1** JSON on Overgrown Origins. It normalizes power, action, condition, origin and layer data during reload; packs do not need to be unpacked or rewritten.
 
@@ -11,7 +11,7 @@ This release expands beyond the original pack-specific fixes. It adds a source-d
 ## Install
 
 1. Remove previous bridge versions from the server and clients' `mods` folders.
-2. Install `overgrown-legacy-bridge-0.4.0.jar` on both the server and every client.
+2. Install `overgrown-legacy-bridge-0.6.1.jar` on both the server and every client.
 3. Keep Overgrown Origins, Overgrown Apoli, Fabric API, compatible addon providers and your data packs installed. Restart.
 4. After startup or `/reload`, read `config/overgrown_legacy_bridge/compatibility-report.json`. Operators can locate it with `/legacybridge report`. Native `Failed to parse power` and dropped-field messages still matter; the report checks factory availability and known nested-modifier gaps, not every possible gameplay error.
 

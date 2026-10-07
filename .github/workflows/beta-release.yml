@@ -5,7 +5,7 @@ on:
     inputs:
       tag:
         description: Release tag to create
-        default: v0.4.0-beta
+        default: v0.6.1-beta
   push:
     tags: ["v*-beta*"]
     # Editing this file on beta requests a beta release; it holds the tag to create.
@@ -79,6 +79,19 @@ jobs:
               sys.exit("Production failures: " + "; ".join(failed))
           PY
 
+      # Starts a development client on a virtual display, force-loads every mixin target (with injection counts
+      # checked) and closes; this is the only step that applies the client-only mixins.
+      - name: Client mixin audit
+        run: |
+          set -uo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq xvfb libgl1-mesa-dri > /dev/null
+          rm -f build/audit-client-run/mixin-audit.txt
+          LIBGL_ALWAYS_SOFTWARE=1 timeout 900 xvfb-run -a -s "-screen 0 1280x720x24" ./gradlew runAuditClient --no-daemon > build/audit-client.log 2>&1 || echo "Client exited with status $?"
+          grep -iE "overgrown_legacy_bridge|org\.overgrowns|mixin.*(error|fail)|Injection|Exception" build/audit-client.log | grep -v "WorldSlice" | head -60 || true
+          test -f build/audit-client-run/mixin-audit.txt || { tail -80 build/audit-client.log; echo "The client produced no mixin audit result"; exit 1; }
+          cat build/audit-client-run/mixin-audit.txt
+          grep -qx passed build/audit-client-run/mixin-audit.txt
+
       - name: Summarize test results
         if: always()
         run: |
@@ -136,6 +149,7 @@ jobs:
             tests/*.json
             build/production-run/tests/*-results.json
             build/production-run/server.log
+            build/audit-client.log
 
       - name: Publish pre-release
         uses: softprops/action-gh-release@v2
