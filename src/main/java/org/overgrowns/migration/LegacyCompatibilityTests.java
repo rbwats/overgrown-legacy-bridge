@@ -42,7 +42,8 @@ public final class LegacyCompatibilityTests {
     }
     @SuppressWarnings({"rawtypes", "unchecked"})
     private static JsonElement encode(LegacySchema.Context context, Object value) {
-        return ((Codec) codec(context)).encodeStart(JsonOps.INSTANCE, value).result().orElse(null);
+        DataResult<JsonElement> encoded = ((Codec) codec(context)).encodeStart(JsonOps.INSTANCE, value);
+        return encoded.result().orElse(null);
     }
     /** Top-level fields whose removal decodes to an identical value. */
     private static JsonArray ignoredFields(LegacySchema.Context context, JsonElement normalized, Object decoded) {
