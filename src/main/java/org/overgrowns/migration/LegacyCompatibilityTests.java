@@ -32,22 +32,45 @@ public final class LegacyCompatibilityTests {
     private static DataResult<?> roundTrip(Codec codec, Object value) {
         return codec.encodeStart(JsonOps.INSTANCE, value).flatMap(encoded -> codec.parse(JsonOps.INSTANCE, encoded));
     }
+    private static DataResult<?> parse(LegacySchema.Context context, JsonElement normalized) {
+        JsonElement input = normalized.deepCopy();
+        if (context == LegacySchema.Context.POWER) {
+            if (input.getAsJsonObject().get("type").getAsString().endsWith(":multiple")) input.getAsJsonObject().add("sub_powers", new JsonArray());
+            input = ApoliReloadListener.prepare(new Dynamic<>(JsonOps.INSTANCE, input), new ResourceLocation("bridge_test", "codec")).getValue();
+        }
+        return codec(context).parse(JsonOps.INSTANCE, input);
+    }
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    private static JsonElement encode(LegacySchema.Context context, Object value) {
+        return ((Codec) codec(context)).encodeStart(JsonOps.INSTANCE, value).result().orElse(null);
+    }
+    /** Top-level fields whose removal decodes to an identical value. */
+    private static JsonArray ignoredFields(LegacySchema.Context context, JsonElement normalized, Object decoded) {
+        JsonArray unused = new JsonArray();
+        JsonElement reference = encode(context, decoded);
+        if (reference == null || !normalized.isJsonObject()) return unused;
+        for (String key : normalized.getAsJsonObject().keySet()) {
+            if (key.equals("type")) continue;
+            JsonObject without = normalized.getAsJsonObject().deepCopy(); without.remove(key);
+            DataResult<?> reduced = parse(context, without);
+            if (reduced.result().isPresent() && reference.equals(encode(context, reduced.result().get()))) unused.add(key);
+        }
+        return unused;
+    }
     public static void runIfRequested(MinecraftServer server) {
         String corpus = System.getProperty("overgrown_legacy_bridge.testCorpus");
         if (corpus == null) return;
         try {
             JsonArray cases = JsonParser.parseString(Files.readString(Path.of(corpus))).getAsJsonArray();
             JsonArray results = new JsonArray(); int passed = 0;
+            int fullDecoded = 0, ignored = 0;
             for (JsonElement element : cases) {
                 JsonObject test = element.getAsJsonObject();
                 LegacySchema.Context context = LegacySchema.Context.valueOf(test.get("context").getAsString());
+                boolean full = test.has("full") && test.get("full").getAsBoolean();
                 JsonElement input = test.get("data").deepCopy();
                 LegacySchema.normalize(input, context);
-                if (context == LegacySchema.Context.POWER) {
-                    if (input.getAsJsonObject().get("type").getAsString().endsWith(":multiple")) input.getAsJsonObject().add("sub_powers", new JsonArray());
-                    input = ApoliReloadListener.prepare(new Dynamic<>(JsonOps.INSTANCE, input), new ResourceLocation("bridge_test", "codec")).getValue();
-                }
-                DataResult<?> parsed = codec(context).parse(JsonOps.INSTANCE, input);
+                DataResult<?> parsed = parse(context, input);
                 JsonObject result = new JsonObject(); result.add("name", test.get("name"));
                 boolean ok = parsed.error().isEmpty();
                 if (ok) {
@@ -57,6 +80,20 @@ public final class LegacyCompatibilityTests {
                         if (roundTrip.error().isPresent()) { parsed = roundTrip; ok = false; }
                     }
                 }
+                if (full) {
+                    // Diagnostic only: optional fields that decode but change nothing are ignored by the fork.
+                    result.addProperty("full", true);
+                    result.addProperty("decoded", ok);
+                    if (ok) {
+                        fullDecoded++;
+                        JsonArray unused = ignoredFields(context, input, parsed.result().orElseThrow());
+                        ignored += unused.size();
+                        result.add("ignored_fields", unused);
+                    } else result.addProperty("error", parsed.error().get().message());
+                    result.addProperty("passed", true);
+                    results.add(result);
+                    continue;
+                }
                 result.addProperty("passed", ok);
                 if (ok) passed++; else {
                     String error = parsed.error().get().message(); result.addProperty("error", error); result.add("normalized", input);
@@ -64,9 +101,11 @@ public final class LegacyCompatibilityTests {
                 }
                 results.add(result);
             }
+            LegacyBridge.LOGGER.info("COMPATIBILITY FULL-FIELD CASES: {} decoded, {} ignored optional field(s)", fullDecoded, ignored);
             Path output = Path.of(corpus).resolveSibling("codec-results.json");
             Files.writeString(output, new GsonBuilder().setPrettyPrinting().create().toJson(results));
-            LegacyBridge.LOGGER.info("COMPATIBILITY CORPUS: {}/{} passed; results at {}", passed, cases.size(), output);
+            long baseCases = java.util.stream.StreamSupport.stream(cases.spliterator(), false).filter(c -> !c.getAsJsonObject().has("full")).count();
+            LegacyBridge.LOGGER.info("COMPATIBILITY CORPUS: {}/{} passed; results at {}", passed, baseCases, output);
             JsonArray regressions = LegacyRegressionTests.run(server);
             Files.writeString(Path.of(corpus).resolveSibling("regression-results.json"), new GsonBuilder().setPrettyPrinting().create().toJson(regressions));
             long regressionPassed = java.util.stream.StreamSupport.stream(regressions.spliterator(), false).filter(row -> row.getAsJsonObject().get("passed").getAsBoolean()).count();

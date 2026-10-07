@@ -61,6 +61,7 @@ public final class LegacyRegressionTests {
         var night = new ResourceLocation("bridge_test", "night");
         var camera = new ResourceLocation("bridge_test", "camera");
         var dot = new ResourceLocation("bridge_test", "dot");
+        var transfer = new ResourceLocation("bridge_test", "transfer");
         powers.put(resource, power("{\"type\":\"origins:resource\",\"min\":-100,\"max\":100,\"start_value\":10}"));
         powers.put(insomnia, power("{\"type\":\"origins:modify_insomnia_ticks\",\"modifier\":{\"operation\":\"addition\",\"value\":10}}"));
         powers.put(insomnia2, power("{\"type\":\"apoli:modify_insomnia_ticks\",\"modifiers\":[{\"operation\":\"multiply_total\",\"value\":1}]}"));
@@ -69,9 +70,10 @@ public final class LegacyRegressionTests {
         powers.put(night, power("{\"type\":\"origins:toggle_night_vision\",\"strength\":0.6,\"key\":{\"key\":\"origins.primary_active\",\"continous\":false}}"));
         powers.put(dot, power("{\"type\":\"origins:damage_over_time\",\"damage\":1,\"interval\":2,\"onset_delay\":0}"));
         powers.put(camera, power("{\"type\":\"origins:modify_camera_submersion\",\"to\":\"water\"}"));
+        powers.put(transfer, power("{\"type\":\"origins:attribute_modify_transfer\",\"class\":\"modify_air_speed\",\"attribute\":\"minecraft:generic.movement_speed\"}"));
         ApoliPowers.replaceAll(powers);
         try {
-            for (var id : List.of(resource, insomnia, insomnia2, insomniaOff, lava, night, dot, camera)) check(holder.addPower(id, source), "Cannot grant " + id);
+            for (var id : List.of(resource, insomnia, insomnia2, insomniaOff, lava, night, dot, camera, transfer)) check(holder.addPower(id, source), "Cannot grant " + id);
             suite.test("insomnia: aggregate active modifiers without modifying state", () -> {
                 eq(LegacyInsomniaPower.modify(pig, 100), 220); eq(holder.getAuxIntOr(resource, -1), 10);
                 holder.suppressPower(insomnia2, source); eq(LegacyInsomniaPower.modify(pig, 100), 110); holder.unsuppressPower(insomnia2, source);
@@ -83,19 +85,19 @@ public final class LegacyRegressionTests {
             });
             suite.test("toggle night vision: defaults, key dispatch, active condition, suppression", () -> {
                 eq(NightVisionPower.strengthFor(pig), 0);
-                check(KeyDispatch.press(pig, "key.apoli.primary_active") == 1, "Legacy control did not dispatch");
+                check(KeyDispatch.press(pig, "key.origins.primary_active") == 1, "Legacy control did not dispatch");
                 eq(NightVisionPower.strengthFor(pig), 0.6);
                 var condition = decode(EntityCondition.CODEC, json("{\"type\":\"origins:power_active\",\"power\":\"bridge_test:night\"}"));
                 check(condition.test(new EntityCtx(pig, level)), "Toggled power is not active");
                 holder.suppressPower(night, source); eq(NightVisionPower.strengthFor(pig), 0); holder.unsuppressPower(night, source);
-                KeyDispatch.press(pig, "key.apoli.primary_active");
+                KeyDispatch.press(pig, "key.origins.primary_active");
                 eq(NightVisionPower.strengthFor(pig), 0); check(!condition.test(new EntityCtx(pig, level)), "Disabled night vision is active");
             });
             suite.test("toggle: persisted state survives container round trip", () -> {
-                KeyDispatch.press(pig, "key.apoli.primary_active");
+                KeyDispatch.press(pig, "key.origins.primary_active");
                 var encoded = PowerContainerImpl.CODEC.encodeStart(JsonOps.INSTANCE, holder).getOrThrow(false, message -> {});
                 var restored = decode(PowerContainerImpl.CODEC, encoded);
-                eq(restored.getAuxIntOr(night, -1), 1); KeyDispatch.press(pig, "key.apoli.primary_active");
+                eq(restored.getAuxIntOr(night, -1), 1); KeyDispatch.press(pig, "key.origins.primary_active");
             });
             suite.test("modify_resource: singular and plural, legacy truncation", () -> {
                 PowerResources.write(holder, resource, 3);
@@ -200,9 +202,63 @@ public final class LegacyRegressionTests {
                 });
                 check(contexts.equals(List.of(LegacySchema.Context.BI_ENTITY_ACTION)),"Bi-entity context was inferred as entity");
             });
+            suite.test("keys: Origins' bound primary control is kept, legacy aliases map onto it", () -> {
+                var kept = normalized("{\"type\":\"origins:active_self\",\"key\":\"key.origins.primary_active\"}", LegacySchema.Context.POWER);
+                check(kept.get("key").getAsString().equals("key.origins.primary_active"), "Origins primary key was rewritten");
+                var alias = normalized("{\"type\":\"apugli:addon_power\",\"key\":{\"key\":\"secondary\"}}", LegacySchema.Context.POWER);
+                check(alias.getAsJsonObject("key").get("key").getAsString().equals("key.origins.secondary_active"), "Legacy secondary alias not mapped");
+            });
+            suite.test("damage source: legacy name is the message ID matched by origins:name", () -> {
+                var damage = decode(LegacyDamageSource.CODEC, json("{\"name\":\"bridge_named\",\"magic\":true}")).create(level, null);
+                check(damage.getMsgId().equals("bridge_named"), "Message ID is " + damage.getMsgId());
+            });
+            suite.test("built-in IDs: legacy Origins powers load under their original IDs", () -> {
+                check(original.containsKey(new ResourceLocation("origins", "fall_immunity")), "origins:fall_immunity missing");
+                check(original.containsKey(new ResourceLocation("origins", "like_air")), "origins:like_air failed to load");
+                check(original.containsKey(new ResourceLocation("origins", "master_of_webs_no_slowdown")), "Legacy sub-power IDs missing");
+                var breathing = original.get(new ResourceLocation("origins", "water_breathing"));
+                check(breathing != null && breathing.typeId().equals(new ResourceLocation("apoli", "water_breathing")), "water_breathing is not native");
+                check(original.containsKey(new ResourceLocation("origins", "scare_creepers_flee")), "scare_creepers was not expanded");
+            });
+            suite.test("attribute transfer: movement speed modifiers reach air speed; other classes still fail", () -> {
+                var speed = pig.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED);
+                var modifier = new net.minecraft.world.entity.ai.attributes.AttributeModifier(UUID.randomUUID(), "bridge_test", 0.5,
+                    net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.MULTIPLY_TOTAL);
+                speed.addTransientModifier(modifier);
+                try { eq(dev.overgrown.apoli.power.builtin.ModifyAirSpeedPower.modify(pig, 0.02f), 0.03f); }
+                finally { speed.removeModifier(modifier); }
+                var unsupported = Power.CODEC.parse(JsonOps.INSTANCE, ApoliReloadListener.prepare(new Dynamic<>(JsonOps.INSTANCE,
+                    normalized("{\"type\":\"origins:attribute_modify_transfer\",\"class\":\"modify_jump\",\"attribute\":\"minecraft:generic.movement_speed\"}", LegacySchema.Context.POWER)),
+                    new ResourceLocation("bridge_test", "unsupported")).getValue());
+                check(unsupported.error().isPresent(), "Unsupported transfer class was accepted");
+            });
+            suite.test("resource conditions: sub-powers and apoli namespace conditions", () -> {
+                var id = new ResourceLocation("bridge_test", "conditional");
+                var multiple = (json("{\"type\":\"origins:multiple\",\"kept\":{\"type\":\"origins:simple\",\"fabric:load_conditions\":[{\"condition\":\"apoli:any_namespace_loaded\",\"namespaces\":[\"minecraft\"]}]},\"dropped\":{\"type\":\"origins:simple\",\"fabric:load_conditions\":[{\"condition\":\"apoli:all_namespaces_loaded\",\"namespaces\":[\"minecraft\",\"bridge_absent_namespace\"]}]}}"));
+                LegacyPowerNormalizer.filterSubPowers(id, multiple);
+                check(multiple.has("kept") && !multiple.has("dropped"), "Sub-power conditions not applied: " + multiple);
+            });
+            suite.test("origin upgrades: advancement IDs become native entity conditions", () -> {
+                var origin = json("{\"upgrades\":[{\"condition\":\"minecraft:story/root\",\"origin\":\"origins:human\",\"announcement\":\"bridge.upgrade\"}]}");
+                LegacyOriginNormalizer.origin(origin);
+                decode(dev.overgrown.origins.origin.OriginUpgrade.CODEC, origin.getAsJsonArray("upgrades").get(0));
+            });
+            suite.test("temporary cobweb: behaves as a cobweb", () -> check(net.minecraft.core.registries.BuiltInRegistries.BLOCK.get(new ResourceLocation("origins", "temporary_cobweb")) instanceof net.minecraft.world.level.block.WebBlock, "Temporary cobweb does not slow entities"));
             suite.test("origin text: translation keys are preserved as components", () -> {
                 var origin=json("{\"name\":\"origin.example.name\",\"description\":\"origin.example.description\"}"); LegacyOriginNormalizer.origin(origin);
                 check(origin.getAsJsonObject("name").get("translate").getAsString().equals("origin.example.name"),"Origin name became literal");
+            });
+            suite.test("commands: legacy grant/revoke sources and list, sources, clear", () -> {
+                var dispatcher = server.getCommands().getDispatcher();
+                var stack = server.createCommandSourceStack().withSuppressedOutput();
+                String target = "@e[tag=legacy_bridge_test,limit=1]";
+                dispatcher.execute("power grant " + target + " bridge_test:resource", stack);
+                check(holder.sourcesOf(resource).contains(LegacyPowerCommands.COMMAND_SOURCE), "Grant did not use apoli:command");
+                eq(dispatcher.execute("power sources " + target + " bridge_test:resource", stack), 2);
+                dispatcher.execute("power revoke " + target + " bridge_test:resource", stack);
+                check(holder.hasPower(resource) && !holder.sourcesOf(resource).contains(LegacyPowerCommands.COMMAND_SOURCE), "Revoke removed more than the command grant");
+                check(dispatcher.execute("power list " + target, stack) > 0, "List found no powers");
+                check(dispatcher.execute("power clear " + target, stack) > 0 && holder.isEmpty(), "Clear left powers behind");
             });
         } finally { holder.clear();pig.discard();ApoliPowers.replaceAll(original); }
         return suite.results;

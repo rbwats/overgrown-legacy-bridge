@@ -5,6 +5,13 @@ in data/apoli are reused from apace100/apoli v2.9.0 (MIT, copyright 2021 apace10
 The included LICENSE-upstream-apoli preserves the complete copyright and license.
 Source: https://github.com/apace100/apoli/tree/v2.9.0/src/main/resources/data/apoli
 
+The built-in power files in data/origins/powers, the power names in
+assets/origins/lang and the origins:cobwebs and origins:shields tags are reused
+from apace100/origins-fabric v1.10.0 (MIT, copyright 2020 apace100) so legacy
+packs that reference the original power IDs keep working. The included
+LICENSE-upstream-origins preserves the complete copyright and license.
+Source: https://github.com/apace100/origins-fabric/tree/v1.10.0/src/main/resources
+
 Legacy damage-source selection and damage-over-time behavior are adapted from
 that project's MIT-licensed implementations. No Origins or Apoli mod jars are
 bundled in this artifact.

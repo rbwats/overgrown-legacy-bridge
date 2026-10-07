@@ -133,26 +133,43 @@ public final class LegacySchema {
         return group != null && group.has(path) ? group.getAsJsonObject(path).getAsJsonObject("fields") : null;
     }
     private static boolean adapt(JsonObject obj, Context ctx, String type) {
-        if (type == null || !(type.startsWith("origins:") || type.startsWith("apoli:"))) return false;
-        String path = type.substring(type.indexOf(':') + 1);
         JsonObject before = obj.deepCopy();
+        if (ctx == Context.POWER) {
+            // Power text and keys are legacy conventions regardless of which mod provides the power type.
+            translate(obj, "name"); translate(obj, "description");
+            if (obj.has("key")) normalizeKey(obj, "key");
+        }
+        if (type == null || !(type.startsWith("origins:") || type.startsWith("apoli:"))) return !before.equals(obj);
+        String path = type.substring(type.indexOf(':') + 1);
         if (ctx == Context.ENTITY_CONDITION && path.equals("power_type") && obj.has("power_type")) {
             obj.addProperty("type", "apoli:power");
             obj.add("power", obj.remove("power_type"));
         }
-        if (ctx == Context.BIOME_CONDITION && path.equals("category") && obj.has("category")) {
+        if (ctx == Context.BIOME_CONDITION && path.equals("category") && string(obj, "category") != null) {
             obj.addProperty("type", "apoli:in_tag");
             obj.addProperty("tag", "apoli:category/" + obj.remove("category").getAsString());
         }
         if (ctx == Context.BLOCK_CONDITION && path.equals("material")) {
-            JsonArray conditions = new JsonArray();
-            if (obj.has("material")) conditions.add(materialCondition(obj.remove("material").getAsString()));
-            if (obj.has("materials") && obj.get("materials").isJsonArray()) {
-                for (JsonElement material : obj.getAsJsonArray("materials")) conditions.add(materialCondition(material.getAsString()));
-                obj.remove("materials");
+            // Malformed values are left for the native parser to reject this one condition.
+            List<String> materials = new ArrayList<>();
+            boolean valid = true;
+            if (obj.has("material")) {
+                if (string(obj, "material") != null) materials.add(string(obj, "material")); else valid = false;
             }
-            obj.addProperty("type", "apoli:or"); obj.add("conditions", conditions);
+            if (obj.has("materials") && obj.get("materials").isJsonArray()) {
+                for (JsonElement material : obj.getAsJsonArray("materials")) {
+                    if (material.isJsonPrimitive() && material.getAsJsonPrimitive().isString()) materials.add(material.getAsString());
+                    else valid = false;
+                }
+            }
+            if (valid) {
+                JsonArray conditions = new JsonArray();
+                for (String material : materials) conditions.add(materialCondition(material));
+                obj.remove("material"); obj.remove("materials");
+                obj.addProperty("type", "apoli:or"); obj.add("conditions", conditions);
+            }
         }
+        if (ctx == Context.ENTITY_CONDITION && path.equals("elytra_flight_possible")) rename(obj, "check_ability", "check_abilities");
         if (ctx == Context.ITEM_CONDITION && path.equals("enchantment")) {
             if (!obj.has("comparison")) obj.addProperty("comparison", ">");
             if (!obj.has("compare_to")) obj.addProperty("compare_to", 0);
@@ -167,7 +184,6 @@ public final class LegacySchema {
             obj.addProperty("type", "overgrown_legacy_bridge:damage");
         if (ctx == Context.POWER) {
             if (path.equals("damage_over_time")) obj.addProperty("type", "overgrown_legacy_bridge:damage_over_time");
-            translate(obj, "name"); translate(obj, "description");
             if (path.equals("toggle_night_vision")) obj.addProperty("type", "overgrown_legacy_bridge:toggle_night_vision");
             if (path.equals("action_on_land") && !obj.has("entity_action")) {
                 JsonObject noAction = new JsonObject(); noAction.addProperty("type", "apoli:nothing"); obj.add("entity_action", noAction);
@@ -176,9 +192,14 @@ public final class LegacySchema {
             if (path.equals("prevent_sleep") && obj.has("message") && obj.get("message").isJsonPrimitive()) {
                 JsonObject text = new JsonObject(); text.add("translate", obj.get("message")); obj.add("message", text);
             }
-            if (path.equals("particle") && !obj.has("offset_y")) obj.addProperty("offset_y", 1.0);
-            // Legacy keys are translation names; map the two built-in controls, preserving addon bindings.
-            if (obj.has("key")) normalizeKey(obj, "key");
+            if (path.equals("particle")) {
+                if (!obj.has("offset_y")) obj.addProperty("offset_y", 1.0);
+                if (!obj.has("spread")) {
+                    JsonObject spread = new JsonObject();
+                    spread.addProperty("x", 0.25); spread.addProperty("y", 0.5); spread.addProperty("z", 0.25);
+                    obj.add("spread", spread);
+                }
+            }
         }
         if (ctx.action() && path.equals("side")) obj.addProperty("type", "overgrown_legacy_bridge:side");
         if (ctx == Context.ENTITY_ACTION && path.equals("modify_resource")) mergeModifiers(obj, "modifier", "modifiers");
@@ -209,10 +230,20 @@ public final class LegacySchema {
             rename(key, "continous", "continuous");
             if (key.has("key")) normalizeKey(key, "key");
         } else if (value.isJsonPrimitive() && value.getAsJsonPrimitive().isString()) {
-            String name = value.getAsString();
-            if (Set.of("origins.primary_active", "key.origins.primary_active").contains(name)) obj.addProperty(field, "key.apoli.primary_active");
-            if (Set.of("origins.secondary_active", "key.origins.secondary_active").contains(name)) obj.addProperty(field, "key.apoli.secondary_active");
+            String mapped = legacyKeyName(value.getAsString());
+            if (mapped != null) obj.addProperty(field, mapped);
         }
+    }
+    /**
+     * Overgrown Origins still registers {@code key.origins.primary_active} (G) and {@code key.origins.secondary_active};
+     * {@code key.apoli.*} are separate, unbound controls. Only legacy aliases that resolve to nothing are rewritten.
+     */
+    static String legacyKeyName(String name) {
+        return switch (name) {
+            case "primary", "origins.primary_active" -> "key.origins.primary_active";
+            case "secondary", "origins.secondary_active" -> "key.origins.secondary_active";
+            default -> null;
+        };
     }
     static boolean normalizeModifiers(JsonElement node) {
         if (node == null) return false;

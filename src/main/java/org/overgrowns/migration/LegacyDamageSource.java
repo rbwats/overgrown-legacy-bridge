@@ -44,5 +44,7 @@ public record LegacyDamageSource(String name, boolean bypassesArmor, boolean fir
     public static class Named extends DamageSource {
         public final String legacyName;
         public Named(Holder<DamageType> holder, Entity attacker, String name) { super(holder, attacker); legacyName = name; }
+        /** Legacy Apoli renamed the source itself, so origins:name damage conditions match the legacy name. */
+        @Override public String getMsgId() { return legacyName; }
     }
 }

@@ -15,11 +15,12 @@ public final class LegacyCameraSubmersionPower extends PowerType<LegacyCameraSub
             Submersion.CODEC.fieldOf("to").forGetter(Config::to)
         ).apply(i, Config::new));
     }
-    public static FogType remap(Entity entity, FogType original) {
-        FogType[] result = {original};
+    /** Legacy returned the first power matching the unmodified fog type; no match keeps the native result. */
+    public static FogType remap(Entity entity, FogType original, FogType current) {
+        FogType[] result = {null};
         PowerLookup.forEach(entity, ID, Config.class, cfg -> {
-            if (cfg.from().isEmpty() || cfg.from().get().fog() == result[0]) result[0] = cfg.to().fog();
+            if (result[0] == null && (cfg.from().isEmpty() || cfg.from().get().fog() == original)) result[0] = cfg.to().fog();
         });
-        return result[0];
+        return result[0] == null ? current : result[0];
     }
 }

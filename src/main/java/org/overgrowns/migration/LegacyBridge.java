@@ -97,6 +97,7 @@ public final class LegacyBridge implements ModInitializer {
 
 
         registerGeneralAdapters();
+        LegacyResourceConditions.register();
         net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents.SERVER_STARTED.register(LegacyCompatibilityTests::runIfRequested);
         LOGGER.info("Overgrown Legacy Bridge active; legacy power revoke syntax will attach during command registration");
     }
@@ -106,14 +107,18 @@ public final class LegacyBridge implements ModInitializer {
         ActionTypes.ENTITY.register(damageId, new LegacyDamageAction<>(dev.overgrown.apoli.condition.context.EntityCtx::entity, ctx -> null));
         ActionTypes.BI_ENTITY.register(damageId, new LegacyDamageAction<>(dev.overgrown.apoli.condition.context.BiEntityCtx::target, dev.overgrown.apoli.condition.context.BiEntityCtx::actor));
         net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents.AFTER_RESPAWN.register((oldPlayer, player, alive) -> {
-            if (dev.overgrown.apoli.power.PowerContainer.of(player) instanceof dev.overgrown.apoli.power.PowerContainerImpl holder)
-                for (var id : holder.powersOfType(LegacyDamageOverTimePower.ID)) holder.setAuxInts(id, new int[2]);
+            // Legacy onRespawn ran only for death respawns, not when leaving the End.
+            if (!alive && dev.overgrown.apoli.power.PowerContainer.of(player) instanceof dev.overgrown.apoli.power.PowerContainerImpl holder)
+                for (var id : holder.powersOfType(LegacyDamageOverTimePower.ID)) LegacyDamageOverTimePower.reset(holder, id);
         });
         PowerTypeRegistry.register(LegacyToggleNightVisionPower.ID, new LegacyToggleNightVisionPower());
         if (PowerTypeRegistry.get(new ResourceLocation("origins", "modify_lava_speed")) == null)
             PowerTypeRegistry.register(LegacyLavaSpeedPower.ID, new LegacyLavaSpeedPower(), AliasingOptions.builder()
                 .addTypeAlias("origins:modify_lava_speed").addTypeAlias("apoli:modify_lava_speed").build());
         PowerTypeRegistry.register(LegacyCameraSubmersionPower.ID, new LegacyCameraSubmersionPower());
+        if (PowerTypeRegistry.get(new ResourceLocation("origins", "attribute_modify_transfer")) == null)
+            PowerTypeRegistry.register(LegacyAttributeTransferPower.ID, new LegacyAttributeTransferPower(), AliasingOptions.builder()
+                .addTypeAlias("origins:attribute_modify_transfer").addTypeAlias("apoli:attribute_modify_transfer").build());
         if (PowerTypeRegistry.get(new ResourceLocation("origins", "modify_fluid_render")) == null)
             PowerTypeRegistry.register(LegacyFluidRenderPower.ID, new LegacyFluidRenderPower(), AliasingOptions.builder()
                 .addTypeAlias("origins:modify_fluid_render").addTypeAlias("apoli:modify_fluid_render").build());

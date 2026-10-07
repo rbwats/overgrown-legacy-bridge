@@ -81,6 +81,20 @@
     }
   },
   {
+    "name": "bi_entity_action/add_velocity#full",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:add_velocity",
+      "x": 7,
+      "y": 7,
+      "z": 7,
+      "client": false,
+      "server": false,
+      "set": true
+    },
+    "full": true
+  },
+  {
     "name": "bi_entity_action/and",
     "context": "BI_ENTITY_ACTION",
     "data": {
@@ -121,6 +135,17 @@
       "type": "origins:damage",
       "amount": 1
     }
+  },
+  {
+    "name": "bi_entity_action/damage#full",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "origins:damage",
+      "amount": 1,
+      "source": "bridge_test:source",
+      "damage_type": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "bi_entity_action/delay",
@@ -276,6 +301,16 @@
     }
   },
   {
+    "name": "bi_entity_condition/can_see#full",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:can_see",
+      "shape_type": "minecraft:stone",
+      "fluid_handling": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "bi_entity_condition/constant",
     "context": "BI_ENTITY_CONDITION",
     "data": {
@@ -337,6 +372,19 @@
       "comparison": ">=",
       "compare_to": 1
     }
+  },
+  {
+    "name": "bi_entity_condition/relative_rotation#full",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "origins:relative_rotation",
+      "comparison": ">=",
+      "compare_to": 1,
+      "axes": "minecraft:stone",
+      "actor_rotation": "minecraft:stone",
+      "target_rotation": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "bi_entity_condition/riding",
@@ -408,11 +456,37 @@
     }
   },
   {
+    "name": "block_action/area_of_effect#full",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:area_of_effect",
+      "block_action": {
+        "type": "origins:nothing"
+      },
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "radius": 7,
+      "shape": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "block_action/bonemeal",
     "context": "BLOCK_ACTION",
     "data": {
       "type": "origins:bonemeal"
     }
+  },
+  {
+    "name": "block_action/bonemeal#full",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:bonemeal",
+      "effects": false
+    },
+    "full": true
   },
   {
     "name": "block_action/chance",
@@ -468,6 +542,25 @@
     }
   },
   {
+    "name": "block_action/explode#full",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:explode",
+      "power": 2.0,
+      "destruction_type": "minecraft:stone",
+      "indestructible": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "destructible": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "create_fire": true
+    },
+    "full": true
+  },
+  {
     "name": "block_action/if_else",
     "context": "BLOCK_ACTION",
     "data": {
@@ -508,6 +601,20 @@
     }
   },
   {
+    "name": "block_action/modify_block_state#full",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:modify_block_state",
+      "property": "age",
+      "operation": "minecraft:stone",
+      "change": 7,
+      "value": true,
+      "enum": "minecraft:stone",
+      "cycle": true
+    },
+    "full": true
+  },
+  {
     "name": "block_action/nothing",
     "context": "BLOCK_ACTION",
     "data": {
@@ -523,6 +630,20 @@
         "type": "origins:nothing"
       }
     }
+  },
+  {
+    "name": "block_action/offset#full",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "origins:offset",
+      "action": {
+        "type": "origins:nothing"
+      },
+      "x": 7,
+      "y": 7,
+      "z": 7
+    },
+    "full": true
   },
   {
     "name": "block_action/set_block",
@@ -604,6 +725,19 @@
     }
   },
   {
+    "name": "block_condition/block_state#full",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:block_state",
+      "property": "age",
+      "comparison": ">=",
+      "compare_to": 7,
+      "value": true,
+      "enum": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "block_condition/constant",
     "context": "BLOCK_CONDITION",
     "data": {
@@ -672,11 +806,32 @@
     }
   },
   {
+    "name": "block_condition/light_level#full",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:light_level",
+      "comparison": ">=",
+      "compare_to": 1,
+      "light_type": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "block_condition/material",
     "context": "BLOCK_CONDITION",
     "data": {
       "type": "origins:material"
     }
+  },
+  {
+    "name": "block_condition/material#full",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:material",
+      "material": "minecraft:stone",
+      "materials": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "block_condition/movement_blocking",
@@ -703,6 +858,21 @@
         "value": true
       }
     }
+  },
+  {
+    "name": "block_condition/offset#full",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "origins:offset",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "x": 7,
+      "y": 7,
+      "z": 7
+    },
+    "full": true
   },
   {
     "name": "block_condition/or",
@@ -758,6 +928,18 @@
     "data": {
       "type": "origins:attacker"
     }
+  },
+  {
+    "name": "damage_condition/attacker#full",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:attacker",
+      "entity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "damage_condition/bypasses_armor",
@@ -834,6 +1016,19 @@
     }
   },
   {
+    "name": "damage_condition/projectile#full",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "origins:projectile",
+      "projectile": "minecraft:stone",
+      "projectile_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "damage_condition/unblockable",
     "context": "DAMAGE_CONDITION",
     "data": {
@@ -848,11 +1043,36 @@
     }
   },
   {
+    "name": "entity_action/add_velocity#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:add_velocity",
+      "x": 7,
+      "y": 7,
+      "z": 7,
+      "space": "minecraft:stone",
+      "client": false,
+      "server": false,
+      "set": true
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/add_xp",
     "context": "ENTITY_ACTION",
     "data": {
       "type": "origins:add_xp"
     }
+  },
+  {
+    "name": "entity_action/add_xp#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:add_xp",
+      "points": 7,
+      "levels": 7
+    },
+    "full": true
   },
   {
     "name": "entity_action/and",
@@ -870,6 +1090,22 @@
     }
   },
   {
+    "name": "entity_action/apply_effect#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:speed",
+        "duration": 100
+      },
+      "effects": {
+        "effect": "minecraft:speed",
+        "duration": 100
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/area_of_effect",
     "context": "ENTITY_ACTION",
     "data": {
@@ -878,6 +1114,23 @@
         "type": "origins:nothing"
       }
     }
+  },
+  {
+    "name": "entity_action/area_of_effect#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:area_of_effect",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "radius": 7,
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "include_target": true
+    },
+    "full": true
   },
   {
     "name": "entity_action/block_action_at",
@@ -910,6 +1163,17 @@
     }
   },
   {
+    "name": "entity_action/change_resource#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:change_resource",
+      "resource": "bridge_test:resource",
+      "change": 1,
+      "operation": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/choice",
     "context": "ENTITY_ACTION",
     "data": {
@@ -932,6 +1196,15 @@
     }
   },
   {
+    "name": "entity_action/clear_effect#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:clear_effect",
+      "effect": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/crafting_table",
     "context": "ENTITY_ACTION",
     "data": {
@@ -945,6 +1218,17 @@
       "type": "origins:damage",
       "amount": 1
     }
+  },
+  {
+    "name": "entity_action/damage#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:damage",
+      "amount": 1,
+      "source": "bridge_test:source",
+      "damage_type": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "entity_action/delay",
@@ -970,6 +1254,31 @@
     "data": {
       "type": "origins:drop_inventory"
     }
+  },
+  {
+    "name": "entity_action/drop_inventory#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:drop_inventory",
+      "inventory_type": "minecraft:stone",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "slots": "minecraft:stone",
+      "slot": "minecraft:stone",
+      "power": "bridge_test:resource",
+      "throw_randomly": true,
+      "retain_ownership": false,
+      "amount": 7
+    },
+    "full": true
   },
   {
     "name": "entity_action/emit_game_event",
@@ -1022,6 +1331,26 @@
     }
   },
   {
+    "name": "entity_action/explode#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:explode",
+      "power": 2.0,
+      "destruction_type": "minecraft:stone",
+      "damage_self": false,
+      "indestructible": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "destructible": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "create_fire": true
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/extinguish",
     "context": "ENTITY_ACTION",
     "data": {
@@ -1046,6 +1375,22 @@
     }
   },
   {
+    "name": "entity_action/fire_projectile#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:fire_projectile",
+      "entity_type": "minecraft:snowball",
+      "divergence": 7,
+      "speed": 7,
+      "count": 7,
+      "tag": "minecraft:is_forest",
+      "projectile_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/gain_air",
     "context": "ENTITY_ACTION",
     "data": {
@@ -1062,6 +1407,21 @@
         "item": "minecraft:stone"
       }
     }
+  },
+  {
+    "name": "entity_action/give#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:give",
+      "stack": {
+        "item": "minecraft:stone"
+      },
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "preferred_slot": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "entity_action/grant_advancement",
@@ -1142,6 +1502,30 @@
     }
   },
   {
+    "name": "entity_action/modify_inventory#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:modify_inventory",
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "inventory_type": "minecraft:stone",
+      "process_mode": "minecraft:stone",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "slots": "minecraft:stone",
+      "slot": "minecraft:stone",
+      "power": "bridge_test:resource",
+      "limit": 7
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/modify_resource",
     "context": "ENTITY_ACTION",
     "data": {
@@ -1180,12 +1564,42 @@
     }
   },
   {
+    "name": "entity_action/passenger_action#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:passenger_action",
+      "action": {
+        "type": "origins:nothing"
+      },
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "recursive": true
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/play_sound",
     "context": "ENTITY_ACTION",
     "data": {
       "type": "origins:play_sound",
       "sound": "minecraft:entity.player.levelup"
     }
+  },
+  {
+    "name": "entity_action/play_sound#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:entity.player.levelup",
+      "volume": 7,
+      "pitch": 7
+    },
+    "full": true
   },
   {
     "name": "entity_action/raycast",
@@ -1196,6 +1610,43 @@
     }
   },
   {
+    "name": "entity_action/raycast#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:raycast",
+      "distance": 1,
+      "block": "minecraft:stone",
+      "entity": false,
+      "shape_type": "minecraft:stone",
+      "fluid_handling": "minecraft:stone",
+      "block_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "command_at_hit": "minecraft:stone",
+      "command_hit_offset": 7,
+      "command_along_ray": "minecraft:stone",
+      "command_step": 7,
+      "command_along_ray_only_on_hit": true,
+      "before_action": {
+        "type": "origins:nothing"
+      },
+      "hit_action": {
+        "type": "origins:nothing"
+      },
+      "miss_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/replace_inventory",
     "context": "ENTITY_ACTION",
     "data": {
@@ -1204,6 +1655,32 @@
         "item": "minecraft:stone"
       }
     }
+  },
+  {
+    "name": "entity_action/replace_inventory#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:replace_inventory",
+      "stack": {
+        "item": "minecraft:stone"
+      },
+      "inventory_type": "minecraft:stone",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "slots": "minecraft:stone",
+      "slot": "minecraft:stone",
+      "power": "bridge_test:resource",
+      "merge_nbt": true
+    },
+    "full": true
   },
   {
     "name": "entity_action/revoke_advancement",
@@ -1230,6 +1707,25 @@
     }
   },
   {
+    "name": "entity_action/riding_action#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:riding_action",
+      "action": {
+        "type": "origins:nothing"
+      },
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "recursive": true
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/selector_action",
     "context": "ENTITY_ACTION",
     "data": {
@@ -1239,6 +1735,22 @@
         "type": "origins:nothing"
       }
     }
+  },
+  {
+    "name": "entity_action/selector_action#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:selector_action",
+      "selector": "minecraft:stone",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "entity_action/set_fall_distance",
@@ -1284,12 +1796,44 @@
     }
   },
   {
+    "name": "entity_action/spawn_effect_cloud#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:spawn_effect_cloud",
+      "radius": 7,
+      "radius_on_use": 7,
+      "wait_time": 7,
+      "effect": {
+        "effect": "minecraft:speed",
+        "duration": 100
+      },
+      "effects": {
+        "effect": "minecraft:speed",
+        "duration": 100
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/spawn_entity",
     "context": "ENTITY_ACTION",
     "data": {
       "type": "origins:spawn_entity",
       "entity_type": "minecraft:snowball"
     }
+  },
+  {
+    "name": "entity_action/spawn_entity#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:spawn_entity",
+      "entity_type": "minecraft:snowball",
+      "tag": "minecraft:is_forest",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
   },
   {
     "name": "entity_action/spawn_particles",
@@ -1301,11 +1845,34 @@
     }
   },
   {
+    "name": "entity_action/spawn_particles#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:spawn_particles",
+      "particle": "minecraft:cloud",
+      "count": 1,
+      "speed": 7,
+      "force": true,
+      "spread": "minecraft:stone",
+      "offset_y": 7
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/swing_hand",
     "context": "ENTITY_ACTION",
     "data": {
       "type": "origins:swing_hand"
     }
+  },
+  {
+    "name": "entity_action/swing_hand#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "origins:swing_hand",
+      "hand": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "entity_action/toggle",
@@ -1374,11 +1941,40 @@
     }
   },
   {
+    "name": "entity_condition/biome#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:biome",
+      "biome": "minecraft:stone",
+      "biomes": "minecraft:stone",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/block_collision",
     "context": "ENTITY_CONDITION",
     "data": {
       "type": "origins:block_collision"
     }
+  },
+  {
+    "name": "entity_condition/block_collision#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:block_collision",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "offset_x": 7,
+      "offset_y": 7,
+      "offset_z": 7
+    },
+    "full": true
   },
   {
     "name": "entity_condition/block_in_radius",
@@ -1391,6 +1987,22 @@
       },
       "radius": 1
     }
+  },
+  {
+    "name": "entity_condition/block_in_radius#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:block_in_radius",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "radius": 1,
+      "shape": "minecraft:stone",
+      "compare_to": 7,
+      "comparison": ">="
+    },
+    "full": true
   },
   {
     "name": "entity_condition/brightness",
@@ -1463,6 +2075,16 @@
     }
   },
   {
+    "name": "entity_condition/elytra_flight_possible#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:elytra_flight_possible",
+      "check_state": true,
+      "check_ability": false
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/enchantment",
     "context": "ENTITY_CONDITION",
     "data": {
@@ -1471,6 +2093,18 @@
       "comparison": ">=",
       "compare_to": 1
     }
+  },
+  {
+    "name": "entity_condition/enchantment#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:enchantment",
+      "enchantment": "minecraft:protection",
+      "comparison": ">=",
+      "compare_to": 1,
+      "calculation": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "entity_condition/entity_group",
@@ -1603,6 +2237,20 @@
     }
   },
   {
+    "name": "entity_condition/in_block_anywhere#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:in_block_anywhere",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "comparison": ">=",
+      "compare_to": 7
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/in_rain",
     "context": "ENTITY_CONDITION",
     "data": {
@@ -1623,6 +2271,25 @@
     "data": {
       "type": "origins:inventory"
     }
+  },
+  {
+    "name": "entity_condition/inventory#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:inventory",
+      "inventory_types": "minecraft:stone",
+      "process_mode": "minecraft:stone",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "slots": "minecraft:stone",
+      "slot": "minecraft:stone",
+      "power": "bridge_test:resource",
+      "comparison": ">=",
+      "compare_to": 7
+    },
+    "full": true
   },
   {
     "name": "entity_condition/invisible",
@@ -1661,6 +2328,18 @@
     }
   },
   {
+    "name": "entity_condition/on_block#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:on_block",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/on_fire",
     "context": "ENTITY_CONDITION",
     "data": {
@@ -1683,11 +2362,39 @@
     }
   },
   {
+    "name": "entity_condition/passenger#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:passenger",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "comparison": ">=",
+      "compare_to": 7
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/passenger_recursive",
     "context": "ENTITY_CONDITION",
     "data": {
       "type": "origins:passenger_recursive"
     }
+  },
+  {
+    "name": "entity_condition/passenger_recursive#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:passenger_recursive",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "comparison": ">=",
+      "compare_to": 7
+    },
+    "full": true
   },
   {
     "name": "entity_condition/power",
@@ -1696,6 +2403,16 @@
       "type": "origins:power",
       "power": "bridge_test:resource"
     }
+  },
+  {
+    "name": "entity_condition/power#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:power",
+      "power": "bridge_test:resource",
+      "source": "bridge_test:source"
+    },
+    "full": true
   },
   {
     "name": "entity_condition/power_active",
@@ -1730,6 +2447,31 @@
     }
   },
   {
+    "name": "entity_condition/raycast#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:raycast",
+      "distance": 1,
+      "block": "minecraft:stone",
+      "entity": false,
+      "shape_type": "minecraft:stone",
+      "fluid_handling": "minecraft:stone",
+      "match_bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "hit_bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/relative_health",
     "context": "ENTITY_CONDITION",
     "data": {
@@ -1756,6 +2498,18 @@
     }
   },
   {
+    "name": "entity_condition/riding#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:riding",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/riding_recursive",
     "context": "ENTITY_CONDITION",
     "data": {
@@ -1763,11 +2517,37 @@
     }
   },
   {
+    "name": "entity_condition/riding_recursive#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:riding_recursive",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "comparison": ">=",
+      "compare_to": 7
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/riding_root",
     "context": "ENTITY_CONDITION",
     "data": {
       "type": "origins:riding_root"
     }
+  },
+  {
+    "name": "entity_condition/riding_root#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:riding_root",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "entity_condition/saturation_level",
@@ -1787,6 +2567,18 @@
       "comparison": ">=",
       "compare_to": 1
     }
+  },
+  {
+    "name": "entity_condition/scoreboard#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:scoreboard",
+      "objective": "minecraft:stone",
+      "comparison": ">=",
+      "compare_to": 1,
+      "name": "generic"
+    },
+    "full": true
   },
   {
     "name": "entity_condition/sneaking",
@@ -1809,6 +2601,19 @@
       "type": "origins:status_effect",
       "effect": "minecraft:stone"
     }
+  },
+  {
+    "name": "entity_condition/status_effect#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:status_effect",
+      "effect": "minecraft:stone",
+      "min_amplifier": 7,
+      "max_amplifier": 7,
+      "min_duration": 7,
+      "max_duration": 7
+    },
+    "full": true
   },
   {
     "name": "entity_condition/submerged_in",
@@ -1854,6 +2659,18 @@
     "data": {
       "type": "origins:using_item"
     }
+  },
+  {
+    "name": "entity_condition/using_item#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "origins:using_item",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "entity_condition/xp_levels",
@@ -1969,11 +2786,30 @@
     }
   },
   {
+    "name": "item_action/consume#full",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:consume",
+      "amount": 7
+    },
+    "full": true
+  },
+  {
     "name": "item_action/damage",
     "context": "ITEM_ACTION",
     "data": {
       "type": "origins:damage"
     }
+  },
+  {
+    "name": "item_action/damage#full",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:damage",
+      "amount": 7,
+      "ignore_unbreaking": true
+    },
+    "full": true
   },
   {
     "name": "item_action/delay",
@@ -2059,6 +2895,18 @@
     }
   },
   {
+    "name": "item_action/remove_enchantment#full",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "origins:remove_enchantment",
+      "enchantment": "minecraft:protection",
+      "enchantments": "minecraft:stone",
+      "levels": 7,
+      "reset_repair_cost": true
+    },
+    "full": true
+  },
+  {
     "name": "item_action/side",
     "context": "ITEM_ACTION",
     "data": {
@@ -2134,6 +2982,17 @@
     }
   },
   {
+    "name": "item_condition/enchantment#full",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:enchantment",
+      "enchantment": "minecraft:protection",
+      "comparison": ">=",
+      "compare_to": 7
+    },
+    "full": true
+  },
+  {
     "name": "item_condition/fireproof",
     "context": "ITEM_CONDITION",
     "data": {
@@ -2163,6 +3022,16 @@
       "type": "origins:has_power",
       "power": "bridge_test:resource"
     }
+  },
+  {
+    "name": "item_condition/has_power#full",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:has_power",
+      "power": "bridge_test:resource",
+      "slot": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "item_condition/ingredient",
@@ -2222,6 +3091,17 @@
     }
   },
   {
+    "name": "item_condition/power_count#full",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "origins:power_count",
+      "compare_to": 1,
+      "comparison": ">=",
+      "slot": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "item_condition/relative_durability",
     "context": "ITEM_CONDITION",
     "data": {
@@ -2245,11 +3125,63 @@
     }
   },
   {
+    "name": "power/action_on_being_used#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_being_used",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "hands": "minecraft:stone",
+      "result_stack": {
+        "item": "minecraft:stone"
+      },
+      "held_item_action": {
+        "type": "origins:nothing"
+      },
+      "result_item_action": {
+        "type": "origins:nothing"
+      },
+      "action_result": {
+        "type": "origins:nothing"
+      },
+      "priority": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/action_on_block_break",
     "context": "POWER",
     "data": {
       "type": "origins:action_on_block_break"
     }
+  },
+  {
+    "name": "power/action_on_block_break#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_block_break",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "block_action": {
+        "type": "origins:nothing"
+      },
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "only_when_harvested": false
+    },
+    "full": true
   },
   {
     "name": "power/action_on_block_use",
@@ -2259,6 +3191,43 @@
     }
   },
   {
+    "name": "power/action_on_block_use#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_block_use",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "block_action": {
+        "type": "origins:nothing"
+      },
+      "directions": "minecraft:stone",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "hands": "minecraft:stone",
+      "result_stack": {
+        "item": "minecraft:stone"
+      },
+      "held_item_action": {
+        "type": "origins:nothing"
+      },
+      "result_item_action": {
+        "type": "origins:nothing"
+      },
+      "action_result": {
+        "type": "origins:nothing"
+      },
+      "priority": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/action_on_callback",
     "context": "POWER",
     "data": {
@@ -2266,11 +3235,67 @@
     }
   },
   {
+    "name": "power/action_on_callback#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_callback",
+      "entity_action_respawned": {
+        "type": "origins:nothing"
+      },
+      "entity_action_removed": {
+        "type": "origins:nothing"
+      },
+      "entity_action_gained": {
+        "type": "origins:nothing"
+      },
+      "entity_action_lost": {
+        "type": "origins:nothing"
+      },
+      "entity_action_added": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/action_on_entity_use",
     "context": "POWER",
     "data": {
       "type": "origins:action_on_entity_use"
     }
+  },
+  {
+    "name": "power/action_on_entity_use#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_entity_use",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "hands": "minecraft:stone",
+      "result_stack": {
+        "item": "minecraft:stone"
+      },
+      "held_item_action": {
+        "type": "origins:nothing"
+      },
+      "result_item_action": {
+        "type": "origins:nothing"
+      },
+      "action_result": {
+        "type": "origins:nothing"
+      },
+      "priority": 7
+    },
+    "full": true
   },
   {
     "name": "power/action_on_hit",
@@ -2283,11 +3308,52 @@
     }
   },
   {
+    "name": "power/action_on_hit#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_hit",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "cooldown": 7,
+      "hud_render": "minecraft:stone",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/action_on_item_use",
     "context": "POWER",
     "data": {
       "type": "origins:action_on_item_use"
     }
+  },
+  {
+    "name": "power/action_on_item_use#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_item_use",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "trigger": "minecraft:stone",
+      "priority": 7
+    },
+    "full": true
   },
   {
     "name": "power/action_on_land",
@@ -2297,6 +3363,17 @@
     }
   },
   {
+    "name": "power/action_on_land#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_land",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/action_on_wake_up",
     "context": "POWER",
     "data": {
@@ -2304,11 +3381,47 @@
     }
   },
   {
+    "name": "power/action_on_wake_up#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_on_wake_up",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "block_action": {
+        "type": "origins:nothing"
+      },
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/action_over_time",
     "context": "POWER",
     "data": {
       "type": "origins:action_over_time"
     }
+  },
+  {
+    "name": "power/action_over_time#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_over_time",
+      "interval": 7,
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "rising_action": {
+        "type": "origins:nothing"
+      },
+      "falling_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
   },
   {
     "name": "power/action_when_damage_taken",
@@ -2328,6 +3441,27 @@
     }
   },
   {
+    "name": "power/action_when_hit#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:action_when_hit",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "cooldown": 7,
+      "hud_render": "minecraft:stone",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/active_self",
     "context": "POWER",
     "data": {
@@ -2336,6 +3470,20 @@
         "type": "origins:nothing"
       }
     }
+  },
+  {
+    "name": "power/active_self#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:active_self",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "cooldown": 7,
+      "hud_render": "minecraft:stone",
+      "key": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "power/attacker_action_when_hit",
@@ -2348,11 +3496,49 @@
     }
   },
   {
+    "name": "power/attacker_action_when_hit#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:attacker_action_when_hit",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "cooldown": 7,
+      "hud_render": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "power/attribute",
     "context": "POWER",
     "data": {
       "type": "origins:attribute"
     }
+  },
+  {
+    "name": "power/attribute#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:attribute",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25,
+        "attribute": "minecraft:generic.movement_speed"
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25,
+          "attribute": "minecraft:generic.movement_speed"
+        }
+      ],
+      "update_health": false
+    },
+    "full": true
   },
   {
     "name": "power/attribute_modify_transfer",
@@ -2362,6 +3548,17 @@
       "class": "modify_jump",
       "attribute": "minecraft:generic.movement_speed"
     }
+  },
+  {
+    "name": "power/attribute_modify_transfer#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:attribute_modify_transfer",
+      "class": "modify_jump",
+      "attribute": "minecraft:generic.movement_speed",
+      "multiplier": 7
+    },
+    "full": true
   },
   {
     "name": "power/burn",
@@ -2380,11 +3577,46 @@
     }
   },
   {
+    "name": "power/climbing#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:climbing",
+      "allow_holding": false,
+      "hold_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/conditioned_attribute",
     "context": "POWER",
     "data": {
       "type": "origins:conditioned_attribute"
     }
+  },
+  {
+    "name": "power/conditioned_attribute#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:conditioned_attribute",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25,
+        "attribute": "minecraft:generic.movement_speed"
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25,
+          "attribute": "minecraft:generic.movement_speed"
+        }
+      ],
+      "tick_rate": 7,
+      "update_health": false
+    },
+    "full": true
   },
   {
     "name": "power/conditioned_restrict_armor",
@@ -2394,12 +3626,47 @@
     }
   },
   {
+    "name": "power/conditioned_restrict_armor#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:conditioned_restrict_armor",
+      "head": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "chest": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "legs": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "feet": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "tick_rate": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/cooldown",
     "context": "POWER",
     "data": {
       "type": "origins:cooldown",
       "cooldown": 1
     }
+  },
+  {
+    "name": "power/cooldown#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:cooldown",
+      "cooldown": 1,
+      "hud_render": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "power/creative_flight",
@@ -2417,6 +3684,20 @@
     }
   },
   {
+    "name": "power/damage_over_time#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:damage_over_time",
+      "damage": 1,
+      "interval": 7,
+      "damage_source": "minecraft:stone",
+      "damage_type": "minecraft:stone",
+      "protection_enchantment": "minecraft:stone",
+      "protection_effectiveness": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/disable_regen",
     "context": "POWER",
     "data": {
@@ -2431,6 +3712,17 @@
     }
   },
   {
+    "name": "power/effect_immunity#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:effect_immunity",
+      "effect": "minecraft:stone",
+      "effects": "minecraft:stone",
+      "inverted": true
+    },
+    "full": true
+  },
+  {
     "name": "power/elytra_flight",
     "context": "POWER",
     "data": {
@@ -2439,11 +3731,41 @@
     }
   },
   {
+    "name": "power/elytra_flight#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:elytra_flight",
+      "render_elytra": true,
+      "texture_location": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "power/entity_glow",
     "context": "POWER",
     "data": {
       "type": "origins:entity_glow"
     }
+  },
+  {
+    "name": "power/entity_glow#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:entity_glow",
+      "entity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "use_teams": false,
+      "red": 7,
+      "green": 7,
+      "blue": 7
+    },
+    "full": true
   },
   {
     "name": "power/entity_group",
@@ -2462,6 +3784,16 @@
     }
   },
   {
+    "name": "power/exhaust#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:exhaust",
+      "exhaustion": 1,
+      "interval": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/fire_immunity",
     "context": "POWER",
     "data": {
@@ -2475,6 +3807,31 @@
       "type": "origins:fire_projectile",
       "entity_type": "minecraft:snowball"
     }
+  },
+  {
+    "name": "power/fire_projectile#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:fire_projectile",
+      "entity_type": "minecraft:snowball",
+      "cooldown": 7,
+      "count": 7,
+      "interval": 7,
+      "start_delay": 7,
+      "speed": 7,
+      "divergence": 7,
+      "sound": "minecraft:entity.player.levelup",
+      "hud_render": "minecraft:stone",
+      "tag": "minecraft:is_forest",
+      "key": "minecraft:stone",
+      "projectile_action": {
+        "type": "origins:nothing"
+      },
+      "shooter_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
   },
   {
     "name": "power/freeze",
@@ -2505,11 +3862,38 @@
     }
   },
   {
+    "name": "power/inventory#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:inventory",
+      "title": "minecraft:stone",
+      "container_type": "minecraft:stone",
+      "drop_on_death": true,
+      "drop_on_death_filter": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "key": "minecraft:stone",
+      "recoverable": false
+    },
+    "full": true
+  },
+  {
     "name": "power/invisibility",
     "context": "POWER",
     "data": {
       "type": "origins:invisibility"
     }
+  },
+  {
+    "name": "power/invisibility#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:invisibility",
+      "render_armor": true,
+      "render_outline": true
+    },
+    "full": true
   },
   {
     "name": "power/invulnerability",
@@ -2530,11 +3914,56 @@
     }
   },
   {
+    "name": "power/item_on_item#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:item_on_item",
+      "using_item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "on_item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "result_from_on_stack": 7,
+      "result": {
+        "item": "minecraft:stone"
+      },
+      "using_item_action": {
+        "type": "origins:nothing"
+      },
+      "on_item_action": {
+        "type": "origins:nothing"
+      },
+      "result_item_action": {
+        "type": "origins:nothing"
+      },
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/keep_inventory",
     "context": "POWER",
     "data": {
       "type": "origins:keep_inventory"
     }
+  },
+  {
+    "name": "power/keep_inventory#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:keep_inventory",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "slots": 7
+    },
+    "full": true
   },
   {
     "name": "power/launch",
@@ -2543,6 +3972,19 @@
       "type": "origins:launch",
       "speed": 1
     }
+  },
+  {
+    "name": "power/launch#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:launch",
+      "speed": 1,
+      "cooldown": 7,
+      "sound": "minecraft:entity.player.levelup",
+      "hud_render": "minecraft:stone",
+      "key": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "power/lava_vision",
@@ -2561,11 +4003,41 @@
     }
   },
   {
+    "name": "power/model_color#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:model_color",
+      "red": 7,
+      "green": 7,
+      "blue": 7,
+      "alpha": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_air_speed",
     "context": "POWER",
     "data": {
       "type": "origins:modify_air_speed"
     }
+  },
+  {
+    "name": "power/modify_air_speed#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_air_speed",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/modify_attribute",
@@ -2576,6 +4048,25 @@
     }
   },
   {
+    "name": "power/modify_attribute#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_attribute",
+      "attribute": "minecraft:generic.movement_speed",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_block_render",
     "context": "POWER",
     "data": {
@@ -2584,11 +4075,46 @@
     }
   },
   {
+    "name": "power/modify_block_render#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_block_render",
+      "block": "minecraft:stone",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_break_speed",
     "context": "POWER",
     "data": {
       "type": "origins:modify_break_speed"
     }
+  },
+  {
+    "name": "power/modify_break_speed#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_break_speed",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/modify_camera_submersion",
@@ -2599,11 +4125,60 @@
     }
   },
   {
+    "name": "power/modify_camera_submersion#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_camera_submersion",
+      "to": "water",
+      "from": "none"
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_crafting",
     "context": "POWER",
     "data": {
       "type": "origins:modify_crafting"
     }
+  },
+  {
+    "name": "power/modify_crafting#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_crafting",
+      "recipe": {
+        "id": "bridge_test:recipe",
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:dirt"
+          }
+        ],
+        "result": {
+          "item": "minecraft:stone"
+        }
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "result": {
+        "item": "minecraft:stone"
+      },
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "item_action_after_crafting": {
+        "type": "origins:nothing"
+      },
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "block_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
   },
   {
     "name": "power/modify_damage_dealt",
@@ -2613,11 +4188,93 @@
     }
   },
   {
+    "name": "power/modify_damage_dealt#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_damage_dealt",
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ],
+      "target_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "self_action": {
+        "type": "origins:nothing"
+      },
+      "target_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_damage_taken",
     "context": "POWER",
     "data": {
       "type": "origins:modify_damage_taken"
     }
+  },
+  {
+    "name": "power/modify_damage_taken#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_damage_taken",
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ],
+      "self_action": {
+        "type": "origins:nothing"
+      },
+      "attacker_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "apply_armor_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "damage_armor_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "power/modify_exhaustion",
@@ -2627,11 +4284,49 @@
     }
   },
   {
+    "name": "power/modify_exhaustion#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_exhaustion",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_falling",
     "context": "POWER",
     "data": {
       "type": "origins:modify_falling"
     }
+  },
+  {
+    "name": "power/modify_falling#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_falling",
+      "velocity": 7,
+      "take_fall_damage": false,
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/modify_fluid_render",
@@ -2642,6 +4337,23 @@
     }
   },
   {
+    "name": "power/modify_fluid_render#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_fluid_render",
+      "fluid": "minecraft:water",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "fluid_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_food",
     "context": "POWER",
     "data": {
@@ -2649,11 +4361,98 @@
     }
   },
   {
+    "name": "power/modify_food#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_food",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "replace_stack": {
+        "item": "minecraft:stone"
+      },
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "food_modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "food_modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ],
+      "saturation_modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "saturation_modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ],
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "always_edible": true,
+      "prevent_effects": true
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_grindstone",
     "context": "POWER",
     "data": {
       "type": "origins:modify_grindstone"
     }
+  },
+  {
+    "name": "power/modify_grindstone#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_grindstone",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "block_action": {
+        "type": "origins:nothing"
+      },
+      "top_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "bottom_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "output_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "item_action_after_grinding": {
+        "type": "origins:nothing"
+      },
+      "result_stack": {
+        "item": "minecraft:stone"
+      },
+      "result_type": "minecraft:stone",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "xp_modifier": {
+        "operation": "addition",
+        "value": 0.25
+      }
+    },
+    "full": true
   },
   {
     "name": "power/modify_harvest",
@@ -2664,11 +4463,42 @@
     }
   },
   {
+    "name": "power/modify_harvest#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_harvest",
+      "allow": true,
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_healing",
     "context": "POWER",
     "data": {
       "type": "origins:modify_healing"
     }
+  },
+  {
+    "name": "power/modify_healing#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_healing",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/modify_insomnia_ticks",
@@ -2678,6 +4508,24 @@
     }
   },
   {
+    "name": "power/modify_insomnia_ticks#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_insomnia_ticks",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_jump",
     "context": "POWER",
     "data": {
@@ -2685,11 +4533,50 @@
     }
   },
   {
+    "name": "power/modify_jump#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_jump",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ],
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_lava_speed",
     "context": "POWER",
     "data": {
       "type": "origins:modify_lava_speed"
     }
+  },
+  {
+    "name": "power/modify_lava_speed#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_lava_speed",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/modify_player_spawn",
@@ -2700,11 +4587,57 @@
     }
   },
   {
+    "name": "power/modify_player_spawn#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_player_spawn",
+      "dimension": "minecraft:overworld",
+      "dimension_distance_multiplier": 7,
+      "biome": "minecraft:stone",
+      "spawn_strategy": "minecraft:stone",
+      "structure": "minecraft:stone",
+      "respawn_sound": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_projectile_damage",
     "context": "POWER",
     "data": {
       "type": "origins:modify_projectile_damage"
     }
+  },
+  {
+    "name": "power/modify_projectile_damage#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_projectile_damage",
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ],
+      "target_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "self_action": {
+        "type": "origins:nothing"
+      },
+      "target_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
   },
   {
     "name": "power/modify_slipperiness",
@@ -2714,11 +4647,53 @@
     }
   },
   {
+    "name": "power/modify_slipperiness#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_slipperiness",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_status_effect_amplifier",
     "context": "POWER",
     "data": {
       "type": "origins:modify_status_effect_amplifier"
     }
+  },
+  {
+    "name": "power/modify_status_effect_amplifier#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_status_effect_amplifier",
+      "status_effect": "minecraft:stone",
+      "status_effects": "minecraft:stone",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/modify_status_effect_duration",
@@ -2728,11 +4703,49 @@
     }
   },
   {
+    "name": "power/modify_status_effect_duration#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_status_effect_duration",
+      "status_effect": "minecraft:stone",
+      "status_effects": "minecraft:stone",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_swim_speed",
     "context": "POWER",
     "data": {
       "type": "origins:modify_swim_speed"
     }
+  },
+  {
+    "name": "power/modify_swim_speed#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_swim_speed",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/modify_velocity",
@@ -2742,11 +4755,48 @@
     }
   },
   {
+    "name": "power/modify_velocity#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_velocity",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ],
+      "axes": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_xp_gain",
     "context": "POWER",
     "data": {
       "type": "origins:modify_xp_gain"
     }
+  },
+  {
+    "name": "power/modify_xp_gain#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:modify_xp_gain",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/multiple",
@@ -2763,6 +4813,15 @@
     }
   },
   {
+    "name": "power/night_vision#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:night_vision",
+      "strength": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/overlay",
     "context": "POWER",
     "data": {
@@ -2771,6 +4830,23 @@
       "draw_mode": "texture",
       "draw_phase": "above_hud"
     }
+  },
+  {
+    "name": "power/overlay#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:overlay",
+      "texture": "minecraft:textures/misc/underwater.png",
+      "draw_mode": "texture",
+      "draw_phase": "above_hud",
+      "strength": 7,
+      "red": 7,
+      "green": 7,
+      "blue": 7,
+      "hide_with_hud": false,
+      "visible_in_third_person": true
+    },
+    "full": true
   },
   {
     "name": "power/particle",
@@ -2782,11 +4858,46 @@
     }
   },
   {
+    "name": "power/particle#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:particle",
+      "particle": "minecraft:cloud",
+      "frequency": 1,
+      "visible_in_first_person": true,
+      "spread": "minecraft:stone",
+      "offset_y": 7,
+      "count": 7,
+      "visible_while_invisible": true,
+      "speed": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/phasing",
     "context": "POWER",
     "data": {
       "type": "origins:phasing"
     }
+  },
+  {
+    "name": "power/phasing#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:phasing",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "blacklist": true,
+      "render_type": "minecraft:stone",
+      "view_distance": 7,
+      "phase_down_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "power/prevent_being_used",
@@ -2796,11 +4907,52 @@
     }
   },
   {
+    "name": "power/prevent_being_used#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_being_used",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "hands": "minecraft:stone",
+      "result_stack": {
+        "item": "minecraft:stone"
+      },
+      "held_item_action": {
+        "type": "origins:nothing"
+      },
+      "result_item_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/prevent_block_selection",
     "context": "POWER",
     "data": {
       "type": "origins:prevent_block_selection"
     }
+  },
+  {
+    "name": "power/prevent_block_selection#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_block_selection",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "power/prevent_block_use",
@@ -2810,11 +4962,38 @@
     }
   },
   {
+    "name": "power/prevent_block_use#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_block_use",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/prevent_death",
     "context": "POWER",
     "data": {
       "type": "origins:prevent_death"
     }
+  },
+  {
+    "name": "power/prevent_death#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_death",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "power/prevent_elytra_flight",
@@ -2824,11 +5003,34 @@
     }
   },
   {
+    "name": "power/prevent_elytra_flight#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_elytra_flight",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/prevent_entity_collision",
     "context": "POWER",
     "data": {
       "type": "origins:prevent_entity_collision"
     }
+  },
+  {
+    "name": "power/prevent_entity_collision#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_entity_collision",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "power/prevent_entity_render",
@@ -2838,11 +5040,56 @@
     }
   },
   {
+    "name": "power/prevent_entity_render#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_entity_render",
+      "entity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/prevent_entity_use",
     "context": "POWER",
     "data": {
       "type": "origins:prevent_entity_use"
     }
+  },
+  {
+    "name": "power/prevent_entity_use#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_entity_use",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "hands": "minecraft:stone",
+      "result_stack": {
+        "item": "minecraft:stone"
+      },
+      "held_item_action": {
+        "type": "origins:nothing"
+      },
+      "result_item_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
   },
   {
     "name": "power/prevent_feature_render",
@@ -2852,11 +5099,35 @@
     }
   },
   {
+    "name": "power/prevent_feature_render#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_feature_render",
+      "feature": "minecraft:stone",
+      "features": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "power/prevent_game_event",
     "context": "POWER",
     "data": {
       "type": "origins:prevent_game_event"
     }
+  },
+  {
+    "name": "power/prevent_game_event#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_game_event",
+      "event": "minecraft:step",
+      "events": "minecraft:stone",
+      "tag": "minecraft:is_forest",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
   },
   {
     "name": "power/prevent_item_use",
@@ -2866,11 +5137,37 @@
     }
   },
   {
+    "name": "power/prevent_item_use#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_item_use",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/prevent_sleep",
     "context": "POWER",
     "data": {
       "type": "origins:prevent_sleep"
     }
+  },
+  {
+    "name": "power/prevent_sleep#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:prevent_sleep",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "message": "minecraft:stone",
+      "set_spawn_point": true
+    },
+    "full": true
   },
   {
     "name": "power/prevent_sprinting",
@@ -2908,11 +5205,52 @@
     }
   },
   {
+    "name": "power/resource#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:resource",
+      "min": 1,
+      "max": 1,
+      "hud_render": "minecraft:stone",
+      "min_action": {
+        "type": "origins:nothing"
+      },
+      "max_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/restrict_armor",
     "context": "POWER",
     "data": {
       "type": "origins:restrict_armor"
     }
+  },
+  {
+    "name": "power/restrict_armor#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:restrict_armor",
+      "head": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "chest": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "legs": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "feet": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "power/self_action_on_hit",
@@ -2925,6 +5263,27 @@
     }
   },
   {
+    "name": "power/self_action_on_hit#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:self_action_on_hit",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "cooldown": 7,
+      "hud_render": "minecraft:stone",
+      "target_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/self_action_on_kill",
     "context": "POWER",
     "data": {
@@ -2933,6 +5292,27 @@
         "type": "origins:nothing"
       }
     }
+  },
+  {
+    "name": "power/self_action_on_kill#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:self_action_on_kill",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "cooldown": 7,
+      "hud_render": "minecraft:stone",
+      "target_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "power/self_action_when_hit",
@@ -2949,12 +5329,42 @@
     }
   },
   {
+    "name": "power/self_glow#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:self_glow",
+      "entity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "use_teams": false,
+      "red": 7,
+      "green": 7,
+      "blue": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/shader",
     "context": "POWER",
     "data": {
       "type": "origins:shader",
       "shader": "minecraft:shaders/post/creeper.json"
     }
+  },
+  {
+    "name": "power/shader#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:shader",
+      "shader": "minecraft:shaders/post/creeper.json",
+      "toggleable": false
+    },
+    "full": true
   },
   {
     "name": "power/shaking",
@@ -2981,6 +5391,26 @@
     }
   },
   {
+    "name": "power/stacking_status_effect#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:stacking_status_effect",
+      "min_stacks": 1,
+      "max_stacks": 1,
+      "duration_per_stack": 1,
+      "tick_rate": 7,
+      "effect": {
+        "effect": "minecraft:speed",
+        "duration": 100
+      },
+      "effects": {
+        "effect": "minecraft:speed",
+        "duration": 100
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/starting_equipment",
     "context": "POWER",
     "data": {
@@ -2988,11 +5418,35 @@
     }
   },
   {
+    "name": "power/starting_equipment#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:starting_equipment",
+      "stack": {
+        "item": "minecraft:stone"
+      },
+      "stacks": {
+        "item": "minecraft:stone"
+      },
+      "recurrent": true
+    },
+    "full": true
+  },
+  {
     "name": "power/status_bar_texture",
     "context": "POWER",
     "data": {
       "type": "origins:status_bar_texture"
     }
+  },
+  {
+    "name": "power/status_bar_texture#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:status_bar_texture",
+      "texture": "minecraft:textures/misc/underwater.png"
+    },
+    "full": true
   },
   {
     "name": "power/swimming",
@@ -3012,11 +5466,43 @@
     }
   },
   {
+    "name": "power/target_action_on_hit#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:target_action_on_hit",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "cooldown": 7,
+      "hud_render": "minecraft:stone",
+      "target_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/toggle",
     "context": "POWER",
     "data": {
       "type": "origins:toggle"
     }
+  },
+  {
+    "name": "power/toggle#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:toggle",
+      "active_by_default": false,
+      "retain_state": false,
+      "key": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "power/toggle_night_vision",
@@ -3026,11 +5512,37 @@
     }
   },
   {
+    "name": "power/toggle_night_vision#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:toggle_night_vision",
+      "active_by_default": true,
+      "strength": 7,
+      "key": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "power/tooltip",
     "context": "POWER",
     "data": {
       "type": "origins:tooltip"
     }
+  },
+  {
+    "name": "power/tooltip#full",
+    "context": "POWER",
+    "data": {
+      "type": "origins:tooltip",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "text": "minecraft:stone",
+      "texts": "minecraft:stone",
+      "order": 7
+    },
+    "full": true
   },
   {
     "name": "power/walk_on_fluid",
@@ -3122,6 +5634,20 @@
     }
   },
   {
+    "name": "bi_entity_action/add_velocity@apoli#full",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:add_velocity",
+      "x": 7,
+      "y": 7,
+      "z": 7,
+      "client": false,
+      "server": false,
+      "set": true
+    },
+    "full": true
+  },
+  {
     "name": "bi_entity_action/and@apoli",
     "context": "BI_ENTITY_ACTION",
     "data": {
@@ -3162,6 +5688,17 @@
       "type": "apoli:damage",
       "amount": 1
     }
+  },
+  {
+    "name": "bi_entity_action/damage@apoli#full",
+    "context": "BI_ENTITY_ACTION",
+    "data": {
+      "type": "apoli:damage",
+      "amount": 1,
+      "source": "bridge_test:source",
+      "damage_type": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "bi_entity_action/delay@apoli",
@@ -3317,6 +5854,16 @@
     }
   },
   {
+    "name": "bi_entity_condition/can_see@apoli#full",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:can_see",
+      "shape_type": "minecraft:stone",
+      "fluid_handling": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "bi_entity_condition/constant@apoli",
     "context": "BI_ENTITY_CONDITION",
     "data": {
@@ -3378,6 +5925,19 @@
       "comparison": ">=",
       "compare_to": 1
     }
+  },
+  {
+    "name": "bi_entity_condition/relative_rotation@apoli#full",
+    "context": "BI_ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:relative_rotation",
+      "comparison": ">=",
+      "compare_to": 1,
+      "axes": "minecraft:stone",
+      "actor_rotation": "minecraft:stone",
+      "target_rotation": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "bi_entity_condition/riding@apoli",
@@ -3449,11 +6009,37 @@
     }
   },
   {
+    "name": "block_action/area_of_effect@apoli#full",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:area_of_effect",
+      "block_action": {
+        "type": "origins:nothing"
+      },
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "radius": 7,
+      "shape": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "block_action/bonemeal@apoli",
     "context": "BLOCK_ACTION",
     "data": {
       "type": "apoli:bonemeal"
     }
+  },
+  {
+    "name": "block_action/bonemeal@apoli#full",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:bonemeal",
+      "effects": false
+    },
+    "full": true
   },
   {
     "name": "block_action/chance@apoli",
@@ -3509,6 +6095,25 @@
     }
   },
   {
+    "name": "block_action/explode@apoli#full",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:explode",
+      "power": 2.0,
+      "destruction_type": "minecraft:stone",
+      "indestructible": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "destructible": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "create_fire": true
+    },
+    "full": true
+  },
+  {
     "name": "block_action/if_else@apoli",
     "context": "BLOCK_ACTION",
     "data": {
@@ -3549,6 +6154,20 @@
     }
   },
   {
+    "name": "block_action/modify_block_state@apoli#full",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:modify_block_state",
+      "property": "age",
+      "operation": "minecraft:stone",
+      "change": 7,
+      "value": true,
+      "enum": "minecraft:stone",
+      "cycle": true
+    },
+    "full": true
+  },
+  {
     "name": "block_action/nothing@apoli",
     "context": "BLOCK_ACTION",
     "data": {
@@ -3564,6 +6183,20 @@
         "type": "origins:nothing"
       }
     }
+  },
+  {
+    "name": "block_action/offset@apoli#full",
+    "context": "BLOCK_ACTION",
+    "data": {
+      "type": "apoli:offset",
+      "action": {
+        "type": "origins:nothing"
+      },
+      "x": 7,
+      "y": 7,
+      "z": 7
+    },
+    "full": true
   },
   {
     "name": "block_action/set_block@apoli",
@@ -3645,6 +6278,19 @@
     }
   },
   {
+    "name": "block_condition/block_state@apoli#full",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:block_state",
+      "property": "age",
+      "comparison": ">=",
+      "compare_to": 7,
+      "value": true,
+      "enum": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "block_condition/constant@apoli",
     "context": "BLOCK_CONDITION",
     "data": {
@@ -3713,11 +6359,32 @@
     }
   },
   {
+    "name": "block_condition/light_level@apoli#full",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:light_level",
+      "comparison": ">=",
+      "compare_to": 1,
+      "light_type": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "block_condition/material@apoli",
     "context": "BLOCK_CONDITION",
     "data": {
       "type": "apoli:material"
     }
+  },
+  {
+    "name": "block_condition/material@apoli#full",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:material",
+      "material": "minecraft:stone",
+      "materials": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "block_condition/movement_blocking@apoli",
@@ -3744,6 +6411,21 @@
         "value": true
       }
     }
+  },
+  {
+    "name": "block_condition/offset@apoli#full",
+    "context": "BLOCK_CONDITION",
+    "data": {
+      "type": "apoli:offset",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "x": 7,
+      "y": 7,
+      "z": 7
+    },
+    "full": true
   },
   {
     "name": "block_condition/or@apoli",
@@ -3799,6 +6481,18 @@
     "data": {
       "type": "apoli:attacker"
     }
+  },
+  {
+    "name": "damage_condition/attacker@apoli#full",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:attacker",
+      "entity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "damage_condition/bypasses_armor@apoli",
@@ -3875,6 +6569,19 @@
     }
   },
   {
+    "name": "damage_condition/projectile@apoli#full",
+    "context": "DAMAGE_CONDITION",
+    "data": {
+      "type": "apoli:projectile",
+      "projectile": "minecraft:stone",
+      "projectile_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "damage_condition/unblockable@apoli",
     "context": "DAMAGE_CONDITION",
     "data": {
@@ -3889,11 +6596,36 @@
     }
   },
   {
+    "name": "entity_action/add_velocity@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:add_velocity",
+      "x": 7,
+      "y": 7,
+      "z": 7,
+      "space": "minecraft:stone",
+      "client": false,
+      "server": false,
+      "set": true
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/add_xp@apoli",
     "context": "ENTITY_ACTION",
     "data": {
       "type": "apoli:add_xp"
     }
+  },
+  {
+    "name": "entity_action/add_xp@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:add_xp",
+      "points": 7,
+      "levels": 7
+    },
+    "full": true
   },
   {
     "name": "entity_action/and@apoli",
@@ -3911,6 +6643,22 @@
     }
   },
   {
+    "name": "entity_action/apply_effect@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:apply_effect",
+      "effect": {
+        "effect": "minecraft:speed",
+        "duration": 100
+      },
+      "effects": {
+        "effect": "minecraft:speed",
+        "duration": 100
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/area_of_effect@apoli",
     "context": "ENTITY_ACTION",
     "data": {
@@ -3919,6 +6667,23 @@
         "type": "origins:nothing"
       }
     }
+  },
+  {
+    "name": "entity_action/area_of_effect@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:area_of_effect",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "radius": 7,
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "include_target": true
+    },
+    "full": true
   },
   {
     "name": "entity_action/block_action_at@apoli",
@@ -3951,6 +6716,17 @@
     }
   },
   {
+    "name": "entity_action/change_resource@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:change_resource",
+      "resource": "bridge_test:resource",
+      "change": 1,
+      "operation": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/choice@apoli",
     "context": "ENTITY_ACTION",
     "data": {
@@ -3973,6 +6749,15 @@
     }
   },
   {
+    "name": "entity_action/clear_effect@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:clear_effect",
+      "effect": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/crafting_table@apoli",
     "context": "ENTITY_ACTION",
     "data": {
@@ -3986,6 +6771,17 @@
       "type": "apoli:damage",
       "amount": 1
     }
+  },
+  {
+    "name": "entity_action/damage@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:damage",
+      "amount": 1,
+      "source": "bridge_test:source",
+      "damage_type": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "entity_action/delay@apoli",
@@ -4011,6 +6807,31 @@
     "data": {
       "type": "apoli:drop_inventory"
     }
+  },
+  {
+    "name": "entity_action/drop_inventory@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:drop_inventory",
+      "inventory_type": "minecraft:stone",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "slots": "minecraft:stone",
+      "slot": "minecraft:stone",
+      "power": "bridge_test:resource",
+      "throw_randomly": true,
+      "retain_ownership": false,
+      "amount": 7
+    },
+    "full": true
   },
   {
     "name": "entity_action/emit_game_event@apoli",
@@ -4063,6 +6884,26 @@
     }
   },
   {
+    "name": "entity_action/explode@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:explode",
+      "power": 2.0,
+      "destruction_type": "minecraft:stone",
+      "damage_self": false,
+      "indestructible": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "destructible": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "create_fire": true
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/extinguish@apoli",
     "context": "ENTITY_ACTION",
     "data": {
@@ -4087,6 +6928,22 @@
     }
   },
   {
+    "name": "entity_action/fire_projectile@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:fire_projectile",
+      "entity_type": "minecraft:snowball",
+      "divergence": 7,
+      "speed": 7,
+      "count": 7,
+      "tag": "minecraft:is_forest",
+      "projectile_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/gain_air@apoli",
     "context": "ENTITY_ACTION",
     "data": {
@@ -4103,6 +6960,21 @@
         "item": "minecraft:stone"
       }
     }
+  },
+  {
+    "name": "entity_action/give@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:give",
+      "stack": {
+        "item": "minecraft:stone"
+      },
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "preferred_slot": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "entity_action/grant_advancement@apoli",
@@ -4183,6 +7055,30 @@
     }
   },
   {
+    "name": "entity_action/modify_inventory@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:modify_inventory",
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "inventory_type": "minecraft:stone",
+      "process_mode": "minecraft:stone",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "slots": "minecraft:stone",
+      "slot": "minecraft:stone",
+      "power": "bridge_test:resource",
+      "limit": 7
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/modify_resource@apoli",
     "context": "ENTITY_ACTION",
     "data": {
@@ -4221,12 +7117,42 @@
     }
   },
   {
+    "name": "entity_action/passenger_action@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:passenger_action",
+      "action": {
+        "type": "origins:nothing"
+      },
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "recursive": true
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/play_sound@apoli",
     "context": "ENTITY_ACTION",
     "data": {
       "type": "apoli:play_sound",
       "sound": "minecraft:entity.player.levelup"
     }
+  },
+  {
+    "name": "entity_action/play_sound@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:play_sound",
+      "sound": "minecraft:entity.player.levelup",
+      "volume": 7,
+      "pitch": 7
+    },
+    "full": true
   },
   {
     "name": "entity_action/raycast@apoli",
@@ -4237,6 +7163,43 @@
     }
   },
   {
+    "name": "entity_action/raycast@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:raycast",
+      "distance": 1,
+      "block": "minecraft:stone",
+      "entity": false,
+      "shape_type": "minecraft:stone",
+      "fluid_handling": "minecraft:stone",
+      "block_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "command_at_hit": "minecraft:stone",
+      "command_hit_offset": 7,
+      "command_along_ray": "minecraft:stone",
+      "command_step": 7,
+      "command_along_ray_only_on_hit": true,
+      "before_action": {
+        "type": "origins:nothing"
+      },
+      "hit_action": {
+        "type": "origins:nothing"
+      },
+      "miss_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/replace_inventory@apoli",
     "context": "ENTITY_ACTION",
     "data": {
@@ -4245,6 +7208,32 @@
         "item": "minecraft:stone"
       }
     }
+  },
+  {
+    "name": "entity_action/replace_inventory@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:replace_inventory",
+      "stack": {
+        "item": "minecraft:stone"
+      },
+      "inventory_type": "minecraft:stone",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "slots": "minecraft:stone",
+      "slot": "minecraft:stone",
+      "power": "bridge_test:resource",
+      "merge_nbt": true
+    },
+    "full": true
   },
   {
     "name": "entity_action/revoke_advancement@apoli",
@@ -4271,6 +7260,25 @@
     }
   },
   {
+    "name": "entity_action/riding_action@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:riding_action",
+      "action": {
+        "type": "origins:nothing"
+      },
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "recursive": true
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/selector_action@apoli",
     "context": "ENTITY_ACTION",
     "data": {
@@ -4280,6 +7288,22 @@
         "type": "origins:nothing"
       }
     }
+  },
+  {
+    "name": "entity_action/selector_action@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:selector_action",
+      "selector": "minecraft:stone",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "entity_action/set_fall_distance@apoli",
@@ -4325,12 +7349,44 @@
     }
   },
   {
+    "name": "entity_action/spawn_effect_cloud@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:spawn_effect_cloud",
+      "radius": 7,
+      "radius_on_use": 7,
+      "wait_time": 7,
+      "effect": {
+        "effect": "minecraft:speed",
+        "duration": 100
+      },
+      "effects": {
+        "effect": "minecraft:speed",
+        "duration": 100
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/spawn_entity@apoli",
     "context": "ENTITY_ACTION",
     "data": {
       "type": "apoli:spawn_entity",
       "entity_type": "minecraft:snowball"
     }
+  },
+  {
+    "name": "entity_action/spawn_entity@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:spawn_entity",
+      "entity_type": "minecraft:snowball",
+      "tag": "minecraft:is_forest",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
   },
   {
     "name": "entity_action/spawn_particles@apoli",
@@ -4342,11 +7398,34 @@
     }
   },
   {
+    "name": "entity_action/spawn_particles@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:spawn_particles",
+      "particle": "minecraft:cloud",
+      "count": 1,
+      "speed": 7,
+      "force": true,
+      "spread": "minecraft:stone",
+      "offset_y": 7
+    },
+    "full": true
+  },
+  {
     "name": "entity_action/swing_hand@apoli",
     "context": "ENTITY_ACTION",
     "data": {
       "type": "apoli:swing_hand"
     }
+  },
+  {
+    "name": "entity_action/swing_hand@apoli#full",
+    "context": "ENTITY_ACTION",
+    "data": {
+      "type": "apoli:swing_hand",
+      "hand": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "entity_action/toggle@apoli",
@@ -4415,11 +7494,40 @@
     }
   },
   {
+    "name": "entity_condition/biome@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:biome",
+      "biome": "minecraft:stone",
+      "biomes": "minecraft:stone",
+      "condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/block_collision@apoli",
     "context": "ENTITY_CONDITION",
     "data": {
       "type": "apoli:block_collision"
     }
+  },
+  {
+    "name": "entity_condition/block_collision@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:block_collision",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "offset_x": 7,
+      "offset_y": 7,
+      "offset_z": 7
+    },
+    "full": true
   },
   {
     "name": "entity_condition/block_in_radius@apoli",
@@ -4432,6 +7540,22 @@
       },
       "radius": 1
     }
+  },
+  {
+    "name": "entity_condition/block_in_radius@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:block_in_radius",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "radius": 1,
+      "shape": "minecraft:stone",
+      "compare_to": 7,
+      "comparison": ">="
+    },
+    "full": true
   },
   {
     "name": "entity_condition/brightness@apoli",
@@ -4504,6 +7628,16 @@
     }
   },
   {
+    "name": "entity_condition/elytra_flight_possible@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:elytra_flight_possible",
+      "check_state": true,
+      "check_ability": false
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/enchantment@apoli",
     "context": "ENTITY_CONDITION",
     "data": {
@@ -4512,6 +7646,18 @@
       "comparison": ">=",
       "compare_to": 1
     }
+  },
+  {
+    "name": "entity_condition/enchantment@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:enchantment",
+      "enchantment": "minecraft:protection",
+      "comparison": ">=",
+      "compare_to": 1,
+      "calculation": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "entity_condition/entity_group@apoli",
@@ -4644,6 +7790,20 @@
     }
   },
   {
+    "name": "entity_condition/in_block_anywhere@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:in_block_anywhere",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "comparison": ">=",
+      "compare_to": 7
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/in_rain@apoli",
     "context": "ENTITY_CONDITION",
     "data": {
@@ -4664,6 +7824,25 @@
     "data": {
       "type": "apoli:inventory"
     }
+  },
+  {
+    "name": "entity_condition/inventory@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:inventory",
+      "inventory_types": "minecraft:stone",
+      "process_mode": "minecraft:stone",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "slots": "minecraft:stone",
+      "slot": "minecraft:stone",
+      "power": "bridge_test:resource",
+      "comparison": ">=",
+      "compare_to": 7
+    },
+    "full": true
   },
   {
     "name": "entity_condition/invisible@apoli",
@@ -4702,6 +7881,18 @@
     }
   },
   {
+    "name": "entity_condition/on_block@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:on_block",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/on_fire@apoli",
     "context": "ENTITY_CONDITION",
     "data": {
@@ -4724,11 +7915,39 @@
     }
   },
   {
+    "name": "entity_condition/passenger@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:passenger",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "comparison": ">=",
+      "compare_to": 7
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/passenger_recursive@apoli",
     "context": "ENTITY_CONDITION",
     "data": {
       "type": "apoli:passenger_recursive"
     }
+  },
+  {
+    "name": "entity_condition/passenger_recursive@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:passenger_recursive",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "comparison": ">=",
+      "compare_to": 7
+    },
+    "full": true
   },
   {
     "name": "entity_condition/power@apoli",
@@ -4737,6 +7956,16 @@
       "type": "apoli:power",
       "power": "bridge_test:resource"
     }
+  },
+  {
+    "name": "entity_condition/power@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:power",
+      "power": "bridge_test:resource",
+      "source": "bridge_test:source"
+    },
+    "full": true
   },
   {
     "name": "entity_condition/power_active@apoli",
@@ -4771,6 +8000,31 @@
     }
   },
   {
+    "name": "entity_condition/raycast@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:raycast",
+      "distance": 1,
+      "block": "minecraft:stone",
+      "entity": false,
+      "shape_type": "minecraft:stone",
+      "fluid_handling": "minecraft:stone",
+      "match_bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "hit_bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/relative_health@apoli",
     "context": "ENTITY_CONDITION",
     "data": {
@@ -4797,6 +8051,18 @@
     }
   },
   {
+    "name": "entity_condition/riding@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:riding",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/riding_recursive@apoli",
     "context": "ENTITY_CONDITION",
     "data": {
@@ -4804,11 +8070,37 @@
     }
   },
   {
+    "name": "entity_condition/riding_recursive@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:riding_recursive",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "comparison": ">=",
+      "compare_to": 7
+    },
+    "full": true
+  },
+  {
     "name": "entity_condition/riding_root@apoli",
     "context": "ENTITY_CONDITION",
     "data": {
       "type": "apoli:riding_root"
     }
+  },
+  {
+    "name": "entity_condition/riding_root@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:riding_root",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "entity_condition/saturation_level@apoli",
@@ -4828,6 +8120,18 @@
       "comparison": ">=",
       "compare_to": 1
     }
+  },
+  {
+    "name": "entity_condition/scoreboard@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:scoreboard",
+      "objective": "minecraft:stone",
+      "comparison": ">=",
+      "compare_to": 1,
+      "name": "generic"
+    },
+    "full": true
   },
   {
     "name": "entity_condition/sneaking@apoli",
@@ -4850,6 +8154,19 @@
       "type": "apoli:status_effect",
       "effect": "minecraft:stone"
     }
+  },
+  {
+    "name": "entity_condition/status_effect@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:status_effect",
+      "effect": "minecraft:stone",
+      "min_amplifier": 7,
+      "max_amplifier": 7,
+      "min_duration": 7,
+      "max_duration": 7
+    },
+    "full": true
   },
   {
     "name": "entity_condition/submerged_in@apoli",
@@ -4895,6 +8212,18 @@
     "data": {
       "type": "apoli:using_item"
     }
+  },
+  {
+    "name": "entity_condition/using_item@apoli#full",
+    "context": "ENTITY_CONDITION",
+    "data": {
+      "type": "apoli:using_item",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "entity_condition/xp_levels@apoli",
@@ -5010,11 +8339,30 @@
     }
   },
   {
+    "name": "item_action/consume@apoli#full",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:consume",
+      "amount": 7
+    },
+    "full": true
+  },
+  {
     "name": "item_action/damage@apoli",
     "context": "ITEM_ACTION",
     "data": {
       "type": "apoli:damage"
     }
+  },
+  {
+    "name": "item_action/damage@apoli#full",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:damage",
+      "amount": 7,
+      "ignore_unbreaking": true
+    },
+    "full": true
   },
   {
     "name": "item_action/delay@apoli",
@@ -5100,6 +8448,18 @@
     }
   },
   {
+    "name": "item_action/remove_enchantment@apoli#full",
+    "context": "ITEM_ACTION",
+    "data": {
+      "type": "apoli:remove_enchantment",
+      "enchantment": "minecraft:protection",
+      "enchantments": "minecraft:stone",
+      "levels": 7,
+      "reset_repair_cost": true
+    },
+    "full": true
+  },
+  {
     "name": "item_action/side@apoli",
     "context": "ITEM_ACTION",
     "data": {
@@ -5175,6 +8535,17 @@
     }
   },
   {
+    "name": "item_condition/enchantment@apoli#full",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:enchantment",
+      "enchantment": "minecraft:protection",
+      "comparison": ">=",
+      "compare_to": 7
+    },
+    "full": true
+  },
+  {
     "name": "item_condition/fireproof@apoli",
     "context": "ITEM_CONDITION",
     "data": {
@@ -5204,6 +8575,16 @@
       "type": "apoli:has_power",
       "power": "bridge_test:resource"
     }
+  },
+  {
+    "name": "item_condition/has_power@apoli#full",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:has_power",
+      "power": "bridge_test:resource",
+      "slot": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "item_condition/ingredient@apoli",
@@ -5263,6 +8644,17 @@
     }
   },
   {
+    "name": "item_condition/power_count@apoli#full",
+    "context": "ITEM_CONDITION",
+    "data": {
+      "type": "apoli:power_count",
+      "compare_to": 1,
+      "comparison": ">=",
+      "slot": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "item_condition/relative_durability@apoli",
     "context": "ITEM_CONDITION",
     "data": {
@@ -5286,11 +8678,63 @@
     }
   },
   {
+    "name": "power/action_on_being_used@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_being_used",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "hands": "minecraft:stone",
+      "result_stack": {
+        "item": "minecraft:stone"
+      },
+      "held_item_action": {
+        "type": "origins:nothing"
+      },
+      "result_item_action": {
+        "type": "origins:nothing"
+      },
+      "action_result": {
+        "type": "origins:nothing"
+      },
+      "priority": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/action_on_block_break@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:action_on_block_break"
     }
+  },
+  {
+    "name": "power/action_on_block_break@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_block_break",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "block_action": {
+        "type": "origins:nothing"
+      },
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "only_when_harvested": false
+    },
+    "full": true
   },
   {
     "name": "power/action_on_block_use@apoli",
@@ -5300,6 +8744,43 @@
     }
   },
   {
+    "name": "power/action_on_block_use@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_block_use",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "block_action": {
+        "type": "origins:nothing"
+      },
+      "directions": "minecraft:stone",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "hands": "minecraft:stone",
+      "result_stack": {
+        "item": "minecraft:stone"
+      },
+      "held_item_action": {
+        "type": "origins:nothing"
+      },
+      "result_item_action": {
+        "type": "origins:nothing"
+      },
+      "action_result": {
+        "type": "origins:nothing"
+      },
+      "priority": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/action_on_callback@apoli",
     "context": "POWER",
     "data": {
@@ -5307,11 +8788,67 @@
     }
   },
   {
+    "name": "power/action_on_callback@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_callback",
+      "entity_action_respawned": {
+        "type": "origins:nothing"
+      },
+      "entity_action_removed": {
+        "type": "origins:nothing"
+      },
+      "entity_action_gained": {
+        "type": "origins:nothing"
+      },
+      "entity_action_lost": {
+        "type": "origins:nothing"
+      },
+      "entity_action_added": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/action_on_entity_use@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:action_on_entity_use"
     }
+  },
+  {
+    "name": "power/action_on_entity_use@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_entity_use",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "hands": "minecraft:stone",
+      "result_stack": {
+        "item": "minecraft:stone"
+      },
+      "held_item_action": {
+        "type": "origins:nothing"
+      },
+      "result_item_action": {
+        "type": "origins:nothing"
+      },
+      "action_result": {
+        "type": "origins:nothing"
+      },
+      "priority": 7
+    },
+    "full": true
   },
   {
     "name": "power/action_on_hit@apoli",
@@ -5324,11 +8861,52 @@
     }
   },
   {
+    "name": "power/action_on_hit@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_hit",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "cooldown": 7,
+      "hud_render": "minecraft:stone",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/action_on_item_use@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:action_on_item_use"
     }
+  },
+  {
+    "name": "power/action_on_item_use@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_item_use",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "trigger": "minecraft:stone",
+      "priority": 7
+    },
+    "full": true
   },
   {
     "name": "power/action_on_land@apoli",
@@ -5338,6 +8916,17 @@
     }
   },
   {
+    "name": "power/action_on_land@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_land",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/action_on_wake_up@apoli",
     "context": "POWER",
     "data": {
@@ -5345,11 +8934,47 @@
     }
   },
   {
+    "name": "power/action_on_wake_up@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_on_wake_up",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "block_action": {
+        "type": "origins:nothing"
+      },
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/action_over_time@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:action_over_time"
     }
+  },
+  {
+    "name": "power/action_over_time@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_over_time",
+      "interval": 7,
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "rising_action": {
+        "type": "origins:nothing"
+      },
+      "falling_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
   },
   {
     "name": "power/action_when_damage_taken@apoli",
@@ -5369,6 +8994,27 @@
     }
   },
   {
+    "name": "power/action_when_hit@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:action_when_hit",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "cooldown": 7,
+      "hud_render": "minecraft:stone",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/active_self@apoli",
     "context": "POWER",
     "data": {
@@ -5377,6 +9023,20 @@
         "type": "origins:nothing"
       }
     }
+  },
+  {
+    "name": "power/active_self@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:active_self",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "cooldown": 7,
+      "hud_render": "minecraft:stone",
+      "key": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "power/attacker_action_when_hit@apoli",
@@ -5389,11 +9049,49 @@
     }
   },
   {
+    "name": "power/attacker_action_when_hit@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:attacker_action_when_hit",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "cooldown": 7,
+      "hud_render": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "power/attribute@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:attribute"
     }
+  },
+  {
+    "name": "power/attribute@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:attribute",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25,
+        "attribute": "minecraft:generic.movement_speed"
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25,
+          "attribute": "minecraft:generic.movement_speed"
+        }
+      ],
+      "update_health": false
+    },
+    "full": true
   },
   {
     "name": "power/attribute_modify_transfer@apoli",
@@ -5403,6 +9101,17 @@
       "class": "modify_jump",
       "attribute": "minecraft:generic.movement_speed"
     }
+  },
+  {
+    "name": "power/attribute_modify_transfer@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:attribute_modify_transfer",
+      "class": "modify_jump",
+      "attribute": "minecraft:generic.movement_speed",
+      "multiplier": 7
+    },
+    "full": true
   },
   {
     "name": "power/burn@apoli",
@@ -5421,11 +9130,46 @@
     }
   },
   {
+    "name": "power/climbing@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:climbing",
+      "allow_holding": false,
+      "hold_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/conditioned_attribute@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:conditioned_attribute"
     }
+  },
+  {
+    "name": "power/conditioned_attribute@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:conditioned_attribute",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25,
+        "attribute": "minecraft:generic.movement_speed"
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25,
+          "attribute": "minecraft:generic.movement_speed"
+        }
+      ],
+      "tick_rate": 7,
+      "update_health": false
+    },
+    "full": true
   },
   {
     "name": "power/conditioned_restrict_armor@apoli",
@@ -5435,12 +9179,47 @@
     }
   },
   {
+    "name": "power/conditioned_restrict_armor@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:conditioned_restrict_armor",
+      "head": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "chest": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "legs": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "feet": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "tick_rate": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/cooldown@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:cooldown",
       "cooldown": 1
     }
+  },
+  {
+    "name": "power/cooldown@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:cooldown",
+      "cooldown": 1,
+      "hud_render": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "power/creative_flight@apoli",
@@ -5458,6 +9237,20 @@
     }
   },
   {
+    "name": "power/damage_over_time@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:damage_over_time",
+      "damage": 1,
+      "interval": 7,
+      "damage_source": "minecraft:stone",
+      "damage_type": "minecraft:stone",
+      "protection_enchantment": "minecraft:stone",
+      "protection_effectiveness": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/disable_regen@apoli",
     "context": "POWER",
     "data": {
@@ -5472,6 +9265,17 @@
     }
   },
   {
+    "name": "power/effect_immunity@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:effect_immunity",
+      "effect": "minecraft:stone",
+      "effects": "minecraft:stone",
+      "inverted": true
+    },
+    "full": true
+  },
+  {
     "name": "power/elytra_flight@apoli",
     "context": "POWER",
     "data": {
@@ -5480,11 +9284,41 @@
     }
   },
   {
+    "name": "power/elytra_flight@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:elytra_flight",
+      "render_elytra": true,
+      "texture_location": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "power/entity_glow@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:entity_glow"
     }
+  },
+  {
+    "name": "power/entity_glow@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:entity_glow",
+      "entity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "use_teams": false,
+      "red": 7,
+      "green": 7,
+      "blue": 7
+    },
+    "full": true
   },
   {
     "name": "power/entity_group@apoli",
@@ -5503,6 +9337,16 @@
     }
   },
   {
+    "name": "power/exhaust@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:exhaust",
+      "exhaustion": 1,
+      "interval": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/fire_immunity@apoli",
     "context": "POWER",
     "data": {
@@ -5516,6 +9360,31 @@
       "type": "apoli:fire_projectile",
       "entity_type": "minecraft:snowball"
     }
+  },
+  {
+    "name": "power/fire_projectile@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:fire_projectile",
+      "entity_type": "minecraft:snowball",
+      "cooldown": 7,
+      "count": 7,
+      "interval": 7,
+      "start_delay": 7,
+      "speed": 7,
+      "divergence": 7,
+      "sound": "minecraft:entity.player.levelup",
+      "hud_render": "minecraft:stone",
+      "tag": "minecraft:is_forest",
+      "key": "minecraft:stone",
+      "projectile_action": {
+        "type": "origins:nothing"
+      },
+      "shooter_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
   },
   {
     "name": "power/freeze@apoli",
@@ -5546,11 +9415,38 @@
     }
   },
   {
+    "name": "power/inventory@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:inventory",
+      "title": "minecraft:stone",
+      "container_type": "minecraft:stone",
+      "drop_on_death": true,
+      "drop_on_death_filter": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "key": "minecraft:stone",
+      "recoverable": false
+    },
+    "full": true
+  },
+  {
     "name": "power/invisibility@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:invisibility"
     }
+  },
+  {
+    "name": "power/invisibility@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:invisibility",
+      "render_armor": true,
+      "render_outline": true
+    },
+    "full": true
   },
   {
     "name": "power/invulnerability@apoli",
@@ -5571,11 +9467,56 @@
     }
   },
   {
+    "name": "power/item_on_item@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:item_on_item",
+      "using_item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "on_item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "result_from_on_stack": 7,
+      "result": {
+        "item": "minecraft:stone"
+      },
+      "using_item_action": {
+        "type": "origins:nothing"
+      },
+      "on_item_action": {
+        "type": "origins:nothing"
+      },
+      "result_item_action": {
+        "type": "origins:nothing"
+      },
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/keep_inventory@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:keep_inventory"
     }
+  },
+  {
+    "name": "power/keep_inventory@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:keep_inventory",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "slots": 7
+    },
+    "full": true
   },
   {
     "name": "power/launch@apoli",
@@ -5584,6 +9525,19 @@
       "type": "apoli:launch",
       "speed": 1
     }
+  },
+  {
+    "name": "power/launch@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:launch",
+      "speed": 1,
+      "cooldown": 7,
+      "sound": "minecraft:entity.player.levelup",
+      "hud_render": "minecraft:stone",
+      "key": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "power/lava_vision@apoli",
@@ -5602,11 +9556,41 @@
     }
   },
   {
+    "name": "power/model_color@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:model_color",
+      "red": 7,
+      "green": 7,
+      "blue": 7,
+      "alpha": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_air_speed@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:modify_air_speed"
     }
+  },
+  {
+    "name": "power/modify_air_speed@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_air_speed",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/modify_attribute@apoli",
@@ -5617,6 +9601,25 @@
     }
   },
   {
+    "name": "power/modify_attribute@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_attribute",
+      "attribute": "minecraft:generic.movement_speed",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_block_render@apoli",
     "context": "POWER",
     "data": {
@@ -5625,11 +9628,46 @@
     }
   },
   {
+    "name": "power/modify_block_render@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_block_render",
+      "block": "minecraft:stone",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_break_speed@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:modify_break_speed"
     }
+  },
+  {
+    "name": "power/modify_break_speed@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_break_speed",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/modify_camera_submersion@apoli",
@@ -5640,11 +9678,60 @@
     }
   },
   {
+    "name": "power/modify_camera_submersion@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_camera_submersion",
+      "to": "water",
+      "from": "none"
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_crafting@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:modify_crafting"
     }
+  },
+  {
+    "name": "power/modify_crafting@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_crafting",
+      "recipe": {
+        "id": "bridge_test:recipe",
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:dirt"
+          }
+        ],
+        "result": {
+          "item": "minecraft:stone"
+        }
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "result": {
+        "item": "minecraft:stone"
+      },
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "item_action_after_crafting": {
+        "type": "origins:nothing"
+      },
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "block_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
   },
   {
     "name": "power/modify_damage_dealt@apoli",
@@ -5654,11 +9741,93 @@
     }
   },
   {
+    "name": "power/modify_damage_dealt@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_damage_dealt",
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ],
+      "target_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "self_action": {
+        "type": "origins:nothing"
+      },
+      "target_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_damage_taken@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:modify_damage_taken"
     }
+  },
+  {
+    "name": "power/modify_damage_taken@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_damage_taken",
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ],
+      "self_action": {
+        "type": "origins:nothing"
+      },
+      "attacker_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "apply_armor_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "damage_armor_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "power/modify_exhaustion@apoli",
@@ -5668,11 +9837,49 @@
     }
   },
   {
+    "name": "power/modify_exhaustion@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_exhaustion",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_falling@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:modify_falling"
     }
+  },
+  {
+    "name": "power/modify_falling@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_falling",
+      "velocity": 7,
+      "take_fall_damage": false,
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/modify_fluid_render@apoli",
@@ -5683,6 +9890,23 @@
     }
   },
   {
+    "name": "power/modify_fluid_render@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_fluid_render",
+      "fluid": "minecraft:water",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "fluid_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_food@apoli",
     "context": "POWER",
     "data": {
@@ -5690,11 +9914,98 @@
     }
   },
   {
+    "name": "power/modify_food@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_food",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "replace_stack": {
+        "item": "minecraft:stone"
+      },
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "food_modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "food_modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ],
+      "saturation_modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "saturation_modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ],
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "always_edible": true,
+      "prevent_effects": true
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_grindstone@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:modify_grindstone"
     }
+  },
+  {
+    "name": "power/modify_grindstone@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_grindstone",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "block_action": {
+        "type": "origins:nothing"
+      },
+      "top_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "bottom_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "output_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "item_action": {
+        "type": "origins:nothing"
+      },
+      "item_action_after_grinding": {
+        "type": "origins:nothing"
+      },
+      "result_stack": {
+        "item": "minecraft:stone"
+      },
+      "result_type": "minecraft:stone",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "xp_modifier": {
+        "operation": "addition",
+        "value": 0.25
+      }
+    },
+    "full": true
   },
   {
     "name": "power/modify_harvest@apoli",
@@ -5705,11 +10016,42 @@
     }
   },
   {
+    "name": "power/modify_harvest@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_harvest",
+      "allow": true,
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_healing@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:modify_healing"
     }
+  },
+  {
+    "name": "power/modify_healing@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_healing",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/modify_insomnia_ticks@apoli",
@@ -5719,6 +10061,24 @@
     }
   },
   {
+    "name": "power/modify_insomnia_ticks@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_insomnia_ticks",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_jump@apoli",
     "context": "POWER",
     "data": {
@@ -5726,11 +10086,50 @@
     }
   },
   {
+    "name": "power/modify_jump@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_jump",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ],
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_lava_speed@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:modify_lava_speed"
     }
+  },
+  {
+    "name": "power/modify_lava_speed@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_lava_speed",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/modify_player_spawn@apoli",
@@ -5741,11 +10140,57 @@
     }
   },
   {
+    "name": "power/modify_player_spawn@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_player_spawn",
+      "dimension": "minecraft:overworld",
+      "dimension_distance_multiplier": 7,
+      "biome": "minecraft:stone",
+      "spawn_strategy": "minecraft:stone",
+      "structure": "minecraft:stone",
+      "respawn_sound": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_projectile_damage@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:modify_projectile_damage"
     }
+  },
+  {
+    "name": "power/modify_projectile_damage@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_projectile_damage",
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ],
+      "target_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "self_action": {
+        "type": "origins:nothing"
+      },
+      "target_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
   },
   {
     "name": "power/modify_slipperiness@apoli",
@@ -5755,11 +10200,53 @@
     }
   },
   {
+    "name": "power/modify_slipperiness@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_slipperiness",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_status_effect_amplifier@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:modify_status_effect_amplifier"
     }
+  },
+  {
+    "name": "power/modify_status_effect_amplifier@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_status_effect_amplifier",
+      "status_effect": "minecraft:stone",
+      "status_effects": "minecraft:stone",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/modify_status_effect_duration@apoli",
@@ -5769,11 +10256,49 @@
     }
   },
   {
+    "name": "power/modify_status_effect_duration@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_status_effect_duration",
+      "status_effect": "minecraft:stone",
+      "status_effects": "minecraft:stone",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_swim_speed@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:modify_swim_speed"
     }
+  },
+  {
+    "name": "power/modify_swim_speed@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_swim_speed",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/modify_velocity@apoli",
@@ -5783,11 +10308,48 @@
     }
   },
   {
+    "name": "power/modify_velocity@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_velocity",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ],
+      "axes": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "power/modify_xp_gain@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:modify_xp_gain"
     }
+  },
+  {
+    "name": "power/modify_xp_gain@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:modify_xp_gain",
+      "modifier": {
+        "operation": "addition",
+        "value": 0.25
+      },
+      "modifiers": [
+        {
+          "operation": "addition",
+          "value": 0.25
+        }
+      ]
+    },
+    "full": true
   },
   {
     "name": "power/multiple@apoli",
@@ -5804,6 +10366,15 @@
     }
   },
   {
+    "name": "power/night_vision@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:night_vision",
+      "strength": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/overlay@apoli",
     "context": "POWER",
     "data": {
@@ -5812,6 +10383,23 @@
       "draw_mode": "texture",
       "draw_phase": "above_hud"
     }
+  },
+  {
+    "name": "power/overlay@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:overlay",
+      "texture": "minecraft:textures/misc/underwater.png",
+      "draw_mode": "texture",
+      "draw_phase": "above_hud",
+      "strength": 7,
+      "red": 7,
+      "green": 7,
+      "blue": 7,
+      "hide_with_hud": false,
+      "visible_in_third_person": true
+    },
+    "full": true
   },
   {
     "name": "power/particle@apoli",
@@ -5823,11 +10411,46 @@
     }
   },
   {
+    "name": "power/particle@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:particle",
+      "particle": "minecraft:cloud",
+      "frequency": 1,
+      "visible_in_first_person": true,
+      "spread": "minecraft:stone",
+      "offset_y": 7,
+      "count": 7,
+      "visible_while_invisible": true,
+      "speed": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/phasing@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:phasing"
     }
+  },
+  {
+    "name": "power/phasing@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:phasing",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "blacklist": true,
+      "render_type": "minecraft:stone",
+      "view_distance": 7,
+      "phase_down_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "power/prevent_being_used@apoli",
@@ -5837,11 +10460,52 @@
     }
   },
   {
+    "name": "power/prevent_being_used@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_being_used",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "hands": "minecraft:stone",
+      "result_stack": {
+        "item": "minecraft:stone"
+      },
+      "held_item_action": {
+        "type": "origins:nothing"
+      },
+      "result_item_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/prevent_block_selection@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:prevent_block_selection"
     }
+  },
+  {
+    "name": "power/prevent_block_selection@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_block_selection",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "power/prevent_block_use@apoli",
@@ -5851,11 +10515,38 @@
     }
   },
   {
+    "name": "power/prevent_block_use@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_block_use",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/prevent_death@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:prevent_death"
     }
+  },
+  {
+    "name": "power/prevent_death@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_death",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "power/prevent_elytra_flight@apoli",
@@ -5865,11 +10556,34 @@
     }
   },
   {
+    "name": "power/prevent_elytra_flight@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_elytra_flight",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/prevent_entity_collision@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:prevent_entity_collision"
     }
+  },
+  {
+    "name": "power/prevent_entity_collision@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_entity_collision",
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "power/prevent_entity_render@apoli",
@@ -5879,11 +10593,56 @@
     }
   },
   {
+    "name": "power/prevent_entity_render@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_entity_render",
+      "entity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/prevent_entity_use@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:prevent_entity_use"
     }
+  },
+  {
+    "name": "power/prevent_entity_use@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_entity_use",
+      "bientity_action": {
+        "type": "origins:nothing"
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "hands": "minecraft:stone",
+      "result_stack": {
+        "item": "minecraft:stone"
+      },
+      "held_item_action": {
+        "type": "origins:nothing"
+      },
+      "result_item_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
   },
   {
     "name": "power/prevent_feature_render@apoli",
@@ -5893,11 +10652,35 @@
     }
   },
   {
+    "name": "power/prevent_feature_render@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_feature_render",
+      "feature": "minecraft:stone",
+      "features": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "power/prevent_game_event@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:prevent_game_event"
     }
+  },
+  {
+    "name": "power/prevent_game_event@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_game_event",
+      "event": "minecraft:step",
+      "events": "minecraft:stone",
+      "tag": "minecraft:is_forest",
+      "entity_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
   },
   {
     "name": "power/prevent_item_use@apoli",
@@ -5907,11 +10690,37 @@
     }
   },
   {
+    "name": "power/prevent_item_use@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_item_use",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/prevent_sleep@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:prevent_sleep"
     }
+  },
+  {
+    "name": "power/prevent_sleep@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:prevent_sleep",
+      "block_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "message": "minecraft:stone",
+      "set_spawn_point": true
+    },
+    "full": true
   },
   {
     "name": "power/prevent_sprinting@apoli",
@@ -5949,11 +10758,52 @@
     }
   },
   {
+    "name": "power/resource@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:resource",
+      "min": 1,
+      "max": 1,
+      "hud_render": "minecraft:stone",
+      "min_action": {
+        "type": "origins:nothing"
+      },
+      "max_action": {
+        "type": "origins:nothing"
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/restrict_armor@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:restrict_armor"
     }
+  },
+  {
+    "name": "power/restrict_armor@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:restrict_armor",
+      "head": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "chest": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "legs": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "feet": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "power/self_action_on_hit@apoli",
@@ -5966,6 +10816,27 @@
     }
   },
   {
+    "name": "power/self_action_on_hit@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:self_action_on_hit",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "cooldown": 7,
+      "hud_render": "minecraft:stone",
+      "target_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/self_action_on_kill@apoli",
     "context": "POWER",
     "data": {
@@ -5974,6 +10845,27 @@
         "type": "origins:nothing"
       }
     }
+  },
+  {
+    "name": "power/self_action_on_kill@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:self_action_on_kill",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "cooldown": 7,
+      "hud_render": "minecraft:stone",
+      "target_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
   },
   {
     "name": "power/self_action_when_hit@apoli",
@@ -5990,12 +10882,42 @@
     }
   },
   {
+    "name": "power/self_glow@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:self_glow",
+      "entity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "bientity_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "use_teams": false,
+      "red": 7,
+      "green": 7,
+      "blue": 7
+    },
+    "full": true
+  },
+  {
     "name": "power/shader@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:shader",
       "shader": "minecraft:shaders/post/creeper.json"
     }
+  },
+  {
+    "name": "power/shader@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:shader",
+      "shader": "minecraft:shaders/post/creeper.json",
+      "toggleable": false
+    },
+    "full": true
   },
   {
     "name": "power/shaking@apoli",
@@ -6022,6 +10944,26 @@
     }
   },
   {
+    "name": "power/stacking_status_effect@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:stacking_status_effect",
+      "min_stacks": 1,
+      "max_stacks": 1,
+      "duration_per_stack": 1,
+      "tick_rate": 7,
+      "effect": {
+        "effect": "minecraft:speed",
+        "duration": 100
+      },
+      "effects": {
+        "effect": "minecraft:speed",
+        "duration": 100
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/starting_equipment@apoli",
     "context": "POWER",
     "data": {
@@ -6029,11 +10971,35 @@
     }
   },
   {
+    "name": "power/starting_equipment@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:starting_equipment",
+      "stack": {
+        "item": "minecraft:stone"
+      },
+      "stacks": {
+        "item": "minecraft:stone"
+      },
+      "recurrent": true
+    },
+    "full": true
+  },
+  {
     "name": "power/status_bar_texture@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:status_bar_texture"
     }
+  },
+  {
+    "name": "power/status_bar_texture@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:status_bar_texture",
+      "texture": "minecraft:textures/misc/underwater.png"
+    },
+    "full": true
   },
   {
     "name": "power/swimming@apoli",
@@ -6053,11 +11019,43 @@
     }
   },
   {
+    "name": "power/target_action_on_hit@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:target_action_on_hit",
+      "entity_action": {
+        "type": "origins:nothing"
+      },
+      "damage_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "cooldown": 7,
+      "hud_render": "minecraft:stone",
+      "target_condition": {
+        "type": "origins:constant",
+        "value": true
+      }
+    },
+    "full": true
+  },
+  {
     "name": "power/toggle@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:toggle"
     }
+  },
+  {
+    "name": "power/toggle@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:toggle",
+      "active_by_default": false,
+      "retain_state": false,
+      "key": "minecraft:stone"
+    },
+    "full": true
   },
   {
     "name": "power/toggle_night_vision@apoli",
@@ -6067,11 +11065,37 @@
     }
   },
   {
+    "name": "power/toggle_night_vision@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:toggle_night_vision",
+      "active_by_default": true,
+      "strength": 7,
+      "key": "minecraft:stone"
+    },
+    "full": true
+  },
+  {
     "name": "power/tooltip@apoli",
     "context": "POWER",
     "data": {
       "type": "apoli:tooltip"
     }
+  },
+  {
+    "name": "power/tooltip@apoli#full",
+    "context": "POWER",
+    "data": {
+      "type": "apoli:tooltip",
+      "item_condition": {
+        "type": "origins:constant",
+        "value": true
+      },
+      "text": "minecraft:stone",
+      "texts": "minecraft:stone",
+      "order": 7
+    },
+    "full": true
   },
   {
     "name": "power/walk_on_fluid@apoli",

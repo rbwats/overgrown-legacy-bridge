@@ -42,24 +42,44 @@ public final class LegacyDamageOverTimePower extends PowerType<LegacyDamageOverT
         if (!(holder instanceof PowerContainerImpl impl) || holder.owner() == null) return;
         LivingEntity owner = holder.owner();
         Power power = ApoliPowers.get(id); if (power == null) return;
-        int[] state = impl.auxIntsAtLeast(id, 2, 0);
+        // Counters change every tick: keep them in unsynchronized scratch state and persist them at most once a
+        // second, or when damage or a reset happens, instead of broadcasting the aux state every tick.
+        int[] state = impl.scratchInts(id, 3);
+        if (state[2] == 0) {
+            int[] saved = impl.getAuxInts(id);
+            if (saved != null && saved.length >= 2) { state[0] = saved[0]; state[1] = saved[1]; }
+            state[2] = 1;
+        }
+        boolean persist = owner.tickCount % 20 == 0;
         boolean active = power.condition().isEmpty() || power.condition().get().test(EntityCtx.of(owner, owner.level()));
-        if (!active) { if (state[1] >= 20) state[0] = 0; else state[1]++; }
-        else {
+        if (!active) {
+            if (state[1] >= 20) { persist |= state[0] != 0; state[0] = 0; } else state[1]++;
+        } else {
             state[1] = 0;
             int elapsed = state[0] - onset(cfg, owner);
             if (elapsed >= 0 && elapsed % cfg.interval() == 0) {
                 DamageSource source = cfg.source().map(s -> s.create(owner.level(), null)).orElseGet(() -> {
                     var type = owner.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
-                        .getHolder(ResourceKey.create(Registries.DAMAGE_TYPE, cfg.damageType())).orElseThrow();
+                        .getHolder(ResourceKey.create(Registries.DAMAGE_TYPE, cfg.damageType())).orElse(null);
+                    if (type == null) {
+                        if (MISSING_TYPES.add(cfg.damageType())) LegacyBridge.LOGGER.error("Damage over time power {} uses unknown damage type {}", id, cfg.damageType());
+                        return null;
+                    }
                     return new DamageSource(type);
                 });
-                owner.hurt(source, owner.level().getDifficulty() == Difficulty.EASY ? cfg.easyDamage() : cfg.damage());
+                if (source != null) owner.hurt(source, owner.level().getDifficulty() == Difficulty.EASY ? cfg.easyDamage() : cfg.damage());
+                persist = true;
             }
             state[0]++;
         }
-        holder.markDirty();
+        if (persist) impl.setAuxInts(id, new int[] {state[0], state[1]});
     }
+    /** Clears the timer on respawn, as legacy {@code onRespawn} did. */
+    public static void reset(PowerContainerImpl impl, ResourceLocation id) {
+        impl.setAuxInts(id, new int[2]);
+        java.util.Arrays.fill(impl.scratchInts(id, 3), 0);
+    }
+    private static final Set<ResourceLocation> MISSING_TYPES = java.util.concurrent.ConcurrentHashMap.newKeySet();
     public void onRemoved(ResourceLocation id, Config cfg, PowerContainer holder, ResourceLocation source) {
         if (holder instanceof PowerContainerImpl impl && !holder.hasPower(id)) impl.removeAux(id);
     }

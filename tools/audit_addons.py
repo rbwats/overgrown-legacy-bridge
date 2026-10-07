@@ -18,8 +18,10 @@ def references(data):
         else:raise ValueError('Unknown constant pool tag '+str(tag))
         index+=1
     refs=set()
-    for entry in classes+descriptors:
-        text=pool.get(entry,'')
+    # Every UTF8 entry: annotation values (@Mixin targets), signatures and reflective strings never pass through
+    # a Class or NameAndType entry. Dotted names are normalized to internal form.
+    for text in pool.values():
+        text=text.replace('.','/')
         for prefix in PREFIXES:
             for value in re.findall(re.escape(prefix)+r'[\w/$]+',text):refs.add(value)
     return sorted(refs)

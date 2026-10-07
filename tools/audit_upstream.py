@@ -42,7 +42,7 @@ def group(p,kind):
  return p.stem.replace('Actions','').replace('Conditions','').replace('Client','').replace('Server','').upper().replace('BIENTITY','BI_ENTITY')+'_'+kind.upper()
 def inventory():
  out={}
- for p in (OLD/'power').rglob('*.java'):
+ for p in sorted((OLD/'power').rglob('*.java')):
   s=p.read_text(encoding='utf-8');s=re.sub(r'"(?:[^"\\]|\\.)*"|//[^\n]*|/\*.*?\*/', lambda m: m[0] if m[0].startswith(chr(34)) else ' ', s, flags=re.S)
   for m in re.finditer(r'new (Power|Action|Condition)Factory(?:<[^\n]*?>)?\s*\(',s):
    a=args(enclosed(s,s.index('(',m.start())));id=re.search(r'Apoli.identifier\("([^"]+)"\)',a[0])
@@ -75,6 +75,13 @@ def sample(n,t):
  if 'NBT' in t:return '{}'
  if any(x in t for x in ['INT','FLOAT','DOUBLE']):return 1
  return 'minecraft:stone'
+def optional_sample(n,f):
+ value=sample(n,f['java_type']);default=f.get('java_default','')
+ if isinstance(value,bool):return default.strip().lower()!='true'
+ if isinstance(value,(int,float)) and not isinstance(value,bool):
+  try:return 7 if float(default.rstrip('FfDdLl'))!=7 else 3
+  except ValueError:return 7
+ return value
 if __name__=='__main__':
  schemas=inventory(); (PROJECT/'src/main/resources/legacy-1.20.1-schemas.json').write_text(json.dumps(schemas,indent=2)+'\n')
  corpus=[]
@@ -84,9 +91,15 @@ if __name__=='__main__':
    for n,f in spec['fields'].items():
     if f['required']:data[n]=sample(n,f['java_type'])
    corpus.append({'name':g.lower()+'/'+id,'context':g,'data':data})
+   # Full variants set every optional field to a non-default sample so ignored fields become visible.
+   optional={n:f for n,f in spec['fields'].items() if not f['required']}
+   if optional:
+    full=dict(data)
+    for n,f in optional.items():full[n]=optional_sample(n,f)
+    corpus.append({'name':g.lower()+'/'+id+'#full','context':g,'data':full,'full':True})
  additional=[]
  for case in corpus:
-  alt=json.loads(json.dumps(case)); alt['name']+='@apoli'; alt['data']['type']=alt['data']['type'].replace('origins:', 'apoli:',1); additional.append(alt)
+  alt=json.loads(json.dumps(case)); alt['name']=alt['name'].replace('#full','')+'@apoli'+('#full' if case.get('full') else ''); alt['data']['type']=alt['data']['type'].replace('origins:', 'apoli:',1); additional.append(alt)
  corpus.extend(additional)
  (PROJECT/'tests/upstream-codec-corpus.json').write_text(json.dumps(corpus,indent=2)+'\n')
  print({g:len(s) for g,s in schemas.items()});print(len(corpus),'source-derived codec cases')

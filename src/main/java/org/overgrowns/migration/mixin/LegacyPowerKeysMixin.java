@@ -9,6 +9,6 @@ import java.util.Collection;
 public abstract class LegacyPowerKeysMixin {
     @Inject(method = "collect", at = @At("HEAD"))
     private static void overgrownLegacyBridge$collect(Power power, Collection<String> out, CallbackInfo ci) {
-        if (power.config() instanceof LegacyToggleNightVisionPower.Config cfg) out.add(cfg.key().key());
+        if (power.config() instanceof LegacyToggleNightVisionPower.Config cfg && !"none".equals(cfg.key().key())) out.add(cfg.key().key());
     }
 }

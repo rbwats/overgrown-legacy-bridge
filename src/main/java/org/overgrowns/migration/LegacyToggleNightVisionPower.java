@@ -9,11 +9,13 @@ import net.minecraft.world.entity.LivingEntity;
 public final class LegacyToggleNightVisionPower extends PowerType<LegacyToggleNightVisionPower.Config> {
     public static final ResourceLocation ID = new ResourceLocation(LegacyBridge.MOD_ID, "toggle_night_vision");
     public record Config(boolean activeByDefault, float strength, Key key) {}
+    /** Legacy Active.Key defaulted to "none", so a toggle without a key had no control bound. */
+    public static final Key NO_KEY = new Key("none", false);
     public MapCodec<Config> configCodec() {
         return RecordCodecBuilder.mapCodec(i -> i.group(
             Codec.BOOL.optionalFieldOf("active_by_default", false).forGetter(Config::activeByDefault),
             Codec.FLOAT.optionalFieldOf("strength", 1f).forGetter(Config::strength),
-            Key.CODEC.optionalFieldOf("key", Key.DEFAULT_PRIMARY).forGetter(Config::key)
+            Key.CODEC.optionalFieldOf("key", NO_KEY).forGetter(Config::key)
         ).apply(i, Config::new));
     }
     public void onAdded(ResourceLocation id, Config cfg, PowerContainer holder, ResourceLocation source) {

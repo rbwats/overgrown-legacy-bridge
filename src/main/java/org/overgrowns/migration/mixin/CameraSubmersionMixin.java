@@ -10,6 +10,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class CameraSubmersionMixin {
     @Inject(method = "remap", at = @At("RETURN"), cancellable = true)
     private static void overgrownLegacyBridge$remap(Entity entity, FogType original, CallbackInfoReturnable<FogType> cir) {
-        cir.setReturnValue(LegacyCameraSubmersionPower.remap(entity, cir.getReturnValue()));
+        cir.setReturnValue(LegacyCameraSubmersionPower.remap(entity, original, cir.getReturnValue()));
     }
 }

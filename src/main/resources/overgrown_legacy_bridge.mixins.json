@@ -18,12 +18,19 @@
     "LegacyNightVisionMixin",
     "LegacyPowerActiveMixin",
     "LegacyDamageNameMixin",
-    "LegacyCommandsMixin"
+    "LegacyCommandsMixin",
+    "ApoliPowerCommandMixin",
+    "BadgeLoaderMixin",
+    "MultiPackResourceManagerMixin",
+    "LegacyCobwebMixin",
+    "LegacyConduitMixin",
+    "ModifyAirSpeedMixin"
   ],
   "client": [
     "GuiMixin",
     "FluidRenderMixin",
-    "LegacyClientKeysMixin"
+    "LegacyClientKeysMixin",
+    "LegacyWaterVisionMixin"
   ],
   "injectors": {
     "defaultRequire": 1

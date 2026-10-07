@@ -6,28 +6,69 @@ import com.google.gson.JsonObject;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.Map;
+import java.util.function.Predicate;
 
 /** Context-aware legacy upgrades before Apoli expands multiple powers. */
 public final class LegacyPowerNormalizer {
     private LegacyPowerNormalizer() {}
 
+    /** Evaluates {@code fabric:load_conditions}; replaced with Fabric's evaluator at initialization. */
+    public static volatile Predicate<JsonObject> loadConditions = json -> true;
+
     public static void normalizeAll(Map<ResourceLocation, JsonElement> data) {
-        int changed = 0;
+        int changed = 0, skipped = 0;
         for (Map.Entry<ResourceLocation, JsonElement> entry : data.entrySet()) {
             JsonElement original = entry.getValue();
-            if (!original.isJsonObject()) continue;
-            JsonElement copy = original.deepCopy();
-            boolean updated = normalize(copy);
-            JsonElement repaired = repairSpecific(entry.getKey(), copy);
-            if (repaired != copy) updated = true;
-            if (updated) {
-                entry.setValue(repaired);
-                changed++;
+            if (original == null || !original.isJsonObject()) continue;
+            try {
+                JsonElement copy = original.deepCopy();
+                boolean updated = LegacyBuiltinPowers.adapt(entry.getKey(), copy.getAsJsonObject());
+                updated |= filterSubPowers(entry.getKey(), copy.getAsJsonObject());
+                updated |= normalize(copy);
+                JsonElement repaired = repairSpecific(entry.getKey(), copy);
+                if (repaired != copy) updated = true;
+                if (updated) {
+                    entry.setValue(repaired);
+                    changed++;
+                }
+            } catch (RuntimeException error) {
+                // A malformed file must only affect itself, as it did on legacy Apoli.
+                skipped++;
+                LegacyBridge.LOGGER.error("Legacy normalization failed for power {}; loading it unchanged: {}", entry.getKey(), error.toString());
             }
         }
-        LegacyCompatibilityReport.write(data, changed);
-        LegacyBridge.LOGGER.info("Legacy power JSON normalization changed {} file(s)", changed);
+        try {
+            LegacyCompatibilityReport.write(data, changed);
+        } catch (RuntimeException error) {
+            LegacyBridge.LOGGER.warn("Could not build the legacy compatibility report", error);
+        }
+        LegacyBridge.LOGGER.info("Legacy power JSON normalization changed {} file(s); {} could not be normalized", changed, skipped);
     }
+
+    /** Legacy Apoli evaluated fabric:load_conditions on every sub-power of a multiple power. */
+    static boolean filterSubPowers(ResourceLocation id, JsonObject root) {
+        String type = string(root, "type");
+        if (type == null || !type.endsWith(":multiple")) return false;
+        // The top-level list belongs to Fabric's own resource-condition filtering and is left in place.
+        boolean changed = false;
+        for (Map.Entry<String, JsonElement> field : new java.util.ArrayList<>(root.entrySet())) {
+            if (!field.getValue().isJsonObject()) continue;
+            JsonObject sub = field.getValue().getAsJsonObject();
+            if (!sub.has(LOAD_CONDITIONS_KEY)) continue;
+            boolean keep;
+            try {
+                keep = loadConditions.test(sub);
+            } catch (RuntimeException error) {
+                LegacyBridge.LOGGER.error("Could not evaluate the load conditions of sub-power {}_{} (skipping): {}", id, field.getKey(), error.toString());
+                keep = false;
+            }
+            if (keep) sub.remove(LOAD_CONDITIONS_KEY); else root.remove(field.getKey());
+            changed = true;
+        }
+        return changed;
+    }
+
+    static final String LOAD_CONDITIONS_KEY = "fabric:load_conditions";
 
     static boolean normalize(JsonElement node) {
         return LegacySchema.normalize(node, LegacySchema.Context.POWER);

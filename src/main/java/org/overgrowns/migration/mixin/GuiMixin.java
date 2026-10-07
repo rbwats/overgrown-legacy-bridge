@@ -13,7 +13,8 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 public abstract class GuiMixin {
     private static final ResourceLocation ICONS = new ResourceLocation("minecraft", "textures/gui/icons.png");
 
-    @ModifyArg(method = {"renderPlayerHealth", "renderHeart"},
+    // Legacy Apoli replaced the status bars, hearts, experience bar, crosshair, mount jump bar and mount health.
+    @ModifyArg(method = {"renderPlayerHealth", "renderHeart", "renderExperienceBar", "renderCrosshair", "renderJumpMeter", "renderVehicleHealth"},
         at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;blit(Lnet/minecraft/resources/ResourceLocation;IIIIII)V"),
         index = 0, require = 0)
     private ResourceLocation overgrownLegacyBridge$statusBarTexture(ResourceLocation vanilla) {

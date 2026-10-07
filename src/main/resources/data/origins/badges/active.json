@@ -1,0 +1,6 @@
+{
+  "type": "origins:keybind",
+  "sprite": "origins:textures/gui/badge/isaacfanta/active.png",
+  "text": "origins.gui.badge.active",
+  "key": "key.origins.primary_active"
+}
