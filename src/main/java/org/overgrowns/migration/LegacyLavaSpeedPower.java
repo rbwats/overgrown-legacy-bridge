@@ -37,7 +37,8 @@ public final class LegacyLavaSpeedPower extends PowerType<LegacyLavaSpeedPower.C
         for (ResourceLocation powerId : impl.powersOfType(ID)) {
             // 0 until the first check, as legacy added nothing before its first 10-tick update.
             if (impl.isSuppressed(powerId) || impl.getAuxIntOr(powerId, 0) == 0) continue;
-            if (ApoliPowers.get(powerId) instanceof Power power && power.config() instanceof Config cfg)
+            Power power = ApoliPowers.get(powerId);
+            if (power != null && power.config() instanceof Config cfg)
                 modifiers.addAll(AttributeModifierHelper.flatten(cfg.modifier(), cfg.modifiers()));
         }
         if (modifiers.isEmpty()) return original;
