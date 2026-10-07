@@ -79,18 +79,26 @@ jobs:
               sys.exit("Production failures: " + "; ".join(failed))
           PY
 
-      # Starts a development client on a virtual display, force-loads every mixin target (with injection counts
-      # checked) and closes; this is the only step that applies the client-only mixins.
-      - name: Client mixin audit
+      # Starts the released jar on a production-mapped Fabric client (virtual display), force-loads every mixin
+      # target and closes. The servers above never apply client-only mixins. A development client cannot be used:
+      # an Overgrown Apoli client mixin names its target in intermediary without a refmap.
+      - name: Client mixin audit (production-mapped client)
         run: |
           set -uo pipefail
           sudo apt-get update -qq && sudo apt-get install -y -qq xvfb libgl1-mesa-dri > /dev/null
-          rm -f build/audit-client-run/mixin-audit.txt
-          LIBGL_ALWAYS_SOFTWARE=1 timeout 900 xvfb-run -a -s "-screen 0 1280x720x24" ./gradlew runAuditClient --no-daemon > build/audit-client.log 2>&1 || echo "Client exited with status $?"
-          grep -iE "overgrown_legacy_bridge|org\.overgrowns|mixin.*(error|fail)|Injection|Exception" build/audit-client.log | grep -v "WorldSlice" | head -60 || true
-          test -f build/audit-client-run/mixin-audit.txt || { tail -80 build/audit-client.log; echo "The client produced no mixin audit result"; exit 1; }
-          cat build/audit-client-run/mixin-audit.txt
-          grep -qx passed build/audit-client-run/mixin-audit.txt
+          prop() { grep "^$1=" gradle.properties | cut -d= -f2; }
+          version=$(prop mod_version); mc=$(prop minecraft_version); loader=$(prop loader_version); fapi=$(prop fabric_api_version)
+          run=build/client-run
+          rm -rf "$run"; mkdir -p "$run/mods"
+          curl -fsSL -o "$run/mods/fabric-api.jar" "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/$fapi/fabric-api-$fapi.jar"
+          cp libs/apoli.jar libs/origins.jar "build/libs/overgrown-legacy-bridge-$version.jar" "$run/mods/"
+          LIBGL_ALWAYS_SOFTWARE=1 timeout 900 xvfb-run -a -s "-screen 0 1280x720x24" \
+            python3 .github/scripts/launch_client.py "$run" "$mc" "$loader" -Dovergrown_legacy_bridge.auditMixins=true \
+            > build/client-run.log 2>&1 || echo "Client exited with status $?"
+          grep -iE "overgrown_legacy_bridge|org\.overgrowns|mixin.*(error|fail)|Injection|Exception|Launching" build/client-run.log | grep -v "WorldSlice" | head -60 || true
+          test -f "$run/mixin-audit.txt" || { tail -80 build/client-run.log; echo "The client produced no mixin audit result"; exit 1; }
+          cat "$run/mixin-audit.txt"
+          grep -qx passed "$run/mixin-audit.txt"
 
       - name: Summarize test results
         if: always()
@@ -149,7 +157,7 @@ jobs:
             tests/*.json
             build/production-run/tests/*-results.json
             build/production-run/server.log
-            build/audit-client.log
+            build/client-run.log
 
       - name: Publish pre-release
         uses: softprops/action-gh-release@v2
