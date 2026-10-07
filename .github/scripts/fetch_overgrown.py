@@ -54,15 +54,34 @@ def fetch(label, projects, wanted, expected_id, target):
 
 
 def search(query):
-    facets = json.dumps([["versions:" + GAME], ["categories:fabric"]])
+    facets = json.dumps([["project_type:mod"]])
     hits = json.loads(get(f"{API}/search?" + urllib.parse.urlencode({"query": query, "facets": facets, "limit": 20})))["hits"]
     for hit in hits:
         print(f"search {query!r}: {hit['slug']} ({hit['project_id']}) by {hit['author']}: {hit['title']}")
     return [hit["slug"] for hit in hits]
 
 
+def sibling_projects(project):
+    """Projects published by the same Modrinth team members as the given project."""
+    slugs = []
+    for member in json.loads(get(f"{API}/project/{project}/members")):
+        user = member["user"]
+        for other in json.loads(get(f"{API}/user/{user['id']}/projects")):
+            print(f"{project} member {user['username']}: {other['slug']} ({other['id']}): {other['title']}")
+            if other["slug"] not in slugs:
+                slugs.append(other["slug"])
+    return slugs
+
+
 if __name__ == "__main__":
     apoli = os.environ.get("APOLI_VERSION", "1.90.0")
     origins = os.environ.get("ORIGINS_VERSION", "1.41.0")
     fetch("Apoli", ["opoli"] + search("overgrown apoli"), apoli, "apoli", "libs/apoli.jar")
-    fetch("Origins", search("overgrown origins"), origins, "origins", "libs/origins.jar")
+    candidates = []
+    for source in (lambda: sibling_projects("opoli"), lambda: search("overgrown origins"), lambda: search("origins overgrown")):
+        try:
+            candidates += [slug for slug in source() if slug not in candidates and slug != "opoli"]
+        except Exception as error:
+            print(f"Origins discovery step failed: {error}")
+    # Search results sometimes put unrelated Origins forks first; the mod id and dev/overgrown classes decide.
+    fetch("Origins", candidates, origins, "origins", "libs/origins.jar")
