@@ -122,7 +122,7 @@ jobs:
           mkdir -p "$stage"
           cp "$jar" "$stage/"
           (cd overrides && zip -qr "../$stage/allaykin-item-fix-datapack.zip" pack.mcmeta data)
-          cp README.md COMPATIBILITY.md LICENSE "$stage/"
+          cp README.md COMPATIBILITY.md SUMMARY.md LICENSE "$stage/"
           cat > "$stage/INSTALL.txt" <<TXT
           Overgrown Legacy Bridge ${version} (${TAG})
 

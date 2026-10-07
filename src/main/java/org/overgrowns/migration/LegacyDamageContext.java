@@ -29,6 +29,10 @@ public final class LegacyDamageContext {
         if (stack.isEmpty()) CURRENT.remove();
     }
 
+    public static void clear() {
+        CURRENT.remove();
+    }
+
     public static Hit current() {
         Deque<Hit> stack = CURRENT.get();
         return stack == null ? null : stack.peek();

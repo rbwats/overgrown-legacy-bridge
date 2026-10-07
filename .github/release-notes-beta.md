@@ -1,21 +1,24 @@
-**Beta pre-release** of Overgrown Legacy Bridge 0.6.0 for Minecraft 1.20.1, Overgrown Apoli 1.90.0+ and Overgrown Origins 1.41.0+. It loads legacy Origins 1.10.0 / Apoli 2.9.0 data packs on Overgrown Origins.
+**Beta pre-release** of Overgrown Legacy Bridge 0.6.1 for Minecraft 1.20.1, Overgrown Apoli 1.90.0+ and Overgrown Origins 1.41.0+. It loads legacy Origins 1.10.0 / Apoli 2.9.0 data packs on Overgrown Origins.
 
 ### Download
 
-- `overgrown-legacy-bridge-0.6.0-beta.zip`: the mod jar, the optional Allaykin item-fix data pack, install steps, README and compatibility audit.
-- `overgrown-legacy-bridge-0.6.0.jar`: the mod on its own.
+- `overgrown-legacy-bridge-0.6.1-beta.zip`: the mod jar, the optional Allaykin item-fix data pack, install steps, README, compatibility audit and a short summary of what the bridge does and does not fix.
+- `overgrown-legacy-bridge-0.6.1.jar`: the mod on its own.
 
-Install the jar on the server **and** every client, after removing older bridge jars. See `INSTALL.txt` in the zip.
+Install the jar on the server **and** every client, after removing older bridge jars. See `INSTALL.txt` in the zip. Do not use 0.5.0, which does not start outside a development environment.
 
-### Highlights since 0.5.0
+### Fixes since 0.6.0
 
-- **Fixes 0.5.0 failing to start:** two hooks added in 0.5.0 (power loading and attribute tick rate) described their target methods with development names only, so a normal server or client with 0.5.0 crashed at startup. Every release build now also runs the full test suite on a production-mapped Fabric server with the published jars, so this cannot pass CI again.
-- **Legacy modifier math:** modifiers in `origins:` powers are computed the way Apoli 2.9.0 did (grouped multipliers, `add_total_late`, resource fallback), including nested lists of several modifiers; `attribute_modify_transfer` joins the same pass. Overgrown-native packs keep Overgrown's math.
-- **Save migration** now also carries over remaining cooldowns, damage-over-time timers, stacking-effect counts and active `action_over_time` state.
-- `origins:attribute` ignores its condition again, lava speed re-checks its condition every 10 ticks, layers without an `order` sort as they did, `/power revoke` without a source only removes command grants, and toggle night vision shows the toggle badge.
+- **Memory leak:** every grindstone screen opened was kept in memory together with its player (and, on the client, the world) until the game closed.
+- **Velocity transfers:** an `attribute_modify_transfer` with class `modify_velocity` now applies to every axis, as legacy did, not only to the axes a `modify_velocity` power names.
+- **Nested modifiers:** a legacy modifier with a `name` and a single nested `modifier` no longer loses the nested one.
+- **Transfers applied once per calculation:** a handler's transfers no longer also apply to calculations run by its actions (for example a `modify_resource` self action of `modify_projectile_damage`).
+- **Error safety:** a power action that throws no longer leaves transfer or damage state behind that would affect later calculations.
+- `modify_camera_submersion` without `from` accepts upper-case values (`"to": "WATER"`), as legacy did.
+- **Client check:** each release build now starts a client and verifies that every client-side hook applies; CI previously only exercised servers.
 
-Full details and remaining gaps: README.md and COMPATIBILITY.md.
+Full details and remaining gaps: SUMMARY.md, README.md and COMPATIBILITY.md.
 
 ### Verification
 
-This build was compiled by GitHub Actions against the Overgrown Apoli and Origins releases on Modrinth. The workflow ran the compatibility suite on the development server and again on a production-mapped Fabric server before publishing; results are attached to the workflow run. Client rendering (vanilla and Sodium), HUDs and physical key input still need in-game testing; please report problems with your Minecraft, Origins, Apoli and bridge versions plus `config/overgrown_legacy_bridge/compatibility-report.json`.
+This build was compiled by GitHub Actions against the Overgrown Apoli and Origins releases on Modrinth. The workflow ran the compatibility suite on a development server and again on a production-mapped Fabric server, and started a development client to apply the client hooks, before publishing; results are attached to the workflow run. Visual results (fluid rendering with and without Sodium, HUDs) and physical key input still need in-game testing; please report problems with your Minecraft, Origins, Apoli and bridge versions plus `config/overgrown_legacy_bridge/compatibility-report.json`.

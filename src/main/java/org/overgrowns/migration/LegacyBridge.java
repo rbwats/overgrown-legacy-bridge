@@ -100,8 +100,16 @@ public final class LegacyBridge implements ModInitializer {
         LegacyResourceConditions.register();
         net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents.SERVER_STARTED.register(LegacyCompatibilityTests::runIfRequested);
         net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents.END_SERVER_TICK.register(LegacyTickRates::sweepArmor);
+        // Handler scopes are opened at a method's start and closed at its return; one that threw left its scope
+        // open. No handler is running between ticks, so whatever is left there is stale.
+        net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents.END_SERVER_TICK.register(server -> clearHandlerScopes());
         registerSaveMigration();
         LOGGER.info("Overgrown Legacy Bridge active; legacy power revoke syntax will attach during command registration");
+    }
+    public static void clearHandlerScopes() {
+        LegacyAttributeTransferPower.clearScopes();
+        LegacyModifierMath.clearDamage();
+        LegacyDamageContext.clear();
     }
     /** Origins go in before Overgrown's join handler would prompt for them; power data after it re-grants powers. */
     private static void registerSaveMigration() {

@@ -13,6 +13,7 @@ public final class LegacyBridgeClient implements ClientModInitializer {
     public void onInitializeClient() {
         if (Boolean.getBoolean("overgrown_legacy_bridge.auditMixins")) ClientLifecycleEvents.CLIENT_STARTED.register(LegacyBridgeClient::auditMixins);
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            LegacyBridge.clearHandlerScopes();
             List<LegacyFluidRenderPower.Config> active = PowerLookup.active(client.player, LegacyFluidRenderPower.ID, LegacyFluidRenderPower.Config.class);
             if (!active.equals(previous)) {
                 previous = List.copyOf(active);

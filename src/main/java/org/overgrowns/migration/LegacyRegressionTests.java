@@ -91,6 +91,12 @@ public final class LegacyRegressionTests {
         powers.put(legacyJump, power(legacyJump, "{\"type\":\"origins:modify_jump\",\"modifiers\":[{\"operation\":\"multiply_base\",\"value\":0.5},{\"operation\":\"multiply_base\",\"value\":0.5},{\"operation\":\"addition\",\"value\":1}]}"));
         var nestedJump = new ResourceLocation("bridge_test", "nested_jump");
         powers.put(nestedJump, power(nestedJump, "{\"type\":\"apoli:modify_jump\",\"modifier\":{\"operation\":\"addition\",\"value\":1,\"modifier\":[{\"operation\":\"multiply_total\",\"value\":1},{\"operation\":\"addition\",\"value\":2}]}}"));
+        var namedNestedJump = new ResourceLocation("bridge_test", "named_nested_jump");
+        powers.put(namedNestedJump, power(namedNestedJump, "{\"type\":\"origins:modify_jump\",\"modifier\":{\"name\":\"kept\",\"operation\":\"addition\",\"value\":1,\"modifier\":[{\"operation\":\"multiply_total\",\"value\":1}]}}"));
+        var yVelocity = new ResourceLocation("bridge_test", "y_velocity");
+        powers.put(yVelocity, power(yVelocity, "{\"type\":\"origins:modify_velocity\",\"axes\":[\"y\"],\"modifier\":{\"operation\":\"addition\",\"value\":1}}"));
+        var velocityTransfer = new ResourceLocation("bridge_test", "velocity_transfer");
+        powers.put(velocityTransfer, power(velocityTransfer, "{\"type\":\"origins:attribute_modify_transfer\",\"class\":\"modify_velocity\",\"attribute\":\"minecraft:generic.movement_speed\"}"));
         var cooldown = new ResourceLocation("bridge_test", "cooldown");
         powers.put(cooldown, power(cooldown, "{\"type\":\"origins:cooldown\",\"cooldown\":100}"));
         var slowAttribute = new ResourceLocation("bridge_test", "slow_attribute");
@@ -377,6 +383,33 @@ public final class LegacyRegressionTests {
                 try { eq(dev.overgrown.apoli.power.builtin.ModifyJumpHandler.modify(pig, 10f), 16); }
                 finally { holder.removePower(nestedJump, source); }
             });
+            suite.test("modifier engine: a named modifier keeps its single nested modifier", () -> {
+                holder.addPower(namedNestedJump, source);
+                // Nested: 1 doubled = 2; outer addition: 10 + 2.
+                try { eq(dev.overgrown.apoli.power.builtin.ModifyJumpHandler.modify(pig, 10f), 12); }
+                finally { holder.removePower(namedNestedJump, source); }
+            });
+            suite.test("attribute transfer: velocity transfers reach every axis, and a scope merges once", () -> {
+                var speed = pig.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED);
+                var modifier = new net.minecraft.world.entity.ai.attributes.AttributeModifier(UUID.randomUUID(), "bridge_test", 0.5,
+                    net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.MULTIPLY_TOTAL);
+                holder.addPower(yVelocity, source); holder.addPower(velocityTransfer, source);
+                speed.addTransientModifier(modifier);
+                try {
+                    // Y: (1 + 1) * 1.5 in one legacy pass; X and Z have no velocity modifiers and still take the transfer.
+                    var moved = dev.overgrown.apoli.power.builtin.ModifyVelocityHandler.modify(pig, new net.minecraft.world.phys.Vec3(1, 1, 1));
+                    eq(moved.x, 1.5); eq(moved.y, 3); eq(moved.z, 1.5);
+                    LegacyAttributeTransferPower.begin(pig, "modify_velocity");
+                    eq(LegacyAttributeTransferPower.afterPass(pig, 2), 3);
+                    eq(LegacyAttributeTransferPower.afterPass(pig, 2), 2);
+                    eq(LegacyAttributeTransferPower.end(2.0), 2);
+                } finally {
+                    LegacyAttributeTransferPower.clearScopes();
+                    speed.removeModifier(modifier); holder.removePower(yVelocity, source); holder.removePower(velocityTransfer, source);
+                }
+            });
+            suite.test("normalizer: enum fields of types redirected to the bridge accept legacy case", () ->
+                power("{\"type\":\"origins:modify_camera_submersion\",\"to\":\"WATER\"}"));
             suite.test("badges: toggle night vision shows the toggle badge", () -> {
                 var badges = dev.overgrown.origins.badge.BadgeManager.collectForSend(server).get(night);
                 check(badges != null && !badges.isEmpty() && badges.get(0) instanceof dev.overgrown.origins.badge.KeybindBadge keybind

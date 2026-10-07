@@ -46,13 +46,16 @@ public final class LegacySchema {
         }
     }
     private static boolean normalizeObject(JsonObject obj, Context context, String type) {
+        // Types redirected to the bridge namespace keep the legacy enum handling of their original spelling.
+        String originalType = type;
         boolean changed = adapt(obj, context, type);
         changed |= LegacyPowerNormalizer.normalizeNode(obj, context);
         type = string(obj, "type");
         String path = type == null ? "" : type.substring(type.indexOf(':') + 1);
         JsonObject fields = fields(context, path);
         boolean multiple = context == Context.POWER && path.equals("multiple");
-        boolean legacyType = type != null && (type.startsWith("origins:") || type.startsWith("apoli:"));
+        boolean legacyType = (type != null && (type.startsWith("origins:") || type.startsWith("apoli:")))
+            || (originalType != null && (originalType.startsWith("origins:") || originalType.startsWith("apoli:")));
         for (var entry : new ArrayList<>(obj.entrySet())) {
             String key = entry.getKey();
             JsonElement child = entry.getValue();

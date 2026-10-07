@@ -96,8 +96,11 @@ public final class LegacyModifierMath {
     /** The nested list carried in the marker name, or Overgrown's single nested modifier. */
     static List<AttributeModifier> nested(AttributeModifier modifier) {
         String name = modifier.name().orElse("");
-        if (name.length() > LegacySchema.LEGACY_MODIFIER.length() && name.startsWith(LegacySchema.LEGACY_MODIFIER))
-            return NESTED.computeIfAbsent(name, LegacyModifierMath::decodeNested);
+        if (name.length() > LegacySchema.LEGACY_MODIFIER.length() && name.startsWith(LegacySchema.LEGACY_MODIFIER)) {
+            List<AttributeModifier> carried = NESTED.computeIfAbsent(name, LegacyModifierMath::decodeNested);
+            // A named modifier with a single nested one keeps it in Overgrown's field; the payload only holds the name.
+            if (!carried.isEmpty()) return carried;
+        }
         return modifier.nested().map(List::of).orElse(List.of());
     }
 
@@ -135,6 +138,11 @@ public final class LegacyModifierMath {
 
     public static void beginDamage(@Nullable LivingEntity attacker, LivingEntity target, DamageSource source) {
         DAMAGE.get().push(new DamageScope(attacker, target, source, new boolean[1]));
+    }
+
+    /** Drops damage scopes left open by a handler that threw; called between ticks. */
+    public static void clearDamage() {
+        DAMAGE.get().clear();
     }
 
     /** Ends the damage scope; true when its transfers were already merged into a legacy pass. */

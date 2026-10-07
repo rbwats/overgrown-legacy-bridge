@@ -23,7 +23,13 @@ public abstract class PhantomSpawnerMixin {
         // The result is passed to nextInt, which rejects non-positive bounds.
         if (overgrownLegacyBridge$player == null) return original;
         org.overgrowns.migration.LegacyAttributeTransferPower.begin(overgrownLegacyBridge$player, "modify_insomnia_ticks");
-        int modified = LegacyInsomniaPower.modify(overgrownLegacyBridge$player, original);
+        int modified;
+        try {
+            modified = LegacyInsomniaPower.modify(overgrownLegacyBridge$player, original);
+        } catch (RuntimeException error) {
+            org.overgrowns.migration.LegacyAttributeTransferPower.close();
+            throw error;
+        }
         modified = (int) org.overgrowns.migration.LegacyAttributeTransferPower.end((double) modified);
         return Math.max(1, modified);
     }

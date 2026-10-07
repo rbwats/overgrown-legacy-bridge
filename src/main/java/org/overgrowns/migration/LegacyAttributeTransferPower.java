@@ -144,15 +144,35 @@ public final class LegacyAttributeTransferPower extends PowerType<LegacyAttribut
     }
 
     // Legacy merged transfers into the same pass as the class's own power modifiers. A scope spans one Overgrown
-    // handler call: a legacy pass inside it takes the transfers in; otherwise they apply to the handler's result.
+    // handler call: the first pass for the holder inside it takes the transfers in (later ones, such as a
+    // modify_resource self action, do not); otherwise they apply to the handler's result.
     private static final class Scope {
-        final Entity holder; final String modifyClass; boolean merged;
-        Scope(Entity holder, String modifyClass) { this.holder = holder; this.modifyClass = modifyClass; }
+        final Entity holder; final String modifyClass; final boolean everyPass; boolean merged;
+        Scope(Entity holder, String modifyClass, boolean everyPass) { this.holder = holder; this.modifyClass = modifyClass; this.everyPass = everyPass; }
+        boolean takes(@Nullable Entity entity) { return entity != null && holder == entity && (everyPass || !merged); }
     }
     private static final ThreadLocal<ArrayDeque<Scope>> SCOPES = ThreadLocal.withInitial(ArrayDeque::new);
 
     public static void begin(Entity holder, String modifyClass) {
-        SCOPES.get().push(new Scope(holder, modifyClass));
+        SCOPES.get().push(new Scope(holder, modifyClass, false));
+    }
+
+    /** A scope whose every pass is a separate legacy modify call, such as one per velocity axis. */
+    public static void beginEveryPass(Entity holder, String modifyClass) {
+        SCOPES.get().push(new Scope(holder, modifyClass, true));
+    }
+
+    /** Applies the current scope's transfers to a value the handler computes without a pass of its own. */
+    public static double applyScoped(double value) {
+        Scope scope = SCOPES.get().peek();
+        if (scope == null || scope.holder == null) return value;
+        scope.merged = true;
+        return apply(scope.holder, scope.modifyClass, value);
+    }
+
+    /** Drops scopes left open by a handler that threw; called between ticks, when none can be open. */
+    public static void clearScopes() {
+        SCOPES.get().clear();
     }
 
     /** Ends the innermost scope; transfers not merged into a pass are applied to the handler's result. */
@@ -175,7 +195,7 @@ public final class LegacyAttributeTransferPower extends PowerType<LegacyAttribut
     /** Transfer terms to merge into a pass computed for this holder within the current scope. */
     public static List<LegacyModifierEngine.Term> mergeTerms(@Nullable Entity holder) {
         Scope scope = SCOPES.get().peek();
-        if (scope == null || holder == null || scope.holder != holder) return List.of();
+        if (scope == null || !scope.takes(holder)) return List.of();
         scope.merged = true;
         return terms(holder, scope.modifyClass);
     }
@@ -183,7 +203,7 @@ public final class LegacyAttributeTransferPower extends PowerType<LegacyAttribut
     /** For a pass computed with Overgrown's math inside a scope: the transfers follow it, as before. */
     public static double afterPass(@Nullable Entity holder, double value) {
         Scope scope = SCOPES.get().peek();
-        if (scope == null || holder == null || scope.holder != holder) return value;
+        if (scope == null || !scope.takes(holder)) return value;
         scope.merged = true;
         return apply(holder, scope.modifyClass, value);
     }
