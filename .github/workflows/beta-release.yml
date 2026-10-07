@@ -8,6 +8,9 @@ on:
         default: v0.4.0-beta
   push:
     tags: ["v*-beta*"]
+    # Editing this file on beta requests a beta release; it holds the tag to create.
+    branches: [beta]
+    paths: [".github/release-beta.txt"]
 
 permissions:
   contents: write
@@ -15,10 +18,16 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      TAG: ${{ github.event.inputs.tag || github.ref_name }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Resolve release tag
+        run: |
+          if [ -n "${{ github.event.inputs.tag }}" ]; then tag="${{ github.event.inputs.tag }}"
+          elif [ "${{ github.ref_type }}" = "tag" ]; then tag="${{ github.ref_name }}"
+          else tag=$(head -n1 .github/release-beta.txt | tr -d '[:space:]'); fi
+          case "$tag" in v*-beta*) ;; *) echo "Refusing non-beta tag '$tag'"; exit 1;; esac
+          echo "TAG=$tag" >> "$GITHUB_ENV"
 
       - uses: actions/setup-java@v4
         with:
