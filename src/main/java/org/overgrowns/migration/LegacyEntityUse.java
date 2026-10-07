@@ -19,7 +19,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Legacy action_on_entity_use / action_on_being_used ran in priority buckets around vanilla's Player.interact:
+ * Legacy action_on_entity_use / action_on_being_used ran in priority buckets around vanilla's Player.interactOn:
  * positive buckets (highest first) before vanilla and able to cancel it, priority 0 before vanilla without
  * cancelling it (its result applied afterwards), and negative buckets only when vanilla passed.
  * Overgrown fires every action_on_use power before vanilla and cancels on the first result.
@@ -83,7 +83,7 @@ public final class LegacyEntityUse {
         return InteractionResult.PASS;
     }
 
-    /** Applied at the end of vanilla's Player.interact on the server. */
+    /** Applied at the end of vanilla's Player.interactOn on the server. */
     public static InteractionResult afterVanilla(Player actor, Entity target, InteractionHand hand, InteractionResult original) {
         Pending pending = PENDING.remove(actor.getUUID());
         if (pending == null || pending.time() != actor.level().getGameTime() || pending.target() != target.getId() || pending.hand() != hand)

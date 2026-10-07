@@ -298,7 +298,7 @@ public final class LegacyRegressionTests {
                     pig.setHealth(2);
                     check(dev.overgrown.apoli.power.builtin.ActionOnUseHandler.fire(fake, pig, net.minecraft.world.InteractionHand.MAIN_HAND) == net.minecraft.world.InteractionResult.PASS, "Priority 0 cancelled vanilla");
                     eq(pig.getHealth(), 3);
-                    check(fake.interact(pig, net.minecraft.world.InteractionHand.MAIN_HAND).consumesAction(), "Priority 0 result was not applied after vanilla");
+                    check(fake.interactOn(pig, net.minecraft.world.InteractionHand.MAIN_HAND).consumesAction(), "Priority 0 result was not applied after vanilla");
                     fakeHolder.addPower(useFirst, source);
                     check(dev.overgrown.apoli.power.builtin.ActionOnUseHandler.fire(fake, pig, net.minecraft.world.InteractionHand.MAIN_HAND) == net.minecraft.world.InteractionResult.CONSUME, "Priority 1 did not cancel vanilla");
                     eq(pig.getHealth(), 5);
