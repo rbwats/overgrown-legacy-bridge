@@ -14,15 +14,19 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Legacy attribute_modify_transfer: an attribute's current modifiers, scaled by a multiplier, join the value a
- * power class modifies. Legacy Apoli merged them with the class's own power modifiers in one pass; here they
- * apply to the value after Overgrown's handler, which is identical when the holder has no power of that class.
+ * power class modifies, computed with the legacy modifier engine. When the class's own modifiers are legacy they
+ * share one pass, as in legacy; next to Overgrown-native modifiers the transfers apply to the result.
  */
 public final class LegacyAttributeTransferPower extends PowerType<LegacyAttributeTransferPower.Config> {
     public static final ResourceLocation ID = new ResourceLocation(LegacyBridge.MOD_ID, "attribute_modify_transfer");
@@ -102,17 +106,12 @@ public final class LegacyAttributeTransferPower extends PowerType<LegacyAttribut
         return USED.contains(modifyClass);
     }
 
-    /** Applies the holder's transfers for a legacy class to a value; non-living holders have no attributes. */
+    /** Applies the holder's transfers for a legacy class to a value on their own; non-living holders have no attributes. */
     public static double apply(Entity holder, String modifyClass, double value) {
-        if (!(holder instanceof LivingEntity entity) || !USED.contains(modifyClass)) return value;
-        double[] result = {value};
-        PowerLookup.forEach(entity, ID, Config.class, cfg -> {
-            if (!cfg.modifyClass().equals(modifyClass)) return;
-            Attribute attribute = BuiltInRegistries.ATTRIBUTE.get(cfg.attribute());
-            AttributeInstance instance = attribute == null ? null : entity.getAttribute(attribute);
-            if (instance != null) result[0] = transfer(result[0], instance, cfg.multiplier());
-        });
-        return Double.isFinite(result[0]) ? result[0] : value;
+        List<LegacyModifierEngine.Term> terms = terms(holder, modifyClass);
+        if (terms.isEmpty()) return value;
+        double result = LegacyModifierMath.apply(value, terms);
+        return Double.isFinite(result) ? result : value;
     }
 
     public static float apply(Entity holder, String modifyClass, float value) {
@@ -123,16 +122,69 @@ public final class LegacyAttributeTransferPower extends PowerType<LegacyAttribut
         return apply(entity, "modify_air_speed", value);
     }
 
-    /** Vanilla attribute order: additions, then base multipliers, then total multipliers. */
-    private static double transfer(double base, AttributeInstance instance, double multiplier) {
-        double value = base;
-        for (AttributeModifier mod : instance.getModifiers())
-            if (mod.getOperation() == AttributeModifier.Operation.ADDITION) value += mod.getAmount() * multiplier;
-        double added = value;
-        for (AttributeModifier mod : instance.getModifiers())
-            if (mod.getOperation() == AttributeModifier.Operation.MULTIPLY_BASE) value += added * mod.getAmount() * multiplier;
-        for (AttributeModifier mod : instance.getModifiers())
-            if (mod.getOperation() == AttributeModifier.Operation.MULTIPLY_TOTAL) value *= 1.0 + mod.getAmount() * multiplier;
-        return value;
+    /** The transferred modifiers as legacy terms, converted as ModifierUtil.fromAttributeModifier did. */
+    public static List<LegacyModifierEngine.Term> terms(Entity holder, String modifyClass) {
+        if (!(holder instanceof LivingEntity entity) || !USED.contains(modifyClass)) return List.of();
+        List<LegacyModifierEngine.Term> terms = new ArrayList<>();
+        PowerLookup.forEach(entity, ID, Config.class, cfg -> {
+            if (!cfg.modifyClass().equals(modifyClass)) return;
+            Attribute attribute = BuiltInRegistries.ATTRIBUTE.get(cfg.attribute());
+            AttributeInstance instance = attribute == null ? null : entity.getAttribute(attribute);
+            if (instance == null) return;
+            for (AttributeModifier mod : instance.getModifiers()) {
+                LegacyModifierEngine.Op op = switch (mod.getOperation()) {
+                    case ADDITION -> LegacyModifierEngine.Op.ADD_BASE_EARLY;
+                    case MULTIPLY_BASE -> LegacyModifierEngine.Op.MULTIPLY_BASE_ADDITIVE;
+                    case MULTIPLY_TOTAL -> LegacyModifierEngine.Op.MULTIPLY_TOTAL_MULTIPLICATIVE;
+                };
+                terms.add(new LegacyModifierEngine.Term(op, mod.getAmount() * cfg.multiplier()));
+            }
+        });
+        return terms;
+    }
+
+    // Legacy merged transfers into the same pass as the class's own power modifiers. A scope spans one Overgrown
+    // handler call: a legacy pass inside it takes the transfers in; otherwise they apply to the handler's result.
+    private static final class Scope {
+        final Entity holder; final String modifyClass; boolean merged;
+        Scope(Entity holder, String modifyClass) { this.holder = holder; this.modifyClass = modifyClass; }
+    }
+    private static final ThreadLocal<ArrayDeque<Scope>> SCOPES = ThreadLocal.withInitial(ArrayDeque::new);
+
+    public static void begin(Entity holder, String modifyClass) {
+        SCOPES.get().push(new Scope(holder, modifyClass));
+    }
+
+    /** Ends the innermost scope; transfers not merged into a pass are applied to the handler's result. */
+    public static double end(double value) {
+        Scope scope = SCOPES.get().poll();
+        if (scope == null || scope.merged || scope.holder == null) return value;
+        return apply(scope.holder, scope.modifyClass, value);
+    }
+
+    /** Ends the innermost scope, reporting whether its transfers were merged into a pass. */
+    public static boolean close() {
+        Scope scope = SCOPES.get().poll();
+        return scope != null && scope.merged;
+    }
+
+    public static float end(float value) {
+        return (float) end((double) value);
+    }
+
+    /** Transfer terms to merge into a pass computed for this holder within the current scope. */
+    public static List<LegacyModifierEngine.Term> mergeTerms(@Nullable Entity holder) {
+        Scope scope = SCOPES.get().peek();
+        if (scope == null || holder == null || scope.holder != holder) return List.of();
+        scope.merged = true;
+        return terms(holder, scope.modifyClass);
+    }
+
+    /** For a pass computed with Overgrown's math inside a scope: the transfers follow it, as before. */
+    public static double afterPass(@Nullable Entity holder, double value) {
+        Scope scope = SCOPES.get().peek();
+        if (scope == null || holder == null || scope.holder != holder) return value;
+        scope.merged = true;
+        return apply(holder, scope.modifyClass, value);
     }
 }

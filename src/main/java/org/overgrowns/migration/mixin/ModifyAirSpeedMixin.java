@@ -11,8 +11,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 /** Legacy transfer modifiers joined the air speed modifiers; covers every return path, including "no powers". */
 @Mixin(value = ModifyAirSpeedPower.class, remap = false)
 public abstract class ModifyAirSpeedMixin {
+    @Inject(method = "modify", at = @At("HEAD"))
+    private static void overgrownLegacyBridge$begin(LivingEntity entity, float original, CallbackInfoReturnable<Float> cir) {
+        LegacyAttributeTransferPower.begin(entity, "modify_air_speed");
+    }
+
     @Inject(method = "modify", at = @At("RETURN"), cancellable = true)
     private static void overgrownLegacyBridge$transfer(LivingEntity entity, float original, CallbackInfoReturnable<Float> cir) {
-        cir.setReturnValue(LegacyAttributeTransferPower.modifyAirSpeed(entity, cir.getReturnValueF()));
+        cir.setReturnValue(LegacyAttributeTransferPower.end(cir.getReturnValueF()));
     }
 }

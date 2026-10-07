@@ -7,6 +7,7 @@ import dev.overgrown.apoli.power.PowerContainer;
 import dev.overgrown.apoli.power.PowerContainerImpl;
 import dev.overgrown.apoli.power.PowerResources;
 import dev.overgrown.apoli.power.PowerSources;
+import dev.overgrown.apoli.power.PowerType;
 import dev.overgrown.apoli.power.PowerTypeRegistry;
 import dev.overgrown.apoli.power.builtin.InventoryPower;
 import dev.overgrown.origins.component.PlayerOriginsAttachment;
@@ -17,6 +18,7 @@ import net.minecraft.nbt.ByteTag;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.IntTag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.LongTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -29,7 +31,8 @@ import java.util.Set;
 /**
  * Moves Origins 1.10.0 / Apoli 2.9.0 player data (Cardinal Components "origins:origin" and "apoli:powers")
  * onto Overgrown on the first join: chosen origins before Overgrown's join logic would prompt a new choice,
- * then power state once Overgrown has re-granted the origin powers. Until then the legacy tag is saved back.
+ * then power state (resources, cooldowns, toggles, inventories, timers) once Overgrown has re-granted the origin
+ * powers. Until then the legacy tag is saved back.
  */
 public final class LegacySaveMigration {
     private LegacySaveMigration() {}
@@ -40,6 +43,8 @@ public final class LegacySaveMigration {
     private static final ResourceLocation EMPTY_ORIGIN = new ResourceLocation("origins", "empty");
     private static final ResourceLocation TOGGLE = new ResourceLocation("apoli", "toggle");
     private static final ResourceLocation INVENTORY = new ResourceLocation("apoli", "inventory");
+    private static final ResourceLocation STACKING = new ResourceLocation("apoli", "stacking_status_effect");
+    private static final ResourceLocation ACTION_OVER_TIME = new ResourceLocation("apoli", "action_over_time");
 
     /** Implemented by ServerPlayer: the legacy components read from its save, until migrated. */
     public interface Holder {
@@ -147,7 +152,7 @@ public final class LegacySaveMigration {
             for (int i = 0; i < powers.size(); i++) {
                 CompoundTag entry = powers.getCompound(i);
                 ResourceLocation power = ResourceLocation.tryParse(entry.getString("Type"));
-                if (power != null && container.hasPower(power) && restore(container, power, entry.get("Data"))) restored++;
+                if (power != null && container.hasPower(power) && restore(container, power, entry.get("Data"), player.level().getGameTime())) restored++;
             }
             if (restored > 0) InventoryPower.syncAll(player);
             LegacyBridge.LOGGER.info("Migrated legacy power data of {}: {} power(s) restored", player.getName().getString(), restored);
@@ -156,22 +161,42 @@ public final class LegacySaveMigration {
     }
 
     /**
-     * Resource values, toggle states and power inventories carry over. Cooldowns stored a world time the
-     * new cooldowns do not use, so they start ready.
+     * Legacy per-power state onto Overgrown's storage. Cooldowns were stored as the world time of last use; the
+     * time left is carried over, since the world clock continues across the migration.
      */
-    static boolean restore(PowerContainerImpl container, ResourceLocation power, Tag data) {
+    static boolean restore(PowerContainerImpl container, ResourceLocation power, Tag data, long gameTime) {
         Power loaded = ApoliPowers.get(power);
         if (loaded == null || data == null) return false;
         ResourceLocation type = PowerTypeRegistry.resolveId(loaded.typeId());
-        if (data instanceof IntTag value) return PowerResources.write(container, power, value.getAsInt()).isPresent();
-        if (data instanceof ByteTag value && (TOGGLE.equals(type) || LegacyToggleNightVisionPower.ID.equals(type))) {
-            container.setAuxInt(power, value.getAsByte() > 0 ? 1 : 0);
-            return true;
+        PowerType<?> powerType = PowerTypeRegistry.get(loaded.typeId());
+        boolean cooldown = powerType != null && powerType.isCooldown();
+        if (data instanceof LongTag lastUse && cooldown) return restoreCooldown(container, power, lastUse.getAsLong(), gameTime);
+        if (data instanceof IntTag value) {
+            if (STACKING.equals(type)) { container.setAuxInt(power, value.getAsInt()); return true; }
+            return PowerResources.write(container, power, value.getAsInt()).isPresent();
         }
-        if (data instanceof CompoundTag value && INVENTORY.equals(type) && value.contains("Items", Tag.TAG_LIST)) {
-            container.setAuxNbt(power, value.copy());
-            return true;
+        if (data instanceof ByteTag value) {
+            boolean on = value.getAsByte() > 0;
+            if (TOGGLE.equals(type) || LegacyToggleNightVisionPower.ID.equals(type)) { container.setAuxInt(power, on ? 1 : 0); return true; }
+            // Overgrown marks an active action_over_time with a non-zero activation stamp; 1 is long past any onset.
+            if (ACTION_OVER_TIME.equals(type)) { if (on) container.setAuxInt(power, 1); else container.removeAux(power); return true; }
+            return false;
+        }
+        if (data instanceof CompoundTag value) {
+            if (INVENTORY.equals(type) && value.contains("Items", Tag.TAG_LIST)) { container.setAuxNbt(power, value.copy()); return true; }
+            if (LegacyDamageOverTimePower.ID.equals(type) && value.contains("InDamage", Tag.TAG_INT)) {
+                LegacyDamageOverTimePower.restore(container, power, value.getInt("InDamage"), value.getInt("OutDamage"));
+                return true;
+            }
+            // fire_projectile kept its cooldown with the burst state, which is not resumed mid-burst.
+            if (cooldown && value.contains("LastUseTime", Tag.TAG_LONG)) return restoreCooldown(container, power, value.getLong("LastUseTime"), gameTime);
         }
         return false;
+    }
+
+    static boolean restoreCooldown(PowerContainerImpl container, ResourceLocation power, long lastUse, long gameTime) {
+        int duration = PowerResources.bound(container, power, true).orElse(0);
+        int remaining = (int) Math.max(0, Math.min(duration, lastUse + duration - gameTime));
+        return PowerResources.write(container, power, remaining).isPresent();
     }
 }

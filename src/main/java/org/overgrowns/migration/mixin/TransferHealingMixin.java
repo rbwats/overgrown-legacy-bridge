@@ -11,8 +11,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 /** Legacy attribute_modify_transfer with class modify_healing. */
 @Mixin(value = ModifyHealingHandler.class, remap = false)
 public abstract class TransferHealingMixin {
+    @Inject(method = "modify", at = @At("HEAD"))
+    private static void overgrownLegacyBridge$begin(LivingEntity entity, float original, CallbackInfoReturnable<Float> cir) {
+        LegacyAttributeTransferPower.begin(entity, "modify_healing");
+    }
+
     @Inject(method = "modify", at = @At("RETURN"), cancellable = true)
     private static void overgrownLegacyBridge$transfer(LivingEntity entity, float original, CallbackInfoReturnable<Float> cir) {
-        cir.setReturnValue(Math.max(0f, LegacyAttributeTransferPower.apply(entity, "modify_healing", cir.getReturnValueF())));
+        cir.setReturnValue(Math.max(0f, LegacyAttributeTransferPower.end(cir.getReturnValueF())));
     }
 }

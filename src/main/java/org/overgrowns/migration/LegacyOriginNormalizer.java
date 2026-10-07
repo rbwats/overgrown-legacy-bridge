@@ -68,6 +68,26 @@ public final class LegacyOriginNormalizer {
         for (JsonElement entry : root.getAsJsonArray("origins"))
             if (entry.isJsonObject()) LegacySchema.normalize(entry.getAsJsonObject().get("condition"), LegacySchema.Context.ENTITY_CONDITION);
     }
+    /**
+     * Origins 1.10.0 gave a layer without "order" the number of layers created before it. Layers were created
+     * iterating a HashMap of layer ids filled in resource listing order (file path, then namespace), so that
+     * order is reproduced here; layers that share an order still sort in HashMap order on Overgrown too.
+     */
+    public static java.util.Map<net.minecraft.resources.ResourceLocation, Integer> legacyLayerIndices(
+            java.util.Collection<net.minecraft.resources.ResourceLocation> ids) {
+        java.util.List<net.minecraft.resources.ResourceLocation> listed = new java.util.ArrayList<>(ids);
+        listed.sort(java.util.Comparator.comparing((net.minecraft.resources.ResourceLocation id) -> id.getPath() + ".json")
+            .thenComparing(net.minecraft.resources.ResourceLocation::getNamespace));
+        java.util.Map<net.minecraft.resources.ResourceLocation, Boolean> legacy = new java.util.HashMap<>();
+        for (var id : listed) legacy.put(id, true);
+        java.util.Map<net.minecraft.resources.ResourceLocation, Integer> indices = new java.util.HashMap<>();
+        for (var id : legacy.keySet()) indices.put(id, indices.size());
+        return indices;
+    }
+    /** Fills the legacy default order of a merged layer that names none. */
+    public static void defaultLayerOrder(JsonObject merged, Integer legacyIndex) {
+        if (legacyIndex != null && !merged.has("order")) merged.addProperty("order", legacyIndex);
+    }
     /** Legacy loading_priority of a layer, power or origin file; malformed values count as the default 0. */
     public static int loadingPriority(JsonElement json) {
         if (json == null || !json.isJsonObject()) return 0;

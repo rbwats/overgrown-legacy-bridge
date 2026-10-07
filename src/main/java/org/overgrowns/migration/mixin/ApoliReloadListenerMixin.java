@@ -18,9 +18,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Map;
 
+/**
+ * remap = false: these are Overgrown's classes. Selectors that spell a Minecraft type, or name an override of a
+ * Minecraft method, list both the development (Mojang) and the production (intermediary) form.
+ */
 @Mixin(value = ApoliReloadListener.class, remap = false)
 public abstract class ApoliReloadListenerMixin {
-    @Inject(method = "apply", at = @At("HEAD"))
+    @Inject(method = {
+        "apply(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V",
+        "method_18788(Ljava/util/Map;Lnet/minecraft/class_3300;Lnet/minecraft/class_3695;)V"}, at = @At("HEAD"))
     private void overgrownLegacyBridge$normalize(Map<ResourceLocation, JsonElement> data,
             ResourceManager manager, ProfilerFiller profiler, CallbackInfo ci) {
         LegacyLoadingPriority.select(data, manager, "powers");
@@ -30,7 +36,9 @@ public abstract class ApoliReloadListenerMixin {
     }
 
     /** Every top-level power and expanded sub-power passes through here with its final id before parsing. */
-    @Inject(method = "prepare(Lcom/mojang/serialization/Dynamic;Lnet/minecraft/resources/ResourceLocation;)Lcom/mojang/serialization/Dynamic;", at = @At("HEAD"))
+    @Inject(method = {
+        "prepare(Lcom/mojang/serialization/Dynamic;Lnet/minecraft/resources/ResourceLocation;)Lcom/mojang/serialization/Dynamic;",
+        "prepare(Lcom/mojang/serialization/Dynamic;Lnet/minecraft/class_2960;)Lcom/mojang/serialization/Dynamic;"}, at = @At("HEAD"))
     private static void overgrownLegacyBridge$recordLegacyFields(Dynamic<?> power, ResourceLocation id, CallbackInfoReturnable<Dynamic<?>> cir) {
         if (!(power.getValue() instanceof JsonElement json)) return;
         LegacyTickRates.record(id, json);

@@ -42,7 +42,11 @@
     "TransferBreakSpeedMixin",
     "TransferVelocityMixin",
     "TransferStatusEffectMixin",
-    "TransferProjectileDamageMixin"
+    "TransferProjectileDamageMixin",
+    "ToggleNightVisionBadgeMixin",
+    "LegacyModifierHelperMixin",
+    "LegacyModifierMixin",
+    "LegacyFoodModifierMixin"
   ],
   "client": [
     "GuiMixin",

@@ -46,6 +46,42 @@ jobs:
       - name: Compatibility suite (isolated loopback test server)
         run: ./gradlew verifyCompatibility --no-daemon
 
+      # The Gradle run uses Mojang names throughout. Released jars run with intermediary names, so mixin
+      # selectors that only match in development would pass above and crash players. This boots the built
+      # jar with the Overgrown jars on a real Fabric server and runs the same suite there.
+      - name: Compatibility suite (production-mapped server)
+        run: |
+          set -euo pipefail
+          prop() { grep "^$1=" gradle.properties | cut -d= -f2; }
+          version=$(prop mod_version); mc=$(prop minecraft_version); loader=$(prop loader_version); fapi=$(prop fabric_api_version)
+          installer=$(curl -fsSL https://meta.fabricmc.net/v2/versions/installer | python3 -c "import json,sys; print(next(v['version'] for v in json.load(sys.stdin) if v['stable']))")
+          run=build/production-run
+          rm -rf "$run"; mkdir -p "$run/mods" "$run/tests"
+          curl -fsSL -o "$run/server.jar" "https://meta.fabricmc.net/v2/versions/loader/$mc/$loader/$installer/server/jar"
+          curl -fsSL -o "$run/mods/fabric-api.jar" "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/$fapi/fabric-api-$fapi.jar"
+          cp libs/apoli.jar libs/origins.jar "build/libs/overgrown-legacy-bridge-$version.jar" "$run/mods/"
+          # Shows which reload-listener method names the published jars use (development name vs intermediary).
+          unzip -p libs/origins.jar dev/overgrown/origins/origin/OriginLoader.class > "$run/OriginLoader.class"
+          javap -p "$run/OriginLoader.class" | grep -E " (apply|method_18788)\(" || true
+          cp tests/upstream-codec-corpus.json "$run/tests/"
+          printf 'eula=true\n' > "$run/eula.txt"
+          printf 'server-ip=127.0.0.1\nserver-port=25580\nonline-mode=false\nlevel-name=world\nview-distance=2\nsimulation-distance=2\nmax-tick-time=-1\n' > "$run/server.properties"
+          (cd "$run" && timeout 900 java -Xmx2G -Dovergrown_legacy_bridge.testCorpus=tests/upstream-codec-corpus.json -jar server.jar nogui < /dev/null > server.log 2>&1) || echo "Server exited with status $?"
+          grep -E "COMPATIBILITY|BEHAVIORAL|REGRESSION|Mixin|mixin|Exception|Crash" "$run/server.log" | grep -v "Loaded .* mixin" | head -80 || true
+          python3 - <<'PY'
+          import json, os, sys
+          base = "build/production-run/tests"
+          missing = [f for f in ("codec-results.json", "regression-results.json") if not os.path.exists(os.path.join(base, f))]
+          if missing:
+              sys.exit(f"Production server produced no {missing}; see the log above (a mixin that fails to apply crashes startup).")
+          codecs = [r for r in json.load(open(os.path.join(base, "codec-results.json"))) if not r.get("full")]
+          regressions = json.load(open(os.path.join(base, "regression-results.json")))
+          failed = [r["name"] for r in codecs if not r["passed"]] + [f"{r['name']}: {r.get('error')}" for r in regressions if not r["passed"]]
+          print(f"production: codec {sum(r['passed'] for r in codecs)}/{len(codecs)}, regressions {sum(r['passed'] for r in regressions)}/{len(regressions)}")
+          if failed:
+              sys.exit("Production failures: " + "; ".join(failed))
+          PY
+
       - name: Summarize test results
         if: always()
         run: |
@@ -101,6 +137,8 @@ jobs:
           path: |
             build/release/assets/
             tests/*.json
+            build/production-run/tests/*-results.json
+            build/production-run/server.log
 
       - name: Publish pre-release
         uses: softprops/action-gh-release@v2

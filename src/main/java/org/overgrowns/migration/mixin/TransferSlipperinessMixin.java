@@ -12,8 +12,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 /** Legacy attribute_modify_transfer with class modify_slipperiness. */
 @Mixin(value = ModifySlipperinessHandler.class, remap = false)
 public abstract class TransferSlipperinessMixin {
+    @Inject(method = "modify", at = @At("HEAD"))
+    private static void overgrownLegacyBridge$begin(LivingEntity entity, BlockPos affectingPos, float original, CallbackInfoReturnable<Float> cir) {
+        LegacyAttributeTransferPower.begin(entity, "modify_slipperiness");
+    }
+
     @Inject(method = "modify", at = @At("RETURN"), cancellable = true)
     private static void overgrownLegacyBridge$transfer(LivingEntity entity, BlockPos affectingPos, float original, CallbackInfoReturnable<Float> cir) {
-        cir.setReturnValue(LegacyAttributeTransferPower.apply(entity, "modify_slipperiness", cir.getReturnValueF()));
+        cir.setReturnValue(LegacyAttributeTransferPower.end(cir.getReturnValueF()));
     }
 }

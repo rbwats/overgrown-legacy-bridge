@@ -17,14 +17,16 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Legacy conditioned_attribute and conditioned_restrict_armor re-checked their condition every tick_rate ticks.
- * Overgrown's codecs drop the field, so the rate is recorded per loaded power id while powers are parsed.
+ * Legacy attribute and armor timing, recorded per loaded power id while powers are parsed: conditioned_attribute
+ * and conditioned_restrict_armor re-checked their condition every tick_rate ticks (Overgrown's codecs drop the
+ * field), and plain origins:attribute never checked its condition at all.
  */
 public final class LegacyTickRates {
     private LegacyTickRates() {}
 
     private static final Map<ResourceLocation, Integer> ATTRIBUTE = new ConcurrentHashMap<>();
     private static final Map<ResourceLocation, Integer> ARMOR = new ConcurrentHashMap<>();
+    private static final java.util.Set<ResourceLocation> UNCONDITIONAL = ConcurrentHashMap.newKeySet();
     private static final EquipmentSlot[] ARMOR_SLOTS = {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET};
     /** Overgrown already sweeps restricted armor this often; only faster legacy rates need an extra sweep. */
     private static final int OVERGROWN_ARMOR_SWEEP = 20;
@@ -32,6 +34,7 @@ public final class LegacyTickRates {
     public static void clear() {
         ATTRIBUTE.clear();
         ARMOR.clear();
+        UNCONDITIONAL.clear();
     }
 
     /** Records the legacy rate of one power as Overgrown is about to parse it; sub-powers arrive with their own ids. */
@@ -43,6 +46,8 @@ public final class LegacyTickRates {
         switch (type) {
             case "origins:conditioned_attribute", "apoli:conditioned_attribute" -> ATTRIBUTE.put(id, rate(power, 20));
             case "origins:conditioned_restrict_armor", "apoli:conditioned_restrict_armor" -> ARMOR.put(id, rate(power, 80));
+            // Only the origins: spelling: Overgrown's own packs use apoli:attribute with working conditions.
+            case "origins:attribute" -> UNCONDITIONAL.add(id);
             default -> { }
         }
     }
@@ -58,6 +63,11 @@ public final class LegacyTickRates {
     public static boolean attributeTicks(ResourceLocation powerId, LivingEntity owner) {
         Integer rate = ATTRIBUTE.get(powerId);
         return rate == null || rate <= 1 || owner == null || owner.tickCount % rate == 0;
+    }
+
+    /** Legacy AttributePower applied its modifiers on grant and ignored the power's condition. */
+    public static boolean ignoresCondition(ResourceLocation powerId) {
+        return UNCONDITIONAL.contains(powerId);
     }
 
     public static void sweepArmor(MinecraftServer server) {

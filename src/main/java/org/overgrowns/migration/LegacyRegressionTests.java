@@ -85,6 +85,14 @@ public final class LegacyRegressionTests {
         powers.put(useZero, power(useZero, "{\"type\":\"origins:action_on_entity_use\",\"bientity_action\":{\"type\":\"origins:target_action\",\"action\":{\"type\":\"origins:heal\",\"amount\":1}}}"));
         var useFirst = new ResourceLocation("bridge_test", "use_first");
         powers.put(useFirst, power(useFirst, "{\"type\":\"origins:action_on_entity_use\",\"priority\":1,\"action_result\":\"consume\",\"bientity_action\":{\"type\":\"origins:target_action\",\"action\":{\"type\":\"origins:heal\",\"amount\":2}}}"));
+        var unconditional = new ResourceLocation("bridge_test", "unconditional_attribute");
+        powers.put(unconditional, power(unconditional, "{\"type\":\"origins:attribute\",\"condition\":{\"type\":\"origins:constant\",\"value\":false},\"modifier\":{\"attribute\":\"minecraft:generic.armor\",\"operation\":\"addition\",\"value\":3}}"));
+        var legacyJump = new ResourceLocation("bridge_test", "legacy_jump");
+        powers.put(legacyJump, power(legacyJump, "{\"type\":\"origins:modify_jump\",\"modifiers\":[{\"operation\":\"multiply_base\",\"value\":0.5},{\"operation\":\"multiply_base\",\"value\":0.5},{\"operation\":\"addition\",\"value\":1}]}"));
+        var nestedJump = new ResourceLocation("bridge_test", "nested_jump");
+        powers.put(nestedJump, power(nestedJump, "{\"type\":\"apoli:modify_jump\",\"modifier\":{\"operation\":\"addition\",\"value\":1,\"modifier\":[{\"operation\":\"multiply_total\",\"value\":1},{\"operation\":\"addition\",\"value\":2}]}}"));
+        var cooldown = new ResourceLocation("bridge_test", "cooldown");
+        powers.put(cooldown, power(cooldown, "{\"type\":\"origins:cooldown\",\"cooldown\":100}"));
         var slowAttribute = new ResourceLocation("bridge_test", "slow_attribute");
         powers.put(slowAttribute, power(slowAttribute, "{\"type\":\"origins:conditioned_attribute\",\"tick_rate\":5,\"modifier\":{\"attribute\":\"minecraft:generic.armor\",\"operation\":\"addition\",\"value\":1}}"));
         ApoliPowers.replaceAll(powers);
@@ -94,8 +102,13 @@ public final class LegacyRegressionTests {
                 eq(LegacyInsomniaPower.modify(pig, 100), 220); eq(holder.getAuxIntOr(resource, -1), 10);
                 holder.suppressPower(insomnia2, source); eq(LegacyInsomniaPower.modify(pig, 100), 110); holder.unsuppressPower(insomnia2, source);
             });
-            suite.test("lava: modifier arithmetic and native travel injection", () -> {
-                eq(LegacyLavaSpeedPower.modify(pig, 0.5), 0.7);
+            suite.test("lava: 10-tick condition updates, modifier arithmetic and native travel injection", () -> {
+                eq(LegacyLavaSpeedPower.modify(pig, 0.5), 0.5);
+                var lavaType = new LegacyLavaSpeedPower(); var lavaCfg = (LegacyLavaSpeedPower.Config) powers.get(lava).config();
+                int savedTick = pig.tickCount;
+                pig.tickCount = 11; lavaType.tick(lava, lavaCfg, holder); eq(LegacyLavaSpeedPower.modify(pig, 0.5), 0.5);
+                pig.tickCount = 20; lavaType.tick(lava, lavaCfg, holder); eq(LegacyLavaSpeedPower.modify(pig, 0.5), 0.7);
+                pig.tickCount = savedTick;
                 pig.travel(net.minecraft.world.phys.Vec3.ZERO);
                 holder.suppressPower(lava, source); eq(LegacyLavaSpeedPower.modify(pig, 0.5), 0.5); holder.unsuppressPower(lava, source);
             });
@@ -254,10 +267,11 @@ public final class LegacyRegressionTests {
                 check(missing.error().isPresent(), "A class legacy Apoli could not resolve was accepted");
             });
             suite.test("mixin targets: server-side injections apply", () -> {
-                for (String name : List.of("net.minecraft.world.inventory.GrindstoneMenu", "net.minecraft.world.inventory.GrindstoneMenu$2",
-                        "net.minecraft.world.inventory.GrindstoneMenu$3", "net.minecraft.world.inventory.GrindstoneMenu$4",
-                        "net.minecraft.server.PlayerAdvancements", "net.minecraft.world.entity.ExperienceOrb",
-                        "dev.overgrown.apoli.power.builtin.ActionOnUseHandler", "dev.overgrown.apoli.power.builtin.AttributePower"))
+                // Built from class literals so the names are right in both development and production mappings.
+                String grindstone = net.minecraft.world.inventory.GrindstoneMenu.class.getName();
+                for (String name : List.of(grindstone + "$2", grindstone + "$3", grindstone + "$4",
+                        net.minecraft.server.PlayerAdvancements.class.getName(), ExperienceOrb.class.getName(),
+                        dev.overgrown.apoli.power.builtin.ActionOnUseHandler.class.getName(), dev.overgrown.apoli.power.builtin.AttributePower.class.getName()))
                     Class.forName(name, true, LegacyRegressionTests.class.getClassLoader());
             });
             suite.test("tick_rate: conditioned_attribute re-checks every tick_rate ticks", () -> {
@@ -335,6 +349,66 @@ public final class LegacyRegressionTests {
                     fakeHolder.clear();
                 }
             });
+            suite.test("origins:attribute: applies regardless of its condition, as legacy did", () -> {
+                var armor = pig.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ARMOR);
+                double before = armor.getValue();
+                check(LegacyTickRates.ignoresCondition(unconditional), "origins:attribute was not recorded");
+                holder.addPower(unconditional, source);
+                try { eq(armor.getValue(), before + 3); }
+                finally { holder.removePower(unconditional, source); }
+                eq(armor.getValue(), before);
+            });
+            suite.test("modifier engine: legacy lists use grouped legacy math and merge transfers", () -> {
+                holder.addPower(legacyJump, source);
+                var speed = pig.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED);
+                var modifier = new net.minecraft.world.entity.ai.attributes.AttributeModifier(UUID.randomUUID(), "bridge_test", 0.5,
+                    net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.MULTIPLY_BASE);
+                try {
+                    // Legacy: 10 + 1 = 11, then + 10 * (0.5 + 0.5); Overgrown would compound to 24.75.
+                    eq(dev.overgrown.apoli.power.builtin.ModifyJumpHandler.modify(pig, 10f), 21);
+                    // The jump transfer (multiplier 2) joins the same multiply_base group: 11 + 10 * 2.
+                    speed.addTransientModifier(modifier);
+                    eq(dev.overgrown.apoli.power.builtin.ModifyJumpHandler.modify(pig, 10f), 31);
+                } finally { speed.removeModifier(modifier); holder.removePower(legacyJump, source); }
+            });
+            suite.test("modifier engine: multi-element nested modifier lists apply as a group", () -> {
+                holder.addPower(nestedJump, source);
+                // Nested: 1 + 2 = 3, times 2 = 6; outer addition: 10 + 6.
+                try { eq(dev.overgrown.apoli.power.builtin.ModifyJumpHandler.modify(pig, 10f), 16); }
+                finally { holder.removePower(nestedJump, source); }
+            });
+            suite.test("badges: toggle night vision shows the toggle badge", () -> {
+                var badges = dev.overgrown.origins.badge.BadgeManager.collectForSend(server).get(night);
+                check(badges != null && !badges.isEmpty() && badges.get(0) instanceof dev.overgrown.origins.badge.KeybindBadge keybind
+                    && keybind.text().equals("origins.gui.badge.toggle"), "Badges were " + badges);
+            });
+            suite.test("layers: missing order reproduces the legacy load index", () -> {
+                var ids = List.of(new ResourceLocation("origins", "origin"), new ResourceLocation("mypack", "class"), new ResourceLocation("other", "race"));
+                var indices = LegacyOriginNormalizer.legacyLayerIndices(ids);
+                check(new TreeSet<>(indices.values()).equals(new TreeSet<>(List.of(0, 1, 2))), "Indices " + indices);
+                var layer = json("{\"origins\":[]}"); LegacyOriginNormalizer.defaultLayerOrder(layer, indices.get(ids.get(1)));
+                eq(layer.get("order").getAsInt(), indices.get(ids.get(1)));
+                var ordered = json("{\"order\":7}"); LegacyOriginNormalizer.defaultLayerOrder(ordered, 3); eq(ordered.get("order").getAsInt(), 7);
+            });
+            suite.test("save migration: cooldowns resume and damage-over-time timers carry over", () -> {
+                var save = new net.minecraft.nbt.CompoundTag();
+                var components = new net.minecraft.nbt.CompoundTag(); var powerTag = new net.minecraft.nbt.CompoundTag(); var list = new net.minecraft.nbt.ListTag();
+                var command = new net.minecraft.nbt.ListTag(); command.add(net.minecraft.nbt.StringTag.valueOf("apoli:command"));
+                var cd = new net.minecraft.nbt.CompoundTag(); cd.putString("Type", cooldown.toString()); cd.put("Sources", command.copy());
+                cd.put("Data", net.minecraft.nbt.LongTag.valueOf(level.getGameTime() - 40)); list.add(cd);
+                var timer = new net.minecraft.nbt.CompoundTag(); timer.putString("Type", dot.toString()); timer.put("Sources", command.copy());
+                var timerData = new net.minecraft.nbt.CompoundTag(); timerData.putInt("InDamage", 5); timerData.putInt("OutDamage", 3); timer.put("Data", timerData); list.add(timer);
+                powerTag.put("Powers", list); components.put("apoli:powers", powerTag); save.put(LegacySaveMigration.COMPONENTS, components);
+                var holderView = (LegacySaveMigration.Holder) fake;
+                holderView.overgrownLegacyBridge$setLegacyComponents(LegacySaveMigration.capture(save));
+                try {
+                    LegacySaveMigration.restoreOrigins(fake);
+                    LegacySaveMigration.restorePowerData(fake);
+                    eq(PowerResources.read(fakeHolder, cooldown).orElseThrow(), 60);
+                    var timers = fakeHolder.getAuxInts(dot);
+                    check(timers != null && timers[0] == 5 && timers[1] == 3, "Timers " + java.util.Arrays.toString(timers));
+                } finally { holderView.overgrownLegacyBridge$setLegacyComponents(null); fakeHolder.clear(); }
+            });
             suite.test("origin upgrades: legacy upgrades fire on advancement completion", () -> {
                 var state = dev.overgrown.origins.component.PlayerOriginsAttachment.getOrCreate(fake);
                 var layer = new ResourceLocation("origins", "origin");
@@ -379,6 +453,8 @@ public final class LegacyRegressionTests {
                 eq(dispatcher.execute("power sources " + target + " bridge_test:resource", stack), 2);
                 dispatcher.execute("power revoke " + target + " bridge_test:resource", stack);
                 check(holder.hasPower(resource) && !holder.sourcesOf(resource).contains(LegacyPowerCommands.COMMAND_SOURCE), "Revoke removed more than the command grant");
+                eq(dispatcher.execute("power revoke " + target + " bridge_test:resource", stack), 0);
+                check(holder.hasPower(resource), "Revoke without a command grant removed the power");
                 check(dispatcher.execute("power list " + target, stack) > 0, "List found no powers");
                 check(dispatcher.execute("power clear " + target, stack) > 0 && holder.isEmpty(), "Clear left powers behind");
             });

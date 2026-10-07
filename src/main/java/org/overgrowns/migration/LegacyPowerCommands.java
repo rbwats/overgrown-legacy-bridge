@@ -91,9 +91,9 @@ public final class LegacyPowerCommands {
     }
 
     /**
-     * Revoke without a source. Legacy removed only the {@code apoli:command} grant; Overgrown removes the power
-     * from every source. A power held from apoli:command and another source loses only the command grant;
-     * otherwise the native behavior applies, so Overgrown packs keep working.
+     * Revoke without a source, as legacy: only the {@code apoli:command} grant is removed, so powers from origins
+     * or actions stay. Grants made by Overgrown's own source-less command (source = the power ID) count as
+     * command grants too. Overgrown alone removed the power from every source.
      */
     public static int revokeDefault(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
         ResourceLocation power = ResourceLocationArgument.getId(context, "power");
@@ -101,15 +101,15 @@ public final class LegacyPowerCommands {
         for (Entity entity : EntityArgument.getEntities(context, "targets")) {
             PowerContainer container = PowerContainer.of(entity);
             if (container == null || !container.hasPower(power)) continue;
-            Set<ResourceLocation> sources = container.sourcesOf(power);
-            boolean removed = sources.contains(COMMAND_SOURCE) && sources.size() > 1
-                ? container.removePower(power, COMMAND_SOURCE)
-                : container.removePowerCompletely(power);
+            // Legacy removed only the command grant; Overgrown's own source-less grant used the power ID as source.
+            boolean removed = false;
+            for (ResourceLocation source : List.of(COMMAND_SOURCE, power))
+                if (container.sourcesOf(power).contains(source)) removed |= container.removePower(power, source);
             if (removed) affected++;
         }
         final int count = affected;
         if (count == 0) {
-            context.getSource().sendFailure(Component.literal("No target had " + power + "."));
+            context.getSource().sendFailure(Component.literal("No target had " + power + " from source " + COMMAND_SOURCE + "."));
             return 0;
         }
         context.getSource().sendSuccess(() -> Component.literal("Revoked " + power + " from " + count + " target(s)."), true);

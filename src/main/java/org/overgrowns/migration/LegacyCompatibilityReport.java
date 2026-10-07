@@ -32,8 +32,6 @@ public final class LegacyCompatibilityReport {
             };
             if (registered == null) issue(issues, id, location, ctx, name,
                 "Unknown factory in this context. Install a compatible provider or port it; the bridge does not substitute a dummy.");
-            for (String field : List.of("modifier", "modifiers", "food_modifier", "food_modifiers", "saturation_modifier", "saturation_modifiers"))
-                inspectModifiers(node.get(field), issues, id, location + "." + field, ctx, name);
         }));
         issueCount = issues.size();
         JsonObject report = new JsonObject(); report.addProperty("scope", "Normalized JSON factory checks; not a gameplay certification. Optional load conditions may intentionally disable reported entries.");
@@ -41,16 +39,6 @@ public final class LegacyCompatibilityReport {
         try { Files.createDirectories(path().getParent()); Files.writeString(path(), new GsonBuilder().setPrettyPrinting().create().toJson(report)); }
         catch (Exception error) { LegacyBridge.LOGGER.warn("Could not write compatibility report", error); }
         if (!issues.isEmpty()) LegacyBridge.LOGGER.warn("Legacy compatibility found {} diagnostic candidate(s); see {}", issues.size(), path());
-    }
-    private static void inspectModifiers(JsonElement node, JsonArray issues, ResourceLocation id, String path, LegacySchema.Context ctx, String type) {
-        if (node == null) return;
-        if (node.isJsonArray()) { int n=0; for (var item : node.getAsJsonArray()) inspectModifiers(item, issues, id, path + "[" + n++ + "]", ctx, type); }
-        else if (node.isJsonObject()) {
-            JsonElement inner = node.getAsJsonObject().get("modifier");
-            if (inner != null && inner.isJsonArray() && inner.getAsJsonArray().size() > 1)
-                issue(issues, id, path + ".modifier", ctx, type, "Multiple nested value modifiers need porting: Overgrown stores one nested modifier. This bridge only unwraps singleton lists.");
-            inspectModifiers(inner, issues, id, path + ".modifier", ctx, type);
-        }
     }
     private static void issue(JsonArray into, ResourceLocation id, String path, LegacySchema.Context ctx, String type, String message) {
         JsonObject row = new JsonObject(); row.addProperty("power", id.toString()); row.addProperty("path", path);

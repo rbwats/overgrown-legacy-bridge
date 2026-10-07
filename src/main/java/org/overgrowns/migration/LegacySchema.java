@@ -36,6 +36,16 @@ public final class LegacySchema {
         if (!node.isJsonObject()) return false;
         JsonObject obj = node.getAsJsonObject();
         String type = string(obj, "type");
+        boolean outerLegacyMath = LEGACY_MATH.get();
+        // Modifiers of origins:-typed powers use the legacy modifier engine; apoli: is shared with Overgrown packs.
+        if (context == Context.POWER && type != null && type.startsWith("origins:")) LEGACY_MATH.set(true);
+        try {
+            return normalizeObject(obj, context, type);
+        } finally {
+            LEGACY_MATH.set(outerLegacyMath);
+        }
+    }
+    private static boolean normalizeObject(JsonObject obj, Context context, String type) {
         boolean changed = adapt(obj, context, type);
         changed |= LegacyPowerNormalizer.normalizeNode(obj, context);
         type = string(obj, "type");
@@ -296,7 +306,32 @@ public final class LegacySchema {
         if (nested != null && nested.isJsonArray() && nested.getAsJsonArray().size() == 1) {
             mod.add("modifier", nested.getAsJsonArray().get(0)); changed = true;
         }
+        nested = mod.get("modifier");
+        if (nested != null && nested.isJsonArray() && nested.getAsJsonArray().size() > 1) {
+            // Overgrown stores one nested modifier; a legacy list travels in the marker name instead.
+            boolean outer = LEGACY_MATH.get();
+            LEGACY_MATH.set(true);
+            try { normalizeModifiers(nested); } finally { LEGACY_MATH.set(outer); }
+            markLegacy(mod, nested.getAsJsonArray());
+            mod.remove("modifier");
+            return true;
+        }
+        if (LEGACY_MATH.get()) changed |= markLegacy(mod, null);
         return normalizeModifiers(mod.get("modifier")) | changed;
+    }
+    /** Name prefix of modifiers computed with Apoli 2.9.0's modifier engine; the name survives client sync. */
+    public static final String LEGACY_MODIFIER = "overgrown_legacy_bridge:legacy";
+    private static final ThreadLocal<Boolean> LEGACY_MATH = ThreadLocal.withInitial(() -> false);
+    /** Marks a modifier as legacy, keeping its own name and any nested list as a JSON payload after the prefix. */
+    static boolean markLegacy(JsonObject mod, JsonArray nested) {
+        String name = string(mod, "name");
+        if (name != null && name.startsWith(LEGACY_MODIFIER)) return false;
+        if (name == null && nested == null) { mod.addProperty("name", LEGACY_MODIFIER); return true; }
+        JsonObject payload = new JsonObject();
+        if (name != null) payload.addProperty("name", name);
+        if (nested != null) payload.add("nested", nested.deepCopy());
+        mod.addProperty("name", LEGACY_MODIFIER + payload);
+        return true;
     }
     private static void addAttribute(JsonElement node, String attribute) {
         if (node == null) return;

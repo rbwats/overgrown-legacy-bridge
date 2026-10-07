@@ -11,8 +11,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 /** Legacy attribute_modify_transfer with class modify_exhaustion. */
 @Mixin(value = ModifyExhaustionHandler.class, remap = false)
 public abstract class TransferExhaustionMixin {
+    @Inject(method = "modify", at = @At("HEAD"))
+    private static void overgrownLegacyBridge$begin(Player player, float exhaustion, CallbackInfoReturnable<Float> cir) {
+        LegacyAttributeTransferPower.begin(player, "modify_exhaustion");
+    }
+
     @Inject(method = "modify", at = @At("RETURN"), cancellable = true)
     private static void overgrownLegacyBridge$transfer(Player player, float exhaustion, CallbackInfoReturnable<Float> cir) {
-        cir.setReturnValue(Math.max(0f, LegacyAttributeTransferPower.apply(player, "modify_exhaustion", cir.getReturnValueF())));
+        cir.setReturnValue(Math.max(0f, LegacyAttributeTransferPower.end(cir.getReturnValueF())));
     }
 }

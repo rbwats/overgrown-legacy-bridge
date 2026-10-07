@@ -14,8 +14,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 /** Legacy attribute_modify_transfer with class modify_break_speed, on the final break progress as legacy did. */
 @Mixin(value = ModifyBreakSpeedHandler.class, remap = false)
 public abstract class TransferBreakSpeedMixin {
+    @Inject(method = "modifySpeed", at = @At("HEAD"))
+    private static void overgrownLegacyBridge$begin(float speed, Player player, BlockGetter level, BlockPos pos, BlockState state, CallbackInfoReturnable<Float> cir) {
+        LegacyAttributeTransferPower.begin(player, "modify_break_speed");
+    }
+
     @Inject(method = "modifySpeed", at = @At("RETURN"), cancellable = true)
     private static void overgrownLegacyBridge$transfer(float speed, Player player, BlockGetter level, BlockPos pos, BlockState state, CallbackInfoReturnable<Float> cir) {
-        cir.setReturnValue(LegacyAttributeTransferPower.apply(player, "modify_break_speed", cir.getReturnValueF()));
+        cir.setReturnValue(LegacyAttributeTransferPower.end(cir.getReturnValueF()));
     }
 }

@@ -74,6 +74,11 @@ public final class LegacyDamageOverTimePower extends PowerType<LegacyDamageOverT
         }
         if (persist) impl.setAuxInts(id, new int[] {state[0], state[1]});
     }
+    /** Sets the timer from a migrated legacy save; the next tick reloads it. */
+    public static void restore(PowerContainerImpl impl, ResourceLocation id, int inDamageTicks, int outOfDamageTicks) {
+        impl.setAuxInts(id, new int[] {inDamageTicks, outOfDamageTicks});
+        java.util.Arrays.fill(impl.scratchInts(id, 3), 0);
+    }
     /** Clears the timer on respawn, as legacy {@code onRespawn} did. */
     public static void reset(PowerContainerImpl impl, ResourceLocation id) {
         impl.setAuxInts(id, new int[2]);

@@ -20,8 +20,9 @@ public final class LegacyXpGain {
         List<AttributeModifier> modifiers = new ArrayList<>();
         PowerLookup.forEach(player, MODIFY_XP_GAIN, ModifyXpGainPower.Config.class,
             cfg -> modifiers.addAll(AttributeModifierHelper.flatten(cfg.modifier(), cfg.modifiers())));
+        LegacyAttributeTransferPower.begin(player, "modify_experience");
         double result = modifiers.isEmpty() ? value : AttributeModifierHelper.apply((double) value, modifiers, player);
-        result = LegacyAttributeTransferPower.apply(player, "modify_experience", result);
+        result = LegacyAttributeTransferPower.end(result);
         return Double.isFinite(result) ? (int) result : value;
     }
 }

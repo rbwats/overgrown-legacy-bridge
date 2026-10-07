@@ -12,7 +12,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.Map;
 @Mixin(value = dev.overgrown.origins.origin.OriginLoader.class, remap = false)
 public abstract class OriginLoaderMixin {
-    @Inject(method = "apply", at = @At("HEAD"))
+    @Inject(method = {
+        "apply(Ljava/util/Map;Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/util/profiling/ProfilerFiller;)V",
+        "method_18788(Ljava/util/Map;Lnet/minecraft/class_3300;Lnet/minecraft/class_3695;)V"}, at = @At("HEAD"))
     private void overgrownLegacyBridge$origin(Map<ResourceLocation, JsonElement> entries, ResourceManager manager, ProfilerFiller profiler, CallbackInfo ci) {
         LegacyLoadingPriority.select(entries, manager, "origins");
         Map<ResourceLocation, java.util.List<JsonObject>> upgrades = new java.util.HashMap<>();

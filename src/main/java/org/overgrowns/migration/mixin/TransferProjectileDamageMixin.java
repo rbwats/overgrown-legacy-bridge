@@ -14,9 +14,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 /** Legacy attribute_modify_transfer with class modify_projectile_damage: the attacker's transfers, projectile damage only. */
 @Mixin(value = ModifyProjectileDamageHandler.class, remap = false)
 public abstract class TransferProjectileDamageMixin {
+    @Inject(method = {"modifyAmount", "previewAmount"}, at = @At("HEAD"))
+    private static void overgrownLegacyBridge$begin(LivingEntity shooter, LivingEntity target, DamageSource source, float amount, Level level, CallbackInfoReturnable<Float> cir) {
+        LegacyAttributeTransferPower.begin(source.is(DamageTypeTags.IS_PROJECTILE) ? source.getEntity() : null, "modify_projectile_damage");
+    }
+
     @Inject(method = {"modifyAmount", "previewAmount"}, at = @At("RETURN"), cancellable = true)
     private static void overgrownLegacyBridge$transfer(LivingEntity shooter, LivingEntity target, DamageSource source, float amount, Level level, CallbackInfoReturnable<Float> cir) {
-        if (source.getEntity() == null || !source.is(DamageTypeTags.IS_PROJECTILE)) return;
-        cir.setReturnValue(Math.max(0f, LegacyAttributeTransferPower.apply(source.getEntity(), "modify_projectile_damage", cir.getReturnValueF())));
+        cir.setReturnValue(Math.max(0f, LegacyAttributeTransferPower.end(cir.getReturnValueF())));
     }
 }
