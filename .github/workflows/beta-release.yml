@@ -1,0 +1,104 @@
+name: Beta release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to create
+        default: v0.4.0-beta
+  push:
+    tags: ["v*-beta*"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.inputs.tag || github.ref_name }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      # Compile-time and test-server dependencies only; they are not bundled into the bridge or the release.
+      - name: Fetch tested Overgrown Apoli and Origins
+        run: python3 .github/scripts/fetch_overgrown.py
+
+      - name: Build
+        run: ./gradlew build --no-daemon
+
+      - name: Compatibility suite (isolated loopback test server)
+        run: ./gradlew verifyCompatibility --no-daemon
+
+      - name: Summarize test results
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json, os
+          if os.path.exists("tests/codec-results.json"):
+              rows = json.load(open("tests/codec-results.json"))
+              base = [r for r in rows if not r.get("full")]
+              full = [r for r in rows if r.get("full")]
+              print(f"codec: {sum(r['passed'] for r in base)}/{len(base)} passed; failures: {[r['name'] for r in base if not r['passed']]}")
+              print(f"full-field: {sum(r.get('decoded', False) for r in full)}/{len(full)} decoded")
+              for r in full:
+                  if r.get("ignored_fields"): print(f"  ignored {r['name']}: {r['ignored_fields']}")
+                  if not r.get("decoded"): print(f"  undecoded {r['name']}: {r.get('error', '')[:200]}")
+          if os.path.exists("tests/regression-results.json"):
+              rows = json.load(open("tests/regression-results.json"))
+              print(f"regressions: {sum(r['passed'] for r in rows)}/{len(rows)} passed")
+              for r in rows:
+                  if not r["passed"]: print(f"  FAILED {r['name']}: {r.get('error')}")
+          PY
+
+      - name: Package
+        run: |
+          version=$(grep '^mod_version=' gradle.properties | cut -d= -f2)
+          jar="build/libs/overgrown-legacy-bridge-${version}.jar"
+          test -f "$jar"
+          stage="build/release/overgrown-legacy-bridge-${TAG#v}"
+          mkdir -p "$stage"
+          cp "$jar" "$stage/"
+          (cd overrides && zip -qr "../$stage/allaykin-item-fix-datapack.zip" pack.mcmeta data)
+          cp README.md COMPATIBILITY.md LICENSE "$stage/"
+          cat > "$stage/INSTALL.txt" <<TXT
+          Overgrown Legacy Bridge ${version} (${TAG})
+
+          1. Remove any older overgrown-legacy-bridge jar from the server and every client.
+          2. Copy overgrown-legacy-bridge-${version}.jar into the mods folder of the server AND every client.
+          3. Keep Minecraft 1.20.1, Fabric Loader 0.19.3+, Fabric API, Overgrown Apoli 1.90.0+
+             and Overgrown Origins 1.41.0+ installed, then restart.
+          4. Optional: only for the Allaykin pack, put allaykin-item-fix-datapack.zip in the world's
+             datapacks folder, enable it after Allaykin, and run /reload.
+          5. After startup or /reload, check config/overgrown_legacy_bridge/compatibility-report.json
+             (/legacybridge report shows its location).
+          TXT
+          (cd build/release && zip -qr "overgrown-legacy-bridge-${TAG#v}.zip" "overgrown-legacy-bridge-${TAG#v}")
+          mkdir -p build/release/assets
+          cp "$jar" "build/release/overgrown-legacy-bridge-${TAG#v}.zip" build/release/assets/
+          ls -la build/release/assets
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: release-and-test-results
+          path: |
+            build/release/assets/
+            tests/*.json
+
+      - name: Publish pre-release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG }}
+          target_commitish: ${{ github.sha }}
+          name: Overgrown Legacy Bridge 0.4.0 beta
+          prerelease: true
+          body_path: .github/release-notes-beta.md
+          files: build/release/assets/*
